@@ -1,0 +1,10 @@
+App with Vite (React+TS) and Postman
+
+Siti utili:
+
+- https://vitejs.dev/guide/
+- https://web.postman.co/workspace/My-Workspace~81742c0f-cb9f-4327-883a-40b7f9b1e17b/quickstart
+
+Progetto creato con:
+npm create vite@latest FoodApp -- --react-ts
+npm install
