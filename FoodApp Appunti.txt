@@ -1,5 +1,10 @@
 App with Vite (React+TS) and Postman
 
+Backend
+Swagger: http://flying-food-swagger.s3-website.eu-central-1.amazonaws.com
+API base url: https://d4crsehc65.execute-api.eu-central-1.amazonaws.com/prod
+API key: e34vAOxj2C9fo2NVp9kT89QBOA4P1qvl459VtZak
+
 Siti utili:
 
 - https://vitejs.dev/guide/
@@ -8,3 +13,24 @@ Siti utili:
 Progetto creato con:
 npm create vite@latest FoodApp -- --react-ts
 npm install
+
+Aggiungere il type checker:
+npm i vite-plugin-checker
+
+"dev": "vite" diventa "start": "vite --port=3000"
+
+Modificare Vite.config
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import checker from "vite-plugin-checker";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+    checker({
+      typescript: true,
+    }),
+  ],
+});
+
