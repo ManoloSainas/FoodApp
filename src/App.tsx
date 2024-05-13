@@ -1,5 +1,5 @@
 import "./App.css";
-import { Button } from "./Components/Button/Button";
+import { IconButton } from "./Components/IconButton/IconButton";
 // import { Icon } from "./Components/Icon/Icon";
 
 import { Stack } from "./Components/Stack/Stack";
@@ -12,9 +12,7 @@ function App() {
 
   return (
     <Stack>
-      <Button backgroundColor="red" borderRadius={50}>
-        Click me
-      </Button>
+      <IconButton/>
     </Stack>
   );
 }
