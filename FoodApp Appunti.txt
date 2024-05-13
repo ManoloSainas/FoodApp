@@ -34,3 +34,9 @@ export default defineConfig({
   ],
 });
 
+Icone:
+https://fontawesome.com/search
+
+Stile generale:
+https://styled-components.com/docs/basics#installation
+
