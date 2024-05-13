@@ -5,7 +5,11 @@ import { Stack } from "./Components/Stack/Stack";
 function App() {
   const [count, setCount] = useState(0);
 
-  return <Stack></Stack>;
+  return (
+    <Stack>
+      <h1>FoodApp</h1>
+    </Stack>
+  );
 }
 
 export default App;

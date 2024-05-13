@@ -54,7 +54,6 @@ const getTextStyle = ({
   flexDirection,
   justifyContent,
   alignItems,
-
   height,
   width,
   backgroundColor,
