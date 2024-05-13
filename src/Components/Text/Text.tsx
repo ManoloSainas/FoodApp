@@ -5,6 +5,7 @@ type Props = PropsWithChildren<{
   color?: string;
   backgroundColor?: string;
   fontSize?: number;
+  fontStyle?: "normal" | "italic";
   margin?: number;
 }>;
 
@@ -13,6 +14,7 @@ export const Text = ({
   color = "white",
   backgroundColor,
   fontSize,
+  fontStyle,
   margin,
   children,
 }: Props) => {
@@ -25,6 +27,7 @@ export const Text = ({
         backgroundColor,
         margin,
         fontSize,
+        fontStyle,
       }),
     },
     children
@@ -42,10 +45,17 @@ const textTypes = {
   span: "span",
 };
 
-const getTextStyle = ({ color, backgroundColor, fontSize, margin }: Props) => ({
+const getTextStyle = ({
+  color,
+  backgroundColor,
+  fontSize,
+  fontStyle,
+  margin,
+}: Props) => ({
   display: "flex",
   color,
   margin,
   backgroundColor,
   fontSize: `${fontSize}px`,
+  fontStyle,
 });
