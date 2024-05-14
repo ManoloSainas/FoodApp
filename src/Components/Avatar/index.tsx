@@ -1,6 +1,5 @@
-import { Image } from '../Image/Image'
-import { Text } from '../Text/Text'
-import { Stack } from '../Stack/Stack'
+import { Image } from '../Image'
+import { Text } from '../Text'
 import { PropsWithChildren } from 'react'
 
 type Props = PropsWithChildren<{
@@ -9,9 +8,9 @@ type Props = PropsWithChildren<{
 
 export const Avatar = ({ imageURL, children }: Props) => {
   return (
-    <Stack flexDirection="column">
+    <div>
       <Image height={60} width={60} imageURL={imageURL}></Image>
       <Text variant="h6">{children}</Text>
-    </Stack>
+    </div>
   )
 }

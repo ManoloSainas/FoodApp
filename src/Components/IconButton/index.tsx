@@ -1,9 +1,9 @@
-import { Icon } from '../Icon/Icon'
+import { Icon } from '../Icon'
 import { ButtonVariant } from '../Button/styled'
 import { PropsWithChildren } from 'react'
 import { IconName } from '../Icon/config'
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
-import { Button } from '../Button/Button'
+import { Button } from '../Button'
 
 type Props = PropsWithChildren<{
   onClick: () => void

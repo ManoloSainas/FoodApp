@@ -34,5 +34,11 @@ export const buttonVariants = {
     backgroundColor: 'grey',
     color: 'white',
     border: 'none'
+  },
+
+  transparent: {
+    backgroundColor: 'transparent',
+    color: 'white',
+    border: 'none'
   }
 }
