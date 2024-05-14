@@ -1,20 +1,24 @@
 import { PropsWithChildren } from "react";
-import { StyledButton } from "./styled";
+import { ButtonVariant, StyledButton } from "./styled";
+
 
 type Props = PropsWithChildren<{
-  backgroundColor?: string;
-  borderRadius?: number;
+  onClick: () => void
+  disabled?: boolean
+  variant?: ButtonVariant
 }>;
 
 export const Button = ({
   children,
-  backgroundColor,
-  borderRadius,
+  onClick,
+  disabled,
+  variant = "primary"
 }: Props) => {
   return (
     <StyledButton
-      $borderRadius={borderRadius}
-      $backgroundColor={backgroundColor}
+      onClick={onClick}
+      disabled={disabled}
+      $variant={variant}
     >
       {children}
     </StyledButton>
