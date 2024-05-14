@@ -21,7 +21,7 @@ export const buttonVariants = {
   outlined: {
     backgroundColor: '#00000000',
     color: 'white',
-    border: 'white'
+    border: 'solid 1px white'
   },
 
   redIcon: {

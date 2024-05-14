@@ -1,38 +1,19 @@
 import './App.css'
-import { IconButton } from './Components/IconButton/IconButton'
+import { Avatar } from './Components/Avatar/Avatar'
 import { Stack } from './Components/Stack/Stack'
+import { TagText } from './Components/TagText/TagText'
 
 function App() {
   // const [count, setCount] = useState(0);
   // useEffect
-  //useCallback
+  // useCallback
   // useMemo
 
   return (
-    <Stack>
-      <IconButton
-        iconName="plus"
-        size="7x"
-        onClick={() => console.log('sono stato cliccato')}
-      ></IconButton>
-      <IconButton
-        iconName="plus"
-        size="7x"
-        variant="outlined"
-        onClick={() => console.log('sono stato cliccato')}
-      ></IconButton>
-      <IconButton
-        iconName="plus"
-        size="7x"
-        variant="redIcon"
-        onClick={() => console.log('sono stato cliccato')}
-      ></IconButton>
-      <IconButton
-        iconName="plus"
-        size="7x"
-        variant="greyIcon"
-        onClick={() => console.log('sono stato cliccato')}
-      ></IconButton>
+    <Stack width="100%">
+      <TagText>ciao</TagText>
+
+      <Avatar imageURL="src\assets\Images\food.jpg"> Ciao mondo</Avatar>
     </Stack>
   )
 }
