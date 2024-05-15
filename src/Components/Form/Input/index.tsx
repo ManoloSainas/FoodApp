@@ -14,3 +14,4 @@ export const Input = ({ placeholder, value, onChange }: Props) => {
     <input type="text" value={value} placeholder={placeholder} onChange={handleChange} />
   )
 }
+// mettere il type dinamico

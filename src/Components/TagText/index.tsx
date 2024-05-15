@@ -1,6 +1,5 @@
 import { PropsWithChildren } from 'react'
 import { Text } from '../Text'
-import { Card } from '../Card'
 
 type Props = PropsWithChildren<{
   backgroundColor?: string
@@ -13,8 +12,10 @@ export const TagText = ({
   borderRadius = 20
 }: Props) => {
   return (
-    <Card backgroundColor={backgroundColor} borderRadius={borderRadius}>
+    <div background-color={backgroundColor} border-radius={borderRadius}>
       <Text color="grey">{children}</Text>
-    </Card>
+    </div>
   )
 }
+
+// creare styled per il div

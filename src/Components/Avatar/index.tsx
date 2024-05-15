@@ -1,16 +1,19 @@
 import { Image } from '../Image'
 import { Text } from '../Text'
-import { PropsWithChildren } from 'react'
+import { StyledAvatar } from './styled'
 
-type Props = PropsWithChildren<{
+type Props = {
   imageURL: string
-}>
+  text: string
+}
 
-export const Avatar = ({ imageURL, children }: Props) => {
+export const Avatar = ({ imageURL, text }: Props) => {
   return (
-    <div>
-      <Image height={60} width={60} imageURL={imageURL}></Image>
-      <Text variant="h6">{children}</Text>
-    </div>
+    <StyledAvatar>
+      <Image imageURL={imageURL}></Image>
+      <Text variant="h6">{text}</Text>
+    </StyledAvatar>
   )
 }
+
+// creare styled per il div

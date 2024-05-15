@@ -32,13 +32,16 @@ export const SearchBar = ({
         value={value}
         placeholder={placeholder}
         onChange={handleChange}
-      />
+      />{' '}
       <IconButton
         onClick={onClick}
         iconName={iconName}
         variant={variant}
         disabled={disabled}
-      ></IconButton>
+      />
     </>
   )
 }
+
+//mettere input precedentemente creato
+// creare styled per il div
