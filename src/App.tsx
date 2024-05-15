@@ -1,5 +1,6 @@
 import './App.css'
 import { IconButton } from './Components/IconButton'
+import { Select } from './Components/Select'
 import { TagText } from './Components/TagText'
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
       </IconButton>
 
       <TagText text="60gr"></TagText>
+
+      <Select onChange={(value) => console.log(value)}></Select>
     </>
   )
 }
