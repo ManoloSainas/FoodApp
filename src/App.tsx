@@ -1,6 +1,7 @@
 import './App.css'
 import { IconButton } from './Components/IconButton'
-import { Select } from './Components/Select'
+import { Price } from './Components/Price'
+import { Select } from './Components/Form/Select'
 import { TagText } from './Components/TagText'
 
 function App() {
@@ -18,9 +19,9 @@ function App() {
         Premi qui
       </IconButton>
 
-      <TagText text="60gr"></TagText>
+      <TagText text="60gr" />
 
-      <Select onChange={(value) => console.log(value)}></Select>
+      <Select options={['primo', 'secondo']} onChange={(value) => console.log(value)} />
     </>
   )
 }
