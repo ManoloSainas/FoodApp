@@ -23,9 +23,9 @@ export const IconButton = ({
 }: Props) => {
   return (
     <Button onClick={onClick} disabled={disabled} variant={variant}>
-      {<Icon iconName={iconName} color={color} size={size}></Icon>}
+      <Icon iconName={iconName} color={color} size={size}></Icon>
     </Button>
   )
 }
 
-// creare styled per il div
+// DA TOGLIERE???

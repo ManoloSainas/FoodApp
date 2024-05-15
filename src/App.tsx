@@ -1,5 +1,5 @@
 import './App.css'
-import { TagText } from './Components/TagText'
+import { Input } from './Components/Form/Input'
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -8,9 +8,7 @@ function App() {
   // useMemo
 
   return (
-    <div>
-      <TagText text="60gr" />
-    </div>
+    <Input placeholder="Cerca..." type="text" onChange={(value) => console.log(value)} />
   )
 }
 

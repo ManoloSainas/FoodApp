@@ -12,5 +12,3 @@ export const TagText = ({ text }: Props) => {
     </StyledTagText>
   )
 }
-
-// creare styled per il div

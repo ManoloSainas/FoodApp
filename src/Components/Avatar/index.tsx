@@ -15,6 +15,3 @@ export const Avatar = ({ imageURL, text }: Props) => {
     </StyledAvatar>
   )
 }
-
-// creare styled per il div
-// non funziona

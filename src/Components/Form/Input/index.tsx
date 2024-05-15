@@ -1,4 +1,5 @@
 import { ChangeEvent } from 'react'
+import { StyledInput } from './styled'
 
 type Props = {
   placeholder?: string
@@ -12,7 +13,11 @@ export const Input = ({ placeholder, value, onChange, type }: Props) => {
     onChange(e.target.value)
   }
   return (
-    <input type={type} value={value} placeholder={placeholder} onChange={handleChange} />
+    <StyledInput
+      type={type}
+      value={value}
+      placeholder={placeholder}
+      onChange={handleChange}
+    />
   )
 }
-// creare lo styled
