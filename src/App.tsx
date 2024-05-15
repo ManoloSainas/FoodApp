@@ -1,5 +1,6 @@
 import './App.css'
-import { Input } from './Components/Form/Input'
+import { IconButton } from './Components/IconButton'
+import { TagText } from './Components/TagText'
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -8,7 +9,16 @@ function App() {
   // useMemo
 
   return (
-    <Input placeholder="Cerca..." type="text" onChange={(value) => console.log(value)} />
+    <>
+      <IconButton
+        onClick={() => console.log('sono stato premuto')}
+        iconName="angleBracket"
+      >
+        Premi qui
+      </IconButton>
+
+      <TagText text="60gr"></TagText>
+    </>
   )
 }
 

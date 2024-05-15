@@ -1,45 +1,38 @@
 import { IconButton } from '../IconButton'
 import { ButtonVariant } from '../Button/styled'
 import { IconName } from '../Icon/config'
-import { ChangeEvent } from 'react'
+import { Input } from '../Form/Input'
+import { StyledSearchBar } from './styled'
 
 type Props = {
-  placeholder?: string
   onClick: () => void
   iconName: IconName
   variant?: ButtonVariant
   disabled?: boolean
   onChange: (e: string) => void
-  value?: string
+  type: string
+  placeholder?: string
 }
 
 export const SearchBar = ({
-  placeholder,
   onClick,
   iconName,
   variant,
   disabled,
   onChange,
-  value
+  type,
+  placeholder
 }: Props) => {
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    onChange(e.target.value)
-  }
   return (
-    <>
-      <input
-        type="text"
-        value={value}
-        placeholder={placeholder}
-        onChange={handleChange}
-      />
+    <StyledSearchBar>
+      <Input placeholder={placeholder} type={type} onChange={onChange} />
       <IconButton
         onClick={onClick}
         iconName={iconName}
         variant={variant}
         disabled={disabled}
       />
-    </>
+    </StyledSearchBar>
   )
 }
 

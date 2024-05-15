@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledTagText = styled.div<{}>`
-  background-color: grey;
+  background-color: black;
   border-radius: 40%;
   width: max-content;
   & > p {

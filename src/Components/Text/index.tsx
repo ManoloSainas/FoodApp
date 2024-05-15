@@ -1,37 +1,17 @@
-import { PropsWithChildren, createElement } from 'react'
+import { PropsWithChildren } from 'react'
+import { getTextComponent } from './styled'
 
-type Props = PropsWithChildren<{
+export type Props = PropsWithChildren<{
   variant?: keyof typeof textTypes
   color?: string
-  backgroundColor?: string
   fontSize?: number
   fontStyle?: 'normal' | 'italic'
-  margin?: number
 }>
 
-export const Text = ({
-  variant = 'p',
-  color = 'white',
-  backgroundColor,
-  fontSize,
-  fontStyle,
-  margin,
-  children
-}: Props) => {
-  const TextComponent = textTypes[variant]
-  return createElement(
-    TextComponent,
-    {
-      style: getTextStyle({
-        color,
-        backgroundColor,
-        margin,
-        fontSize,
-        fontStyle
-      })
-    },
-    children
-  )
+export const Text = ({ variant = 'p', children, color }: Props) => {
+  const text = typeof children === 'string' ? children : ''
+  const TextComponent = getTextComponent(variant)
+  return <TextComponent color={color}>{text}</TextComponent>
 }
 
 const textTypes = {
@@ -44,20 +24,3 @@ const textTypes = {
   p: 'p',
   span: 'span'
 }
-
-const getTextStyle = ({
-  color,
-  backgroundColor,
-  fontSize,
-  fontStyle,
-  margin
-}: Props) => ({
-  display: 'flex',
-  color,
-  margin,
-  backgroundColor,
-  fontSize: `${fontSize}px`,
-  fontStyle
-})
-
-// creare styled per il div
