@@ -3,9 +3,13 @@ import styled from 'styled-components'
 export const StyledAvatar = styled.div<{}>`
   display: flex;
   flex-direction: column;
-  & > Image {
+  & > img {
     border-radius: 100%;
-    height: 60%;
-    width: 60%;
+    height: 60px;
+    width: 60px;
+  }
+
+  & > h4 {
+    width: 60px;
   }
 `

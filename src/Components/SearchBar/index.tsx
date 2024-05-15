@@ -32,7 +32,7 @@ export const SearchBar = ({
         value={value}
         placeholder={placeholder}
         onChange={handleChange}
-      />{' '}
+      />
       <IconButton
         onClick={onClick}
         iconName={iconName}

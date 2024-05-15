@@ -4,14 +4,15 @@ type Props = {
   placeholder?: string
   value?: string
   onChange: (e: string) => void
+  type: string
 }
 
-export const Input = ({ placeholder, value, onChange }: Props) => {
+export const Input = ({ placeholder, value, onChange, type }: Props) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value)
   }
   return (
-    <input type="text" value={value} placeholder={placeholder} onChange={handleChange} />
+    <input type={type} value={value} placeholder={placeholder} onChange={handleChange} />
   )
 }
-// mettere il type dinamico
+// creare lo styled

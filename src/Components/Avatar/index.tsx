@@ -11,9 +11,10 @@ export const Avatar = ({ imageURL, text }: Props) => {
   return (
     <StyledAvatar>
       <Image imageURL={imageURL}></Image>
-      <Text variant="h6">{text}</Text>
+      <Text variant="h4">{text}</Text>
     </StyledAvatar>
   )
 }
 
 // creare styled per il div
+// non funziona

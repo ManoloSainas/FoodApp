@@ -1,20 +1,15 @@
-import { PropsWithChildren } from 'react'
 import { Text } from '../Text'
+import { StyledTagText } from './styled'
 
-type Props = PropsWithChildren<{
-  backgroundColor?: string
-  borderRadius?: number
-}>
+type Props = {
+  text: string
+}
 
-export const TagText = ({
-  children,
-  backgroundColor = '#202027',
-  borderRadius = 20
-}: Props) => {
+export const TagText = ({ text }: Props) => {
   return (
-    <div background-color={backgroundColor} border-radius={borderRadius}>
-      <Text color="grey">{children}</Text>
-    </div>
+    <StyledTagText>
+      <Text>{text}</Text>
+    </StyledTagText>
   )
 }
 

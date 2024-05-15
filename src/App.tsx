@@ -1,5 +1,5 @@
 import './App.css'
-import { StyledAvatar } from './Components/Avatar/styled'
+import { TagText } from './Components/TagText'
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -7,7 +7,11 @@ function App() {
   // useCallback
   // useMemo
 
-  return <StyledAvatar />
+  return (
+    <div>
+      <TagText text="60gr" />
+    </div>
+  )
 }
 
 export default App
