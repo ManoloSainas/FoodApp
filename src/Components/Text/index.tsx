@@ -1,30 +1,27 @@
 import { PropsWithChildren } from 'react'
-import { getTextComponent } from './styled'
+import { StyledText } from './styled'
 
 export type Props = PropsWithChildren<{
-  variant?: keyof typeof textTypes
+  variant?: keyof typeof StyledText
   color?: string
   fontSize?: number
   fontStyle?: 'normal' | 'italic'
 }>
 
-export const Text = ({ variant = 'p', children, color, fontSize, fontStyle }: Props) => {
-  const text = typeof children === 'string' ? children : ''
-  const TextComponent = getTextComponent(variant)
+export const Text = ({
+  variant = 'p',
+  children,
+  color = 'black',
+  fontSize,
+  fontStyle
+}: Props) => {
+  const text =
+    typeof children === 'string' || typeof children === 'number' ? children : ''
+  const TextComponent = StyledText[variant] || StyledText.p
+
   return (
     <TextComponent color={color} fontSize={fontSize} fontStyle={fontStyle}>
       {text}
     </TextComponent>
   )
-}
-
-const textTypes = {
-  h1: 'h1',
-  h2: 'h2',
-  h3: 'h3',
-  h4: 'h4',
-  h5: 'h5',
-  h6: 'h6',
-  p: 'p',
-  span: 'span'
 }
