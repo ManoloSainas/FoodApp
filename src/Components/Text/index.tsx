@@ -8,10 +8,14 @@ export type Props = PropsWithChildren<{
   fontStyle?: 'normal' | 'italic'
 }>
 
-export const Text = ({ variant = 'p', children, color }: Props) => {
+export const Text = ({ variant = 'p', children, color, fontSize, fontStyle }: Props) => {
   const text = typeof children === 'string' ? children : ''
   const TextComponent = getTextComponent(variant)
-  return <TextComponent color={color}>{text}</TextComponent>
+  return (
+    <TextComponent color={color} fontSize={fontSize} fontStyle={fontStyle}>
+      {text}
+    </TextComponent>
+  )
 }
 
 const textTypes = {

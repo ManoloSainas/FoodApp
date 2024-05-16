@@ -1,10 +1,16 @@
 import styled from 'styled-components'
 
-export const StyledSelect = styled.select<{}>`
+export const StyledTag = styled.div<{}>`
   background-color: black;
   border-top-right-radius: 50px 50px;
   border-bottom-right-radius: 50px 50px;
   border-top-left-radius: 50px 50px;
   border-bottom-left-radius: 50px 50px;
-  padding: 2% 6%;
+  padding: 1px 30px;
+  width: max-content;
+  & > p {
+    color: grey;
+  }
 `
+
+// allargare un pò il div

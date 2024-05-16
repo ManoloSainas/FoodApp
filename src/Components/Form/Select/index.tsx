@@ -1,4 +1,5 @@
 import { ChangeEvent } from 'react'
+import { StyledSelect } from './styled'
 
 type Props = {
   onChange: (e: string) => void
@@ -11,10 +12,10 @@ export const Select = ({ onChange, value, options }: Props) => {
     onChange(e.target.value)
   }
   return (
-    <select value={value} onChange={handleChange}>
+    <StyledSelect value={value} onChange={handleChange}>
       {options.map((value) => (
         <option key={value}>{value}</option>
       ))}
-    </select>
+    </StyledSelect>
   )
 }
