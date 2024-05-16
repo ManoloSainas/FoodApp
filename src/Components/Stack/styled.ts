@@ -24,5 +24,5 @@ export const StyledStack = styled.div<{
   flex: ${({ $flex }) => $flex};
   padding: ${({ $padding }) => $padding};
   margin: ${({ $margin }) => $margin};
-  border-radius: ${({ $borderRadius }) => $borderRadius};
+  border-radius: ${({ $borderRadius }) => $borderRadius}px;
 `

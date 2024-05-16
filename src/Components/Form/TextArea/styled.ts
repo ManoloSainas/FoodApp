@@ -15,6 +15,7 @@ export const StyledTextArea = styled.div<{}>`
   & > textarea {
     font-style: italic;
     border: none;
-    background-color: #3b3b3b;
+    background-color: #111114;
+    color
   }
 `

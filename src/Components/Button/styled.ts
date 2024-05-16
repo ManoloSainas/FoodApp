@@ -31,7 +31,7 @@ export const buttonVariants = {
   },
 
   greyIcon: {
-    backgroundColor: 'grey',
+    backgroundColor: '#2D2E37',
     color: 'white',
     border: 'none'
   },
