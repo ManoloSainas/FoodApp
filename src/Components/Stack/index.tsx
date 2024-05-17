@@ -8,7 +8,7 @@ type Props = PropsWithChildren<{
   height?: string
   width?: string
   backgroundColor?: string
-  gap?: number
+  gap?: string
   flex?: number
   padding?: string
   margin?: string

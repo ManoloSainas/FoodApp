@@ -1,5 +1,6 @@
 import './App.css'
-import { WriteReview } from './Components/Cards/WriteReview'
+import { TextArea } from './Components/Form/TextArea'
+// import { Select } from './Components/Form/Select'
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -8,7 +9,13 @@ function App() {
   // useMemo
   return (
     <>
-      <WriteReview></WriteReview>
+      {/* <Select
+        multiple={true}
+        options={['Primo', 'Secondo', 'Terzo']}
+        onChange={(value) => console.log(value)}
+      ></Select> */}
+
+      <TextArea onChange={(value) => console.log(value)} />
     </>
   )
 }

@@ -11,12 +11,18 @@ export const WriteReview = () => {
       margin="20px"
       borderRadius={20}
       backgroundColor="#22222A"
-      padding="5px 25px"
-      width="610px"
-      height="253px"
+      width="max-content"
+      height="max-content"
+      padding="10px 40px 30px 40px"
+      gap="20px"
     >
-      <Stack justifyContent="space-between" width="100%" alignItems="center">
-        <Text variant="h4" color="white">
+      <Stack
+        justifyContent="space-between"
+        width="100%"
+        height="100%"
+        alignItems="center"
+      >
+        <Text variant="h2" color="white">
           Write a review
         </Text>
         <IconButton
@@ -27,12 +33,12 @@ export const WriteReview = () => {
         ></IconButton>
       </Stack>
 
-      <Stack>
+      <Stack justifyContent="center" width="100%">
         <TextArea></TextArea>
       </Stack>
 
-      <Stack>
-        <Button></Button>
+      <Stack width="100%" justifyContent="flex-end">
+        <Button onClick={() => console.log('Clicked!')}>Send</Button>
       </Stack>
     </Stack>
   )

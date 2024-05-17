@@ -13,7 +13,7 @@ export const StyledButton = styled.button<{
 
 export const buttonVariants = {
   primary: {
-    backgroundColor: 'green',
+    backgroundColor: '#14C458',
     color: 'white',
     border: 'none'
   },

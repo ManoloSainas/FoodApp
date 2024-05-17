@@ -7,7 +7,7 @@ type Props = {
   options: { icon: IconName; text: string }[]
 }
 
-export const UnorderedList = ({ options }: Props) => {
+export const SideBar = ({ options }: Props) => {
   return (
     <ul>
       {options.map(({ icon, text }) => (
@@ -16,11 +16,6 @@ export const UnorderedList = ({ options }: Props) => {
           <Text>{text}</Text>
         </StyledRow>
       ))}
-
-      {/* <StyledRow>
-        <Icon iconName="plus"></Icon>
-        <Text>Più</Text>
-      </StyledRow> */}
     </ul>
   )
 }

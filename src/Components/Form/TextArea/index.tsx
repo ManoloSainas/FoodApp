@@ -1,18 +1,36 @@
-import { PropsWithChildren } from 'react'
+import { ChangeEvent } from 'react'
 import { StyledTextArea } from './styled'
 
-type Props = PropsWithChildren<{}>
+type Props = {
+  onChange: (e: string) => void
+  disabled?: boolean
+  placeholder?: string
+  value?: string
+  height?: string
+  width?: string
+}
 
-export const TextArea = ({ children }: Props) => {
+export const TextArea = ({
+  onChange,
+  disabled,
+  placeholder,
+  value,
+  height = '530px',
+  width = '145px'
+}: Props) => {
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    onChange(e.target.value)
+  }
   return (
-    <StyledTextArea>
-      <textarea
-        placeholder="Tell us what you liked or disliked about this product..."
-        rows={7}
-        cols={50}
-      >
-        {children}
-      </textarea>
-    </StyledTextArea>
+    <StyledTextArea
+      onChange={handleChange}
+      $height={height}
+      $width={width}
+      placeholder={placeholder}
+      disabled={disabled}
+      value={value}
+    ></StyledTextArea>
   )
 }
+
+//onchange
