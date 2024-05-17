@@ -1,5 +1,6 @@
 import './App.css'
 import { Select } from './Components/Form/Select'
+import { ToPay } from './Components/ToPay'
 // import { Select } from './Components/Form/Select'
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         ]}
         onChange={(value) => console.log(value)}
       ></Select>
+
+      <ToPay currency="Euro" value="700" />
     </>
   )
 }
