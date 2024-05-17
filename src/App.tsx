@@ -1,5 +1,5 @@
 import './App.css'
-import { WriteReview } from './Components/Cards/WriteReview'
+import { Select } from './Components/Form/Select'
 // import { Select } from './Components/Form/Select'
 
 function App() {
@@ -15,7 +15,15 @@ function App() {
         onChange={(value) => console.log(value)}
       ></Select> */}
 
-      <WriteReview />
+      <Select
+        multiple={true}
+        options={[
+          { value: '1', label: 'Primo' },
+          { value: '2', label: 'Secondo' },
+          { value: '3', label: 'Terzo' }
+        ]}
+        onChange={(value) => console.log(value)}
+      ></Select>
     </>
   )
 }
