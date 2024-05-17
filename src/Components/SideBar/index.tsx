@@ -12,7 +12,7 @@ export const SideBar = ({ options }: Props) => {
     <ul>
       {options.map(({ icon, text }) => (
         <StyledRow key={icon}>
-          <Icon iconName={icon}></Icon>
+          <Icon iconName={icon} />
           <Text>{text}</Text>
         </StyledRow>
       ))}

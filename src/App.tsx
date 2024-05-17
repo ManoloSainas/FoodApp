@@ -1,5 +1,5 @@
 import './App.css'
-import { TextArea } from './Components/Form/TextArea'
+import { WriteReview } from './Components/Cards/WriteReview'
 // import { Select } from './Components/Form/Select'
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         onChange={(value) => console.log(value)}
       ></Select> */}
 
-      <TextArea onChange={(value) => console.log(value)} />
+      <WriteReview />
     </>
   )
 }

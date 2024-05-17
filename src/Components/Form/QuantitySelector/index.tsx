@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { Text } from '../Text'
-import { IconButton } from '../IconButton'
+
 import { StyledQuantitySelector } from './styled'
+import { IconButton } from '../../IconButton'
+import { Text } from '../../Text'
 
 export const QuantitySelector = () => {
   const [quantity, setQuantity] = useState(1)
@@ -18,13 +19,9 @@ export const QuantitySelector = () => {
 
   return (
     <StyledQuantitySelector>
-      <IconButton iconName="Plus" onClick={handleIncrement}></IconButton>
+      <IconButton iconName="Plus" onClick={handleIncrement} />
       <Text variant="span">{quantity}</Text>
-      <IconButton
-        iconName="Minus"
-        onClick={handleDecrement}
-        disabled={quantity <= 0}
-      ></IconButton>
+      <IconButton iconName="Minus" onClick={handleDecrement} disabled={quantity <= 0} />
     </StyledQuantitySelector>
   )
 }

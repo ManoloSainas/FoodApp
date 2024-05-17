@@ -30,11 +30,14 @@ export const WriteReview = () => {
           variant="greyIcon"
           iconName="Xmark"
           onClick={() => console.log('Clicked!')}
-        ></IconButton>
+        />
       </Stack>
 
       <Stack justifyContent="center" width="100%">
-        <TextArea></TextArea>
+        <TextArea
+          placeholder="Tell us what you liked or disliked about this product..."
+          onChange={(value) => console.log(value)}
+        />
       </Stack>
 
       <Stack width="100%" justifyContent="flex-end">

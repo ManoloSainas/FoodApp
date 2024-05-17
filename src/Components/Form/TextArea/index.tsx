@@ -29,7 +29,7 @@ export const TextArea = ({
       placeholder={placeholder}
       disabled={disabled}
       value={value}
-    ></StyledTextArea>
+    />
   )
 }
 

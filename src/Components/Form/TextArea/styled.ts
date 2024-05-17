@@ -8,8 +8,9 @@ export const StyledTextArea = styled.textarea<{ $height?: string; $width?: strin
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   margin: 5px;
+  padding: 15px;
   font-style: italic;
-  color: #2e2e30;
+  color: white;
   resize: none;
   width: ${({ $height }) => $height};
   height: ${({ $width }) => $width};
