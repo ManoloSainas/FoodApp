@@ -9,7 +9,12 @@ type Props = {
   height?: string
 }
 
-export const ImageText = ({ imageURL, text, width, height }: Props) => {
+export const ImageText = ({
+  imageURL,
+  text,
+  width = '150px',
+  height = '100px'
+}: Props) => {
   return (
     <StyledImageText $width={width} $height={height}>
       <Image imageURL={imageURL} />

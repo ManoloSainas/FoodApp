@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react'
+import { ChangeEvent, useCallback } from 'react'
 import { StyledInput } from './styled'
 
 type Props = {
@@ -9,9 +9,10 @@ type Props = {
 }
 
 export const Input = ({ placeholder, value, onChange, type }: Props) => {
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value)
-  }
+  }, [])
+
   return (
     <StyledInput
       type={type}
