@@ -39,8 +39,7 @@ export const iconsSet = {
   Bell: faBell,
   Bars: faBars, // DA CAMBIARE!
   BagShopping: faBagShopping, // DA CAMBIARE!
-  DoorOpen: faDoorOpen, // DA CAMBIARE!
-  noIcon: null // INSERIRE ICONA VUOTA
+  DoorOpen: faDoorOpen // DA CAMBIARE!
   // AGGIUNGERE LE ALTRE ICONE
 }
 export type IconName = keyof typeof iconsSet
