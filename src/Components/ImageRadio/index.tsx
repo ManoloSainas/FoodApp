@@ -1,6 +1,17 @@
+//import { StyledImageRadio } from "./styled";
+import { Image } from '../Image'
+import { StyledImageRadio } from './styled'
 
-export const ImageRadio = () {
-    return (
+type Props = {
+  images: string[]
+}
 
-    );
+export const ImageRadio = ({ images }: Props) => {
+  return (
+    <StyledImageRadio>
+      {images.map((currImage) => (
+        <Image imageURL={currImage} />
+      ))}
+    </StyledImageRadio>
+  )
 }

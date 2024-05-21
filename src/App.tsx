@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { ImageText } from './Components/Cards/ImageText'
 import { Select } from './Components/Form/Select'
+import { Review } from './Components/Cards/Review'
 
 function App() {
   const [selectedValue, setSelectedValue] = useState<any>()
@@ -23,6 +24,16 @@ function App() {
       />
 
       <ImageText imageURL="src\assets\Images\food.jpg" text="Frutta" />
+
+      <Review
+        reviewList={[
+          {
+            title: 'Prima recensione',
+            date: '10 November 2023',
+            rev: 'Tutto ok'
+          }
+        ]}
+      />
     </>
   )
 }

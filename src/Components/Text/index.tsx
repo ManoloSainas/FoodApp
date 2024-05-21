@@ -17,7 +17,7 @@ export const Text = ({
 }: Props) => {
   const text =
     typeof children === 'string' || typeof children === 'number' ? children : ''
-  const TextComponent = StyledText[variant] || StyledText.p
+  const TextComponent: any = StyledText[variant] || StyledText.p
 
   return (
     <TextComponent color={color} fontSize={fontSize} fontStyle={fontStyle}>

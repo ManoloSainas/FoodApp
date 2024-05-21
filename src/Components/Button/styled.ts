@@ -25,7 +25,7 @@ export const buttonVariants = {
   },
 
   redIcon: {
-    backgroundColor: 'red',
+    backgroundColor: '#6E1322',
     color: 'white',
     border: 'none'
   },
