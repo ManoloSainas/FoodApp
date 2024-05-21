@@ -21,9 +21,7 @@ export const Select = ({
       const selectedValue = e.target.value
       const newValue = multiple
         ? value?.includes(selectedValue)
-          ? value.length > 1
-            ? ([...value] ?? []).filter((element) => element !== selectedValue)
-            : ['']
+          ? ([...value] ?? []).filter((element) => element !== selectedValue)
           : [...(value ?? []), selectedValue]
         : selectedValue
       onChange(newValue)
