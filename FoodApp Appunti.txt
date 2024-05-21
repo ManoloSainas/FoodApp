@@ -60,3 +60,5 @@ creare cartella .vscode con all'interno settings.json
     "files.eol": "\n"
 }
 
+
+https://react.dev/learn/react-developer-tools

@@ -5,6 +5,7 @@ import { Price } from '../../Price'
 import { Tag } from '../../Tag'
 import { Text } from '../../Text'
 import { StyledRow } from './styled'
+import { Stack } from '../../Stack'
 
 type Props = {
   options: {
@@ -23,10 +24,13 @@ export const ShoppingCard = ({ options }: Props) => {
       {options.map(({ imageURL, text, tagText, currency, value, onClick }) => (
         <StyledRow key={imageURL}>
           <Image imageURL={imageURL} />
-          <Text color="#E6E5E8" variant="h2">
-            {text}
-          </Text>
-          <Tag text={tagText} />
+          <Stack flexDirection="column">
+            <Text color="#E6E5E8" variant="h2">
+              {text}
+            </Text>
+            <Tag text={tagText} />
+          </Stack>
+
           <QuantitySelector />
           <Price currency={currency} value={value} />
           <IconButton variant="redIcon" iconName="Xmark" onClick={onClick} />
