@@ -5,7 +5,7 @@ type Props = {
   reviewList: { title: string; date: string; rev: string }[]
 }
 
-export const Review = ({ reviewList }: Props) => {
+export const ReviewCard = ({ reviewList }: Props) => {
   return (
     <ul>
       {reviewList.map(({ title, date, rev }) => (

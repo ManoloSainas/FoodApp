@@ -9,7 +9,7 @@ type Props = {
   height?: string
 }
 
-export const ImageText = ({
+export const ImageTextCard = ({
   imageURL,
   text,
   width = '150px',

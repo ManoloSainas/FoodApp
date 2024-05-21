@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import './App.css'
-import { ImageText } from './Components/Cards/ImageText'
+import { ImageTextCard } from './Components/Cards/ImageTextCard'
 import { Select } from './Components/Form/Select'
-import { Review } from './Components/Cards/Review'
+import { ReviewCard } from './Components/Cards/ReviewCard'
+import { ShoppingCard } from './Components/Cards/ShoppingCard'
 
 function App() {
   const [selectedValue, setSelectedValue] = useState<any>()
@@ -23,14 +24,43 @@ function App() {
         onChange={(value) => setSelectedValue(value)}
       />
 
-      <ImageText imageURL="src\assets\Images\food.jpg" text="Frutta" />
+      <ImageTextCard imageURL="src\assets\Images\food.jpg" text="Frutta" />
 
-      <Review
+      <ReviewCard
         reviewList={[
           {
             title: 'Prima recensione',
             date: '10 November 2023',
             rev: 'Tutto ok'
+          }
+        ]}
+      />
+
+      <ShoppingCard
+        options={[
+          {
+            imageURL: 'src/assets/Images/food.jpg',
+            text: 'Primo',
+            tagText: '10gr',
+            currency: 'Dollar',
+            value: '50',
+            onClick: () => console.log('Premuto!')
+          },
+          {
+            imageURL: 'src/assets/Images/mela.jpg',
+            text: 'Secondo',
+            tagText: '20gr',
+            currency: 'Euro',
+            value: '70',
+            onClick: () => console.log('Premuto!')
+          },
+          {
+            imageURL: 'src/assets/Images/fragola.jpg',
+            text: 'Terzo',
+            tagText: '30gr',
+            currency: 'Yen',
+            value: '30',
+            onClick: () => console.log('Premuto!')
           }
         ]}
       />

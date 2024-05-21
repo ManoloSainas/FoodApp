@@ -4,7 +4,7 @@ import { IconButton } from '../../IconButton'
 import { Stack } from '../../Stack'
 import { Text } from '../../Text'
 
-export const WriteReview = () => {
+export const WriteReviewCard = () => {
   return (
     <Stack
       flexDirection="column"

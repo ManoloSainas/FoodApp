@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 import { StyledQuantitySelector } from './styled'
-import { IconButton } from '../../IconButton'
-import { Text } from '../../Text'
+import { IconButton } from '../IconButton'
+import { Text } from '../Text'
 
 export const QuantitySelector = () => {
   const [quantity, setQuantity] = useState(1)
