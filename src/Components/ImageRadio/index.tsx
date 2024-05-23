@@ -2,6 +2,7 @@
 import { useCallback, useState } from 'react'
 import { Image } from '../Image'
 import { StyledImageRadio } from './styled'
+import { Input } from '../Form/Input'
 
 type Props = {
   images: string[]
@@ -25,7 +26,7 @@ export const ImageRadio = ({ images, width, height, onChange }: Props) => {
     <StyledImageRadio $width={width} $height={height}>
       {images.map((currCard, index) => (
         <div key={currCard}>
-          <input
+          <Input
             type="radio"
             id={`radio-${index}`}
             value={currCard}

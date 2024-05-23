@@ -6,9 +6,11 @@ type Props = {
   value?: string
   onChange: (e: string) => void
   type: string
+  id?: string
+  checked?: boolean
 }
 
-export const Input = ({ placeholder, value, onChange, type }: Props) => {
+export const Input = ({ placeholder, value, onChange, type, id, checked }: Props) => {
   const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value)
   }, [])
@@ -19,6 +21,8 @@ export const Input = ({ placeholder, value, onChange, type }: Props) => {
       value={value}
       placeholder={placeholder}
       onChange={handleChange}
+      id={id}
+      checked={checked}
     />
   )
 }

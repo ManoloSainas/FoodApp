@@ -10,6 +10,7 @@ import { SideBar } from './Components/SideBar'
 import { IconName } from './Components/Icon/config'
 import { ImageRadio } from './Components/ImageRadio'
 import { Stack } from './Components/Stack'
+import { CardDetails } from './Components/CardDetails'
 
 function App() {
   const [selectedValue, setSelectedValue] = useState<any>()
@@ -181,6 +182,9 @@ function App() {
           'src/assets/Images/mela.jpg'
         ]}
       />
+      <Stack width="100%" height="100%" justifyContent="center">
+        <CardDetails />
+      </Stack>
     </>
   )
 }
