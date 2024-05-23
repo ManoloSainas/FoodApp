@@ -17,4 +17,12 @@ export const StyledRow = styled.li<{}>`
     width: 100px;
     height: 100px;
   }
+
+  .text {
+    color: #e6e5e8;
+  }
+
+  .textp {
+    color: #58585c;
+  }
 `

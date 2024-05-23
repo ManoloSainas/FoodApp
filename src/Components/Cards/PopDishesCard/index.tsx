@@ -56,14 +56,14 @@ export const PopDishes = ({ options, onClick }: Props) => {
               >
                 <Stack>
                   {showIconInCorner && <Icon iconName={iconName} />}
-                  <Image className="image" width={100} height={100} imageURL={imageURL} />
+                  <Image className="image" imageURL={imageURL} />
                 </Stack>
 
                 <Stack flexDirection="column" alignItems="center">
-                  <Text color="#E6E5E8" variant="h2">
+                  <Text className="text" variant="h2">
                     {text}
                   </Text>
-                  <Text color="#58585C">{textp}</Text>
+                  <Text className="textp">{textp}</Text>
                 </Stack>
 
                 <Stack gap="30px">

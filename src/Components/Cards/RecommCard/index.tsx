@@ -8,6 +8,8 @@ import { Tag } from '../../Tag'
 import { Text } from '../../Text'
 import { StyledRow } from '../RecommCard/styled'
 import { symbols } from '../../Price'
+import { useCallback, useMemo } from 'react'
+import { Icon } from '../../Icon'
 
 type Props = {
   options: {
@@ -17,15 +19,19 @@ type Props = {
     tagText: string
     currency: keyof typeof symbols
     value: string
-    onClick: () => void
     variant?: keyof typeof buttonVariants
     iconName: IconName
+    iconNameButton: IconName
+    showIconInCorner?: boolean
   }[]
+  onClick: () => void
 }
-export const RecommCard = ({ options }: Props) => {
-  return (
-    <ul>
-      {options.map(
+export const RecommCard = ({ options, onClick }: Props) => {
+  const memorizedOnClick = useCallback(onClick, [])
+
+  const optionsElements = useMemo(
+    () =>
+      options.map(
         ({
           imageURL,
           text,
@@ -33,26 +39,36 @@ export const RecommCard = ({ options }: Props) => {
           tagText,
           currency,
           value,
-          onClick,
           variant,
-          iconName
+          iconName,
+          iconNameButton,
+          showIconInCorner = false
         }) => (
           <StyledRow key={imageURL}>
             <Image className="image" imageURL={imageURL} />
             <Stack flexDirection="column">
-              <Text className="text" variant="h2">
-                {text}
-              </Text>
+              <Stack>
+                <Text className="text" variant="h2">
+                  {text}
+                </Text>
+                {showIconInCorner && <Icon iconName={iconName} />}
+              </Stack>
+
               <Text className="textp">{textp}</Text>
               <Tag text={tagText} />
               <Stack justifyContent="space-between">
                 <Price currency={currency} value={value} />
-                <IconButton variant={variant} iconName={iconName} onClick={onClick} />
+                <IconButton
+                  variant={variant}
+                  iconName={iconNameButton}
+                  onClick={memorizedOnClick}
+                />
               </Stack>
             </Stack>
           </StyledRow>
         )
-      )}
-    </ul>
+      ),
+    [options, memorizedOnClick]
   )
+  return <ul>{optionsElements}</ul>
 }
