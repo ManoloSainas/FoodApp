@@ -7,6 +7,7 @@ import { Text } from '../../Text'
 import { StyledRow } from './styled'
 import { Stack } from '../../Stack'
 import { symbols } from '../../Price'
+import { useCallback, useMemo } from 'react'
 
 type Props = {
   options: {
@@ -15,18 +16,20 @@ type Props = {
     tagText: string
     currency: keyof typeof symbols
     value: string
-    onClick: () => void
   }[]
+  onClick: () => void
 }
 
-export const ShoppingCard = ({ options }: Props) => {
-  return (
-    <ul>
-      {options.map(({ imageURL, text, tagText, currency, value, onClick }) => (
+export const ShoppingCard = ({ options, onClick }: Props) => {
+  const memorizedOnClick = useCallback(onClick, [])
+
+  const optionsElements = useMemo(
+    () =>
+      options.map(({ imageURL, text, tagText, currency, value }) => (
         <StyledRow key={imageURL}>
-          <Image imageURL={imageURL} />
+          <Image className="image" imageURL={imageURL} />
           <Stack flexDirection="column">
-            <Text color="#E6E5E8" variant="h2">
+            <Text className="text" variant="h2">
               {text}
             </Text>
             <Tag text={tagText} />
@@ -34,9 +37,10 @@ export const ShoppingCard = ({ options }: Props) => {
 
           <QuantitySelector />
           <Price currency={currency} value={value} />
-          <IconButton variant="redIcon" iconName="Xmark" onClick={onClick} />
+          <IconButton variant="redIcon" iconName="Xmark" onClick={memorizedOnClick} />
         </StyledRow>
-      ))}
-    </ul>
+      )),
+    [options, memorizedOnClick]
   )
+  return <ul>{optionsElements}</ul>
 }

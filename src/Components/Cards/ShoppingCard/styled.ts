@@ -14,11 +14,13 @@ export const StyledRow = styled.li<{}>`
   border-top-left-radius: 50px 50px;
   border-bottom-left-radius: 50px 50px;
 
-  & > img {
+  .image {
     width: 100px;
     height: 100px;
     border-radius: 100%;
   }
-`
 
-export const StyledImage = styled(Image)``
+  .text {
+    color: #e6e5e8;
+  }
+`
