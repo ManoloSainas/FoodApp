@@ -56,7 +56,7 @@ export const PopDishes = ({ options, onClick }: Props) => {
                 gap="10px"
               >
                 <Stack>
-                  {showIconInCorner && <Icon iconName={iconName} />}
+                  {shouldShowIcon && <Icon iconName={iconName} />}
                   <Image width={100} height={100} imageURL={imageURL} />
                 </Stack>
 
