@@ -1,5 +1,5 @@
 //import { StyledImageRadio } from "./styled";
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Image } from '../Image'
 import { StyledImageRadio } from './styled'
 
@@ -13,10 +13,13 @@ type Props = {
 export const ImageRadio = ({ images, width, height, onChange }: Props) => {
   const [selectedCard, setSelectedCard] = useState<string | null>(null)
 
-  const handleRadioChange = (card: string) => {
-    setSelectedCard(card)
-    onChange(card)
-  }
+  const handleRadioChange = useCallback(
+    (card: string) => {
+      setSelectedCard(card)
+      onChange(card)
+    },
+    [onChange]
+  )
 
   return (
     <StyledImageRadio $width={width} $height={height}>
