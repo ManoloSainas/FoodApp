@@ -11,4 +11,17 @@ export const StyledReview = styled.li<{}>`
   border-bottom-right-radius: 20px 20px;
   border-top-left-radius: 20px 20px;
   border-bottom-left-radius: 20px 20px;
+
+  .title {
+    color: #c8c8c9;
+  }
+
+  .date {
+    color: #b83345;
+  }
+
+  .rev {
+    color: #757579;
+    font-style: italic;
+  }
 `

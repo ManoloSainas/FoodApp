@@ -1,26 +1,27 @@
 import { Text } from '../../Text'
 import { StyledReview } from './styled'
+import { useMemo } from 'react'
 
 type Props = {
-  reviewList: { title: string; date: string; rev: string }[]
+  reviewList: { id: string; title: string; date: string; rev: string }[]
 }
 
 export const ReviewCard = ({ reviewList }: Props) => {
-  return (
-    <ul>
-      {reviewList.map(({ title, date, rev }) => (
-        <StyledReview key={title}>
-          <Text variant="h2" color="#C8C8C9">
+  const reviewListElements = useMemo(
+    () =>
+      reviewList.map(({ id, title, date, rev }) => (
+        <StyledReview key={id}>
+          <Text className="title" variant="h2">
             {title}
           </Text>
-          <Text variant="h3" color="#B83345">
+          <Text className="date" variant="h3">
             {date}
           </Text>
-          <Text fontStyle="italic" color="#757579">
-            {rev}
-          </Text>
+          <Text className="rev">{rev}</Text>
         </StyledReview>
-      ))}
-    </ul>
+      )),
+    [reviewList]
   )
+
+  return <ul>{reviewListElements}</ul>
 }
