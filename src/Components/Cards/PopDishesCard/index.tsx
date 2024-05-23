@@ -19,8 +19,8 @@ type Props = {
     value: string
     onClick: () => void
     iconName: IconName
-    IconName2: IconName
-    variant: keyof typeof buttonVariants
+    IconNameButton: IconName
+    variant?: keyof typeof buttonVariants
   }[]
 }
 
@@ -37,19 +37,41 @@ export const PopDishes = ({ options }: Props) => {
           value,
           onClick,
           iconName,
-          IconName2,
+          IconNameButton,
           variant
         }) => (
           <StyledRow key={imageURL}>
-            <Icon iconName={iconName} />
-            <Image imageURL={imageURL} />
-            <Text color="#E6E5E8" variant="h2">
-              {text}
-            </Text>
-            <Text color="#58585C">{textp}</Text>
-            <Price currency={currency} value={value} />
-            <Tag text={tagText} />
-            <IconButton variant={variant} iconName={IconName2} onClick={onClick} />
+            <Stack
+              flexDirection="column"
+              width="max-content"
+              height="max-content"
+              alignItems="center"
+              gap="10px"
+            >
+              <Stack>
+                <Icon iconName={iconName} />
+                <Image width={100} height={100} imageURL={imageURL} />
+              </Stack>
+
+              <Stack flexDirection="column" alignItems="center">
+                <Text color="#E6E5E8" variant="h2">
+                  {text}
+                </Text>
+                <Text color="#58585C">{textp}</Text>
+              </Stack>
+
+              <Stack gap="30px">
+                <Price currency={currency} value={value} />
+                <Stack>
+                  <Tag text={tagText} />
+                  <IconButton
+                    variant={variant}
+                    iconName={IconNameButton}
+                    onClick={onClick}
+                  />
+                </Stack>
+              </Stack>
+            </Stack>
           </StyledRow>
         )
       )}
