@@ -9,13 +9,13 @@ type Props = {
 export const Price = ({ value, currency }: Props) => {
   return (
     <StyledPrice>
-      <Text>{symbols[currency]}</Text>
-      <Text>{value}</Text>
+      <Text className="text">{symbols[currency]}</Text>
+      <Text className="text">{value}</Text>
     </StyledPrice>
   )
 }
 
-const symbols = {
+export const symbols = {
   Dollar: '$',
   Euro: '€',
   PoundSterling: '£',

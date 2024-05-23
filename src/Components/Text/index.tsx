@@ -6,6 +6,7 @@ export type Props = PropsWithChildren<{
   color?: string
   fontSize?: number
   fontStyle?: 'normal' | 'italic'
+  className?: string
 }>
 
 export const Text = ({
@@ -13,14 +14,20 @@ export const Text = ({
   children,
   color = 'black',
   fontSize,
-  fontStyle
+  fontStyle,
+  className
 }: Props) => {
   const text =
     typeof children === 'string' || typeof children === 'number' ? children : ''
   const TextComponent: any = StyledText[variant] || StyledText.p
 
   return (
-    <TextComponent color={color} fontSize={fontSize} fontStyle={fontStyle}>
+    <TextComponent
+      className={className}
+      color={color}
+      fontSize={fontSize}
+      fontStyle={fontStyle}
+    >
       {text}
     </TextComponent>
   )

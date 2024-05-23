@@ -1,10 +1,10 @@
-import { Price } from '../Price'
+import { Price, symbols as priceSymbols } from '../Price'
 import { Text } from '../Text'
 import { StyledToPay } from './styled'
 
 type Props = {
   value?: string
-  currency: keyof typeof symbols
+  currency: keyof typeof priceSymbols
 }
 
 export const ToPay = ({ currency, value = '0' }: Props) => {
@@ -14,11 +14,4 @@ export const ToPay = ({ currency, value = '0' }: Props) => {
       <Price currency={currency} value={value}></Price>
     </StyledToPay>
   )
-}
-
-const symbols = {
-  Dollar: '$',
-  Euro: '€',
-  PoundSterling: '£',
-  Yen: '¥'
 }

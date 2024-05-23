@@ -6,6 +6,7 @@ import { Tag } from '../../Tag'
 import { Text } from '../../Text'
 import { StyledRow } from './styled'
 import { Stack } from '../../Stack'
+import { symbols } from '../../Price'
 
 type Props = {
   options: {
@@ -38,11 +39,4 @@ export const ShoppingCard = ({ options }: Props) => {
       ))}
     </ul>
   )
-}
-
-const symbols = {
-  Dollar: '$',
-  Euro: '€',
-  PoundSterling: '£',
-  Yen: '¥'
 }

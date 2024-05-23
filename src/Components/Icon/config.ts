@@ -15,7 +15,8 @@ import {
   faBell,
   faBars,
   faBagShopping,
-  faDoorOpen
+  faDoorOpen,
+  faSpinner
 } from '@fortawesome/free-solid-svg-icons'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
@@ -39,7 +40,8 @@ export const iconsSet = {
   Bell: faBell,
   Bars: faBars, // DA CAMBIARE!
   BagShopping: faBagShopping, // DA CAMBIARE!
-  DoorOpen: faDoorOpen // DA CAMBIARE!
+  DoorOpen: faDoorOpen, // DA CAMBIARE!
+  Loading: faSpinner // fa-spin-pulse
   // AGGIUNGERE LE ALTRE ICONE
 }
 export type IconName = keyof typeof iconsSet

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Image } from '../Image'
 import { Text } from '../Text'
 import { StyledAvatar } from './styled'
@@ -9,9 +10,11 @@ type Props = {
 
 export const Avatar = ({ imageURL, text }: Props) => {
   return (
-    <StyledAvatar>
-      <Image imageURL={imageURL}></Image>
-      <Text variant="h4">{text}</Text>
-    </StyledAvatar>
+    <Link to="/">
+      <StyledAvatar>
+        <Image imageURL={imageURL}></Image>
+        <Text variant="h4">{text}</Text>
+      </StyledAvatar>
+    </Link>
   )
 }

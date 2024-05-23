@@ -8,6 +8,7 @@ import { Stack } from '../../Stack'
 import { Tag } from '../../Tag'
 import { Text } from '../../Text'
 import { StyledRow } from './styled'
+import { symbols } from '../../Price'
 
 type Props = {
   options: {
@@ -77,11 +78,4 @@ export const PopDishes = ({ options }: Props) => {
       )}
     </ul>
   )
-}
-
-const symbols = {
-  Dollar: '$',
-  Euro: '€',
-  PoundSterling: '£',
-  Yen: '¥'
 }

@@ -13,9 +13,13 @@ export const StyledImageText = styled.div<{ $width?: string; $height?: string }>
   border-bottom-left-radius: 40px 40px;
   background-color: #26262f;
   padding: 15px;
-  & > * {
+
+  .image {
     width: ${({ $height }) => $height};
     height: ${({ $width }) => $width};
+  }
+
+  .text {
     height: max-content;
     text-align: center;
     color: white;

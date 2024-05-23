@@ -28,7 +28,13 @@ function App() {
         onChange={(value) => setSelectedValue(value)}
       />
 
-      <ImageTextCard imageURL="src\assets\Images\food.jpg" text="Frutta" />
+      <ImageTextCard
+        classImage="image"
+        classText="text"
+        onClick={() => console.log('selected!')}
+        imageURL="src\assets\Images\food.jpg"
+        text="Frutta"
+      />
 
       <ReviewCard
         reviewList={[

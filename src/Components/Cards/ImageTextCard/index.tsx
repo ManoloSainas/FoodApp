@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Image } from '../../Image'
 import { Text } from '../../Text'
 import { StyledImageText } from './styled'
@@ -7,18 +8,30 @@ type Props = {
   text: string
   width?: string
   height?: string
+  onClick: () => void
+  classImage?: string
+  classText?: string
 }
 
 export const ImageTextCard = ({
   imageURL,
   text,
-  width = '150px',
-  height = '100px'
+  width = '100px',
+  height = '100px',
+  onClick,
+  classImage,
+  classText
 }: Props) => {
+  const [isSelected, setIsSelected] = useState(false)
+  const handleClick = () => {
+    setIsSelected(!isSelected)
+    onClick()
+  }
+
   return (
-    <StyledImageText $width={width} $height={height}>
-      <Image imageURL={imageURL} />
-      <Text>{text}</Text>
+    <StyledImageText $width={width} $height={height} onClick={handleClick}>
+      <Image className={classImage} imageURL={imageURL} />
+      <Text className={classText}>{text}</Text>
     </StyledImageText>
   )
 }
