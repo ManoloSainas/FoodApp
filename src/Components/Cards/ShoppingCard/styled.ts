@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Image } from '../../Image'
 
 export const StyledRow = styled.li<{}>`
   display: flex;
