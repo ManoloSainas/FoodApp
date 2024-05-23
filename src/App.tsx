@@ -112,37 +112,39 @@ function App() {
       />
 
       <PopDishes
+        onClick={() => console.log('Premuto!')}
         options={[
           {
+            showIconInCorner: false,
             imageURL: 'src/assets/Images/kiwi.jpg',
             text: 'Primo',
             textp: 'Primo prodotto',
             tagText: '10gr',
             currency: 'Dollar',
             value: '50',
-            onClick: () => console.log('Premuto!'),
+
             iconName: 'Plus',
             IconNameButton: 'Plus'
           },
           {
+            showIconInCorner: true,
             imageURL: 'src/assets/Images/mela.jpg',
             text: 'Secondo',
             textp: 'Secondo prodotto',
             tagText: '20gr',
             currency: 'Euro',
             value: '70',
-            onClick: () => console.log('Premuto!'),
             iconName: 'Plus',
             IconNameButton: 'Plus'
           },
           {
+            showIconInCorner: true,
             imageURL: 'src/assets/Images/fragola.jpg',
             text: 'Terzo',
             textp: 'Terzo prodotto',
             tagText: '30gr',
             currency: 'Yen',
             value: '30',
-            onClick: () => console.log('Premuto!'),
             iconName: 'Plus',
             IconNameButton: 'Plus'
           }

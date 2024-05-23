@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Image } from '../../Image'
 import { Text } from '../../Text'
 import { StyledImageText } from './styled'
@@ -23,10 +23,10 @@ export const ImageTextCard = ({
   classText
 }: Props) => {
   const [isSelected, setIsSelected] = useState(false)
-  const handleClick = () => {
-    setIsSelected(!isSelected)
+  const handleClick = useCallback(() => {
+    setIsSelected((prevSelected) => !prevSelected)
     onClick()
-  }
+  }, [onClick])
 
   return (
     <StyledImageText $width={width} $height={height} onClick={handleClick}>
