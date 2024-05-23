@@ -8,6 +8,7 @@ import { RecommCard } from './Components/Cards/RecommCard'
 import { PopDishes } from './Components/Cards/PopDishesCard'
 import { SideBar } from './Components/SideBar'
 import { IconName } from './Components/Icon/config'
+import { ImageRadio } from './Components/ImageRadio'
 
 function App() {
   const [selectedValue, setSelectedValue] = useState<any>()
@@ -32,7 +33,7 @@ function App() {
         classImage="image"
         classText="text"
         onClick={() => console.log('selected!')}
-        imageURL="src\assets\Images\food.jpg"
+        imageURL="src\assets\Images\kiwi.jpg"
         text="Frutta"
       />
 
@@ -49,7 +50,7 @@ function App() {
       <ShoppingCard
         options={[
           {
-            imageURL: 'src/assets/Images/food.jpg',
+            imageURL: 'src/assets/Images/kiwi.jpg',
             text: 'Primo',
             tagText: '10gr',
             currency: 'Dollar',
@@ -78,7 +79,7 @@ function App() {
       <RecommCard
         options={[
           {
-            imageURL: 'src/assets/Images/food.jpg',
+            imageURL: 'src/assets/Images/kiwi.jpg',
             text: 'Primo',
             textp: 'Primo prodotto',
             tagText: '10gr',
@@ -113,7 +114,7 @@ function App() {
       <PopDishes
         options={[
           {
-            imageURL: 'src/assets/Images/food.jpg',
+            imageURL: 'src/assets/Images/kiwi.jpg',
             text: 'Primo',
             textp: 'Primo prodotto',
             tagText: '10gr',
@@ -153,6 +154,17 @@ function App() {
         options={[
           { icon: 'Plus', text: 'Home' },
           { icon: 'Minus', text: 'Settings' }
+        ]}
+      />
+
+      <ImageRadio
+        onChange={(selectedCard) => console.log(selectedCard)}
+        width="100px"
+        height="100px"
+        images={[
+          'src/assets/Images/kiwi.jpg',
+          'src/assets/Images/fragola.jpg',
+          'src/assets/Images/mela.jpg'
         ]}
       />
     </>

@@ -15,7 +15,7 @@ export const StyledImageRadio = styled.div<{ $width?: string; $height?: string }
   border: solid 4px;
   border-color: grey;
 
-  & > img {
+  .image {
     width: ${({ $height }) => $height};
     height: ${({ $width }) => $width};
   }
