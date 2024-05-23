@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const StyledImageText = styled.div<{ $width?: string; $height?: string }>`
+export const StyledImageText = styled.div<{
+  $width?: string
+  $height?: string
+  $isSelected: boolean
+}>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,6 +17,8 @@ export const StyledImageText = styled.div<{ $width?: string; $height?: string }>
   border-bottom-left-radius: 40px 40px;
   background-color: #26262f;
   padding: 15px;
+
+  border-bottom: ${({ $isSelected }) => ($isSelected ? '2px solid red' : 'none')};
 
   .image {
     width: ${({ $height }) => $height};

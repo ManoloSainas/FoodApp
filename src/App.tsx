@@ -9,6 +9,7 @@ import { PopDishes } from './Components/Cards/PopDishesCard'
 import { SideBar } from './Components/SideBar'
 import { IconName } from './Components/Icon/config'
 import { ImageRadio } from './Components/ImageRadio'
+import { Stack } from './Components/Stack'
 
 function App() {
   const [selectedValue, setSelectedValue] = useState<any>()
@@ -29,13 +30,23 @@ function App() {
         onChange={(value) => setSelectedValue(value)}
       />
 
-      <ImageTextCard
-        classImage="image"
-        classText="text"
-        onClick={() => console.log('selected!')}
-        imageURL="src\assets\Images\kiwi.jpg"
-        text="Frutta"
-      />
+      <Stack>
+        <ImageTextCard
+          classImage="image"
+          classText="text"
+          onClick={() => console.log('selected!')}
+          imageURL="src\assets\Images\kiwi.jpg"
+          text="kiwi"
+        />
+
+        <ImageTextCard
+          classImage="image"
+          classText="text"
+          onClick={() => console.log('selected!')}
+          imageURL="src\assets\Images\fragola.jpg"
+          text="Fragola"
+        />
+      </Stack>
 
       <ReviewCard
         reviewList={[

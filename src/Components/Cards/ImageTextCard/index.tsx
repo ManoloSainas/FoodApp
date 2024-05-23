@@ -29,7 +29,12 @@ export const ImageTextCard = ({
   }, [onClick])
 
   return (
-    <StyledImageText $width={width} $height={height} onClick={handleClick}>
+    <StyledImageText
+      $width={width}
+      $height={height}
+      $isSelected={isSelected}
+      onClick={handleClick}
+    >
       <Image className={classImage} imageURL={imageURL} />
       <Text className={classText}>{text}</Text>
     </StyledImageText>
