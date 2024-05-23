@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 import { StyledQuantitySelector } from './styled'
 import { IconButton } from '../IconButton'
@@ -7,15 +7,15 @@ import { Text } from '../Text'
 export const QuantitySelector = () => {
   const [quantity, setQuantity] = useState(1)
 
-  const handleIncrement = () => {
+  const handleIncrement = useCallback(() => {
     setQuantity((prevQuantity) => prevQuantity + 1)
-  }
+  }, [])
 
-  const handleDecrement = () => {
+  const handleDecrement = useCallback(() => {
     if (quantity > 0) {
       setQuantity((prevQuantity) => prevQuantity - 1)
     }
-  }
+  }, [quantity])
 
   return (
     <StyledQuantitySelector>
