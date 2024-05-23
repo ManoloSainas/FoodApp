@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { Button } from '../../Button'
 import { TextArea } from '../../Form/TextArea'
 import { IconButton } from '../../IconButton'
@@ -5,6 +6,18 @@ import { Stack } from '../../Stack'
 import { Text } from '../../Text'
 
 export const WriteReviewCard = () => {
+  const handleIconButtonClick = useCallback(() => {
+    console.log('Clicked!')
+  }, [])
+
+  const handleTextAreaChange = useCallback((value: string) => {
+    console.log(value)
+  }, [])
+
+  const handleButtonClick = useCallback(() => {
+    console.log('Clicked!')
+  }, [])
+
   return (
     <Stack
       flexDirection="column"
@@ -29,19 +42,19 @@ export const WriteReviewCard = () => {
           color="#6C6D73"
           variant="greyIcon"
           iconName="Xmark"
-          onClick={() => console.log('Clicked!')}
+          onClick={handleIconButtonClick}
         />
       </Stack>
 
       <Stack justifyContent="center" width="100%">
         <TextArea
           placeholder="Tell us what you liked or disliked about this product..."
-          onChange={(value) => console.log(value)}
+          onChange={handleTextAreaChange}
         />
       </Stack>
 
       <Stack width="100%" justifyContent="flex-end">
-        <Button onClick={() => console.log('Clicked!')}>Send</Button>
+        <Button onClick={handleButtonClick}>Send</Button>
       </Stack>
     </Stack>
   )
