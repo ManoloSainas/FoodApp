@@ -12,6 +12,7 @@ type Props = {
   onChange: (e: string) => void
   type: string
   placeholder?: string
+  value: string
 }
 
 export const SearchBar = ({
@@ -21,11 +22,12 @@ export const SearchBar = ({
   disabled,
   onChange,
   type,
-  placeholder
+  placeholder,
+  value
 }: Props) => {
   return (
     <StyledSearchBar>
-      <Input placeholder={placeholder} type={type} onChange={onChange} />
+      <Input placeholder={placeholder} type={type} value={value} onChange={onChange} />
       <IconButton
         onClick={onClick}
         iconName={iconName}
