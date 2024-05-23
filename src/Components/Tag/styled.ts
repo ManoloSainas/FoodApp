@@ -8,7 +8,7 @@ export const StyledTag = styled.div<{}>`
   border-bottom-left-radius: 50px 50px;
   padding: 1px 30px;
   width: max-content;
-  & > p {
+  .text {
     color: grey;
   }
 `

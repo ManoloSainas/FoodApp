@@ -13,8 +13,16 @@ export const StyledRow = styled.li<{}>`
   border-top-left-radius: 50px 50px;
   border-bottom-left-radius: 50px 50px;
 
-  & > img {
+  .image {
     width: 100px;
     height: 100px;
+  }
+
+  .text {
+    color: #e6e5e8;
+  }
+
+  .textp {
+    color: #58585c;
   }
 `

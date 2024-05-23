@@ -43,9 +43,8 @@ export const PopDishes = ({ options, onClick }: Props) => {
           iconName,
           IconNameButton,
           variant,
-          showIconInCorner
+          showIconInCorner = false
         }) => {
-          const shouldShowIcon = showIconInCorner || false
           return (
             <StyledRow key={imageURL}>
               <Stack
@@ -56,8 +55,8 @@ export const PopDishes = ({ options, onClick }: Props) => {
                 gap="10px"
               >
                 <Stack>
-                  {shouldShowIcon && <Icon iconName={iconName} />}
-                  <Image width={100} height={100} imageURL={imageURL} />
+                  {showIconInCorner && <Icon iconName={iconName} />}
+                  <Image className="image" width={100} height={100} imageURL={imageURL} />
                 </Stack>
 
                 <Stack flexDirection="column" alignItems="center">

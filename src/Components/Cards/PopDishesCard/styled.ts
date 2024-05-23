@@ -13,7 +13,7 @@ export const StyledRow = styled.li<{}>`
   border-top-left-radius: 50px 50px;
   border-bottom-left-radius: 50px 50px;
 
-  & > img {
+  .image {
     width: 100px;
     height: 100px;
   }

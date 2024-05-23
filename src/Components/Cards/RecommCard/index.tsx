@@ -38,12 +38,12 @@ export const RecommCard = ({ options }: Props) => {
           iconName
         }) => (
           <StyledRow key={imageURL}>
-            <Image imageURL={imageURL} />
+            <Image className="image" imageURL={imageURL} />
             <Stack flexDirection="column">
-              <Text color="#E6E5E8" variant="h2">
+              <Text className="text" variant="h2">
                 {text}
               </Text>
-              <Text color="#58585C">{textp}</Text>
+              <Text className="textp">{textp}</Text>
               <Tag text={tagText} />
               <Stack justifyContent="space-between">
                 <Price currency={currency} value={value} />
