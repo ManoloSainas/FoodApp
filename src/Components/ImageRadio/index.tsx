@@ -10,10 +10,11 @@ type Props = {
   width?: string
   height?: string
   onChange: (selectedCard: string) => void
+  id?: string
 }
 
-export const ImageRadio = ({ images, width, height, onChange }: Props) => {
-  const [selectedCard, setSelectedCard] = useState<string | null>(null)
+export const ImageRadio = ({ images, width, height, onChange, id }: Props) => {
+  const [selectedCard, setSelectedCard] = useState<string | null>(images[0])
 
   const handleRadioChange = useCallback(
     (card: string) => {
@@ -31,6 +32,7 @@ export const ImageRadio = ({ images, width, height, onChange }: Props) => {
           $width={width}
           $height={height}
           $isSelected={currCard === selectedCard}
+          id={id}
         >
           <Input
             type="radio"

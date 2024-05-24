@@ -14,9 +14,10 @@ export const CardDetails = ({ images }: Props) => {
   return (
     <StyledCardDetails>
       <Text variant="h2">Card Details</Text>
-      <label>
+      <label htmlFor="cardDetails">
         Payment method
         <ImageRadio
+          id="cardDetails"
           width="100px"
           height="100px"
           images={images}
@@ -40,13 +41,31 @@ export const CardDetails = ({ images }: Props) => {
         id="cardNumberId"
         onChange={(value) => console.log(value)}
       />
+      <Stack width="100%" justifyContent="space-between">
+        <label htmlFor="expDate">
+          <Stack flexDirection="column">
+            Expiration date
+            <Select
+              id="expDate"
+              options={months}
+              onChange={(valueM) => console.log(valueM)}
+            />
+          </Stack>
+        </label>
 
-      <label>
-        <Stack flexDirection="column">
-          Expiration date
-          <Select options={months} onChange={(valueM) => console.log(valueM)} />
-        </Stack>
-      </label>
+        <label htmlFor="cvv">
+          <Stack flexDirection="column">
+            CVV
+            <Input
+              maxLength={3}
+              className="cvv"
+              type="text"
+              id="cvv"
+              onChange={(value) => console.log(value)}
+            />
+          </Stack>
+        </label>
+      </Stack>
     </StyledCardDetails>
   )
 }

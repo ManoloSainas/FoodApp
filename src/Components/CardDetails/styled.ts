@@ -6,7 +6,8 @@ export const StyledCardDetails = styled.div<{}>`
   flex-direction: column;
 
   .name-surname,
-  .card-number {
+  .card-number,
+  .cvv {
     border-bottom: ridge 2px;
   }
 `
