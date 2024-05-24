@@ -5,6 +5,7 @@ import { ImageRadio } from '../ImageRadio'
 import { Stack } from '../Stack'
 import { Text } from '../Text'
 import { StyledCardDetails } from './styled'
+import { Button } from '../Button'
 
 type Props = {
   images: string[]
@@ -86,7 +87,7 @@ export const CardDetails = ({ images }: Props) => {
           </Stack>
         </label>
       </Stack>
-      <button onClick={handleSubmit}>Submit</button>
+      <Button onClick={handleSubmit}>Submit</Button>
     </StyledCardDetails>
   )
 }
