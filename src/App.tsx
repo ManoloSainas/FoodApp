@@ -10,6 +10,7 @@ import { IconName } from './Components/Icon/config'
 import { Stack } from './Components/Stack'
 import { CardDetails } from './Components/CardDetails'
 import { ImageTextCard } from './Components/Cards/ImageTextCard'
+import { Button } from './Components/Button'
 
 function App() {
   const [selectedValue, setSelectedValue] = useState<any>()
