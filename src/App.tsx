@@ -35,7 +35,7 @@ function App() {
         onChange={(value) => setSelectedValue(value)}
       />
 
-      <Stack>
+      <Stack gap="10px" margin="10px">
         <ImageTextCard
           cards={[
             {
