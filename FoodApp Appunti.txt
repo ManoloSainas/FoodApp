@@ -62,3 +62,7 @@ creare cartella .vscode con all'interno settings.json
 
 
 https://react.dev/learn/react-developer-tools
+
+
+// Gestire più schermate
+https://reactrouter.com/en/main 
