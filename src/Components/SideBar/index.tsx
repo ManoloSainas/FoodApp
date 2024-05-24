@@ -20,7 +20,11 @@ export const SideBar = ({ options, onChange }: Props) => {
   return (
     <ul>
       {options.map(({ icon, text }) => (
-        <StyledRow key={icon} onClick={() => handleClick(icon)}>
+        <StyledRow
+          key={icon}
+          onClick={() => handleClick(icon)}
+          isSelected={selectedRow === icon}
+        >
           <Icon iconName={icon} />
           <Text>{text}</Text>
         </StyledRow>
