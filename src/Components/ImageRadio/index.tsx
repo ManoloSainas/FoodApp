@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react'
 import { Image } from '../Image'
 import { StyledImageRadio } from './styled'
 import { Input } from '../Form/Input'
+import { Stack } from '../Stack'
 
 type Props = {
   images: string[]
@@ -23,21 +24,26 @@ export const ImageRadio = ({ images, width, height, onChange }: Props) => {
   )
 
   return (
-    <StyledImageRadio $width={width} $height={height}>
-      {images.map((currCard, index) => (
-        <div key={currCard}>
+    <Stack gap="10px">
+      {images.map((currCard) => (
+        <StyledImageRadio
+          key={currCard}
+          $width={width}
+          $height={height}
+          $isSelected={currCard === selectedCard}
+        >
           <Input
             type="radio"
-            id={`radio-${index}`}
+            id={`radio-${currCard}`}
             value={currCard}
             checked={currCard === selectedCard}
             onChange={() => handleRadioChange(currCard)}
           />
-          <label htmlFor={`radio-${index}`}>
+          <label htmlFor={`radio-${currCard}`}>
             <Image className="image" imageURL={currCard} />
           </label>
-        </div>
+        </StyledImageRadio>
       ))}
-    </StyledImageRadio>
+    </Stack>
   )
 }

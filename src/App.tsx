@@ -8,7 +8,6 @@ import { RecommCard } from './Components/Cards/RecommCard'
 import { PopDishes } from './Components/Cards/PopDishesCard'
 import { SideBar } from './Components/SideBar'
 import { IconName } from './Components/Icon/config'
-import { ImageRadio } from './Components/ImageRadio'
 import { Stack } from './Components/Stack'
 import { CardDetails } from './Components/CardDetails'
 
@@ -172,18 +171,10 @@ function App() {
         ]}
       />
 
-      <ImageRadio
-        onChange={(selectedCard) => console.log(selectedCard)}
-        width="100px"
-        height="100px"
-        images={[
-          'src/assets/Images/kiwi.jpg',
-          'src/assets/Images/fragola.jpg',
-          'src/assets/Images/mela.jpg'
-        ]}
-      />
       <Stack width="100%" height="100%" justifyContent="center">
-        <CardDetails />
+        <CardDetails
+          images={['src/assets/Images/kiwi.jpg', 'src/assets/Images/fragola.jpg']}
+        />
       </Stack>
     </>
   )
