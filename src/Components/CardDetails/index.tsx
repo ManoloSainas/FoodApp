@@ -7,6 +7,7 @@ import { StyledCardDetails } from './styled'
 
 type Props = {
   images: string[]
+  value?: string
 }
 
 export const CardDetails = ({ images }: Props) => {
@@ -43,7 +44,7 @@ export const CardDetails = ({ images }: Props) => {
       <label>
         <Stack flexDirection="column">
           Expiration date
-          <Select options={months} onChange={(value) => console.log(value)} />
+          <Select options={months} onChange={(valueM) => console.log(valueM)} />
         </Stack>
       </label>
     </StyledCardDetails>
