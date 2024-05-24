@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-import { ImageTextCard } from './Components/Cards/ImageTextCard'
 import { Select } from './Components/Form/Select'
 import { ReviewCard } from './Components/Cards/ReviewCard'
 import { ShoppingCard } from './Components/Cards/ShoppingCard'
@@ -10,9 +9,15 @@ import { SideBar } from './Components/SideBar'
 import { IconName } from './Components/Icon/config'
 import { Stack } from './Components/Stack'
 import { CardDetails } from './Components/CardDetails'
+import { ImageTextCard } from './Components/Cards/ImageTextCard'
 
 function App() {
   const [selectedValue, setSelectedValue] = useState<any>()
+
+  const handleClick = () => {
+    console.log('Card clicked')
+  }
+
   // const [count, setCount] = useState(0);
   // useEffect
   // useCallback
@@ -32,19 +37,22 @@ function App() {
 
       <Stack>
         <ImageTextCard
-          classImage="image"
-          classText="text"
-          onClick={() => console.log('selected!')}
-          imageURL="src\assets\Images\kiwi.jpg"
-          text="kiwi"
-        />
-
-        <ImageTextCard
-          classImage="image"
-          classText="text"
-          onClick={() => console.log('selected!')}
-          imageURL="src\assets\Images\fragola.jpg"
-          text="Fragola"
+          cards={[
+            {
+              imageURL: 'src/assets/Images/kiwi.jpg',
+              text: 'Text 1',
+              onClick: handleClick,
+              classImage: 'image',
+              classText: 'text'
+            },
+            {
+              imageURL: 'src/assets/Images/mela.jpg',
+              text: 'Text 2',
+              onClick: handleClick,
+              classImage: 'image',
+              classText: 'text'
+            }
+          ]}
         />
       </Stack>
 

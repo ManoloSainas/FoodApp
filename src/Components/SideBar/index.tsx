@@ -10,7 +10,7 @@ type Props = {
 }
 
 export const SideBar = ({ options, onChange }: Props) => {
-  const [selectedRow, setSelectedRow] = useState<IconName | null>(null)
+  const [selectedRow, setSelectedRow] = useState<IconName>(options[0].icon)
 
   const handleClick = (icon: IconName) => {
     setSelectedRow(icon)
