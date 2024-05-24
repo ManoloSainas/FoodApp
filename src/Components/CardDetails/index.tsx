@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Input } from '../Form/Input'
 import { Select } from '../Form/Select'
 import { ImageRadio } from '../ImageRadio'
@@ -11,6 +12,23 @@ type Props = {
 }
 
 export const CardDetails = ({ images }: Props) => {
+  const [paymentMethod, setPaymentMethod] = useState('')
+  const [nameSurname, setNameSurname] = useState('')
+  const [cardNumber, setCardNumber] = useState('')
+  const [expDate, setExpDate] = useState('')
+  const [cvv, setCvv] = useState('')
+
+  const handleSubmit = () => {
+    const data = {
+      paymentMethod,
+      nameSurname,
+      cardNumber,
+      expDate,
+      cvv
+    }
+
+    console.log(data) // gestire dati
+  }
   return (
     <StyledCardDetails>
       <Text variant="h2">Card Details</Text>
@@ -21,7 +39,7 @@ export const CardDetails = ({ images }: Props) => {
           width="100px"
           height="100px"
           images={images}
-          onChange={(value) => console.log(value)}
+          onChange={(value) => setPaymentMethod(value)}
         />
       </label>
 
@@ -30,7 +48,7 @@ export const CardDetails = ({ images }: Props) => {
         className="name-surname"
         type="text"
         id="nameId"
-        onChange={(value) => console.log(value)}
+        onChange={(value) => setNameSurname(value)}
       />
 
       <label htmlFor="cardNumberId">Card Number</label>
@@ -39,7 +57,7 @@ export const CardDetails = ({ images }: Props) => {
         className="card-number"
         type="text"
         id="cardNumberId"
-        onChange={(value) => console.log(value)}
+        onChange={(value) => setCardNumber(value)}
       />
       <Stack width="100%" justifyContent="space-between">
         <label htmlFor="expDate">
@@ -48,7 +66,9 @@ export const CardDetails = ({ images }: Props) => {
             <Select
               id="expDate"
               options={months}
-              onChange={(valueM) => console.log(valueM)}
+              onChange={(valueM) =>
+                setExpDate(Array.isArray(valueM) ? valueM[0] : valueM)
+              }
             />
           </Stack>
         </label>
@@ -61,11 +81,12 @@ export const CardDetails = ({ images }: Props) => {
               className="cvv"
               type="text"
               id="cvv"
-              onChange={(value) => console.log(value)}
+              onChange={(value) => setCvv(value)}
             />
           </Stack>
         </label>
       </Stack>
+      <button onClick={handleSubmit}>Submit</button>
     </StyledCardDetails>
   )
 }
