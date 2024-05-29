@@ -5,11 +5,12 @@ export const StyledAvatar = styled.div<{}>`
   flex-direction: column;
   .image {
     border-radius: 100%;
-    height: 60px;
-    width: 60px;
+    height: 90px;
+    width: 90px;
   }
 
   .text {
-    width: 60px;
+    width: 90px;
+    text-align: center;
   }
 `

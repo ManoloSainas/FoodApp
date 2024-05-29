@@ -3,8 +3,7 @@ import styled from 'styled-components'
 export const StyledRow = styled.li<{ isSelected: boolean }>`
   display: flex;
   align-items: center;
-  width: max-content;
-  padding: 0.1% 2%;
+  width: 200px;
   margin: 2%;
   gap: 20px;
   border-top-right-radius: 50px 50px;
@@ -13,4 +12,11 @@ export const StyledRow = styled.li<{ isSelected: boolean }>`
   border-bottom-left-radius: 50px 50px;
 
   background-color: ${({ isSelected }) => (isSelected ? '#F73E55' : 'initial')};
+
+  #iconId {
+    background-color: ${({ isSelected }) => (isSelected ? '#f00c2c' : '#272730')};
+    border-radius: 100%;
+    padding: 20px;
+    color: white;
+  }
 `

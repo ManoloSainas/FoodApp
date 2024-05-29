@@ -12,7 +12,7 @@ export const Avatar = ({ imageURL, text }: Props) => {
   return (
     <Link to="/">
       <StyledAvatar>
-        <Image className="image" imageURL={imageURL}></Image>
+        <Image height={100} width={100} className="image" imageURL={imageURL}></Image>
         <Text className="text" variant="h4">
           {text}
         </Text>

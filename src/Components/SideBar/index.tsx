@@ -3,6 +3,7 @@ import { Icon } from '../Icon'
 import { IconName } from '../Icon/config'
 import { Text } from '../Text'
 import { StyledRow } from './styled'
+import { Stack } from '../Stack'
 
 type Props = {
   options: { icon: IconName; text: string }[]
@@ -18,14 +19,17 @@ export const SideBar = ({ options, onChange }: Props) => {
   }
 
   return (
-    <ul>
+    <ul style={{ padding: 0 }}>
       {options.map(({ icon, text }) => (
         <StyledRow
           key={icon}
           onClick={() => handleClick(icon)}
           isSelected={selectedRow === icon}
         >
-          <Icon iconName={icon} />
+          <Stack padding="0px 20px 0px 0px">
+            <Icon id="iconId" iconName={icon} />
+          </Stack>
+
           <Text>{text}</Text>
         </StyledRow>
       ))}

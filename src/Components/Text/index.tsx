@@ -12,7 +12,7 @@ export type Props = PropsWithChildren<{
 export const Text = ({
   variant = 'p',
   children,
-  color = 'black',
+  color = 'white',
   fontSize,
   fontStyle,
   className
