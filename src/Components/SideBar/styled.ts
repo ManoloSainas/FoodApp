@@ -16,7 +16,7 @@ export const StyledRow = styled.li<{ isSelected: boolean }>`
   #iconId {
     background-color: ${({ isSelected }) => (isSelected ? '#f00c2c' : '#272730')};
     border-radius: 100%;
-    padding: 20px;
+    padding: 22px;
     color: white;
   }
 `
