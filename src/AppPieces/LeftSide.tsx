@@ -4,6 +4,10 @@ import { SideBar } from '../Components/SideBar'
 import { Stack } from '../Components/Stack'
 
 export const LeftSide = () => {
+  const changePage = (icon: IconName) => {
+    return console.log(icon)
+  }
+
   return (
     <Stack
       flexDirection="column"
@@ -16,7 +20,7 @@ export const LeftSide = () => {
     >
       <Avatar imageURL="src\assets\Images\cheong.jpg" text="Joseph Cheong" />
       <SideBar
-        onChange={(icon: IconName) => console.log(icon)}
+        onChange={(icon: IconName) => changePage(icon)}
         options={[
           { icon: 'Home', text: 'Home' },
           { icon: 'Catalog', text: 'Catalog' },
