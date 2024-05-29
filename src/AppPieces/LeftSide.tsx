@@ -19,7 +19,11 @@ export const LeftSide = () => {
         onChange={(icon: IconName) => console.log(icon)}
         options={[
           { icon: 'Home', text: 'Home' },
-          { icon: 'Catalog', text: 'Catalog' }
+          { icon: 'Catalog', text: 'Catalog' },
+          { icon: 'Category', text: 'Category' },
+          { icon: 'Map', text: 'Map' },
+          { icon: 'Delivery', text: 'Delivery' },
+          { icon: 'Settings', text: 'Settings' }
         ]}
       />
     </Stack>
