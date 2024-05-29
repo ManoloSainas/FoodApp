@@ -26,7 +26,7 @@ export const SideBar = ({ options, onChange }: Props) => {
           onClick={() => handleClick(icon)}
           isSelected={selectedRow === icon}
         >
-          <Stack padding="0px 20px 0px 0px">
+          <Stack width="75px">
             <Icon id="iconId" iconName={icon} />
           </Stack>
 
