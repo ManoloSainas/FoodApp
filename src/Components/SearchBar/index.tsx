@@ -12,7 +12,7 @@ type Props = {
   onChange: (e: string) => void
   type: string
   placeholder?: string
-  value: string
+  value?: string
 }
 
 export const SearchBar = ({

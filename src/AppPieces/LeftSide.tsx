@@ -9,7 +9,7 @@ export const LeftSide = () => {
       flexDirection="column"
       backgroundColor="#17171C"
       width="max-content"
-      padding="50px"
+      padding="00px 45px 45px 45px"
       justifyContent="center"
       alignItems="center"
       height="100%"
