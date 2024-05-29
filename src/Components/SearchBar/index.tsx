@@ -27,7 +27,13 @@ export const SearchBar = ({
 }: Props) => {
   return (
     <StyledSearchBar>
-      <Input placeholder={placeholder} type={type} value={value} onChange={onChange} />
+      <Input
+        id="inputId"
+        placeholder={placeholder}
+        type={type}
+        value={value}
+        onChange={onChange}
+      />
       <IconButton
         onClick={onClick}
         iconName={iconName}

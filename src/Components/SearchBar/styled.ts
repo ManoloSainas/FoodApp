@@ -13,4 +13,8 @@ export const StyledSearchBar = styled.div<{}>`
   border-bottom-left-radius: 50px 50px;
   width: 310px;
   color: #17171c;
+
+  #inputId {
+    width: 253.6px;
+  }
 `
