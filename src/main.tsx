@@ -4,11 +4,21 @@ import './index.css'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Root } from './routes/Root.tsx'
+import ErrorPage from './error-page.tsx'
+import { Home } from './routes/Home.tsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root />
+    element: <Root />,
+    errorElement: <ErrorPage />,
+
+    children: [
+      {
+        path: '/home',
+        element: <Home />
+      }
+    ]
   }
 ])
 

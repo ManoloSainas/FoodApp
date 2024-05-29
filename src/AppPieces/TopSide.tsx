@@ -20,7 +20,7 @@ export const TopSide = () => {
         variant="transparent"
       />
 
-      <Stack>
+      <Stack gap="10px">
         <IconButton
           variant="greyIcon"
           iconName="Bell"
