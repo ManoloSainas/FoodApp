@@ -14,9 +14,9 @@ export const LeftSide = () => {
       backgroundColor="#17171C"
       width="max-content"
       padding="00px 45px 45px 45px"
-      justifyContent="center"
+      justifyContent="flex-start"
       alignItems="center"
-      height="100%"
+      height="100vh"
     >
       <Avatar imageURL="src\assets\Images\cheong.jpg" text="Joseph Cheong" />
       <SideBar
