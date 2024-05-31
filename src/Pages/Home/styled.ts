@@ -7,4 +7,8 @@ export const StyledHome = styled.div`
   background-color: #101013;
   border-top-left-radius: 80px 80px;
   padding: 60px 0px 0px 60px;
+
+  .popDis {
+    width: 250px;
+  }
 `

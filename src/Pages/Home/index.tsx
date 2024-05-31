@@ -1,5 +1,6 @@
 import { ImageTextCard } from '../../Components/Cards/ImageTextCard'
 import { Select } from '../../Components/Form/Select'
+import { IconButton } from '../../Components/IconButton'
 import { Stack } from '../../Components/Stack'
 import { Text } from '../../Components/Text'
 import { StyledHome } from './styled'
@@ -41,24 +42,43 @@ export const Home = () => {
         />
       </Stack>
       <Stack>
-        <Stack alignItems="center">
-          <Text variant="h1">Popular dishes</Text>
-          <Stack>
-            <Select
-              onChange={(value) => console.log(value)}
-              options={[{ value: 'Delivery', label: 'Delivery' }]}
-            />
-            <Select
-              onChange={(value) => console.log(value)}
-              options={[{ value: 'Ingredients', label: 'Ingredients' }]}
-            />
-            <Select
-              onChange={(value) => console.log(value)}
-              options={[{ value: 'Price', label: 'Price' }]}
-            />
+        <Stack alignItems="center" gap="330px">
+          <Text className="popDis" variant="h1">
+            Popular dishes
+          </Text>
+
+          <Stack alignItems="center" gap="25px">
+            <Stack gap="5px">
+              <Select
+                onChange={(value) => console.log(value)}
+                options={[{ value: 'Delivery', label: 'Delivery' }]}
+              />
+              <Select
+                onChange={(value) => console.log(value)}
+                options={[{ value: 'Ingredients', label: 'Ingredients' }]}
+              />
+              <Select
+                onChange={(value) => console.log(value)}
+                options={[{ value: 'Price', label: 'Price' }]}
+              />
+            </Stack>
+
+            <Stack gap="5px">
+              <IconButton
+                size="lg"
+                variant="greyIcon"
+                onClick={() => console.log('premuto')}
+                iconName="Bars"
+              />
+              <IconButton
+                size="lg"
+                variant="redIcon"
+                onClick={() => console.log('premuto')}
+                iconName="Category"
+              />
+            </Stack>
           </Stack>
         </Stack>
-        <Stack></Stack>
       </Stack>
     </StyledHome>
   )
