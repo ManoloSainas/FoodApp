@@ -39,62 +39,6 @@ export const Home = () => {
             {
               imageURL: 'src/assets/Images/watermelon.jpg',
               text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
-            },
-            {
-              imageURL: 'src/assets/Images/watermelon.jpg',
-              text: 'watermelon'
             }
           ]}
         />
