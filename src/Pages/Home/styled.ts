@@ -8,6 +8,10 @@ export const StyledHome = styled.div`
   border-top-left-radius: 80px 80px;
   padding: 60px 0px 0px 60px;
 
+  #stackPop {
+    margin-top: 55px;
+  }
+
   .popDis {
     width: 250px;
   }

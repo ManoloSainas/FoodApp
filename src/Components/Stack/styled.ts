@@ -13,7 +13,7 @@ export const StyledStack = styled.div<{
   $margin?: string
   $borderRadius?: number
   $flexWrap?: string
-  stackId?: string
+  id?: string
 }>`
   display: flex;
   flex-direction: ${({ $flexDirection }) => $flexDirection};

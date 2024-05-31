@@ -41,42 +41,41 @@ export const Home = () => {
           ]}
         />
       </Stack>
-      <Stack>
-        <Stack alignItems="center" gap="330px">
-          <Text className="popDis" variant="h1">
-            Popular dishes
-          </Text>
 
-          <Stack alignItems="center" gap="25px">
-            <Stack gap="5px">
-              <Select
-                onChange={(value) => console.log(value)}
-                options={[{ value: 'Delivery', label: 'Delivery' }]}
-              />
-              <Select
-                onChange={(value) => console.log(value)}
-                options={[{ value: 'Ingredients', label: 'Ingredients' }]}
-              />
-              <Select
-                onChange={(value) => console.log(value)}
-                options={[{ value: 'Price', label: 'Price' }]}
-              />
-            </Stack>
+      <Stack id="stackPop" alignItems="center" gap="330px">
+        <Text className="popDis" variant="h1">
+          Popular dishes
+        </Text>
 
-            <Stack gap="5px">
-              <IconButton
-                size="lg"
-                variant="greyIcon"
-                onClick={() => console.log('premuto')}
-                iconName="Bars"
-              />
-              <IconButton
-                size="lg"
-                variant="redIcon"
-                onClick={() => console.log('premuto')}
-                iconName="Category"
-              />
-            </Stack>
+        <Stack alignItems="center" gap="25px">
+          <Stack gap="5px">
+            <Select
+              onChange={(value) => console.log(value)}
+              options={[{ value: 'Delivery', label: 'Delivery' }]}
+            />
+            <Select
+              onChange={(value) => console.log(value)}
+              options={[{ value: 'Ingredients', label: 'Ingredients' }]}
+            />
+            <Select
+              onChange={(value) => console.log(value)}
+              options={[{ value: 'Price', label: 'Price' }]}
+            />
+          </Stack>
+
+          <Stack gap="5px">
+            <IconButton
+              size="lg"
+              variant="greyIcon"
+              onClick={() => console.log('premuto')}
+              iconName="Bars"
+            />
+            <IconButton
+              size="lg"
+              variant="redIcon"
+              onClick={() => console.log('premuto')}
+              iconName="Category"
+            />
           </Stack>
         </Stack>
       </Stack>
