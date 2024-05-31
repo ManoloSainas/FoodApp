@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 
 export const StyledSelect = styled.select<{}>`
-  width: max-content;
-  height: max-content;
+  height: 35px;
+  background-color: #101013;
+  margin: 10px;
+  padding: 1px 1px 1px 22px;
+  border-top-right-radius: 50px 50px;
+  border-bottom-right-radius: 50px 50px;
+  border-top-left-radius: 50px 50px;
+  border-bottom-left-radius: 50px 50px;
+  width: 125px;
 `

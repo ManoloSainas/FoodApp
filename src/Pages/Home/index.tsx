@@ -1,15 +1,12 @@
-import { ImageTextCard } from '../Components/Cards/ImageTextCard'
-import { Stack } from '../Components/Stack'
+import { ImageTextCard } from '../../Components/Cards/ImageTextCard'
+import { Select } from '../../Components/Form/Select'
+import { Stack } from '../../Components/Stack'
+import { Text } from '../../Components/Text'
+import { StyledHome } from './styled'
 
 export const Home = () => {
   return (
-    <Stack
-      height="100%"
-      width="100%"
-      flexDirection="column"
-      backgroundColor="#101013"
-      borderRadius={0}
-    >
+    <StyledHome>
       <Stack gap="30px" flexWrap="wrap" width="100%">
         <ImageTextCard
           onClick={(value) => console.log(value)}
@@ -43,7 +40,26 @@ export const Home = () => {
           ]}
         />
       </Stack>
-      <Stack></Stack>
-    </Stack>
+      <Stack>
+        <Stack alignItems="center">
+          <Text variant="h1">Popular dishes</Text>
+          <Stack>
+            <Select
+              onChange={(value) => console.log(value)}
+              options={[{ value: 'Delivery', label: 'Delivery' }]}
+            />
+            <Select
+              onChange={(value) => console.log(value)}
+              options={[{ value: 'Ingredients', label: 'Ingredients' }]}
+            />
+            <Select
+              onChange={(value) => console.log(value)}
+              options={[{ value: 'Price', label: 'Price' }]}
+            />
+          </Stack>
+        </Stack>
+        <Stack></Stack>
+      </Stack>
+    </StyledHome>
   )
 }

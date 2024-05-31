@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import { Home } from './Pages/Home'
 import { Layout } from './Components/Layout'
 import { Catalog } from './Pages/Catalog'
+import { Home } from './Pages/Home'
 
 function App() {
   return (
