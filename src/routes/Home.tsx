@@ -3,8 +3,14 @@ import { Stack } from '../Components/Stack'
 
 export const Home = () => {
   return (
-    <Stack flexDirection="column">
-      <Stack gap="15px">
+    <Stack
+      height="100%"
+      width="100%"
+      flexDirection="column"
+      backgroundColor="red"
+      borderRadius={20}
+    >
+      <Stack gap="30px">
         <ImageTextCard
           onClick={(value) => console.log(value)}
           classImage="image"
@@ -29,6 +35,62 @@ export const Home = () => {
             {
               imageURL: 'src/assets/Images/strawberry.jpg',
               text: 'strawberry'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
+            },
+            {
+              imageURL: 'src/assets/Images/watermelon.jpg',
+              text: 'watermelon'
             },
             {
               imageURL: 'src/assets/Images/watermelon.jpg',

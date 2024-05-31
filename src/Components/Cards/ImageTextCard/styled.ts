@@ -18,7 +18,7 @@ export const StyledImageText = styled.div<{
   background-color: #26262f;
   padding: 15px;
 
-  border-bottom: ${({ $isSelected }) => ($isSelected ? '2px solid red' : 'none')};
+  border-bottom: ${({ $isSelected }) => ($isSelected ? '4px solid red' : 'none')};
 
   .image {
     width: ${({ $height }) => $height};

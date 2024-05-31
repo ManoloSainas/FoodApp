@@ -12,6 +12,7 @@ export const StyledStack = styled.div<{
   $padding?: string
   $margin?: string
   $borderRadius?: number
+  $flexWrap?: string
 }>`
   display: flex;
   flex-direction: ${({ $flexDirection }) => $flexDirection};
@@ -25,4 +26,5 @@ export const StyledStack = styled.div<{
   padding: ${({ $padding }) => $padding};
   margin: ${({ $margin }) => $margin};
   border-radius: ${({ $borderRadius }) => $borderRadius}px;
+  flex-wrap: ${({ $flexWrap }) => $flexWrap};
 `
