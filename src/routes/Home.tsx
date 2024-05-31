@@ -4,13 +4,13 @@ import { Stack } from '../Components/Stack'
 export const Home = () => {
   return (
     <Stack
-      height="100%"
+      height="100vh"
       width="100%"
       flexDirection="column"
       backgroundColor="red"
       borderRadius={20}
     >
-      <Stack gap="30px">
+      <Stack gap="30px" flexWrap="wrap" width="100%">
         <ImageTextCard
           onClick={(value) => console.log(value)}
           classImage="image"

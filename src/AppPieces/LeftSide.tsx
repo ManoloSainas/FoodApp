@@ -13,7 +13,7 @@ export const LeftSide = () => {
       flexDirection="column"
       backgroundColor="#17171C"
       width="max-content"
-      padding="00px 45px 45px 45px"
+      padding="00px 45px 0px 45px"
       justifyContent="flex-start"
       alignItems="center"
       height="100vh"
