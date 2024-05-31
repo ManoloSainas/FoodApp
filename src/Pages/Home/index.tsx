@@ -1,4 +1,5 @@
 import { ImageTextCard } from '../../Components/Cards/ImageTextCard'
+import { PopDishes } from '../../Components/Cards/PopDishesCard'
 import { Select } from '../../Components/Form/Select'
 import { IconButton } from '../../Components/IconButton'
 import { Stack } from '../../Components/Stack'
@@ -41,42 +42,138 @@ export const Home = () => {
           ]}
         />
       </Stack>
+      <Stack flexDirection="column">
+        <Stack id="stackPop" alignItems="center" gap="330px">
+          <Text className="popDis" variant="h1">
+            Popular dishes
+          </Text>
 
-      <Stack id="stackPop" alignItems="center" gap="330px">
-        <Text className="popDis" variant="h1">
-          Popular dishes
-        </Text>
+          <Stack alignItems="center" gap="25px">
+            <Stack gap="5px">
+              <Select
+                onChange={(value) => console.log(value)}
+                options={[{ value: 'Delivery', label: 'Delivery' }]}
+              />
+              <Select
+                onChange={(value) => console.log(value)}
+                options={[{ value: 'Ingredients', label: 'Ingredients' }]}
+              />
+              <Select
+                onChange={(value) => console.log(value)}
+                options={[{ value: 'Price', label: 'Price' }]}
+              />
+            </Stack>
 
-        <Stack alignItems="center" gap="25px">
-          <Stack gap="5px">
-            <Select
-              onChange={(value) => console.log(value)}
-              options={[{ value: 'Delivery', label: 'Delivery' }]}
-            />
-            <Select
-              onChange={(value) => console.log(value)}
-              options={[{ value: 'Ingredients', label: 'Ingredients' }]}
-            />
-            <Select
-              onChange={(value) => console.log(value)}
-              options={[{ value: 'Price', label: 'Price' }]}
-            />
+            <Stack gap="5px">
+              <IconButton
+                size="lg"
+                variant="greyIcon"
+                onClick={() => console.log('premuto')}
+                iconName="Bars"
+              />
+              <IconButton
+                size="lg"
+                variant="redIcon"
+                onClick={() => console.log('premuto')}
+                iconName="Category"
+              />
+            </Stack>
           </Stack>
-
-          <Stack gap="5px">
-            <IconButton
-              size="lg"
-              variant="greyIcon"
-              onClick={() => console.log('premuto')}
-              iconName="Bars"
-            />
-            <IconButton
-              size="lg"
-              variant="redIcon"
-              onClick={() => console.log('premuto')}
-              iconName="Category"
-            />
-          </Stack>
+        </Stack>
+        <Stack flexDirection="row">
+          <PopDishes
+            options={[
+              {
+                imageURL: 'src/assets/Images/banana.jpg',
+                text: 'Banana',
+                textp:
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                tagText: '330gr',
+                currency: 'Euro',
+                value: '50',
+                iconName: 'Flame',
+                IconNameButton: 'Plus'
+              },
+              {
+                imageURL: 'src/assets/Images/banana.jpg',
+                text: 'Banana',
+                textp:
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                tagText: '330gr',
+                currency: 'Euro',
+                value: '50',
+                iconName: 'Flame',
+                IconNameButton: 'Plus'
+              },
+              {
+                imageURL: 'src/assets/Images/banana.jpg',
+                text: 'Banana',
+                textp:
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                tagText: '330gr',
+                currency: 'Euro',
+                value: '50',
+                iconName: 'Flame',
+                IconNameButton: 'Plus'
+              },
+              {
+                imageURL: 'src/assets/Images/banana.jpg',
+                text: 'Banana',
+                textp:
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                tagText: '330gr',
+                currency: 'Euro',
+                value: '50',
+                iconName: 'Flame',
+                IconNameButton: 'Plus'
+              },
+              {
+                imageURL: 'src/assets/Images/banana.jpg',
+                text: 'Banana',
+                textp:
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                tagText: '330gr',
+                currency: 'Euro',
+                value: '50',
+                iconName: 'Flame',
+                IconNameButton: 'Plus'
+              },
+              {
+                imageURL: 'src/assets/Images/banana.jpg',
+                text: 'Banana',
+                textp:
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                tagText: '330gr',
+                currency: 'Euro',
+                value: '50',
+                iconName: 'Flame',
+                IconNameButton: 'Plus'
+              },
+              {
+                imageURL: 'src/assets/Images/banana.jpg',
+                text: 'Banana',
+                textp:
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                tagText: '330gr',
+                currency: 'Euro',
+                value: '50',
+                iconName: 'Flame',
+                IconNameButton: 'Plus'
+              },
+              {
+                imageURL: 'src/assets/Images/banana.jpg',
+                text: 'Banana',
+                textp:
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                tagText: '330gr',
+                currency: 'Euro',
+                value: '50',
+                iconName: 'Flame',
+                IconNameButton: 'Plus'
+              }
+            ]}
+            onClick={() => console.log('Clicked!')}
+          ></PopDishes>
         </Stack>
       </Stack>
     </StyledHome>

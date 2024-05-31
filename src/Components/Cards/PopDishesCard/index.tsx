@@ -7,7 +7,7 @@ import { Price } from '../../Price'
 import { Stack } from '../../Stack'
 import { Tag } from '../../Tag'
 import { Text } from '../../Text'
-import { StyledRow } from './styled'
+import { StyledList, StyledRow } from './styled'
 import { symbols } from '../../Price'
 import { useCallback, useMemo } from 'react'
 
@@ -71,6 +71,7 @@ export const PopDishes = ({ options, onClick }: Props) => {
                   <Stack>
                     <Tag text={tagText} />
                     <IconButton
+                      size="lg"
                       variant={variant}
                       iconName={IconNameButton}
                       onClick={memorizedOnClick}
@@ -85,5 +86,5 @@ export const PopDishes = ({ options, onClick }: Props) => {
     [options, memorizedOnClick]
   )
 
-  return <ul>{optionsElements}</ul>
+  return <StyledList>{optionsElements}</StyledList>
 }
