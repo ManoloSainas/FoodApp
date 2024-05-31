@@ -7,8 +7,4 @@ export const StyledLayout = styled.div`
 `
 export const StyledMain = styled.main`
   display: flex;
-
-  &:last-child {
-    flex: 1;
-  }
 `

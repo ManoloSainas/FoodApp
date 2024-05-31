@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { Home } from './Pages/Home'
 import { Layout } from './Components/Layout'
+import { Catalog } from './Pages/Catalog'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/home" element={<Home />} />
+          <Route path="/catalog" element={<Catalog />} />
         </Route>
       </Routes>
     </BrowserRouter>
