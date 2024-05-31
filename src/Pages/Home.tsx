@@ -7,8 +7,8 @@ export const Home = () => {
       height="100%"
       width="100%"
       flexDirection="column"
-      backgroundColor="#eeff00"
-      borderRadius={20}
+      backgroundColor="#101013"
+      borderRadius={0}
     >
       <Stack gap="30px" flexWrap="wrap" width="100%">
         <ImageTextCard

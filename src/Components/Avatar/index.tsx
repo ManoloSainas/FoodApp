@@ -10,7 +10,7 @@ type Props = {
 
 export const Avatar = ({ imageURL, text }: Props) => {
   return (
-    <Link to="/">
+    <Link to="/home">
       <StyledAvatar>
         <Image height={100} width={100} className="image" imageURL={imageURL}></Image>
         <Text className="text" variant="h4">

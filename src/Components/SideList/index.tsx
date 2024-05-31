@@ -10,7 +10,7 @@ type Props = {
   onChange: (icon: IconName) => void
 }
 
-export const SideBarDaCambiare = ({ options, onChange }: Props) => {
+export const SideList = ({ options, onChange }: Props) => {
   const [selectedRow, setSelectedRow] = useState<IconName>(options[0].icon)
 
   const handleClick = (icon: IconName) => {

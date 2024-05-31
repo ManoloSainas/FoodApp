@@ -1,6 +1,6 @@
 import { Avatar } from '../Avatar'
 import { IconName } from '../Icon/config'
-import { SideBarDaCambiare } from '../SideBarDaCambiare'
+import { SideList } from '../SideList'
 import { StyledSideBar } from './styled'
 
 export const SideBar = () => {
@@ -11,7 +11,7 @@ export const SideBar = () => {
   return (
     <StyledSideBar>
       <Avatar imageURL="src\assets\Images\cheong.jpg" text="Joseph Cheong" />
-      <SideBarDaCambiare
+      <SideList
         onChange={(icon: IconName) => changePage(icon)}
         options={[
           { icon: 'Home', text: 'Home' },
