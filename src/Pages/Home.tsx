@@ -4,10 +4,10 @@ import { Stack } from '../Components/Stack'
 export const Home = () => {
   return (
     <Stack
-      height="100vh"
+      height="100%"
       width="100%"
       flexDirection="column"
-      backgroundColor="red"
+      backgroundColor="#eeff00"
       borderRadius={20}
     >
       <Stack gap="30px" flexWrap="wrap" width="100%">

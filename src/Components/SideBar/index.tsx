@@ -1,38 +1,27 @@
-import { useState } from 'react'
-import { Icon } from '../Icon'
+import { Avatar } from '../Avatar'
 import { IconName } from '../Icon/config'
-import { Text } from '../Text'
-import { StyledRow } from './styled'
-import { Stack } from '../Stack'
+import { SideBarDaCambiare } from '../SideBarDaCambiare'
+import { StyledSideBar } from './styled'
 
-type Props = {
-  options: { icon: IconName; text: string }[]
-  onChange: (icon: IconName) => void
-}
-
-export const SideBar = ({ options, onChange }: Props) => {
-  const [selectedRow, setSelectedRow] = useState<IconName>(options[0].icon)
-
-  const handleClick = (icon: IconName) => {
-    setSelectedRow(icon)
-    onChange(icon)
+export const SideBar = () => {
+  const changePage = (icon: IconName) => {
+    return console.log(icon)
   }
 
   return (
-    <ul style={{ padding: 0 }}>
-      {options.map(({ icon, text }) => (
-        <StyledRow
-          key={icon}
-          onClick={() => handleClick(icon)}
-          isSelected={selectedRow === icon}
-        >
-          <Stack width="75px">
-            <Icon id="iconId" iconName={icon} />
-          </Stack>
-
-          <Text>{text}</Text>
-        </StyledRow>
-      ))}
-    </ul>
+    <StyledSideBar>
+      <Avatar imageURL="src\assets\Images\cheong.jpg" text="Joseph Cheong" />
+      <SideBarDaCambiare
+        onChange={(icon: IconName) => changePage(icon)}
+        options={[
+          { icon: 'Home', text: 'Home' },
+          { icon: 'Catalog', text: 'Catalog' },
+          { icon: 'Category', text: 'Category' },
+          { icon: 'Map', text: 'Map' },
+          { icon: 'Delivery', text: 'Delivery' },
+          { icon: 'Settings', text: 'Settings' }
+        ]}
+      />
+    </StyledSideBar>
   )
 }

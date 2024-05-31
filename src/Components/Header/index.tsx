@@ -1,16 +1,11 @@
-import { IconButton } from '../Components/IconButton'
-import { SearchBar } from '../Components/SearchBar'
-import { Stack } from '../Components/Stack'
+import { IconButton } from '../IconButton'
+import { SearchBar } from '../SearchBar'
+import { Stack } from '../Stack'
+import { StyledHeader } from './styled'
 
-export const TopSide = () => {
+export const Header = () => {
   return (
-    <Stack
-      backgroundColor="#17171C"
-      width="100%"
-      padding="0 70px 0 330px"
-      alignItems="center"
-      justifyContent="space-between"
-    >
+    <StyledHeader>
       <SearchBar
         type="text"
         iconName="SearchLens"
@@ -37,6 +32,6 @@ export const TopSide = () => {
           onClick={() => console.log('Clicked')}
         />
       </Stack>
-    </Stack>
+    </StyledHeader>
   )
 }
