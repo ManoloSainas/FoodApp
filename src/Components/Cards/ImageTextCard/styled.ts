@@ -29,5 +29,6 @@ export const StyledImageText = styled.div<{
     height: max-content;
     text-align: center;
     color: white;
+    margin-top: 15px;
   }
 `
