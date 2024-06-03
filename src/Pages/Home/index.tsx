@@ -87,7 +87,7 @@ export const Home = () => {
                 imageURL: 'src/assets/Images/banana.jpg',
                 text: 'Banana',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                  'Smoked salmon, red caviar, boiled potatoes, boiled carrots, frozen green peas, salt.',
                 tagText: '330g',
                 currency: 'Euro',
                 value: '50',
@@ -98,7 +98,7 @@ export const Home = () => {
                 imageURL: 'src/assets/Images/cherry.jpg',
                 text: 'cherry',
                 textp:
-                  'This is a cherry. This is a cherry. This is a cherry. This is a cherry. This is a cherry.',
+                  'Smoked salmon, red caviar, boiled potatoes, boiled carrots, frozen green peas, salt.',
                 tagText: '150g',
                 currency: 'Euro',
                 value: '42',
@@ -109,7 +109,7 @@ export const Home = () => {
                 imageURL: 'src/assets/Images/orange.jpg',
                 text: 'orange',
                 textp:
-                  'This is a orange. This is a orange. This is a orange. This is a orange. This is a orange.',
+                  'Smoked salmon, red caviar, boiled potatoes, boiled carrots, frozen green peas, salt.',
                 tagText: '50g',
                 currency: 'Euro',
                 value: '77',
@@ -120,7 +120,7 @@ export const Home = () => {
                 imageURL: 'src/assets/Images/pineapple.jpg',
                 text: 'pineapple',
                 textp:
-                  'This is a pineapple. This is a pineapple. This is a pineapple. This is a pineapple. This is a pineapple.',
+                  'Smoked salmon, red caviar, boiled potatoes, boiled carrots, frozen green peas, salt.',
                 tagText: '780g',
                 currency: 'Euro',
                 value: '9',
@@ -131,7 +131,7 @@ export const Home = () => {
                 imageURL: 'src/assets/Images/strawberry.jpg',
                 text: 'strawberry',
                 textp:
-                  'This is a strawberry. This is a strawberry. This is a strawberry. This is a strawberry. This is a strawberry.',
+                  'Smoked salmon, red caviar, boiled potatoes, boiled carrots, frozen green peas, salt.',
                 tagText: '64g',
                 currency: 'Euro',
                 value: '88',
