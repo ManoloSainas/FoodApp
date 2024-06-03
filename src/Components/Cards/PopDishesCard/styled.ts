@@ -4,7 +4,7 @@ export const StyledRow = styled.li<{}>`
   display: flex;
   align-items: center;
   background-color: #22222a;
-  width: 205px;
+  width: 210px;
   height: 300px;
   padding: 15px;
 
@@ -33,5 +33,5 @@ export const StyledList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   padding: 0%;
-  gap: 70px;
+  gap: 62px;
 `
