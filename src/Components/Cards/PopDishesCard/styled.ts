@@ -4,9 +4,9 @@ export const StyledRow = styled.li<{}>`
   display: flex;
   align-items: center;
   background-color: #22222a;
-  width: 210px;
-  height: 300px;
-  padding: 15px;
+  width: 200px;
+  height: 280px;
+  padding: 20px;
 
   gap: 20px;
   border-top-right-radius: 40px 40px;
