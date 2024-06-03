@@ -22,6 +22,7 @@ export const StyledRow = styled.li<{}>`
   .text {
     color: #e6e5e8;
     padding: 0% 0% 0% 0%;
+    margin: 0%;
   }
 
   .textp {
