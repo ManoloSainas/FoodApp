@@ -88,7 +88,7 @@ export const Home = () => {
                 text: 'Banana',
                 textp:
                   'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330gr',
+                tagText: '330g',
                 currency: 'Euro',
                 value: '50',
                 iconName: 'Flame',
@@ -99,7 +99,7 @@ export const Home = () => {
                 text: 'Banana',
                 textp:
                   'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330gr',
+                tagText: '330g',
                 currency: 'Euro',
                 value: '50',
                 iconName: 'Flame',
@@ -110,7 +110,7 @@ export const Home = () => {
                 text: 'Banana',
                 textp:
                   'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330gr',
+                tagText: '330g',
                 currency: 'Euro',
                 value: '50',
                 iconName: 'Flame',
@@ -121,7 +121,7 @@ export const Home = () => {
                 text: 'Banana',
                 textp:
                   'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330gr',
+                tagText: '330g',
                 currency: 'Euro',
                 value: '50',
                 iconName: 'Flame',
@@ -132,7 +132,7 @@ export const Home = () => {
                 text: 'Banana',
                 textp:
                   'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330gr',
+                tagText: '330g',
                 currency: 'Euro',
                 value: '50',
                 iconName: 'Flame',
@@ -143,7 +143,7 @@ export const Home = () => {
                 text: 'Banana',
                 textp:
                   'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330gr',
+                tagText: '330g',
                 currency: 'Euro',
                 value: '50',
                 iconName: 'Flame',
@@ -154,7 +154,7 @@ export const Home = () => {
                 text: 'Banana',
                 textp:
                   'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330gr',
+                tagText: '330g',
                 currency: 'Euro',
                 value: '50',
                 iconName: 'Flame',
@@ -165,7 +165,7 @@ export const Home = () => {
                 text: 'Banana',
                 textp:
                   'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330gr',
+                tagText: '330g',
                 currency: 'Euro',
                 value: '50',
                 iconName: 'Flame',

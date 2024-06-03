@@ -6,9 +6,10 @@ export const StyledTag = styled.div<{}>`
   border-bottom-right-radius: 50px 50px;
   border-top-left-radius: 50px 50px;
   border-bottom-left-radius: 50px 50px;
-  padding: 3px 17px 3px 17px;
+  padding: 3px 15px 3px 15px;
   width: max-content;
   .text {
-    color: grey;
+    color: #56565a;
+    font-size: 12px;
   }
 `
