@@ -9,7 +9,7 @@ import { StyledHome } from './styled'
 export const Home = () => {
   return (
     <StyledHome>
-      <Stack gap="30px" flexWrap="wrap" width="100%">
+      <Stack gap="17px" flexWrap="wrap" width="100%">
         <ImageTextCard
           onClick={(value) => console.log(value)}
           classImage="image"

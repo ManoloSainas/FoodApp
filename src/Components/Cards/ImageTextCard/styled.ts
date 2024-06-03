@@ -10,7 +10,7 @@ export const StyledImageText = styled.div<{
   justify-content: center;
   align-items: center;
   width: max-content;
-  height: max-content;
+  height: 125px;
   border-top-right-radius: 40px 40px;
   border-bottom-right-radius: 40px 40px;
   border-top-left-radius: 40px 40px;
@@ -28,7 +28,7 @@ export const StyledImageText = styled.div<{
   .text {
     height: max-content;
     text-align: center;
-    color: white;
+    color: ${({ $isSelected }) => ($isSelected ? 'white' : '#7E7E82')};
     margin-top: 15px;
   }
 `
