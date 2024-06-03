@@ -5,5 +5,6 @@ export const StyledPrice = styled.div<{}>`
 
   .text {
     color: white;
+    font-size: 25px;
   }
 `

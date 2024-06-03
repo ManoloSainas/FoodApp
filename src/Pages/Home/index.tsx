@@ -87,7 +87,7 @@ export const Home = () => {
                 imageURL: 'src/assets/Images/banana.jpg',
                 text: 'Banana',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
                 tagText: '330gr',
                 currency: 'Euro',
                 value: '50',
@@ -98,7 +98,7 @@ export const Home = () => {
                 imageURL: 'src/assets/Images/banana.jpg',
                 text: 'Banana',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
                 tagText: '330gr',
                 currency: 'Euro',
                 value: '50',
@@ -109,7 +109,7 @@ export const Home = () => {
                 imageURL: 'src/assets/Images/banana.jpg',
                 text: 'Banana',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
                 tagText: '330gr',
                 currency: 'Euro',
                 value: '50',
@@ -120,7 +120,7 @@ export const Home = () => {
                 imageURL: 'src/assets/Images/banana.jpg',
                 text: 'Banana',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
                 tagText: '330gr',
                 currency: 'Euro',
                 value: '50',
@@ -131,7 +131,7 @@ export const Home = () => {
                 imageURL: 'src/assets/Images/banana.jpg',
                 text: 'Banana',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
                 tagText: '330gr',
                 currency: 'Euro',
                 value: '50',
@@ -142,7 +142,7 @@ export const Home = () => {
                 imageURL: 'src/assets/Images/banana.jpg',
                 text: 'Banana',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
                 tagText: '330gr',
                 currency: 'Euro',
                 value: '50',
@@ -153,7 +153,7 @@ export const Home = () => {
                 imageURL: 'src/assets/Images/banana.jpg',
                 text: 'Banana',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
                 tagText: '330gr',
                 currency: 'Euro',
                 value: '50',
@@ -164,7 +164,7 @@ export const Home = () => {
                 imageURL: 'src/assets/Images/banana.jpg',
                 text: 'Banana',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
+                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
                 tagText: '330gr',
                 currency: 'Euro',
                 value: '50',

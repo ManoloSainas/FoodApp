@@ -6,7 +6,7 @@ export const StyledRow = styled.li<{}>`
   background-color: #22222a;
   width: 250px;
   padding: 15px;
-  margin: 2%;
+
   gap: 20px;
   border-top-right-radius: 50px 50px;
   border-bottom-right-radius: 50px 50px;
@@ -31,4 +31,6 @@ export const StyledRow = styled.li<{}>`
 export const StyledList = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  padding: 0%;
+  gap: 30px;
 `

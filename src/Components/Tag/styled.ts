@@ -6,11 +6,9 @@ export const StyledTag = styled.div<{}>`
   border-bottom-right-radius: 50px 50px;
   border-top-left-radius: 50px 50px;
   border-bottom-left-radius: 50px 50px;
-  padding: 1px 30px;
+  padding: 3px 17px 3px 17px;
   width: max-content;
   .text {
     color: grey;
   }
 `
-
-// allargare un pò il div

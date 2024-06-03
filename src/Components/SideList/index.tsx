@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Icon } from '../Icon'
 import { IconName } from '../Icon/config'
 import { Text } from '../Text'
-import { StyledRow } from './styled'
+import { StyledRow, StyledSideList } from './styled'
 import { Stack } from '../Stack'
 import { Link } from 'react-router-dom'
 
@@ -20,7 +20,7 @@ export const SideList = ({ options, onChange }: Props) => {
   }
 
   return (
-    <ul style={{ padding: 0 }}>
+    <StyledSideList>
       {options.map(({ icon, text }) => (
         <Link to={`/${icon}`}>
           <StyledRow
@@ -36,6 +36,6 @@ export const SideList = ({ options, onChange }: Props) => {
           </StyledRow>
         </Link>
       ))}
-    </ul>
+    </StyledSideList>
   )
 }
