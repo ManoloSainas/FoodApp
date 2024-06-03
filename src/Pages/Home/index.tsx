@@ -95,79 +95,57 @@ export const Home = () => {
                 IconNameButton: 'Plus'
               },
               {
-                imageURL: 'src/assets/Images/banana.jpg',
-                text: 'Banana',
+                imageURL: 'src/assets/Images/cherry.jpg',
+                text: 'cherry',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330g',
+                  'This is a cherry. This is a cherry. This is a cherry. This is a cherry. This is a cherry.',
+                tagText: '150g',
                 currency: 'Euro',
-                value: '50',
+                value: '42',
                 iconName: 'Flame',
                 IconNameButton: 'Plus'
               },
               {
-                imageURL: 'src/assets/Images/banana.jpg',
-                text: 'Banana',
+                imageURL: 'src/assets/Images/orange.jpg',
+                text: 'orange',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330g',
+                  'This is a orange. This is a orange. This is a orange. This is a orange. This is a orange.',
+                tagText: '50g',
                 currency: 'Euro',
-                value: '50',
+                value: '77',
                 iconName: 'Flame',
                 IconNameButton: 'Plus'
               },
               {
-                imageURL: 'src/assets/Images/banana.jpg',
-                text: 'Banana',
+                imageURL: 'src/assets/Images/pineapple.jpg',
+                text: 'pineapple',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330g',
+                  'This is a pineapple. This is a pineapple. This is a pineapple. This is a pineapple. This is a pineapple.',
+                tagText: '780g',
                 currency: 'Euro',
-                value: '50',
+                value: '9',
                 iconName: 'Flame',
                 IconNameButton: 'Plus'
               },
               {
-                imageURL: 'src/assets/Images/banana.jpg',
-                text: 'Banana',
+                imageURL: 'src/assets/Images/strawberry.jpg',
+                text: 'strawberry',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330g',
+                  'This is a strawberry. This is a strawberry. This is a strawberry. This is a strawberry. This is a strawberry.',
+                tagText: '64g',
                 currency: 'Euro',
-                value: '50',
+                value: '88',
                 iconName: 'Flame',
                 IconNameButton: 'Plus'
               },
               {
-                imageURL: 'src/assets/Images/banana.jpg',
-                text: 'Banana',
+                imageURL: 'src/assets/Images/watermelon.jpg',
+                text: 'watermelon',
                 textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330g',
+                  'This is a watermelon. This is a watermelon. This is a watermelon. This is a watermelon. This is a watermelon.',
+                tagText: '10g',
                 currency: 'Euro',
-                value: '50',
-                iconName: 'Flame',
-                IconNameButton: 'Plus'
-              },
-              {
-                imageURL: 'src/assets/Images/banana.jpg',
-                text: 'Banana',
-                textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330g',
-                currency: 'Euro',
-                value: '50',
-                iconName: 'Flame',
-                IconNameButton: 'Plus'
-              },
-              {
-                imageURL: 'src/assets/Images/banana.jpg',
-                text: 'Banana',
-                textp:
-                  'This is a banana. This is a banana. This is a banana. This is a banana. This is a banana.',
-                tagText: '330g',
-                currency: 'Euro',
-                value: '50',
+                value: '19',
                 iconName: 'Flame',
                 IconNameButton: 'Plus'
               }

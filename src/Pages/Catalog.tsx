@@ -1,5 +1,10 @@
-import { Text } from '../Components/Text'
+import { Button } from '../Components/Button'
+import { Stack } from '../Components/Stack'
 
 export const Catalog = () => {
-  return <Text>To Do</Text>
+  return (
+    <Stack>
+      <Button onClick={() => console.log('premuto!')}>Catalog</Button>
+    </Stack>
+  )
 }
