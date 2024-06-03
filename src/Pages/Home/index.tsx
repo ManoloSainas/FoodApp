@@ -96,7 +96,7 @@ export const Home = () => {
               },
               {
                 imageURL: 'src/assets/Images/cherry.jpg',
-                text: 'cherry',
+                text: 'Cherry',
                 textp:
                   'Smoked salmon, red caviar, boiled potatoes, boiled carrots, frozen green peas, salt.',
                 tagText: '150g',
@@ -107,7 +107,7 @@ export const Home = () => {
               },
               {
                 imageURL: 'src/assets/Images/orange.jpg',
-                text: 'orange',
+                text: 'Orange',
                 textp:
                   'Smoked salmon, red caviar, boiled potatoes, boiled carrots, frozen green peas, salt.',
                 tagText: '50g',
@@ -118,7 +118,7 @@ export const Home = () => {
               },
               {
                 imageURL: 'src/assets/Images/pineapple.jpg',
-                text: 'pineapple',
+                text: 'Pineapple',
                 textp:
                   'Smoked salmon, red caviar, boiled potatoes, boiled carrots, frozen green peas, salt.',
                 tagText: '780g',
@@ -129,7 +129,7 @@ export const Home = () => {
               },
               {
                 imageURL: 'src/assets/Images/strawberry.jpg',
-                text: 'strawberry',
+                text: 'Strawberry',
                 textp:
                   'Smoked salmon, red caviar, boiled potatoes, boiled carrots, frozen green peas, salt.',
                 tagText: '64g',
@@ -140,7 +140,7 @@ export const Home = () => {
               },
               {
                 imageURL: 'src/assets/Images/watermelon.jpg',
-                text: 'watermelon',
+                text: 'Watermelon',
                 textp:
                   'This is a watermelon. This is a watermelon. This is a watermelon. This is a watermelon. This is a watermelon.',
                 tagText: '10g',

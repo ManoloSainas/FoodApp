@@ -4,9 +4,9 @@ export const StyledRow = styled.li<{}>`
   display: flex;
   align-items: center;
   background-color: #22222a;
-  width: 200px;
+  width: 180px;
   height: 280px;
-  padding: 20px;
+  padding: 30px;
 
   gap: 20px;
   border-top-right-radius: 40px 40px;
@@ -22,7 +22,7 @@ export const StyledRow = styled.li<{}>`
   .text {
     color: #e6e5e8;
     padding: 0% 0% 0% 0%;
-    margin: 0%;
+    margin: 10% 0% 0% 0%;
   }
 
   .textp {

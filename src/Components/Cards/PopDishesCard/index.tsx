@@ -59,7 +59,7 @@ export const PopDishes = ({ options, onClick }: Props) => {
                   <Image className="image" imageURL={imageURL} />
                 </Stack>
 
-                <Stack flexDirection="column" alignItems="center">
+                <Stack flexDirection="column" alignItems="flex-start">
                   <Text className="text" variant="h2">
                     {text}
                   </Text>
