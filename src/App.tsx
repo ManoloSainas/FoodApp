@@ -1,14 +1,26 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
 import { Layout } from './Components/Layout'
 import { Catalog } from './Pages/Catalog'
 import { Home } from './Pages/Home'
+import { useEffect } from 'react'
+
+function RedirectToHome() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    navigate('/home')
+  }, [navigate])
+
+  return null
+}
 
 function App() {
   return (
     <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route index element={<RedirectToHome />} />
           <Route path="/home" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/category" element="To-do" />
