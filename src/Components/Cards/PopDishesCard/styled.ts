@@ -8,7 +8,6 @@ export const StyledRow = styled.li<{}>`
   height: 280px;
   padding: 30px;
 
-  gap: 20px;
   border-top-right-radius: 40px 40px;
   border-bottom-right-radius: 40px 40px;
   border-top-left-radius: 40px 40px;
@@ -22,7 +21,7 @@ export const StyledRow = styled.li<{}>`
   .text {
     color: #e6e5e8;
     padding: 0% 0% 0% 0%;
-    margin: 10% 0% 0% 0%;
+    margin: 5% 0% 0% 0%;
   }
 
   .textp {

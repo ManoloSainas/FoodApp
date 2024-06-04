@@ -52,7 +52,6 @@ export const PopDishes = ({ options, onClick }: Props) => {
                 width="max-content"
                 height="max-content"
                 alignItems="center"
-                gap="10px"
               >
                 <Stack>
                   {showIconInCorner && <Icon iconName={iconName} />}

@@ -23,7 +23,7 @@ export const StyledText = variants.reduce(
       color: ${({ color }) => color};
       font-size: ${({ fontSize }) => fontSize}px;
       font-style: ${({ fontStyle }) => fontStyle};
-      margin: 15px 0px 15px 0px;
+      margin: 5px 0px 5px 0px;
     `
   }),
   {} as Record<Variant, Styled>
