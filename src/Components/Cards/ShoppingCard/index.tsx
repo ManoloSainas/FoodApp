@@ -27,9 +27,9 @@ export const ShoppingCard = ({ options, onClick }: Props) => {
     () =>
       options.map(({ imageURL, text, tagText, currency, value }) => (
         <StyledRow key={imageURL}>
-          <Image className="image" imageURL={imageURL} />
+          <Image className="shopping-image" imageURL={imageURL} />
           <Stack flexDirection="column">
-            <Text className="text" variant="h2">
+            <Text className="shopping-text" variant="h2">
               {text}
             </Text>
             <Tag text={tagText} />

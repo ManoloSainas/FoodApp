@@ -42,7 +42,7 @@ export const ImageRadio = ({ images, width, height, onChange, id }: Props) => {
             onChange={() => handleRadioChange(currCard)}
           />
           <label htmlFor={`radio-${currCard}`}>
-            <Image className="image" imageURL={currCard} />
+            <Image className="radio-image" imageURL={currCard} />
           </label>
         </StyledImageRadio>
       ))}

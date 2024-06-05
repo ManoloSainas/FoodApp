@@ -4,7 +4,7 @@ export const StyledQuantitySelector = styled.div<{}>`
   display: flex;
   width: 100%;
 
-  .text {
+  .quant-select-text {
     color: white;
   }
 `

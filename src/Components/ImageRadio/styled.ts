@@ -6,10 +6,7 @@ export const StyledImageRadio = styled.div<{
   $isSelected?: boolean
 }>`
   display: flex;
-  border-top-right-radius: 20px 20px;
-  border-bottom-right-radius: 20px 20px;
-  border-top-left-radius: 20px 20px;
-  border-bottom-left-radius: 20px 20px;
+  border-radius: 20px;
   height: 100px;
   width: 150px;
   padding: 2%;
@@ -18,7 +15,7 @@ export const StyledImageRadio = styled.div<{
   align-items: center;
   gap: 5px;
 
-  .image {
+  .radio-image {
     width: ${({ $height }) => $height};
     height: ${({ $width }) => $width};
   }

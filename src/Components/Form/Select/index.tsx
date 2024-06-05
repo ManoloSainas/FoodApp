@@ -7,7 +7,6 @@ type Props = {
   options: { value: string; label: string }[]
   disabled?: boolean
   multiple?: boolean
-  className?: string
 }
 
 export const Select = ({
@@ -15,8 +14,7 @@ export const Select = ({
   value,
   options,
   disabled,
-  multiple = false,
-  className
+  multiple = false
 }: Props) => {
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLSelectElement>) => {
@@ -38,7 +36,6 @@ export const Select = ({
       onChange={handleChange}
       disabled={disabled}
       multiple={multiple}
-      className={className}
     >
       {options.map(({ value, label }) => (
         <option key={value} value={value}>

@@ -20,7 +20,7 @@ type Props = {
     currency: keyof typeof symbols
     value: string
     variant?: keyof typeof buttonVariants
-    iconName: IconName
+    iconNameOptional: IconName
     iconNameButton: IconName
     showIconInCorner?: boolean
   }[]
@@ -40,21 +40,21 @@ export const RecommCard = ({ options, onClick }: Props) => {
           currency,
           value,
           variant,
-          iconName,
+          iconNameOptional,
           iconNameButton,
           showIconInCorner = false
         }) => (
           <StyledRow key={imageURL}>
-            <Image className="image" imageURL={imageURL} />
+            <Image className="recomm-card-image" imageURL={imageURL} />
             <Stack flexDirection="column">
               <Stack>
-                <Text className="text" variant="h2">
+                <Text className="recomm-card-text" variant="h2">
                   {text}
                 </Text>
-                {showIconInCorner && <Icon iconName={iconName} />}
+                {showIconInCorner && <Icon iconName={iconNameOptional} />}
               </Stack>
 
-              <Text className="textp">{textp}</Text>
+              <Text className="recomm-card-textp">{textp}</Text>
               <Tag text={tagText} />
               <Stack justifyContent="space-between">
                 <Price currency={currency} value={value} />

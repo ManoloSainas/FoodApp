@@ -11,13 +11,13 @@ export const ReviewCard = ({ reviewList }: Props) => {
     () =>
       reviewList.map(({ id, title, date, rev }) => (
         <StyledReview key={id}>
-          <Text className="title" variant="h2">
+          <Text className="review-title" variant="h2">
             {title}
           </Text>
-          <Text className="date" variant="h3">
+          <Text className="review-date" variant="h3">
             {date}
           </Text>
-          <Text className="rev">{rev}</Text>
+          <Text className="review-text">{rev}</Text>
         </StyledReview>
       )),
     [reviewList]

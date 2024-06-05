@@ -11,21 +11,18 @@ export const StyledImageText = styled.div<{
   align-items: center;
   width: max-content;
   height: 125px;
-  border-top-right-radius: 40px 40px;
-  border-bottom-right-radius: 40px 40px;
-  border-top-left-radius: 40px 40px;
-  border-bottom-left-radius: 40px 40px;
+  border-radius: 40px;
   background-color: #26262f;
   padding: 15px;
 
   border-bottom: ${({ $isSelected }) => ($isSelected ? '1px solid red' : 'none')};
 
-  .image {
-    width: ${({ $height }) => $height};
-    height: ${({ $width }) => $width};
+  .card-image {
+    width: 90px;
+    height: 90px;
   }
 
-  .text {
+  .card-text {
     height: max-content;
     text-align: center;
     color: ${({ $isSelected }) => ($isSelected ? 'white' : '#7E7E82')};

@@ -5,9 +5,6 @@ export const StyledSelect = styled.select<{}>`
   background-color: #101013;
   margin: 5px;
   padding: 1px 1px 1px 22px;
-  border-top-right-radius: 50px 50px;
-  border-bottom-right-radius: 50px 50px;
-  border-top-left-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
+  border-radius: 50px;
   width: 125px;
 `

@@ -8,7 +8,7 @@ type Props = {
 export const Tag = ({ text }: Props) => {
   return (
     <StyledTag>
-      <Text className="text">{text}</Text>
+      <Text className="tag-text">{text}</Text>
     </StyledTag>
   )
 }

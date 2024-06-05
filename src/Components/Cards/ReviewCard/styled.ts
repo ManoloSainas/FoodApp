@@ -7,20 +7,17 @@ export const StyledReview = styled.li<{}>`
   background-color: #22222a;
   width: max-content;
   padding: 2%;
-  border-top-right-radius: 20px 20px;
-  border-bottom-right-radius: 20px 20px;
-  border-top-left-radius: 20px 20px;
-  border-bottom-left-radius: 20px 20px;
+  border-radius: 20px;
 
-  .title {
+  .review-title {
     color: #c8c8c9;
   }
 
-  .date {
+  .review-date {
     color: #b83345;
   }
 
-  .rev {
+  .review-text {
     color: #757579;
     font-style: italic;
   }

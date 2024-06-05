@@ -20,7 +20,7 @@ export const QuantitySelector = () => {
   return (
     <StyledQuantitySelector>
       <IconButton iconName="Plus" onClick={handleIncrement} />
-      <Text className="text" variant="span">
+      <Text className="quant-select-text" variant="span">
         {quantity}
       </Text>
       <IconButton iconName="Minus" onClick={handleDecrement} disabled={quantity <= 0} />

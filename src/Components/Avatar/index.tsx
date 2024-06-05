@@ -10,8 +10,8 @@ type Props = {
 export const Avatar = ({ imageURL, text }: Props) => {
   return (
     <StyledAvatar>
-      <Image height={100} width={100} className="image" imageURL={imageURL}></Image>
-      <Text className="text" variant="h4">
+      <Image className="avatar-image" imageURL={imageURL} />
+      <Text className="avatar-text" variant="h4">
         {text}
       </Text>
     </StyledAvatar>

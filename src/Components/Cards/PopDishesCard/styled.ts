@@ -7,24 +7,20 @@ export const StyledRow = styled.li<{}>`
   width: 180px;
   height: 280px;
   padding: 30px;
+  border-radius: 40px;
 
-  border-top-right-radius: 40px 40px;
-  border-bottom-right-radius: 40px 40px;
-  border-top-left-radius: 40px 40px;
-  border-bottom-left-radius: 40px 40px;
-
-  .image {
+  .pop-dish-image {
     width: 100px;
     height: 100px;
   }
 
-  .text {
+  .pop-dish-text {
     color: #e6e5e8;
-    padding: 0% 0% 0% 0%;
-    margin: 5% 0% 0% 0%;
+    padding: 0%;
+    margin-top: 5%;
   }
 
-  .textp {
+  .pop-dish-textp {
     color: #58585c;
   }
 `

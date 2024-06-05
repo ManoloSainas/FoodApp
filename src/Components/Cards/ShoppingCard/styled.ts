@@ -8,18 +8,15 @@ export const StyledRow = styled.li<{}>`
   padding: 1% 1.5%;
   margin: 2%;
   gap: 20px;
-  border-top-right-radius: 50px 50px;
-  border-bottom-right-radius: 50px 50px;
-  border-top-left-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
+  border-radius: 50px;
 
-  .image {
+  .shopping-image {
     width: 100px;
     height: 100px;
     border-radius: 100%;
   }
 
-  .text {
+  .shopping-text {
     color: #e6e5e8;
   }
 `

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const StyledPrice = styled.div<{}>`
   display: flex;
 
-  .text {
+  .price-text {
     color: white;
     font-size: 25px;
   }

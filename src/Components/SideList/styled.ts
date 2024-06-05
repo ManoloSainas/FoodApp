@@ -5,10 +5,7 @@ export const StyledRow = styled.li<{ isSelected: boolean }>`
   align-items: center;
   width: 200px;
   gap: 20px;
-  border-top-right-radius: 50px 50px;
-  border-bottom-right-radius: 50px 50px;
-  border-top-left-radius: 50px 50px;
-  border-bottom-left-radius: 50px 50px;
+  border-radius: 50px;
   margin: 20px 0px 0px 0px;
 
   background-color: ${({ isSelected }) => (isSelected ? '#F73E55' : 'initial')};

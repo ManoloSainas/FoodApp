@@ -43,6 +43,3 @@ export const SearchBar = ({
     </StyledSearchBar>
   )
 }
-
-//mettere input precedentemente creato
-// creare styled per il div

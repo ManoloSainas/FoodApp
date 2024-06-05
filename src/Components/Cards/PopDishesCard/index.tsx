@@ -19,8 +19,8 @@ type Props = {
     tagText: string
     currency: keyof typeof symbols
     value: string
-    iconName: IconName
-    IconNameButton: IconName
+    iconNameOptional: IconName
+    iconNameButton: IconName
     variant?: keyof typeof buttonVariants
     showIconInCorner?: boolean
   }[]
@@ -40,8 +40,8 @@ export const PopDishes = ({ options, onClick }: Props) => {
           tagText,
           currency,
           value,
-          iconName,
-          IconNameButton,
+          iconNameOptional,
+          iconNameButton,
           variant,
           showIconInCorner = false
         }) => {
@@ -54,15 +54,15 @@ export const PopDishes = ({ options, onClick }: Props) => {
                 alignItems="center"
               >
                 <Stack>
-                  {showIconInCorner && <Icon iconName={iconName} />}
-                  <Image className="image" imageURL={imageURL} />
+                  {showIconInCorner && <Icon iconName={iconNameOptional} />}
+                  <Image className="pop-dish-image" imageURL={imageURL} />
                 </Stack>
 
                 <Stack flexDirection="column" alignItems="flex-start">
-                  <Text className="text" variant="h2">
+                  <Text className="pop-dish-text" variant="h2">
                     {text}
                   </Text>
-                  <Text className="textp">{textp}</Text>
+                  <Text className="pop-dish-textp">{textp}</Text>
                 </Stack>
 
                 <Stack gap="35px" alignItems="center">
@@ -72,7 +72,7 @@ export const PopDishes = ({ options, onClick }: Props) => {
                     <IconButton
                       size="lg"
                       variant={variant}
-                      iconName={IconNameButton}
+                      iconName={iconNameButton}
                       onClick={memorizedOnClick}
                     />
                   </Stack>

@@ -9,8 +9,8 @@ type Props = {
 export const Price = ({ value, currency }: Props) => {
   return (
     <StyledPrice>
-      <Text className="text">{symbols[currency]}</Text>
-      <Text className="text">{value}</Text>
+      <Text className="price-text">{symbols[currency]}</Text>
+      <Text className="price-text">{value}</Text>
     </StyledPrice>
   )
 }

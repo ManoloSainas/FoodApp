@@ -65,7 +65,6 @@ export const CardDetails = ({ images }: Props) => {
           <Stack flexDirection="column">
             Expiration date
             <Select
-              className="expDate"
               options={months}
               onChange={(valueM) =>
                 setExpDate(Array.isArray(valueM) ? valueM[0] : valueM)
