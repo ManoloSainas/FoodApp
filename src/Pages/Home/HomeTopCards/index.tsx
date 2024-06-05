@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { ImageTextCard } from '../../../Components/Cards/ImageTextCard'
 import { Stack } from '../../../Components/Stack'
 
 export const HomeTopCards = () => {
+  const [data, setData] = useState()
+
   return (
     <Stack gap="17px" flexWrap="wrap" width="100%">
       <ImageTextCard
