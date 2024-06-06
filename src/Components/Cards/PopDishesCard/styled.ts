@@ -4,14 +4,16 @@ export const StyledRow = styled.li<{}>`
   display: flex;
   align-items: center;
   background-color: #22222a;
-  width: 190px;
-  height: 290px;
+  width: max-content;
+  height: 200px;
   padding: 30px;
   border-radius: 40px;
+  margin-top: 70px;
 
   .pop-dish-image {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
+    margin-top: -90px;
   }
 
   .pop-dish-text {
