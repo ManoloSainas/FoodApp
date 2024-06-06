@@ -55,7 +55,7 @@ export const PopDishes = ({ options, onClick }: Props) => {
               >
                 <Stack flexDirection="column" alignItems="flex-start">
                   {showIconInCorner && <Icon iconName={iconNameOptional} />}
-                  <Stack justifyContent="center" width="190px">
+                  <Stack justifyContent="center" width="198px">
                     <Image className="pop-dish-image" imageUrl={imageURL} />
                   </Stack>
 
