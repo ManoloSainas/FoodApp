@@ -19,7 +19,7 @@ export const StyledImageText = styled.div<{
 
   .card-image {
     width: 90px;
-    height: 90px;
+    height: 70px;
   }
 
   .card-text {
