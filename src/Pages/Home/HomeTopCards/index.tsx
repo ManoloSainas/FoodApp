@@ -13,7 +13,7 @@ export const HomeTopCards = () => {
       try {
         const cards = await apiClient.get('tags')
         const newData = cards.map((item: any) => ({
-          imageURL: item.imageUrl,
+          imageUrl: item.imageUrl,
           text: item.namePlural,
           hidden: item.hidden
         }))
@@ -27,10 +27,6 @@ export const HomeTopCards = () => {
 
     fetchCards()
   }, [])
-
-  if (loading) {
-    return <div>Loading...</div>
-  }
 
   return (
     <Stack gap="17px" flexWrap="wrap" width="100%">

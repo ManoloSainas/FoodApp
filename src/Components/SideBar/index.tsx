@@ -10,7 +10,7 @@ export const SideBar = () => {
 
   return (
     <StyledSideBar>
-      <Avatar imageURL="src\assets\Images\cheong.jpg" text="Joseph Cheong" />
+      <Avatar imageUrl="src\assets\Images\cheong.jpg" text="Joseph Cheong" />
       <SideList
         onChange={(icon: IconName) => changePage(icon)}
         options={[

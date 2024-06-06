@@ -16,8 +16,8 @@ export const Price = ({ value, currency }: Props) => {
 }
 
 export const symbols = {
-  Dollar: '$',
-  Euro: '€',
+  USD: '$',
+  EUR: '€',
   PoundSterling: '£',
-  Yen: '¥'
+  JPY: '¥'
 }

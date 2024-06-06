@@ -3,14 +3,14 @@ import { Text } from '../Text'
 import { StyledAvatar } from './styled'
 
 type Props = {
-  imageURL: string
+  imageUrl: string
   text: string
 }
 
-export const Avatar = ({ imageURL, text }: Props) => {
+export const Avatar = ({ imageUrl, text }: Props) => {
   return (
     <StyledAvatar>
-      <Image className="avatar-image" imageURL={imageURL} />
+      <Image className="avatar-image" imageUrl={imageUrl} />
       <Text className="avatar-text" variant="h4">
         {text}
       </Text>

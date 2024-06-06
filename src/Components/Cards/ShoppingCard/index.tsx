@@ -11,7 +11,7 @@ import { useCallback, useMemo } from 'react'
 
 type Props = {
   options: {
-    imageURL: string
+    imageUrl: string
     text: string
     tagText: string
     currency: keyof typeof symbols
@@ -25,9 +25,9 @@ export const ShoppingCard = ({ options, onClick }: Props) => {
 
   const optionsElements = useMemo(
     () =>
-      options.map(({ imageURL, text, tagText, currency, value }) => (
-        <StyledRow key={imageURL}>
-          <Image className="shopping-image" imageURL={imageURL} />
+      options.map(({ imageUrl, text, tagText, currency, value }) => (
+        <StyledRow key={imageUrl}>
+          <Image className="shopping-image" imageUrl={imageUrl} />
           <Stack flexDirection="column">
             <Text className="shopping-text" variant="h2">
               {text}

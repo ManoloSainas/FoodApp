@@ -4,7 +4,7 @@ import { Text } from '../../Text'
 import { StyledImageText } from './styled'
 
 type CardData = {
-  imageURL: string
+  imageUrl: string
   text: string
   hidden?: boolean
 }
@@ -19,26 +19,30 @@ export const ImageTextCard = ({ cards, onClick }: Props) => {
 
   useEffect(() => {
     const firstVisibleCard = cards.find((card) => card.hidden !== true)
-    if (firstVisibleCard) setSelectedCard(firstVisibleCard.imageURL)
+    if (firstVisibleCard) setSelectedCard(firstVisibleCard.imageUrl)
   }, [cards])
+
+  const handleClick = useCallback(
+    (imageUrl: string) => {
+      setSelectedCard(imageUrl)
+      onClick(imageUrl)
+    },
+    [onClick]
+  )
 
   return (
     <>
       {cards.map((card) => {
-        const isSelected = card.imageURL === selectedCard
-        const handleClick = useCallback(() => {
-          setSelectedCard(card.imageURL)
-          onClick(card.imageURL)
-        }, [onClick, card.imageURL])
+        const isSelected = card.imageUrl === selectedCard
 
         if (card.hidden !== true)
           return (
             <StyledImageText
-              key={card.imageURL}
+              key={card.imageUrl}
               $isSelected={isSelected}
-              onClick={handleClick}
+              onClick={() => handleClick(card.imageUrl)}
             >
-              <Image className="card-image" imageURL={card.imageURL} />
+              <Image className="card-image" imageUrl={card.imageUrl} />
               <Text className="card-text">{card.text}</Text>
             </StyledImageText>
           )

@@ -53,28 +53,28 @@ export const PopDishes = ({ options, onClick }: Props) => {
                 height="max-content"
                 alignItems="center"
               >
-                <Stack>
-                  {showIconInCorner && <Icon iconName={iconNameOptional} />}
-                  <Image className="pop-dish-image" imageURL={imageURL} />
-                </Stack>
-
                 <Stack flexDirection="column" alignItems="flex-start">
+                  {showIconInCorner && <Icon iconName={iconNameOptional} />}
+                  <Stack justifyContent="center" width="185px">
+                    <Image className="pop-dish-image" imageUrl={imageURL} />
+                  </Stack>
+
                   <Text className="pop-dish-text" variant="h2">
                     {text}
                   </Text>
                   <Text className="pop-dish-textp">{textp}</Text>
-                </Stack>
 
-                <Stack gap="35px" alignItems="center">
-                  <Price currency={currency} value={value} />
-                  <Stack alignItems="center" gap="10px">
-                    <Tag text={tagText} />
-                    <IconButton
-                      size="lg"
-                      variant={variant}
-                      iconName={iconNameButton}
-                      onClick={memorizedOnClick}
-                    />
+                  <Stack gap="35px" alignItems="center">
+                    <Price currency={currency} value={value} />
+                    <Stack alignItems="center" gap="10px">
+                      <Tag text={tagText} />
+                      <IconButton
+                        size="lg"
+                        variant={variant}
+                        iconName={iconNameButton}
+                        onClick={memorizedOnClick}
+                      />
+                    </Stack>
                   </Stack>
                 </Stack>
               </Stack>

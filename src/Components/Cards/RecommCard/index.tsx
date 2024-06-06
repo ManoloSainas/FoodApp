@@ -13,7 +13,7 @@ import { Icon } from '../../Icon'
 
 type Props = {
   options: {
-    imageURL: string
+    imageUrl: string
     text: string
     textp: string
     tagText: string
@@ -33,7 +33,7 @@ export const RecommCard = ({ options, onClick }: Props) => {
     () =>
       options.map(
         ({
-          imageURL,
+          imageUrl,
           text,
           textp,
           tagText,
@@ -44,8 +44,8 @@ export const RecommCard = ({ options, onClick }: Props) => {
           iconNameButton,
           showIconInCorner = false
         }) => (
-          <StyledRow key={imageURL}>
-            <Image className="recomm-card-image" imageURL={imageURL} />
+          <StyledRow key={imageUrl}>
+            <Image className="recomm-card-image" imageUrl={imageUrl} />
             <Stack flexDirection="column">
               <Stack>
                 <Text className="recomm-card-text" variant="h2">

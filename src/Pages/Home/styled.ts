@@ -11,6 +11,7 @@ export const StyledHome = styled.div`
   // HomePopDishHeader's stack
   #stack-popdish-title {
     margin-top: 55px;
+    margin-bottom: 55px;
   }
 
   // HomePopDishHeader's title
