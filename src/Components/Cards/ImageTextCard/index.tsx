@@ -19,9 +19,7 @@ export const ImageTextCard = ({ cards, onClick }: Props) => {
 
   useEffect(() => {
     const firstVisibleCard = cards.find((card) => card.hidden !== true)
-    if (firstVisibleCard) {
-      setSelectedCard(firstVisibleCard.imageURL)
-    }
+    if (firstVisibleCard) setSelectedCard(firstVisibleCard.imageURL)
   }, [cards])
 
   return (
