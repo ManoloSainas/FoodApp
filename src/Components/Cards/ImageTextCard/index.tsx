@@ -6,6 +6,7 @@ import { StyledImageText } from './styled'
 type CardData = {
   imageURL: string
   text: string
+  hidden?: boolean
 }
 
 type Props = {
@@ -17,8 +18,9 @@ export const ImageTextCard = ({ cards, onClick }: Props) => {
   const [selectedCard, setSelectedCard] = useState<string>('')
 
   useEffect(() => {
-    if (cards.length > 0) {
-      setSelectedCard(cards[0].imageURL)
+    const firstVisibleCard = cards.find((card) => card.hidden !== true)
+    if (firstVisibleCard) {
+      setSelectedCard(firstVisibleCard.imageURL)
     }
   }, [cards])
 
@@ -31,16 +33,17 @@ export const ImageTextCard = ({ cards, onClick }: Props) => {
           onClick(card.imageURL)
         }, [onClick, card.imageURL])
 
-        return (
-          <StyledImageText
-            key={card.imageURL}
-            $isSelected={isSelected}
-            onClick={handleClick}
-          >
-            <Image className="card-image" imageURL={card.imageURL} />
-            <Text className="card-text">{card.text}</Text>
-          </StyledImageText>
-        )
+        if (card.hidden !== true)
+          return (
+            <StyledImageText
+              key={card.imageURL}
+              $isSelected={isSelected}
+              onClick={handleClick}
+            >
+              <Image className="card-image" imageURL={card.imageURL} />
+              <Text className="card-text">{card.text}</Text>
+            </StyledImageText>
+          )
       })}
     </>
   )

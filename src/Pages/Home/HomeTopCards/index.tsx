@@ -13,8 +13,9 @@ export const HomeTopCards = () => {
       try {
         const cards = await apiClient.get('tags')
         const newData = cards.map((item: any) => ({
-          imageURL: item.imageURL,
-          text: item.namePlural
+          imageURL: item.imageUrl,
+          text: item.namePlural,
+          hidden: item.hidden
         }))
         setData(newData)
       } catch (err) {
