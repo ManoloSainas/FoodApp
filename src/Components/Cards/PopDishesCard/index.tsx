@@ -64,7 +64,7 @@ export const PopDishes = ({ options, onClick }: Props) => {
                   </Text>
                   <Text className="pop-dish-textp">{textp}</Text>
 
-                  <Stack gap="35px" alignItems="center">
+                  <Stack alignItems="center" justifyContent="space-between" width="195px">
                     <Price currency={currency} value={value} />
                     <Stack alignItems="center" gap="10px">
                       <Tag text={tagText} />
