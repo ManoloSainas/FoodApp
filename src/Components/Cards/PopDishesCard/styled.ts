@@ -4,8 +4,8 @@ export const StyledRow = styled.li<{}>`
   display: flex;
   align-items: center;
   background-color: #22222a;
-  width: 180px;
-  height: 280px;
+  width: 190px;
+  height: 290px;
   padding: 30px;
   border-radius: 40px;
 
@@ -17,13 +17,15 @@ export const StyledRow = styled.li<{}>`
   .pop-dish-text {
     color: #e6e5e8;
     padding: 0%;
+    font-size: 19px;
     margin-top: 5%;
   }
 
   .pop-dish-textp {
     color: #58585c;
     overflow: hidden;
-    width: 180px;
+    font-size: 12px;
+    width: 190px;
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
