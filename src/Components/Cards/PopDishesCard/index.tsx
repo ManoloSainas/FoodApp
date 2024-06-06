@@ -66,7 +66,7 @@ export const PopDishes = ({ options, onClick }: Props) => {
 
                   <Stack alignItems="center" justifyContent="space-between" width="195px">
                     <Price currency={currency} value={value} />
-                    <Stack alignItems="center" gap="10px">
+                    <Stack alignItems="center" gap="7px">
                       <Tag text={tagText} />
                       <IconButton
                         size="lg"
