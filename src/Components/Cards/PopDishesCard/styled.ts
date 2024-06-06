@@ -37,5 +37,5 @@ export const StyledList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   padding: 0%;
-  gap: 65px;
+  gap: 53px;
 `
