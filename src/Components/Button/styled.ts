@@ -9,7 +9,7 @@ export const StyledButton = styled.button<{
   color: ${({ $variant }) => buttonVariants[$variant].color};
   border: ${({ $variant }) => buttonVariants[$variant].border};
   border-color: ${({ $variant }) => buttonVariants[$variant].borderColor};
-  padding: 11px 13px 11px 13px;
+  padding: 8px 10px 8px 10px;
   border-radius: 200px;
 `
 
