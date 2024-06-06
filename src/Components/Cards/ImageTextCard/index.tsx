@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Image } from '../../Image'
 import { Text } from '../../Text'
 import { StyledImageText } from './styled'
@@ -14,7 +14,13 @@ type Props = {
 }
 
 export const ImageTextCard = ({ cards, onClick }: Props) => {
-  const [selectedCard, setSelectedCard] = useState<string>(cards[0].imageURL)
+  const [selectedCard, setSelectedCard] = useState<string>('')
+
+  useEffect(() => {
+    if (cards.length > 0) {
+      setSelectedCard(cards[0].imageURL)
+    }
+  }, [cards])
 
   return (
     <>

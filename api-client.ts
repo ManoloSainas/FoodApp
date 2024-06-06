@@ -5,7 +5,7 @@ export const apiClient = {
   get: (resource: string) => {
     return fetch(`${BASE_URL}/${resource}`, {
       headers: {
-        Authorization: `Bearer ${TOKEN}`
+        'x-api-key': TOKEN
       }
     })
       .then((res) => res.json())
@@ -17,7 +17,7 @@ export const apiClient = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${TOKEN}`
+        'x-api-key': TOKEN
       },
       body: JSON.stringify(data)
     })
@@ -30,7 +30,7 @@ export const apiClient = {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${TOKEN}`
+        'x-api-key': TOKEN
       },
       body: JSON.stringify(data)
     })
@@ -43,7 +43,7 @@ export const apiClient = {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${TOKEN}`
+        'x-api-key': TOKEN
       },
       body: JSON.stringify(data)
     })
@@ -56,7 +56,7 @@ export const apiClient = {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${TOKEN}`
+        'x-api-key': TOKEN
       },
       body: JSON.stringify(data)
     })
