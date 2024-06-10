@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { PopDishes } from '../../../Components/Cards/PopDishesCard'
 import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../../api-client'
@@ -35,7 +35,10 @@ export const HomePopDishBody = ({ currentId }: any) => {
     fetchCards()
   }, [])
 
-  const filteredData = data.filter((value: any) => value.tags.includes(currentId))
+  const filteredData = useMemo(
+    () => data.filter((value: any) => value.tags.includes(currentId)),
+    [currentId, data]
+  )
 
   return (
     <Stack flexDirection="row">
