@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { ImageTextCard } from '../../../Components/Cards/ImageTextCard'
+import { CardData, ImageTextCard } from '../../../Components/Cards/ImageTextCard'
 import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../../api-client'
 
 export const HomeTopCards = () => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState<CardData[]>([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -17,7 +17,11 @@ export const HomeTopCards = () => {
           text: item.namePlural,
           hidden: item.hidden
         }))
-        setData(newData)
+        const finalData = [
+          { text: 'All', imageUrl: 'src/assets/Images/All.png' },
+          ...newData
+        ]
+        setData(finalData)
       } catch (err) {
         console.error(`Error: ${err}`)
       } finally {

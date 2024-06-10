@@ -3,7 +3,7 @@ import { Image } from '../../Image'
 import { Text } from '../../Text'
 import { StyledImageText } from './styled'
 
-type CardData = {
+export type CardData = {
   imageUrl: string
   text: string
   hidden?: boolean

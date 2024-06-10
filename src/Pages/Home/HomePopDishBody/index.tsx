@@ -20,7 +20,8 @@ export const HomePopDishBody = () => {
           currency: item.price.type,
           value: item.price.value,
           iconNameOptional: 'flame',
-          iconNameButton: 'Plus'
+          iconNameButton: 'Plus',
+          available: item.available
         }))
         setData(newData)
       } catch (err) {

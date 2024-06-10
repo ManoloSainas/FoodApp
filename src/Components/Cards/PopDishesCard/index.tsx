@@ -23,6 +23,7 @@ type Props = {
     iconNameButton: IconName
     variant?: keyof typeof buttonVariants
     showIconInCorner?: boolean
+    available: boolean
   }[]
   onClick: () => void
 }
@@ -43,48 +44,51 @@ export const PopDishes = ({ options, onClick }: Props) => {
           iconNameOptional,
           iconNameButton,
           variant,
-          showIconInCorner = false
+          showIconInCorner = false,
+          available
         }) => {
-          return (
-            <StyledRow key={imageURL}>
-              <Stack
-                flexDirection="column"
-                width="max-content"
-                height="max-content"
-                alignItems="center"
-              >
-                <Stack flexDirection="column" alignItems="flex-start">
-                  {showIconInCorner && <Icon iconName={iconNameOptional} />}
-                  <Stack justifyContent="center" width="198px">
-                    <Image className="pop-dish-image" imageUrl={imageURL} />
-                  </Stack>
+          if (available === true)
+            return (
+              <StyledRow key={imageURL}>
+                <Stack
+                  flexDirection="column"
+                  width="max-content"
+                  height="max-content"
+                  alignItems="center"
+                >
+                  <Stack flexDirection="column" alignItems="flex-start">
+                    {showIconInCorner && <Icon iconName={iconNameOptional} />}
+                    <Stack justifyContent="center" width="198px">
+                      <Image className="pop-dish-image" imageUrl={imageURL} />
+                    </Stack>
 
-                  <Text className="pop-dish-text" variant="h2">
-                    {text}
-                  </Text>
-                  <Text className="pop-dish-textp">{textp}</Text>
+                    <Text className="pop-dish-text" variant="h2">
+                      {text}
+                    </Text>
+                    <Text className="pop-dish-textp">{textp}</Text>
 
-                  <Stack
-                    alignItems="center"
-                    justifyContent="space-between"
-                    width="195px"
-                    gap="10px"
-                  >
-                    <Price currency={currency} value={value} />
-                    <Stack alignItems="center" gap="7px">
-                      <Tag text={tagText} />
-                      <IconButton
-                        size="lg"
-                        variant={variant}
-                        iconName={iconNameButton}
-                        onClick={memorizedOnClick}
-                      />
+                    <Stack
+                      alignItems="center"
+                      justifyContent="space-between"
+                      width="195px"
+                      gap="10px"
+                    >
+                      <Price currency={currency} value={value} />
+                      <Stack alignItems="center" gap="7px">
+                        <Tag text={tagText} />
+                        <IconButton
+                          size="lg"
+                          variant={variant}
+                          iconName={iconNameButton}
+                          onClick={memorizedOnClick}
+                          disabled={!available}
+                        />
+                      </Stack>
                     </Stack>
                   </Stack>
                 </Stack>
-              </Stack>
-            </StyledRow>
-          )
+              </StyledRow>
+            )
         }
       ),
     [options, memorizedOnClick]
