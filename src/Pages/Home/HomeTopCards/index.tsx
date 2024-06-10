@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { CardData, ImageTextCard } from '../../../Components/Cards/ImageTextCard'
 import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../../api-client'
+import { CardData, ImageTextCard } from '../../../Components/Cards/ImageTextCard'
 
 export const HomeTopCards = () => {
   const [data, setData] = useState<CardData[]>([])
@@ -15,10 +15,11 @@ export const HomeTopCards = () => {
         const newData = cards.map((item: any) => ({
           imageUrl: item.imageUrl,
           text: item.namePlural,
-          hidden: item.hidden
+          hidden: item.hidden,
+          id: item.id
         }))
         const finalData = [
-          { text: 'All', imageUrl: 'src/assets/Images/All.png' },
+          { text: 'All', imageUrl: 'src/assets/Images/All.png', id: 'all' },
           ...newData
         ]
         setData(finalData)

@@ -7,11 +7,12 @@ export type CardData = {
   imageUrl: string
   text: string
   hidden?: boolean
+  id: string
 }
 
 type Props = {
   cards: CardData[]
-  onClick: (imageURL: string) => void
+  onClick: (id: string) => void
 }
 
 export const ImageTextCard = ({ cards, onClick }: Props) => {
@@ -23,9 +24,9 @@ export const ImageTextCard = ({ cards, onClick }: Props) => {
   }, [cards])
 
   const handleClick = useCallback(
-    (imageUrl: string) => {
+    (imageUrl: string, id: string) => {
       setSelectedCard(imageUrl)
-      onClick(imageUrl)
+      onClick(id)
     },
     [onClick]
   )
@@ -40,7 +41,7 @@ export const ImageTextCard = ({ cards, onClick }: Props) => {
             <StyledImageText
               key={card.imageUrl}
               $isSelected={isSelected}
-              onClick={() => handleClick(card.imageUrl)}
+              onClick={() => handleClick(card.imageUrl, card.id)}
             >
               <Image className="card-image" imageUrl={card.imageUrl} />
               <Text className="card-text">{card.text}</Text>
