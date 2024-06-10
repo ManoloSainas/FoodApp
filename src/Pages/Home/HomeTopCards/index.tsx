@@ -3,7 +3,7 @@ import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../../api-client'
 import { CardData, ImageTextCard } from '../../../Components/Cards/ImageTextCard'
 
-export const HomeTopCards = () => {
+export const HomeTopCards = ({ updateId }: any) => {
   const [data, setData] = useState<CardData[]>([])
   const [loading, setLoading] = useState(false)
 
@@ -35,7 +35,7 @@ export const HomeTopCards = () => {
 
   return (
     <Stack gap="17px" flexWrap="wrap" width="100%">
-      <ImageTextCard onClick={(value) => console.log(value)} cards={data} />
+      <ImageTextCard onClick={(value) => updateId(value)} cards={data} />
     </Stack>
   )
 }

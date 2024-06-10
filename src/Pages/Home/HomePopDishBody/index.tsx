@@ -3,7 +3,7 @@ import { PopDishes } from '../../../Components/Cards/PopDishesCard'
 import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../../api-client'
 
-export const HomePopDishBody = () => {
+export const HomePopDishBody = ({ currentId }: any) => {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
 
