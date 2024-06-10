@@ -6,6 +6,9 @@ import { SideBar } from '../SideBar'
 
 const LayoutComponent = () => {
   const [text, setText] = useState('')
+  console.log('testo corrente:', text)
+
+  // use outlet context!!!
 
   return (
     <StyledLayout>
