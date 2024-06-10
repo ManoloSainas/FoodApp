@@ -1,16 +1,18 @@
-import { memo } from 'react'
+import { memo, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import { StyledLayout, StyledMain } from './styled'
 import { Header } from '../Header'
 import { SideBar } from '../SideBar'
 
 const LayoutComponent = () => {
+  const [text, setText] = useState('')
+
   return (
     <StyledLayout>
-      <Header />
+      <Header setText={setText} />
       <StyledMain>
         <SideBar />
-        <Outlet />
+        <Outlet text={text} />
       </StyledMain>
     </StyledLayout>
   )
