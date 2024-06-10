@@ -24,6 +24,7 @@ type Props = {
     variant?: keyof typeof buttonVariants
     showIconInCorner?: boolean
     available: boolean
+    tags: string[]
   }[]
   onClick: () => void
 }

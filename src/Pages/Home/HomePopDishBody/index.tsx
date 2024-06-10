@@ -4,7 +4,7 @@ import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../../api-client'
 
 export const HomePopDishBody = ({ currentId }: any) => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState<any>([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -21,7 +21,8 @@ export const HomePopDishBody = ({ currentId }: any) => {
           value: item.price.value,
           iconNameOptional: 'flame',
           iconNameButton: 'Plus',
-          available: item.available
+          available: item.available,
+          tags: item.tags
         }))
         setData(newData)
       } catch (err) {
@@ -34,9 +35,14 @@ export const HomePopDishBody = ({ currentId }: any) => {
     fetchCards()
   }, [])
 
+  const filteredData = data.filter((value: any) => value.tags.includes(currentId))
+
   return (
     <Stack flexDirection="row">
-      <PopDishes options={data} onClick={() => console.log('Clicked!')}></PopDishes>
+      <PopDishes
+        options={filteredData.length > 0 ? filteredData : data}
+        onClick={() => console.log('Clicked!')}
+      ></PopDishes>
     </Stack>
   )
 }
