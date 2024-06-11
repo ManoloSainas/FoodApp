@@ -4,7 +4,7 @@ import { IconName } from '../Icon/config'
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import { Button } from '../Button'
 import { StyledIconButton } from './styled'
-import { PropsWithChildren, useState } from 'react'
+import { PropsWithChildren, useCallback, useState } from 'react'
 
 type Props = PropsWithChildren<{
   onClick: () => void
@@ -26,7 +26,7 @@ export const IconButton = ({
   const [buttonVariant, setButtonVariant] = useState(variant)
   const [iconVariant, setIconVariant] = useState(iconName)
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     if (variant === 'primary' && iconName === 'Plus') {
       onClick()
       setButtonVariant('redIcon')
@@ -37,7 +37,7 @@ export const IconButton = ({
         setIconVariant('Plus')
       }, 2000)
     }
-  }
+  }, [variant, iconName, onClick])
 
   return (
     <StyledIconButton>
