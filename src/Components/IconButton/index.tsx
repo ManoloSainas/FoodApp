@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import { Icon } from '../Icon'
 import { ButtonVariant } from '../Button/styled'
 import { IconName } from '../Icon/config'
@@ -24,11 +25,25 @@ export const IconButton = ({
   color,
   size
 }: Props) => {
+  const [buttonVariant, setButtonVariant] = useState(variant)
+  const [iconVariant, setIconVariant] = useState(iconName)
+
+  const handleClick = () => {
+    onClick()
+    setButtonVariant('redIcon')
+    setIconVariant('Check')
+
+    setTimeout(() => {
+      setButtonVariant('primary')
+      setIconVariant('Plus')
+    }, 2000)
+  }
+
   return (
     <StyledIconButton>
-      <Button onClick={onClick} disabled={disabled} variant={variant}>
+      <Button onClick={handleClick} disabled={disabled} variant={buttonVariant}>
         {children}
-        <Icon iconName={iconName} color={color} size={size} />
+        <Icon iconName={iconVariant} color={color} size={size} />
       </Button>
     </StyledIconButton>
   )
