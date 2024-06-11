@@ -5,17 +5,12 @@ import { Header } from '../Header'
 import { SideBar } from '../SideBar'
 
 const LayoutComponent = () => {
-  const [text, setText] = useState('')
-  console.log('testo corrente:', text)
-
-  // use outlet context!!!
-
   return (
     <StyledLayout>
-      <Header setText={setText} />
+      <Header />
       <StyledMain>
         <SideBar />
-        <Outlet text={text} />
+        <Outlet />
       </StyledMain>
     </StyledLayout>
   )
