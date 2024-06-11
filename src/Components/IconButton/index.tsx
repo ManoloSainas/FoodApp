@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
 import { Icon } from '../Icon'
 import { ButtonVariant } from '../Button/styled'
 import { IconName } from '../Icon/config'
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import { Button } from '../Button'
 import { StyledIconButton } from './styled'
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useState } from 'react'
 
 type Props = PropsWithChildren<{
   onClick: () => void
@@ -15,7 +14,6 @@ type Props = PropsWithChildren<{
   color?: string
   size?: FontAwesomeIconProps['size']
 }>
-
 export const IconButton = ({
   onClick,
   disabled,
@@ -29,14 +27,16 @@ export const IconButton = ({
   const [iconVariant, setIconVariant] = useState(iconName)
 
   const handleClick = () => {
-    onClick()
-    setButtonVariant('redIcon')
-    setIconVariant('Check')
+    if (variant === 'primary' && iconName === 'Plus') {
+      onClick()
+      setButtonVariant('redIcon')
+      setIconVariant('Check')
 
-    setTimeout(() => {
-      setButtonVariant('primary')
-      setIconVariant('Plus')
-    }, 2000)
+      setTimeout(() => {
+        setButtonVariant('primary')
+        setIconVariant('Plus')
+      }, 2000)
+    }
   }
 
   return (
