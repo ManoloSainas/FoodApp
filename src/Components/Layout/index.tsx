@@ -1,4 +1,4 @@
-import { memo, useState } from 'react'
+import { memo } from 'react'
 import { Outlet } from 'react-router-dom'
 import { StyledLayout, StyledMain } from './styled'
 import { Header } from '../Header'
