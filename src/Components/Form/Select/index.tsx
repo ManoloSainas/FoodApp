@@ -1,10 +1,16 @@
 import { ChangeEvent, useCallback } from 'react'
 import { StyledSelect } from './styled'
 
-type Props = {
+export type deliveryType = {
+  id: string
+  value: string
+  label: string
+}
+
+export type Props = {
   onChange: (e: string | string[]) => void
   value?: string | string[]
-  options: { id: string; value: string; label: string }[]
+  deliveries: deliveryType[]
   disabled?: boolean
   multiple?: boolean
 }
@@ -12,7 +18,7 @@ type Props = {
 export const Select = ({
   onChange,
   value,
-  options,
+  deliveries,
   disabled,
   multiple = false
 }: Props) => {
@@ -37,7 +43,7 @@ export const Select = ({
       disabled={disabled}
       multiple={multiple}
     >
-      {options.map(({ id, value, label }) => (
+      {deliveries.map(({ id, label }) => (
         <option key={id} value={id} id={id}>
           {label}
         </option>

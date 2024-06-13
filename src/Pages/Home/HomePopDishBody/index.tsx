@@ -27,7 +27,7 @@ type fetchedProduct = {
 
 export type Props = {
   currentId: string
-  currentDelivery: string
+  currentDelivery: string | string[]
 }
 
 export const HomePopDishBody = ({ currentId, currentDelivery }: Props) => {
@@ -65,10 +65,20 @@ export const HomePopDishBody = ({ currentId, currentDelivery }: Props) => {
 
   const filteredData = useMemo(
     () =>
-      data.filter(
-        (element: product) =>
-          element.tags.includes(currentId) && element.delivery.includes(currentDelivery)
-      ),
+      data.filter((element: product) => {
+        const tagMatch = element.tags.includes(currentId)
+
+        let deliveryMatch = false
+
+        deliveryMatch =
+          typeof currentDelivery === 'string'
+            ? element.delivery.includes(currentDelivery)
+            : (deliveryMatch = currentDelivery.some((delivery) =>
+                element.delivery.includes(delivery)
+              ))
+
+        return tagMatch && deliveryMatch
+      }),
     [currentId, data, currentDelivery]
   )
 

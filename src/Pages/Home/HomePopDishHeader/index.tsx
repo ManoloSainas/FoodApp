@@ -5,7 +5,16 @@ import { Stack } from '../../../Components/Stack'
 import { Text } from '../../../Components/Text'
 import { apiClient } from '../../../../api-client'
 
-export const HomePopDishHeader = ({ updateDelivery }: any) => {
+export type fetchedDelivery = {
+  id: string
+  name: string
+}
+
+export type Props = {
+  updateDelivery: React.Dispatch<React.SetStateAction<string | string[]>>
+}
+
+export const HomePopDishHeader = ({ updateDelivery }: Props) => {
   const [delivery, setDelivery] = useState<
     { id: string; value: string; label: string }[]
   >([{ id: '', value: '', label: 'Delivery' }])
@@ -16,7 +25,7 @@ export const HomePopDishHeader = ({ updateDelivery }: any) => {
       try {
         setLoading(true)
         const deliveryValues = await apiClient.get('deliveries')
-        const newData = deliveryValues.map((item: any) => ({
+        const newData = deliveryValues.map((item: fetchedDelivery) => ({
           id: item.id,
           value: item.name,
           label: item.name
@@ -40,7 +49,7 @@ export const HomePopDishHeader = ({ updateDelivery }: any) => {
 
       <Stack alignItems="center" gap="25px">
         <Stack gap="5px">
-          <Select onChange={(value) => updateDelivery(value)} options={delivery} />
+          <Select onChange={(value) => updateDelivery(value)} deliveries={delivery} />
           {/* <Select
             onChange={(value) => console.log(value)}
             options={[{ value: 'Ingredients', label: 'Ingredients' }]}

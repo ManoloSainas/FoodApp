@@ -7,7 +7,7 @@ import { StyledHome } from './styled'
 
 export const Home = () => {
   const [selectedId, setSelectedId] = useState<string>('')
-  const [selectedDelivery, setSelectedDelivery] = useState<string>('')
+  const [selectedDelivery, setSelectedDelivery] = useState<string | string[]>('')
 
   return (
     <StyledHome>
