@@ -42,21 +42,23 @@ export const HomePopDishHeader = ({ updateDelivery }: Props) => {
   }, [])
 
   return (
-    <Stack id="stack-popdish-title" alignItems="center" gap="330px">
+    <Stack id="stack-popdish-title" alignItems="center" gap="300px">
       <Text className="popdish-title" variant="h1">
         Popular dishes
       </Text>
 
-      <Stack alignItems="center" gap="25px">
-        <Stack gap="5px">
+      <Stack alignItems="center" gap="20px">
+        <Stack gap="1px">
           <Select onChange={(value) => updateDelivery(value)} deliveries={delivery} />
           {/* <Select
             onChange={(value) => console.log(value)}
-            options={[{ value: 'Ingredients', label: 'Ingredients' }]}
+            deliveries={[
+              { id: 'Ingredients', value: 'Ingredients', label: 'Ingredients' }
+            ]}
           />
           <Select
             onChange={(value) => console.log(value)}
-            options={[{ value: 'Price', label: 'Price' }]}
+            deliveries={[{ id: 'Price', value: 'Price', label: 'Price' }]}
           /> */}
         </Stack>
 

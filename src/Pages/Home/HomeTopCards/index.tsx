@@ -16,7 +16,9 @@ export type Props = {
 }
 
 export const HomeTopCards = ({ updateId }: Props) => {
-  const [data, setData] = useState<CardData[]>([])
+  const [data, setData] = useState<CardData[]>([
+    { text: 'All', imageUrl: 'src/assets/Images/All.png', id: 'All' }
+  ])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -30,10 +32,7 @@ export const HomeTopCards = ({ updateId }: Props) => {
           hidden: item.hidden,
           id: item.id
         }))
-        const finalData = [
-          { text: 'All', imageUrl: 'src/assets/Images/All.png', id: 'All' },
-          ...newData
-        ]
+        const finalData = [...data, ...newData]
         setData(finalData)
       } catch (err) {
         console.error(`Error: ${err}`)
