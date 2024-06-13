@@ -19,7 +19,7 @@ export const HomeTopCards = ({ updateId }: any) => {
           id: item.id
         }))
         const finalData = [
-          { text: 'All', imageUrl: 'src/assets/Images/All.png', id: 'all' },
+          { text: 'All', imageUrl: 'src/assets/Images/All.png', id: '' },
           ...newData
         ]
         setData(finalData)
