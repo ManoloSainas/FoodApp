@@ -4,7 +4,7 @@ import { StyledSelect } from './styled'
 type Props = {
   onChange: (e: string | string[]) => void
   value?: string | string[]
-  options: { value: string; label: string }[]
+  options: { id: string; value: string; label: string }[]
   disabled?: boolean
   multiple?: boolean
 }
@@ -37,8 +37,8 @@ export const Select = ({
       disabled={disabled}
       multiple={multiple}
     >
-      {options.map(({ value, label }) => (
-        <option key={value} value={value}>
+      {options.map(({ id, value, label }) => (
+        <option key={id} value={value} id={id}>
           {label}
         </option>
       ))}
