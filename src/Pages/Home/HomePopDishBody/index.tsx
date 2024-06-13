@@ -66,7 +66,7 @@ export const HomePopDishBody = ({ currentId, currentDelivery }: Props) => {
   const filteredData = useMemo(
     () =>
       data.filter((element: product) => {
-        const tagMatch = element.tags.includes(currentId)
+        const tagMatch = element.tags.includes(currentId) || currentId === 'All'
 
         let deliveryMatch = false
 
