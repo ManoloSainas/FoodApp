@@ -73,9 +73,7 @@ export const HomePopDishBody = ({ currentId, currentDelivery }: Props) => {
         deliveryMatch =
           typeof currentDelivery === 'string'
             ? element.delivery.includes(currentDelivery)
-            : (deliveryMatch = currentDelivery.some((delivery) =>
-                element.delivery.includes(delivery)
-              ))
+            : currentDelivery.some((delivery) => element.delivery.includes(delivery))
 
         return tagMatch && deliveryMatch
       }),
