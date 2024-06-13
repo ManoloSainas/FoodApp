@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
-import { PopDishes } from '../../../Components/Cards/PopDishesCard'
+import { PopDishes, product } from '../../../Components/Cards/PopDishesCard'
 import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../../api-client'
 
 export const HomePopDishBody = ({ currentId, currentDelivery }: any) => {
-  const [data, setData] = useState<any>([])
+  const [data, setData] = useState<product[]>([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export const HomePopDishBody = ({ currentId, currentDelivery }: any) => {
     () =>
       data.filter(
         (value: any) =>
-          value.tags.includes(currentId) || value.delivery.includes(currentDelivery)
+          value.tags.includes(currentId) && value.delivery.includes(currentDelivery)
       ),
     [currentId, data, currentDelivery]
   )
@@ -48,7 +48,7 @@ export const HomePopDishBody = ({ currentId, currentDelivery }: any) => {
   return (
     <Stack flexDirection="row">
       <PopDishes
-        options={filteredData.length > 0 ? filteredData : data}
+        products={filteredData.length > 0 ? filteredData : data}
         onClick={() => console.log('Clicked!')}
       ></PopDishes>
     </Stack>

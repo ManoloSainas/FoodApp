@@ -11,31 +11,33 @@ import { StyledList, StyledRow } from './styled'
 import { symbols } from '../../Price'
 import { useCallback, useMemo } from 'react'
 
+export type product = {
+  imageURL: string
+  text: string
+  textp: string
+  tagText: string
+  currency: keyof typeof symbols
+  value: string
+  iconNameOptional: IconName
+  iconNameButton: IconName
+  variant?: keyof typeof buttonVariants
+  showIconInCorner?: boolean
+  available: boolean
+  tags: string[]
+  delivery: string
+}
+
 type Props = {
-  options: {
-    imageURL: string
-    text: string
-    textp: string
-    tagText: string
-    currency: keyof typeof symbols
-    value: string
-    iconNameOptional: IconName
-    iconNameButton: IconName
-    variant?: keyof typeof buttonVariants
-    showIconInCorner?: boolean
-    available: boolean
-    tags: string[]
-    delivery: string
-  }[]
+  products: product[]
   onClick: () => void
 }
 
-export const PopDishes = ({ options, onClick }: Props) => {
+export const PopDishes = ({ products, onClick }: Props) => {
   const memorizedOnClick = useCallback(onClick, [])
 
   const optionsElements = useMemo(
     () =>
-      options.map(
+      products.map(
         ({
           imageURL,
           text,
@@ -93,7 +95,7 @@ export const PopDishes = ({ options, onClick }: Props) => {
             )
         }
       ),
-    [options, memorizedOnClick]
+    [products, memorizedOnClick]
   )
 
   return <StyledList>{optionsElements}</StyledList>

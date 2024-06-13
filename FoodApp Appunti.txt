@@ -66,3 +66,5 @@ https://react.dev/learn/react-developer-tools
 
 // Gestire più schermate
 https://reactrouter.com/en/main 
+
+Generics <> e template literals ``
