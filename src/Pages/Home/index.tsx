@@ -6,7 +6,7 @@ import { HomeTopCards } from './HomeTopCards'
 import { StyledHome } from './styled'
 
 export const Home = () => {
-  const [selectedId, setSelectedId] = useState<string>('')
+  const [selectedId, setSelectedId] = useState<string>('All')
   const [selectedDelivery, setSelectedDelivery] = useState<string | string[]>('')
 
   return (
