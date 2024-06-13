@@ -36,8 +36,6 @@ export const HomePopDishBody = ({ currentId, currentDelivery }: any) => {
     fetchCards()
   }, [])
 
-  console.log('the delivery:', currentDelivery)
-
   const filteredData = useMemo(
     () =>
       data.filter(
