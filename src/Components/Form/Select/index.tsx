@@ -38,7 +38,7 @@ export const Select = ({
       multiple={multiple}
     >
       {options.map(({ id, value, label }) => (
-        <option key={id} value={value} id={id}>
+        <option key={id} value={id} id={id}>
           {label}
         </option>
       ))}

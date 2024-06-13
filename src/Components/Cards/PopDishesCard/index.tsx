@@ -25,6 +25,7 @@ type Props = {
     showIconInCorner?: boolean
     available: boolean
     tags: string[]
+    delivery: string
   }[]
   onClick: () => void
 }

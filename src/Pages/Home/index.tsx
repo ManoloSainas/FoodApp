@@ -7,13 +7,14 @@ import { StyledHome } from './styled'
 
 export const Home = () => {
   const [selectedId, setSelectedId] = useState('')
+  const [selectedDelivery, setSelectedDelivery] = useState('')
 
   return (
     <StyledHome>
       <HomeTopCards updateId={setSelectedId} />
       <Stack flexDirection="column">
-        <HomePopDishHeader />
-        <HomePopDishBody currentId={selectedId} />
+        <HomePopDishHeader updateDelivery={setSelectedDelivery} />
+        <HomePopDishBody currentId={selectedId} currentDelivery={selectedDelivery} />
       </Stack>
     </StyledHome>
   )

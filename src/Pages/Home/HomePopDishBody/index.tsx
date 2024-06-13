@@ -3,7 +3,7 @@ import { PopDishes } from '../../../Components/Cards/PopDishesCard'
 import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../../api-client'
 
-export const HomePopDishBody = ({ currentId }: any) => {
+export const HomePopDishBody = ({ currentId, currentDelivery }: any) => {
   const [data, setData] = useState<any>([])
   const [loading, setLoading] = useState(false)
 
@@ -22,7 +22,8 @@ export const HomePopDishBody = ({ currentId }: any) => {
           iconNameOptional: 'flame',
           iconNameButton: 'Plus',
           available: item.available,
-          tags: item.tags
+          tags: item.tags,
+          delivery: item.delivery
         }))
         setData(newData)
       } catch (err) {
@@ -35,9 +36,15 @@ export const HomePopDishBody = ({ currentId }: any) => {
     fetchCards()
   }, [])
 
+  console.log('the delivery:', currentDelivery)
+
   const filteredData = useMemo(
-    () => data.filter((value: any) => value.tags.includes(currentId)),
-    [currentId, data]
+    () =>
+      data.filter(
+        (value: any) =>
+          value.tags.includes(currentId) || value.delivery.includes(currentDelivery)
+      ),
+    [currentId, data, currentDelivery]
   )
 
   return (

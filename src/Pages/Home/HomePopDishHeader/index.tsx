@@ -5,7 +5,7 @@ import { Stack } from '../../../Components/Stack'
 import { Text } from '../../../Components/Text'
 import { apiClient } from '../../../../api-client'
 
-export const HomePopDishHeader = () => {
+export const HomePopDishHeader = ({ updateDelivery }: any) => {
   const [delivery, setDelivery] = useState<
     { id: string; value: string; label: string }[]
   >([{ id: '', value: '', label: 'Delivery' }])
@@ -40,7 +40,7 @@ export const HomePopDishHeader = () => {
 
       <Stack alignItems="center" gap="25px">
         <Stack gap="5px">
-          <Select onChange={(value) => console.log(value)} options={delivery} />
+          <Select onChange={(value) => updateDelivery(value)} options={delivery} />
           {/* <Select
             onChange={(value) => console.log(value)}
             options={[{ value: 'Ingredients', label: 'Ingredients' }]}
