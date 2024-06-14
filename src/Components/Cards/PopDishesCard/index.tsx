@@ -25,6 +25,7 @@ export type product = {
   available: boolean
   tags: string[]
   delivery: string
+  price: { type: keyof typeof symbols; value: string }
 }
 
 type Props = {

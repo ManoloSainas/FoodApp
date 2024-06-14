@@ -28,9 +28,10 @@ type fetchedProduct = {
 export type Props = {
   currentId: string
   currentDelivery: string | string[]
+  currentPrice: string | string[]
 }
 
-export const HomePopDishBody = ({ currentId, currentDelivery }: Props) => {
+export const HomePopDishBody = ({ currentId, currentDelivery, currentPrice }: Props) => {
   const [data, setData] = useState<product[]>([])
   const [loading, setLoading] = useState(false)
 
@@ -75,9 +76,16 @@ export const HomePopDishBody = ({ currentId, currentDelivery }: Props) => {
             ? element.delivery.includes(currentDelivery)
             : currentDelivery.some((delivery) => element.delivery.includes(delivery))
 
-        return tagMatch && deliveryMatch
+        let priceMatch = false
+
+        priceMatch =
+          typeof currentPrice === 'string'
+            ? element.currency.includes(currentPrice)
+            : currentPrice.some((price) => element.currency.includes(price))
+
+        return tagMatch && deliveryMatch && priceMatch
       }),
-    [currentId, data, currentDelivery]
+    [currentId, data, currentDelivery, currentPrice]
   )
 
   return (
