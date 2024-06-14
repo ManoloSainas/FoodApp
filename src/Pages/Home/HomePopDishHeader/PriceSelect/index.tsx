@@ -29,8 +29,8 @@ type fetchedProduct = {
 }
 
 export const PriceSelect = ({ updatePrice }: Props) => {
-  const [price, setPrice] = useState<{ value: string; label: string }[]>([
-    { value: '', label: 'Price' }
+  const [price, setPrice] = useState<{ id: string; value: string; label: string }[]>([
+    { id: '', value: '', label: 'Price' }
   ])
 
   const [loading, setLoading] = useState(false)
@@ -46,6 +46,7 @@ export const PriceSelect = ({ updatePrice }: Props) => {
               return [
                 ...acc,
                 {
+                  id: curr.price.type,
                   value: curr.price.value.toString(10),
                   label: curr.price.type
                 }
@@ -62,9 +63,6 @@ export const PriceSelect = ({ updatePrice }: Props) => {
         setLoading(false)
       }
     }
-
-    // value: item.price.value,
-    //       label: item.price.type
 
     fetchPrice()
   }, [])

@@ -2,7 +2,7 @@ import { ChangeEvent, useCallback } from 'react'
 import { StyledSelect } from './styled'
 
 export type element = {
-  id?: string
+  id: string
   value: string
   label: string
 }
@@ -44,7 +44,7 @@ export const Select = ({
       multiple={multiple}
     >
       {elements.map(({ id, label }) => (
-        <option key={label} value={value} id={id}>
+        <option key={label} value={id} id={id}>
           {label}
         </option>
       ))}
