@@ -91,7 +91,7 @@ export const HomePopDishBody = ({ currentId, currentDelivery, currentPrice }: Pr
   return (
     <Stack flexDirection="row">
       <PopDishes
-        products={filteredData.length > 0 ? filteredData : data}
+        products={filteredData.length > 0 ? filteredData : []}
         onClick={() => console.log('Clicked!')}
       ></PopDishes>
     </Stack>
