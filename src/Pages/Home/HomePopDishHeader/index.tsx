@@ -18,6 +18,7 @@ export const HomePopDishHeader = ({ updateDelivery }: Props) => {
   const [delivery, setDelivery] = useState<
     { id: string; value: string; label: string }[]
   >([{ id: '', value: '', label: 'Delivery' }])
+
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -50,7 +51,7 @@ export const HomePopDishHeader = ({ updateDelivery }: Props) => {
       <Stack alignItems="center" gap="20px">
         <Stack gap="1px">
           <Select onChange={(value) => updateDelivery(value)} deliveries={delivery} />
-          {/* <Select
+          <Select
             onChange={(value) => console.log(value)}
             deliveries={[
               { id: 'Ingredients', value: 'Ingredients', label: 'Ingredients' }
@@ -59,7 +60,7 @@ export const HomePopDishHeader = ({ updateDelivery }: Props) => {
           <Select
             onChange={(value) => console.log(value)}
             deliveries={[{ id: 'Price', value: 'Price', label: 'Price' }]}
-          /> */}
+          />
         </Stack>
 
         <Stack gap="5px">
