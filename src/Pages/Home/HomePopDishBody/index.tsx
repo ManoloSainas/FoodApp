@@ -3,7 +3,7 @@ import { PopDishes, product } from '../../../Components/Cards/PopDishesCard'
 import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../../api-client'
 
-type fetchedProduct = {
+type FetchedProduct = {
   id: string
   name: string
   description: string
@@ -40,7 +40,7 @@ export const HomePopDishBody = ({ currentId, currentDelivery, currentPrice }: Pr
       try {
         setLoading(true)
         const cards = await apiClient.get('products')
-        const newData = cards.map((item: fetchedProduct) => ({
+        const newData = cards.map((item: FetchedProduct) => ({
           imageURL: item.imageUrl,
           text: item.name,
           textp: item.description,

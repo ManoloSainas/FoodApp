@@ -6,7 +6,7 @@ export type Props = {
   updatePrice: React.Dispatch<React.SetStateAction<string | string[]>>
 }
 
-type fetchedProduct = {
+type FetchedProduct = {
   id: string
   name: string
   description: string
@@ -41,7 +41,7 @@ export const PriceSelect = ({ updatePrice }: Props) => {
         setLoading(true)
         const deliveryValues = await apiClient.get('products')
         const newData = deliveryValues.reduce(
-          (acc: { value: string; label: string }[], curr: fetchedProduct) => {
+          (acc: { value: string; label: string }[], curr: FetchedProduct) => {
             if (!acc.some((item) => item.label === curr.price.type)) {
               return [
                 ...acc,

@@ -6,7 +6,7 @@ export type Props = {
   updateDelivery: React.Dispatch<React.SetStateAction<string | string[]>>
 }
 
-export type fetchedDelivery = {
+export type FetchedDelivery = {
   id: string
   name: string
 }
@@ -23,7 +23,7 @@ export const DeliverySelect = ({ updateDelivery }: Props) => {
       try {
         setLoading(true)
         const deliveryValues = await apiClient.get('deliveries')
-        const newData = deliveryValues.map((item: fetchedDelivery) => ({
+        const newData = deliveryValues.map((item: FetchedDelivery) => ({
           id: item.id,
           value: item.name,
           label: item.name
