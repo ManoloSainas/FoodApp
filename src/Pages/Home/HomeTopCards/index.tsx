@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../../api-client'
 import { CardData, ImageTextCard } from '../../../Components/Cards/ImageTextCard'
+import { Text } from '../../../Components/Text'
 
 type fetchedTag = {
   id: string
@@ -43,6 +44,13 @@ export const HomeTopCards = ({ updateId }: Props) => {
 
     fetchCards()
   }, [])
+
+  if (loading)
+    return (
+      <Text variant="h1" color="red">
+        Loading...
+      </Text>
+    )
 
   return (
     <Stack gap="17px" flexWrap="wrap" width="100%">

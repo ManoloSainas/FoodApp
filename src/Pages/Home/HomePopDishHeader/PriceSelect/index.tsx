@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Select } from '../../../../Components/Form/Select'
 import { apiClient } from '../../../../../api-client'
 import { symbols } from '../../../../Components/Price'
+import { Text } from '../../../../Components/Text'
 
 export type Props = {
   updatePrice: React.Dispatch<React.SetStateAction<string | string[]>>
@@ -74,6 +75,13 @@ export const PriceSelect = ({ updatePrice }: Props) => {
 
     fetchPrice()
   }, [])
+
+  if (loading)
+    return (
+      <Text variant="h1" color="red">
+        Loading...
+      </Text>
+    )
 
   return <Select onChange={(value) => updatePrice(value)} elements={price} />
 }

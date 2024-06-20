@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { apiClient } from '../../../../../api-client'
 import { Select } from '../../../../Components/Form/Select'
+import { Text } from '../../../../Components/Text'
 
 export type Props = {
   updateDelivery: React.Dispatch<React.SetStateAction<string | string[]>>
@@ -38,6 +39,13 @@ export const DeliverySelect = ({ updateDelivery }: Props) => {
 
     fetchDelivery()
   }, [])
+
+  if (loading)
+    return (
+      <Text variant="h1" color="red">
+        Loading...
+      </Text>
+    )
 
   return <Select onChange={(value) => updateDelivery(value)} elements={delivery} />
 }

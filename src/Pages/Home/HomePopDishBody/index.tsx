@@ -4,6 +4,7 @@ import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../../api-client'
 import { symbols } from '../../../Components/Price'
 import { IconName } from '../../../Components/Icon/config'
+import { Text } from '../../../Components/Text'
 
 type FetchedProduct = {
   id: string
@@ -90,6 +91,13 @@ export const HomePopDishBody = ({ currentId, currentDelivery, currentPrice }: Pr
       }),
     [currentId, data, currentDelivery, currentPrice]
   )
+
+  if (loading)
+    return (
+      <Text variant="h1" color="red">
+        Loading...
+      </Text>
+    )
 
   return (
     <Stack flexDirection="row">
