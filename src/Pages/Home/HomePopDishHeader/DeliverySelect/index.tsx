@@ -22,7 +22,7 @@ export const DeliverySelect = ({ updateDelivery }: Props) => {
     const fetchDelivery = async () => {
       try {
         setLoading(true)
-        const deliveryValues = await apiClient.get('deliveries')
+        const deliveryValues: FetchedDelivery[] = await apiClient.get('deliveries')
         const newData = deliveryValues.map((item: FetchedDelivery) => ({
           id: item.id,
           value: item.name,
