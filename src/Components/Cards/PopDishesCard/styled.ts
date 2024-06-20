@@ -11,14 +11,14 @@ export const StyledRow = styled.li<{}>`
   margin-top: 70px;
 
   .pop-dish-image {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     margin-top: -90px;
   }
 
   .pop-dish-image-drink {
     width: 65px;
-    height: 140px;
+    height: 130px;
     margin-top: -90px;
   }
 
