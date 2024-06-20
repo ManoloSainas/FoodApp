@@ -11,6 +11,8 @@ import { StyledList, StyledRow } from './styled'
 import { symbols } from '../../Price'
 import { useCallback, useMemo } from 'react'
 
+// 534ed6f7-be81-4af3-9c27-ebb8acd2e946
+
 export type product = {
   imageURL: string
   text: string
@@ -50,7 +52,8 @@ export const PopDishes = ({ products, onClick }: Props) => {
           iconNameButton,
           variant,
           showIconInCorner = false,
-          available
+          available,
+          tags
         }) => {
           if (available === true)
             return (
@@ -64,7 +67,13 @@ export const PopDishes = ({ products, onClick }: Props) => {
                   <Stack flexDirection="column" alignItems="flex-start">
                     {showIconInCorner && <Icon iconName={iconNameOptional} />}
                     <Stack justifyContent="center" width="198px">
-                      <Image className="pop-dish-image" imageUrl={imageURL} />
+                      {tags.includes('534ed6f7-be81-4af3-9c27-ebb8acd2e946') &&
+                      text !== 'Pepsi' &&
+                      text !== 'Fanta' ? (
+                        <Image className="pop-dish-image-drink" imageUrl={imageURL} />
+                      ) : (
+                        <Image className="pop-dish-image" imageUrl={imageURL} />
+                      )}
                     </Stack>
 
                     <Text className="pop-dish-text" variant="h2">

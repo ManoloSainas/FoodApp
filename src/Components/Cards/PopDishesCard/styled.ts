@@ -16,6 +16,12 @@ export const StyledRow = styled.li<{}>`
     margin-top: -90px;
   }
 
+  .pop-dish-image-drink {
+    width: 65px;
+    height: 140px;
+    margin-top: -90px;
+  }
+
   .pop-dish-text {
     color: #e6e5e8;
     padding: 0%;
