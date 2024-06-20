@@ -25,7 +25,7 @@ export const HomeTopCards = ({ updateId }: Props) => {
     const fetchCards = async () => {
       setLoading(true)
       try {
-        const cards = await apiClient.get('tags')
+        const cards: fetchedTag[] = await apiClient.get('tags')
         const newData = cards.map((item: fetchedTag) => ({
           imageUrl: item.imageUrl,
           text: item.namePlural,
