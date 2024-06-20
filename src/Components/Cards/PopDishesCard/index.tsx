@@ -35,6 +35,8 @@ type Props = {
   onClick: () => void
 }
 
+export const drinks: string[] = ['Pepsi', 'Fanta']
+
 export const PopDishes = ({ products, onClick }: Props) => {
   const memorizedOnClick = useCallback(onClick, [])
 
@@ -68,8 +70,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
                     {showIconInCorner && <Icon iconName={iconNameOptional} />}
                     <Stack justifyContent="center" width="198px">
                       {tags.includes('534ed6f7-be81-4af3-9c27-ebb8acd2e946') &&
-                      text !== 'Pepsi' &&
-                      text !== 'Fanta' ? (
+                      !drinks.includes(text) ? (
                         <Image className="pop-dish-image-drink" imageUrl={imageURL} />
                       ) : (
                         <Image className="pop-dish-image" imageUrl={imageURL} />
