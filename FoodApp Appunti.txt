@@ -68,3 +68,7 @@ https://react.dev/learn/react-developer-tools
 https://reactrouter.com/en/main 
 
 Generics <> e template literals ``
+
+https://it.legacy.reactjs.org/docs/context.html
+
+https://react-redux.js.org/

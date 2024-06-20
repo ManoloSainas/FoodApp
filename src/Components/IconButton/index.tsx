@@ -23,27 +23,24 @@ export const IconButton = ({
   color,
   size
 }: Props) => {
-  const [buttonVariant, setButtonVariant] = useState(variant)
-  const [iconVariant, setIconVariant] = useState(iconName)
+  const [buttonState, setButtonState] = useState({ variant, iconName })
 
   const handleClick = useCallback(() => {
-    if (variant === 'primary' && iconName === 'Plus') {
+    if (buttonState.variant === 'primary' && buttonState.iconName === 'Plus') {
       onClick()
-      setButtonVariant('redIcon')
-      setIconVariant('Check')
+      setButtonState({ variant: 'redIcon', iconName: 'Check' })
 
       setTimeout(() => {
-        setButtonVariant('primary')
-        setIconVariant('Plus')
+        setButtonState({ variant: 'primary', iconName: 'Plus' })
       }, 2000)
     }
-  }, [variant, iconName, onClick])
+  }, [buttonState, onClick])
 
   return (
     <StyledIconButton>
-      <Button onClick={handleClick} disabled={disabled} variant={buttonVariant}>
+      <Button onClick={handleClick} disabled={disabled} variant={buttonState.variant}>
         {children}
-        <Icon iconName={iconVariant} color={color} size={size} />
+        <Icon iconName={buttonState.iconName} color={color} size={size} />
       </Button>
     </StyledIconButton>
   )

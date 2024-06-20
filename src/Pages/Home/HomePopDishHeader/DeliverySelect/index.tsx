@@ -4,7 +4,7 @@ import { Select } from '../../../../Components/Form/Select'
 import { Text } from '../../../../Components/Text'
 
 export type Props = {
-  updateDelivery: React.Dispatch<React.SetStateAction<string | string[]>>
+  updateDelivery: (value: string | string[]) => void
 }
 
 export type FetchedDelivery = {

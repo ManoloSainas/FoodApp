@@ -13,7 +13,7 @@ type fetchedTag = {
 }
 
 export type Props = {
-  updateId: React.Dispatch<React.SetStateAction<string>>
+  updateId: (value: string) => void
 }
 
 export const HomeTopCards = ({ updateId }: Props) => {

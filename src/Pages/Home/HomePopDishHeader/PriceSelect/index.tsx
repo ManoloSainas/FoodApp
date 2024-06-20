@@ -5,7 +5,7 @@ import { symbols } from '../../../../Components/Price'
 import { Text } from '../../../../Components/Text'
 
 export type Props = {
-  updatePrice: React.Dispatch<React.SetStateAction<string | string[]>>
+  updatePrice: (value: string | string[]) => void
 }
 
 type FetchedProduct = {
