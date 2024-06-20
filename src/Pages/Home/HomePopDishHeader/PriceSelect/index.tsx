@@ -40,9 +40,16 @@ export const PriceSelect = ({ updatePrice }: Props) => {
     const fetchPrice = async () => {
       try {
         setLoading(true)
-        const deliveryValues = await apiClient.get('products')
+        const deliveryValues: FetchedProduct[] = await apiClient.get('products')
         const newData = deliveryValues.reduce(
-          (acc: { value: string; label: string }[], curr: FetchedProduct) => {
+          (
+            acc: {
+              id: keyof typeof symbols
+              value: string
+              label: keyof typeof symbols
+            }[],
+            curr: FetchedProduct
+          ) => {
             if (!acc.some((item) => item.label === curr.price.type)) {
               return [
                 ...acc,
