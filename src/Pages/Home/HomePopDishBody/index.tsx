@@ -3,6 +3,7 @@ import { PopDishes, product } from '../../../Components/Cards/PopDishesCard'
 import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../../api-client'
 import { symbols } from '../../../Components/Price'
+import { IconName } from '../../../Components/Icon/config'
 
 type FetchedProduct = {
   id: string
@@ -48,12 +49,12 @@ export const HomePopDishBody = ({ currentId, currentDelivery, currentPrice }: Pr
           tagText: item.size.value + item.size.type,
           currency: item.price.type,
           value: item.price.value,
-          iconNameOptional: 'flame',
-          iconNameButton: 'Plus',
           available: item.available,
           tags: item.tags,
           delivery: item.delivery,
-          price: item.price
+          price: item.price,
+          iconNameOptional: 'Flame' as IconName,
+          iconNameButton: 'Plus' as IconName
         }))
         setData(newData)
       } catch (err) {
