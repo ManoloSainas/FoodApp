@@ -2,26 +2,27 @@ import { useEffect, useMemo, useState } from 'react'
 import { PopDishes, product } from '../../../Components/Cards/PopDishesCard'
 import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../../api-client'
+import { symbols } from '../../../Components/Price'
 
 type FetchedProduct = {
   id: string
   name: string
   description: string
-  available: true
-  new: true
-  stock: 0
-  rating: 0
+  available: boolean
+  new: boolean
+  stock: string
+  rating: string
   delivery: string
-  discountRate: 0
+  discountRate: string
   price: {
-    type: string
-    value: 0
+    type: keyof typeof symbols
+    value: string
   }
   size: {
     type: string
-    value: 0
+    value: string
   }
-  tags: [string]
+  tags: string[]
   imageUrl: string
 }
 
@@ -39,7 +40,7 @@ export const HomePopDishBody = ({ currentId, currentDelivery, currentPrice }: Pr
     const fetchCards = async () => {
       try {
         setLoading(true)
-        const cards = await apiClient.get('products')
+        const cards: FetchedProduct[] = await apiClient.get('products')
         const newData = cards.map((item: FetchedProduct) => ({
           imageURL: item.imageUrl,
           text: item.name,
@@ -51,7 +52,8 @@ export const HomePopDishBody = ({ currentId, currentDelivery, currentPrice }: Pr
           iconNameButton: 'Plus',
           available: item.available,
           tags: item.tags,
-          delivery: item.delivery
+          delivery: item.delivery,
+          price: item.price
         }))
         setData(newData)
       } catch (err) {

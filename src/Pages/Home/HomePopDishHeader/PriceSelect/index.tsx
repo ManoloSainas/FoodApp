@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Select } from '../../../../Components/Form/Select'
 import { apiClient } from '../../../../../api-client'
+import { symbols } from '../../../../Components/Price'
 
 export type Props = {
   updatePrice: React.Dispatch<React.SetStateAction<string | string[]>>
@@ -10,21 +11,21 @@ type FetchedProduct = {
   id: string
   name: string
   description: string
-  available: true
-  new: true
-  stock: 0
-  rating: 0
+  available: boolean
+  new: boolean
+  stock: string
+  rating: string
   delivery: string
-  discountRate: 0
+  discountRate: string
   price: {
-    type: string
-    value: 0
+    type: keyof typeof symbols
+    value: string
   }
   size: {
     type: string
-    value: 0
+    value: string
   }
-  tags: [string]
+  tags: string[]
   imageUrl: string
 }
 
@@ -47,7 +48,7 @@ export const PriceSelect = ({ updatePrice }: Props) => {
                 ...acc,
                 {
                   id: curr.price.type,
-                  value: curr.price.value.toString(10),
+                  value: curr.price.value,
                   label: curr.price.type
                 }
               ]
