@@ -14,12 +14,17 @@ export type Props = {
 
 export const HomePopDishHeader = ({ updateDelivery, updatePrice }: Props) => {
   return (
-    <Stack id="stack-popdish-title" alignItems="center" gap="300px">
+    <Stack
+      id="stack-popdish-title"
+      alignItems="center"
+      justifyContent="space-between"
+      width="100%"
+    >
       <Text className="popdish-title" variant="h1">
         Popular dishes
       </Text>
 
-      <Stack alignItems="center" gap="20px">
+      <Stack alignItems="center" gap="20px" margin="0px 40px 0px 0px">
         <Stack gap="1px">
           <DeliverySelect updateDelivery={updateDelivery} />
 
