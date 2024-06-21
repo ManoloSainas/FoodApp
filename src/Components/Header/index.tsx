@@ -4,7 +4,11 @@ import { SearchBar } from '../SearchBar'
 import { Stack } from '../Stack'
 import { StyledHeader } from './styled'
 
-export const Header = ({ setText }: any) => {
+type Props = {
+  setText: (text: string) => void
+}
+
+export const Header = ({ setText }: Props) => {
   const [inputText, setInputText] = useState('')
 
   return (

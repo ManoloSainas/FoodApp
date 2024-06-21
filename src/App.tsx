@@ -3,7 +3,7 @@ import './App.css'
 import { Layout } from './Components/Layout'
 import { Catalog } from './Pages/Catalog'
 import { Home } from './Pages/Home'
-import { createContext, useEffect } from 'react'
+import { useEffect } from 'react'
 
 function RedirectToHome() {
   const navigate = useNavigate()

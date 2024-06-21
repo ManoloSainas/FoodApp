@@ -6,13 +6,14 @@ import { SideBar } from '../SideBar'
 
 const LayoutComponent = () => {
   const [text, setText] = useState('')
+  console.log('testo corrente: ', text)
 
   return (
     <StyledLayout>
       <Header setText={setText} />
       <StyledMain>
         <SideBar />
-        <Outlet text={text} />
+        <Outlet />
       </StyledMain>
     </StyledLayout>
   )
