@@ -1,16 +1,19 @@
+import { useState } from 'react'
 import { IconButton } from '../IconButton'
 import { SearchBar } from '../SearchBar'
 import { Stack } from '../Stack'
 import { StyledHeader } from './styled'
 
-export const Header = () => {
+export const Header = ({ setText }: any) => {
+  const [inputText, setInputText] = useState('')
+
   return (
     <StyledHeader>
       <SearchBar
         type="text"
         iconName="SearchLens"
-        onClick={() => console.log('Clicked!')}
-        onChange={(value) => console.log(value)}
+        onClick={() => setText(inputText)}
+        onChange={(value) => setInputText(value)}
         placeholder="Search..."
         variant="transparent"
       />

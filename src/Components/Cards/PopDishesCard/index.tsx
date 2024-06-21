@@ -11,8 +11,6 @@ import { StyledList, StyledRow } from './styled'
 import { symbols } from '../../Price'
 import { useCallback, useMemo } from 'react'
 
-// 534ed6f7-be81-4af3-9c27-ebb8acd2e946
-
 export type product = {
   imageURL: string
   text: string
