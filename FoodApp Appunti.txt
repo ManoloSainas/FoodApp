@@ -70,5 +70,8 @@ https://reactrouter.com/en/main
 Generics <> e template literals ``
 
 https://it.legacy.reactjs.org/docs/context.html
+https://react.dev/reference/react/createContext
+https://react.dev/reference/react/useContext
+https://react.dev/learn/passing-data-deeply-with-context
 
 https://react-redux.js.org/

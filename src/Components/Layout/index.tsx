@@ -1,18 +1,22 @@
-import { memo, useState } from 'react'
+import { createContext, memo, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import { StyledLayout, StyledMain } from './styled'
 import { Header } from '../Header'
 import { SideBar } from '../SideBar'
 
+export const TextContext = createContext<string>('')
+
 const LayoutComponent = () => {
-  const [text, setText] = useState('')
+  const [searchedText, setText] = useState('')
 
   return (
     <StyledLayout>
       <Header setText={setText} />
       <StyledMain>
         <SideBar />
-        <Outlet />
+        <TextContext.Provider value={searchedText}>
+          <Outlet />
+        </TextContext.Provider>
       </StyledMain>
     </StyledLayout>
   )

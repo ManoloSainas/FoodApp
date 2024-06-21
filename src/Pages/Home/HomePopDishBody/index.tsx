@@ -5,6 +5,7 @@ import { apiClient } from '../../../../api-client'
 import { symbols } from '../../../Components/Price'
 import { IconName } from '../../../Components/Icon/config'
 import { Text } from '../../../Components/Text'
+import { TextContext } from '../../../Components/Layout/index'
 
 type FetchedProduct = {
   id: string
@@ -37,6 +38,10 @@ export type Props = {
 export const HomePopDishBody = ({ currentId, currentDelivery, currentPrice }: Props) => {
   const [data, setData] = useState<product[]>([])
   const [loading, setLoading] = useState(false)
+
+  const searchedText = useContext(TextContext)
+
+  console.log('Testo appena cercato: ', searchedText)
 
   useEffect(() => {
     const fetchCards = async () => {
