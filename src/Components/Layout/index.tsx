@@ -7,11 +7,11 @@ import { SideBar } from '../SideBar'
 export const TextContext = createContext<string>('')
 
 const LayoutComponent = () => {
-  const [searchedText, setSearchedTextText] = useState('')
+  const [searchedText, setSearchedText] = useState('')
 
   return (
     <StyledLayout>
-      <Header setText={setSearchedTextText} />
+      <Header setSearchedText={setSearchedText} />
       <StyledMain>
         <SideBar />
         <TextContext.Provider value={searchedText}>

@@ -5,10 +5,10 @@ import { Stack } from '../Stack'
 import { StyledHeader } from './styled'
 
 type Props = {
-  setText: (text: string) => void
+  setSearchedText: (text: string) => void
 }
 
-export const Header = ({ setText }: Props) => {
+export const Header = ({ setSearchedText }: Props) => {
   const [inputText, setInputText] = useState('')
 
   return (
@@ -16,7 +16,7 @@ export const Header = ({ setText }: Props) => {
       <SearchBar
         type="text"
         iconName="SearchLens"
-        onClick={() => setText(inputText)}
+        onClick={() => setSearchedText(inputText)}
         onChange={(value) => setInputText(value)}
         placeholder="Search..."
         variant="transparent"

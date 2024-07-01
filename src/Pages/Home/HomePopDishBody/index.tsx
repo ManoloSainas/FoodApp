@@ -41,8 +41,6 @@ export const HomePopDishBody = ({ currentId, currentDelivery, currentPrice }: Pr
 
   const searchedText = useContext(TextContext)
 
-  console.log('Testo appena cercato: ', searchedText)
-
   useEffect(() => {
     const fetchCards = async () => {
       try {
