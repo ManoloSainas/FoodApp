@@ -5,7 +5,7 @@ import { apiClient } from '../../../../api-client'
 import { symbols } from '../../../Components/Price'
 import { IconName } from '../../../Components/Icon/config'
 import { Text } from '../../../Components/Text'
-import { TextContext } from '../../../Components/Layout/index'
+import { CurrencyContext, TextContext } from '../../../Components/Layout/index'
 
 type FetchedProduct = {
   id: string
@@ -32,14 +32,14 @@ type FetchedProduct = {
 export type Props = {
   currentId: string
   currentDelivery: string | string[]
-  currentPrice: string | string[]
 }
 
-export const HomePopDishBody = ({ currentId, currentDelivery, currentPrice }: Props) => {
+export const HomePopDishBody = ({ currentId, currentDelivery }: Props) => {
   const [data, setData] = useState<product[]>([])
   const [loading, setLoading] = useState(false)
 
   const searchedText = useContext(TextContext)
+  const selectedCurrency = useContext(CurrencyContext)
 
   useEffect(() => {
     const fetchCards = async () => {
@@ -73,32 +73,57 @@ export const HomePopDishBody = ({ currentId, currentDelivery, currentPrice }: Pr
 
   const filteredData = useMemo(
     () =>
-      data.filter((element: product) => {
-        const tagMatch = element.tags.includes(currentId) || currentId === 'All'
+      data
+        .filter((element: product) => {
+          const tagMatch = element.tags.includes(currentId) || currentId === 'All'
 
-        let deliveryMatch = false
+          let deliveryMatch = false
 
-        deliveryMatch =
-          typeof currentDelivery === 'string'
-            ? element.delivery.includes(currentDelivery)
-            : currentDelivery.some((delivery) => element.delivery.includes(delivery))
+          deliveryMatch =
+            typeof currentDelivery === 'string'
+              ? element.delivery.includes(currentDelivery)
+              : currentDelivery.some((delivery) => element.delivery.includes(delivery))
 
-        let priceMatch = false
-
-        priceMatch =
-          typeof currentPrice === 'string'
-            ? element.currency.includes(currentPrice)
-            : currentPrice.some((price) => element.currency.includes(price))
-
-        return (
-          tagMatch &&
-          deliveryMatch &&
-          priceMatch &&
-          element.text.toLowerCase().includes(searchedText.toLowerCase())
-        )
-      }),
-    [currentId, data, currentDelivery, currentPrice, searchedText]
+          return (
+            tagMatch &&
+            deliveryMatch &&
+            element.text.toLowerCase().includes(searchedText.toLowerCase())
+          )
+        })
+        .map((element: product) => ({
+          ...element,
+          value: convertValue(element.price),
+          currency: selectedCurrency
+        })),
+    [currentId, data, currentDelivery, selectedCurrency, searchedText]
   )
+
+  function convertValue(price: { type: keyof typeof symbols; value: string }) {
+    let numericValue = Number(price.value)
+    switch (selectedCurrency) {
+      case 'EUR': {
+        if (price.type === 'EUR') {
+          return numericValue
+        } else if (price.type === 'JPY') {
+          return (numericValue * 0.0058).toFixed(2)
+        } else return (numericValue * 0.931808).toFixed(2)
+      }
+      case 'JPY': {
+        if (price.type === 'JPY') {
+          return numericValue
+        } else if (price.type === 'EUR') {
+          return (numericValue * 173.253).toFixed(2)
+        } else return (numericValue * 161.438).toFixed(2)
+      }
+      default: {
+        if (price.type === 'USD') {
+          return numericValue
+        } else if (price.type === 'JPY') {
+          return (numericValue * 0.0062).toFixed(2)
+        } else return (numericValue * 1.0732).toFixed(2)
+      }
+    }
+  }
 
   if (loading)
     return (

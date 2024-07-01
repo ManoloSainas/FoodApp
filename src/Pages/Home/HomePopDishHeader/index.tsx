@@ -5,11 +5,9 @@ import { DeliverySelect } from './DeliverySelect'
 import { IngredientsSelect } from './IngredientsSelect'
 import { PriceSelect } from './PriceSelect'
 
-import { Dispatch, SetStateAction } from 'react'
-
 export type Props = {
-  updateDelivery: Dispatch<SetStateAction<string | string[]>>
-  updatePrice: Dispatch<SetStateAction<string | string[]>>
+  updateDelivery: (value: string | string[]) => void
+  updatePrice: (value: string | string[]) => void
 }
 
 export const HomePopDishHeader = ({ updateDelivery, updatePrice }: Props) => {
