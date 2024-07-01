@@ -33,6 +33,8 @@ export const IconButton = ({
       setTimeout(() => {
         setButtonState({ variant: 'primary', iconName: 'Plus' })
       }, 2000)
+    } else {
+      onClick()
     }
   }, [buttonState, onClick])
 

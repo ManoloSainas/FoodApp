@@ -41,6 +41,8 @@ export const HomePopDishBody = ({ currentId, currentDelivery, currentPrice }: Pr
 
   const searchedText = useContext(TextContext)
 
+  console.log('Testo letto nel body: ', searchedText)
+
   useEffect(() => {
     const fetchCards = async () => {
       try {
@@ -90,9 +92,14 @@ export const HomePopDishBody = ({ currentId, currentDelivery, currentPrice }: Pr
             ? element.currency.includes(currentPrice)
             : currentPrice.some((price) => element.currency.includes(price))
 
-        return tagMatch && deliveryMatch && priceMatch
+        return (
+          tagMatch &&
+          deliveryMatch &&
+          priceMatch &&
+          element.text.toLowerCase().includes(searchedText.toLowerCase())
+        )
       }),
-    [currentId, data, currentDelivery, currentPrice]
+    [currentId, data, currentDelivery, currentPrice, searchedText]
   )
 
   if (loading)
