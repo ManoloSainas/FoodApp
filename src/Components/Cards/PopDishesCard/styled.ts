@@ -32,12 +32,13 @@ export const StyledRow = styled.li<{}>`
   .pop-dish-textp {
     color: #58585c;
     overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 12px;
     width: 190px;
+    height: 90px;
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
   }
 `
 

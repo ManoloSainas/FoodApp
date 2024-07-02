@@ -3,14 +3,12 @@ import { Stack } from '../../../Components/Stack'
 import { Text } from '../../../Components/Text'
 import { DeliverySelect } from './DeliverySelect'
 import { IngredientsSelect } from './IngredientsSelect'
-import { PriceSelect } from './PriceSelect'
 
 export type Props = {
   updateDelivery: (value: string | string[]) => void
-  updatePrice: (value: string | string[]) => void
 }
 
-export const HomePopDishHeader = ({ updateDelivery, updatePrice }: Props) => {
+export const HomePopDishHeader = ({ updateDelivery }: Props) => {
   return (
     <Stack
       id="stack-popdish-title"
@@ -27,8 +25,6 @@ export const HomePopDishHeader = ({ updateDelivery, updatePrice }: Props) => {
           <DeliverySelect updateDelivery={updateDelivery} />
 
           <IngredientsSelect />
-
-          <PriceSelect updatePrice={updatePrice} />
         </Stack>
 
         <Stack gap="5px">

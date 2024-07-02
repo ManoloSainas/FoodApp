@@ -65,20 +65,22 @@ export const PopDishes = ({ products, onClick }: Props) => {
                   alignItems="center"
                 >
                   <Stack flexDirection="column" alignItems="flex-start">
-                    {showIconInCorner && <Icon iconName={iconNameOptional} />}
-                    <Stack justifyContent="center" width="198px">
-                      {tags.includes('534ed6f7-be81-4af3-9c27-ebb8acd2e946') &&
-                      !drinks.includes(text) ? (
-                        <Image className="pop-dish-image-drink" imageUrl={imageURL} />
-                      ) : (
-                        <Image className="pop-dish-image" imageUrl={imageURL} />
-                      )}
-                    </Stack>
+                    <Stack flexDirection="column">
+                      {showIconInCorner && <Icon iconName={iconNameOptional} />}
+                      <Stack justifyContent="center" width="198px">
+                        {tags.includes('534ed6f7-be81-4af3-9c27-ebb8acd2e946') &&
+                        !drinks.includes(text) ? (
+                          <Image className="pop-dish-image-drink" imageUrl={imageURL} />
+                        ) : (
+                          <Image className="pop-dish-image" imageUrl={imageURL} />
+                        )}
+                      </Stack>
 
-                    <Text className="pop-dish-text" variant="h2">
-                      {text}
-                    </Text>
-                    <Text className="pop-dish-textp">{textp}</Text>
+                      <Text className="pop-dish-text" variant="h2">
+                        {text}
+                      </Text>
+                      <Text className="pop-dish-textp">{textp}</Text>
+                    </Stack>
 
                     <Stack
                       alignItems="center"

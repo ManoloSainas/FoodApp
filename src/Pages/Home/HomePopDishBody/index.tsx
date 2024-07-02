@@ -93,7 +93,7 @@ export const HomePopDishBody = ({ currentId, currentDelivery }: Props) => {
         .map((element: product) => ({
           ...element,
           value: convertValue(element.price),
-          currency: selectedCurrency
+          currency: selectedCurrency as keyof typeof symbols
         })),
     [currentId, data, currentDelivery, selectedCurrency, searchedText]
   )
@@ -103,24 +103,24 @@ export const HomePopDishBody = ({ currentId, currentDelivery }: Props) => {
     switch (selectedCurrency) {
       case 'EUR': {
         if (price.type === 'EUR') {
-          return numericValue
+          return numericValue.toString()
         } else if (price.type === 'JPY') {
-          return (numericValue * 0.0058).toFixed(2)
-        } else return (numericValue * 0.931808).toFixed(2)
+          return (numericValue * 0.0058).toFixed(2).toString()
+        } else return (numericValue * 0.931808).toFixed(2).toString()
       }
       case 'JPY': {
         if (price.type === 'JPY') {
-          return numericValue
+          return numericValue.toString()
         } else if (price.type === 'EUR') {
-          return (numericValue * 173.253).toFixed(2)
-        } else return (numericValue * 161.438).toFixed(2)
+          return (numericValue * 173.253).toFixed(2).toString()
+        } else return (numericValue * 161.438).toFixed(2).toString()
       }
       default: {
         if (price.type === 'USD') {
-          return numericValue
+          return numericValue.toString()
         } else if (price.type === 'JPY') {
-          return (numericValue * 0.0062).toFixed(2)
-        } else return (numericValue * 1.0732).toFixed(2)
+          return (numericValue * 0.0062).toFixed(2).toString()
+        } else return (numericValue * 1.0732).toFixed(2).toString()
       }
     }
   }
