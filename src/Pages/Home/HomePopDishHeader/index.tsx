@@ -2,7 +2,7 @@ import { IconButton } from '../../../Components/IconButton'
 import { Stack } from '../../../Components/Stack'
 import { Text } from '../../../Components/Text'
 import { DeliverySelect } from './DeliverySelect'
-import { IngredientsSelect } from './IngredientsSelect'
+// import { IngredientsSelect } from './IngredientsSelect'
 import { PriceSelect } from './PriceSelect'
 
 export type Props = {
@@ -25,7 +25,7 @@ export const HomePopDishHeader = ({ updateDelivery }: Props) => {
         <Stack gap="1px">
           <DeliverySelect updateDelivery={updateDelivery} />
 
-          <IngredientsSelect />
+          {/* <IngredientsSelect /> */}
 
           <PriceSelect />
         </Stack>
