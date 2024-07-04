@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Select } from '../../../../Components/Form/Select'
-import { apiClient } from '../../../../../api-client'
-import { symbols } from '../../../../Components/Price'
-import { Text } from '../../../../Components/Text'
+import { Select } from '../../Form/Select'
+import { apiClient } from '../../../../api-client'
+import { symbols } from '../../Price'
+import { Text } from '../../Text'
 
 export type Props = {
   updatePrice: (value: string | string[]) => void
@@ -30,7 +30,7 @@ type FetchedProduct = {
   imageUrl: string
 }
 
-export const PriceSelect = ({ updatePrice }: Props) => {
+export const CurrencySelect = ({ updatePrice }: Props) => {
   const [price, setPrice] = useState<{ id: string; value: string; label: string }[]>([])
 
   const [loading, setLoading] = useState(false)

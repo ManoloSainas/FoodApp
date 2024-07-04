@@ -3,8 +3,8 @@ import { IconButton } from '../IconButton'
 import { SearchBar } from '../SearchBar'
 import { Stack } from '../Stack'
 import { StyledHeader } from './styled'
-import { PriceSelect } from '../../Pages/Home/HomePopDishHeader/PriceSelect'
 import { Text } from '../Text'
+import { CurrencySelect } from './CurrencySelect'
 
 type Props = {
   setSearchedText: (text: string) => void
@@ -28,7 +28,7 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
       <Stack gap="10px" alignItems="center">
         <Stack alignItems="center" flexDirection="column" margin="0px 50px 0px 0px">
           <Text variant="h4">Select your currency</Text>
-          <PriceSelect updatePrice={setSelectedCurrency} />
+          <CurrencySelect updatePrice={setSelectedCurrency} />
         </Stack>
 
         <Stack gap="5px">
