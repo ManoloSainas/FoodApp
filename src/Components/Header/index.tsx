@@ -21,6 +21,11 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
         iconName="SearchLens"
         onClick={() => setSearchedText(inputText)}
         onChange={(value) => setInputText(value)}
+        onKeyPress={(e) => {
+          if (e.key === 'Enter') {
+            setSearchedText(inputText)
+          }
+        }}
         placeholder="Search..."
         variant="transparent"
       />

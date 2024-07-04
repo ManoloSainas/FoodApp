@@ -5,6 +5,7 @@ type Props = {
   placeholder?: string
   value?: string
   onChange: (e: string) => void
+  onKeyPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void
   type: string
   id?: string
   checked?: boolean
@@ -16,6 +17,7 @@ export const Input = ({
   placeholder,
   value,
   onChange,
+  onKeyPress,
   type,
   id,
   checked,
@@ -32,6 +34,7 @@ export const Input = ({
       value={value}
       placeholder={placeholder}
       onChange={handleChange}
+      onKeyPress={onKeyPress}
       id={id}
       checked={checked}
       className={className}
