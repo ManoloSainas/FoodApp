@@ -37,11 +37,28 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
             iconName="Bell"
             onClick={() => console.log('Clicked')}
           />
-          <IconButton
-            variant="greyIcon"
-            iconName="BagShopping"
-            onClick={() => console.log('Clicked')}
-          />
+
+          <Stack position="relative" alignItems="center" justifyContent="center">
+            <IconButton
+              variant="greyIcon"
+              iconName="BagShopping"
+              onClick={() => console.log('Clicked')}
+            />
+
+            <Stack
+              position="absolute"
+              backgroundColor="#F74158"
+              borderRadius={50}
+              width="12px"
+              height="12px"
+              alignItems="center"
+              justifyContent="center"
+              transform="translate(45%, 45%)"
+            >
+              <Text fontSize={8}>0</Text>
+            </Stack>
+          </Stack>
+
           <IconButton
             variant="redIcon"
             iconName="DoorOpen"

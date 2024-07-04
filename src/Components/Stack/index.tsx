@@ -15,6 +15,12 @@ type Props = PropsWithChildren<{
   borderRadius?: number
   flexWrap?: string
   id?: string
+  position?: string
+  top?: string
+  right?: string
+  left?: string
+  bottom?: string
+  transform?: string
 }>
 
 export const Stack = ({
@@ -31,7 +37,13 @@ export const Stack = ({
   padding,
   margin,
   flexWrap,
-  id
+  id,
+  position,
+  top,
+  right,
+  left,
+  bottom,
+  transform
 }: Props) => {
   return (
     <StyledStack
@@ -48,6 +60,12 @@ export const Stack = ({
       $margin={margin}
       $flexWrap={flexWrap}
       id={id}
+      $position={position}
+      $top={top}
+      $right={right}
+      $left={left}
+      $bottom={bottom}
+      $transform={transform}
     >
       {children}
     </StyledStack>

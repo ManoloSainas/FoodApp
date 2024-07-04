@@ -14,6 +14,12 @@ export const StyledStack = styled.div<{
   $borderRadius?: number
   $flexWrap?: string
   id?: string
+  $position?: string
+  $top?: string
+  $bottom?: string
+  $right?: string
+  $left?: string
+  $transform?: string
 }>`
   display: flex;
   flex-direction: ${({ $flexDirection }) => $flexDirection};
@@ -28,4 +34,10 @@ export const StyledStack = styled.div<{
   margin: ${({ $margin }) => $margin};
   border-radius: ${({ $borderRadius }) => $borderRadius}px;
   flex-wrap: ${({ $flexWrap }) => $flexWrap};
+  position: ${({ $position }) => $position};
+  top: ${({ $top }) => $top};
+  bottom: ${({ $bottom }) => $bottom};
+  right: ${({ $right }) => $right};
+  left: ${({ $left }) => $left};
+  transform: ${({ $transform }) => $transform};
 `
