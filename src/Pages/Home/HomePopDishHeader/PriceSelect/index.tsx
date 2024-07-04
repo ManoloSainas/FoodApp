@@ -6,6 +6,16 @@ const options = [
   { id: 'Descending', value: 'Descending', label: 'Prices Descending ↘' }
 ]
 
-export const PriceSelect = () => {
-  return <Select onChange={(value) => console.log(value)} elements={options} />
+export type Props = {
+  updateSortPrice: (value: string | string[]) => void
+}
+
+export const PriceSelect = ({ updateSortPrice }: Props) => {
+  return (
+    <Select
+      multiple={false}
+      onChange={(value) => updateSortPrice(value)}
+      elements={options}
+    />
+  )
 }

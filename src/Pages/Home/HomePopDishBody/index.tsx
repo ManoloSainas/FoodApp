@@ -32,9 +32,14 @@ type FetchedProduct = {
 export type Props = {
   currentId: string
   currentDelivery: string | string[]
+  currentSortPrice: string | string[]
 }
 
-export const HomePopDishBody = ({ currentId, currentDelivery }: Props) => {
+export const HomePopDishBody = ({
+  currentId,
+  currentDelivery,
+  currentSortPrice
+}: Props) => {
   const [data, setData] = useState<product[]>([])
   const [loading, setLoading] = useState(false)
 
@@ -94,8 +99,16 @@ export const HomePopDishBody = ({ currentId, currentDelivery }: Props) => {
           ...element,
           value: convertValue(element.price),
           currency: selectedCurrency as keyof typeof symbols
-        })),
-    [currentId, data, currentDelivery, selectedCurrency, searchedText]
+        }))
+        .sort((a, b) => {
+          if (currentSortPrice === 'Ascending') {
+            return parseFloat(a.value) - parseFloat(b.value)
+          } else if (currentSortPrice === 'Descending') {
+            return parseFloat(b.value) - parseFloat(a.value)
+          }
+          return 0
+        }),
+    [currentId, data, currentDelivery, selectedCurrency, searchedText, currentSortPrice]
   )
 
   function convertValue(price: { type: keyof typeof symbols; value: string }) {

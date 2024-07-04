@@ -7,9 +7,10 @@ import { PriceSelect } from './PriceSelect'
 
 export type Props = {
   updateDelivery: (value: string | string[]) => void
+  updateSortPrice: (value: string | string[]) => void
 }
 
-export const HomePopDishHeader = ({ updateDelivery }: Props) => {
+export const HomePopDishHeader = ({ updateDelivery, updateSortPrice }: Props) => {
   return (
     <Stack
       id="stack-popdish-title"
@@ -27,7 +28,7 @@ export const HomePopDishHeader = ({ updateDelivery }: Props) => {
 
           {/* <IngredientsSelect /> */}
 
-          <PriceSelect />
+          <PriceSelect updateSortPrice={updateSortPrice} />
         </Stack>
 
         <Stack gap="5px">
