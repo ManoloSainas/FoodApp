@@ -101,12 +101,11 @@ export const HomePopDishBody = ({
           currency: selectedCurrency as keyof typeof symbols
         }))
         .sort((a, b) => {
-          if (currentSortPrice === 'Ascending') {
-            return parseFloat(a.value) - parseFloat(b.value)
-          } else if (currentSortPrice === 'Descending') {
-            return parseFloat(b.value) - parseFloat(a.value)
-          }
-          return 0
+          return currentSortPrice === 'Ascending'
+            ? parseFloat(a.value) - parseFloat(b.value)
+            : currentSortPrice === 'Descending'
+            ? parseFloat(b.value) - parseFloat(a.value)
+            : 0
         }),
     [currentId, data, currentDelivery, selectedCurrency, searchedText, currentSortPrice]
   )
@@ -115,25 +114,25 @@ export const HomePopDishBody = ({
     let numericValue = Number(price.value)
     switch (selectedCurrency) {
       case 'EUR': {
-        if (price.type === 'EUR') {
-          return numericValue.toString()
-        } else if (price.type === 'JPY') {
-          return (numericValue * 0.0058).toFixed(2).toString()
-        } else return (numericValue * 0.931808).toFixed(2).toString()
+        return price.type === 'EUR'
+          ? numericValue.toString()
+          : price.type === 'JPY'
+          ? (numericValue * 0.0058).toFixed(2).toString()
+          : (numericValue * 0.931808).toFixed(2).toString()
       }
       case 'JPY': {
-        if (price.type === 'JPY') {
-          return numericValue.toString()
-        } else if (price.type === 'EUR') {
-          return (numericValue * 173.253).toFixed(2).toString()
-        } else return (numericValue * 161.438).toFixed(2).toString()
+        return price.type === 'JPY'
+          ? numericValue.toString()
+          : price.type === 'EUR'
+          ? (numericValue * 173.253).toFixed(2).toString()
+          : (numericValue * 161.438).toFixed(2).toString()
       }
       default: {
-        if (price.type === 'USD') {
-          return numericValue.toString()
-        } else if (price.type === 'JPY') {
-          return (numericValue * 0.0062).toFixed(2).toString()
-        } else return (numericValue * 1.0732).toFixed(2).toString()
+        return price.type === 'USD'
+          ? numericValue.toString()
+          : price.type === 'JPY'
+          ? (numericValue * 0.0062).toFixed(2).toString()
+          : (numericValue * 1.0732).toFixed(2).toString()
       }
     }
   }
