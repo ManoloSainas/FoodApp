@@ -79,3 +79,4 @@ https://react.dev/learn/passing-data-deeply-with-context
 https://react-redux.js.org/
 
 https://redux-toolkit.js.org/introduction/getting-started
+https://www.freecodecamp.org/news/redux-and-redux-toolkit-for-beginners/
