@@ -7,8 +7,8 @@ import { IconName } from '../../../Components/Icon/config'
 import { Text } from '../../../Components/Text'
 import { CurrencyContext, TextContext } from '../../../Components/Layout/index'
 
-import { increment, selectCount } from '../../../reducers/counterReducer'
-import { useDispatch, useSelector } from 'react-redux'
+import { increment } from '../../../reducers/counterReducer'
+import { useDispatch } from 'react-redux'
 
 type FetchedProduct = {
   id: string

@@ -82,3 +82,9 @@ https://redux-toolkit.js.org/introduction/getting-started
 https://www.freecodecamp.org/news/redux-and-redux-toolkit-for-beginners/
 
 npm list nomeApp -> to check if something is already installed
+
+Redux persist
+
+addons utili per edge: 
+  React developer toolkit
+  Redux Devtools
