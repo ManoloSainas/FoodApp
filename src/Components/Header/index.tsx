@@ -54,18 +54,20 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
               onClick={() => console.log('Clicked')}
             />
 
-            <Stack
-              position="absolute"
-              backgroundColor="#F74158"
-              borderRadius={50}
-              width="12px"
-              height="12px"
-              alignItems="center"
-              justifyContent="center"
-              transform="translate(45%, 45%)"
-            >
-              <Text fontSize={8}>{count}</Text>
-            </Stack>
+            {count > 0 && (
+              <Stack
+                position="absolute"
+                backgroundColor="#F74158"
+                borderRadius={50}
+                width="12px"
+                height="12px"
+                alignItems="center"
+                justifyContent="center"
+                transform="translate(45%, 45%)"
+              >
+                <Text fontSize={8}>{count}</Text>
+              </Stack>
+            )}
           </Stack>
 
           <IconButton
