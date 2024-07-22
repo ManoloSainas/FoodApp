@@ -4,6 +4,7 @@ import { Layout } from './Components/Layout'
 import { Catalog } from './Pages/Catalog'
 import { Home } from './Pages/Home'
 import { useEffect } from 'react'
+import { ShoppingCart } from './Pages/ShoppingCart/index'
 
 function RedirectToHome() {
   const navigate = useNavigate()
@@ -27,6 +28,7 @@ function App() {
           <Route path="/map" element="To-do" />
           <Route path="/Delivery" element="To-do" />
           <Route path="/Settings" element="To-do" />
+          <Route path="/ShoppingCart" element={<ShoppingCart />} />
         </Route>
       </Routes>
     </BrowserRouter>

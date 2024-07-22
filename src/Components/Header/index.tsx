@@ -7,6 +7,7 @@ import { Text } from '../Text'
 import { CurrencySelect } from './CurrencySelect'
 import { useSelector } from 'react-redux'
 import { selectCount } from '../../reducers/counterReducer'
+import { Link } from 'react-router-dom'
 
 type Props = {
   setSearchedText: (text: string) => void
@@ -47,28 +48,30 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
             onClick={() => console.log('Clicked')}
           />
 
-          <Stack position="relative" alignItems="center" justifyContent="center">
-            <IconButton
-              variant="greyIcon"
-              iconName="BagShopping"
-              onClick={() => console.log('Clicked')}
-            />
+          <Link key="shoppingcart" to={`/shoppingcart`}>
+            <Stack position="relative" alignItems="center" justifyContent="center">
+              <IconButton
+                variant="greyIcon"
+                iconName="BagShopping"
+                onClick={() => console.log('Clicked')}
+              />
 
-            {count > 0 && (
-              <Stack
-                position="absolute"
-                backgroundColor="#F74158"
-                borderRadius={50}
-                width="12px"
-                height="12px"
-                alignItems="center"
-                justifyContent="center"
-                transform="translate(45%, 45%)"
-              >
-                <Text fontSize={8}>{count}</Text>
-              </Stack>
-            )}
-          </Stack>
+              {count > 0 && (
+                <Stack
+                  position="absolute"
+                  backgroundColor="#F74158"
+                  borderRadius={50}
+                  width="12px"
+                  height="12px"
+                  alignItems="center"
+                  justifyContent="center"
+                  transform="translate(45%, 45%)"
+                >
+                  <Text fontSize={8}>{count}</Text>
+                </Stack>
+              )}
+            </Stack>
+          </Link>
 
           <IconButton
             variant="redIcon"
