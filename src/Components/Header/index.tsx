@@ -5,6 +5,8 @@ import { Stack } from '../Stack'
 import { StyledHeader } from './styled'
 import { Text } from '../Text'
 import { CurrencySelect } from './CurrencySelect'
+import { useSelector } from 'react-redux'
+import { selectCount } from '../../reducers/counterReducer'
 
 type Props = {
   setSearchedText: (text: string) => void
@@ -13,6 +15,8 @@ type Props = {
 
 export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
   const [inputText, setInputText] = useState('')
+
+  const count = useSelector(selectCount)
 
   return (
     <StyledHeader>
@@ -60,7 +64,7 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
               justifyContent="center"
               transform="translate(45%, 45%)"
             >
-              <Text fontSize={8}>0</Text>
+              <Text fontSize={8}>{count}</Text>
             </Stack>
           </Stack>
 

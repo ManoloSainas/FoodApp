@@ -7,6 +7,9 @@ import { IconName } from '../../../Components/Icon/config'
 import { Text } from '../../../Components/Text'
 import { CurrencyContext, TextContext } from '../../../Components/Layout/index'
 
+import { increment, selectCount } from '../../../reducers/counterReducer'
+import { useDispatch, useSelector } from 'react-redux'
+
 type FetchedProduct = {
   id: string
   name: string
@@ -45,6 +48,10 @@ export const HomePopDishBody = ({
 
   const searchedText = useContext(TextContext)
   const selectedCurrency = useContext(CurrencyContext)
+
+  const dispatch = useDispatch()
+
+  console.log()
 
   useEffect(() => {
     const fetchCards = async () => {
@@ -145,11 +152,13 @@ export const HomePopDishBody = ({
     )
 
   return (
-    <Stack flexDirection="row">
-      <PopDishes
-        products={filteredData.length > 0 ? filteredData : []}
-        onClick={() => console.log('Clicked!')}
-      ></PopDishes>
-    </Stack>
+    <>
+      <Stack flexDirection="row">
+        <PopDishes
+          products={filteredData.length > 0 ? filteredData : []}
+          onClick={() => dispatch(increment())}
+        ></PopDishes>
+      </Stack>
+    </>
   )
 }
