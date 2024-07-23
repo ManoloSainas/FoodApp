@@ -15,6 +15,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* Provider rende lo store Redux disponibile a tutti i componenti annidati */}
     <Provider store={store}>
       {/* PersistGate ritarda il rendering dell'app fino al recupero dello stato persistente */}
+      {/* La prop loading accetta un componente React che verrà renderizzato mentre lo stato è in fase di reidratazione. */}
+      {/* La prop persistor è l'oggetto persistor creato dalla configurazione di Redux Persist.  */}
       <PersistGate loading={null} persistor={persistor}>
         {/* App è il componente principale dell'applicazione */}
         <App />

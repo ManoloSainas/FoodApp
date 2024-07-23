@@ -7,16 +7,14 @@ export const counterSlice = createSlice({
   name: 'counter', // Nome dello slice, utilizzato nelle azioni
   initialState: {
     // Stato iniziale dello slice
-    value: 0 // Proprietà 'value' inizializzata a 0
+    value: 0
   },
   reducers: {
     // Oggetto contenente i reducer per modificare lo stato
     increment: (state) => {
-      // Reducer per incrementare 'value' di 1
       state.value += 1
     },
     decrement: (state) => {
-      // Reducer per decrementare 'value' di 1
       state.value -= 1
     },
     incrementByAmount: (state, action) => {
@@ -25,6 +23,19 @@ export const counterSlice = createSlice({
     }
   }
 })
+
+// Esempio di utilizzo di incrementByAmount in un component
+// handleIncrement() -> dispatch(incrementAction) -> Redux Store ->
+// -> Match 'incrementByAmount' in reducer -> Execute reducer code ->
+// -> Update state -> (Re-render components, if necessary)
+
+// const handleIncrement = () => {
+//   const incrementAction = {
+//     type: 'incrementByAmount',
+//     payload: 5
+//   };
+//   dispatch(incrementAction);
+// };
 
 // Esporta le azioni generate automaticamente da createSlice
 export const { increment, decrement, incrementByAmount } = counterSlice.actions

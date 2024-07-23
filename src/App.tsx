@@ -31,14 +31,14 @@ function App() {
           {/* Route index che utilizza RedirectToHome per reindirizzare automaticamente a "/home" */}
           <Route index element={<RedirectToHome />} />
           {/* Definisce le varie rotte dell'applicazione e i componenti da renderizzare */}
-          <Route path="/home" element={<Home />} /> {/* Rotta per la homepage */}
-          <Route path="/catalog" element={<Catalog />} /> {/* Rotta per il catalogo */}
-          {/* Le seguenti rotte hanno un placeholder "To-do" indicando che devono essere implementate */}
+          <Route path="/home" element={<Home />} />
+          <Route path="/catalog" element={<Catalog />} />
+
           <Route path="/category" element="To-do" />
           <Route path="/map" element="To-do" />
           <Route path="/Delivery" element="To-do" />
           <Route path="/Settings" element="To-do" />
-          {/* Rotta per il carrello della spesa, renderizza il componente ShoppingCart */}
+
           <Route path="/ShoppingCart" element={<ShoppingCart />} />
         </Route>
       </Routes>

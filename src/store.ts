@@ -1,8 +1,7 @@
-// Importa le funzioni necessarie da reduxjs/toolkit e redux-persist, oltre allo storage di default.
 import { configureStore } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // storage di default per il web
-import counterReducer from './reducers/counterReducer' // Importa il reducer per il contatore
+import counterReducer from './reducers/counterReducer'
 
 // Configurazione per la persistenza del reducer del contatore.
 const counterPersistConfig = {
