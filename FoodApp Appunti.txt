@@ -85,6 +85,11 @@ npm list nomeApp -> to check if something is already installed
 
 Redux persist
 
-addons utili per edge: 
+addons utili per edge/crhome: 
   React developer toolkit
   Redux Devtools
+
+  ColorZilla
+  Html tree generator
+  lighthouse
+  pesticide for chrome
