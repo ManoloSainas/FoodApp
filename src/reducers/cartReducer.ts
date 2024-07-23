@@ -26,10 +26,8 @@ export const cartSlice = createSlice({
       state.objects.push(action.payload)
     },
 
-    deleteProduct: (state, action: PayloadAction<number>) => {
-      state.objects = state.objects.filter(
-        (obj) => obj.imageUrl !== action.payload.toString()
-      )
+    deleteProduct: (state, action: PayloadAction<string>) => {
+      state.objects = state.objects.filter((obj) => obj.imageUrl !== action.payload)
     }
   }
 })
