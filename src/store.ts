@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // storage di default per il web
 import counterReducer from './reducers/counterReducer'
+import cartReducer from './reducers/cartReducer'
 
 // Configurazione per la persistenza del reducer del contatore.
 const counterPersistConfig = {
@@ -13,10 +14,18 @@ const persistedCounterReducer = persistReducer(counterPersistConfig, counterRedu
 
 // --------------------------------------------------------------------------------------
 
+const cartPersistConfig = {
+  key: 'cart',
+  storage
+}
+
+const persistedCartReducer = persistReducer(cartPersistConfig, cartReducer)
+
 // Configura lo store Redux con il reducer persistente.
 const store = configureStore({
   reducer: {
-    counter: persistedCounterReducer // Associa il reducer persistente allo store
+    counter: persistedCounterReducer, // Associa il reducer persistente allo store
+    cart: persistedCartReducer
   }
 })
 
