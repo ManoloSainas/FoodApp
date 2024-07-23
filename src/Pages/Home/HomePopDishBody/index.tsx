@@ -8,6 +8,7 @@ import { Text } from '../../../Components/Text'
 import { CurrencyContext, TextContext } from '../../../Components/Layout/index'
 
 import { increment } from '../../../reducers/counterReducer'
+import { addProduct } from '../../../reducers/cartReducer'
 import { useDispatch } from 'react-redux'
 
 type FetchedProduct = {
@@ -50,6 +51,26 @@ export const HomePopDishBody = ({
   const selectedCurrency = useContext(CurrencyContext)
 
   const dispatch = useDispatch()
+
+  const handleAddProduct = (
+    imageURL: string,
+    text: string,
+    tagText: string,
+    currency: keyof typeof symbols,
+    value: string
+  ) => {
+    const productPayload = {
+      imageURL,
+      text,
+      tagText,
+      currency,
+      value
+    }
+
+    dispatch(addProduct(productPayload))
+
+    dispatch(increment())
+  }
 
   useEffect(() => {
     const fetchCards = async () => {
@@ -154,7 +175,9 @@ export const HomePopDishBody = ({
       <Stack flexDirection="row">
         <PopDishes
           products={filteredData.length > 0 ? filteredData : []}
-          onClick={() => dispatch(increment())}
+          onClick={(imageURL, text, tagText, currency, value) =>
+            handleAddProduct(imageURL, text, tagText, currency, value)
+          }
         ></PopDishes>
       </Stack>
     </>

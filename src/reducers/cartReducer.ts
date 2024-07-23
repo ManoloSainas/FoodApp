@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { symbols } from '../Components/Price'
 
 type MyObject = {
-  imageUrl: string
+  imageURL: string
   text: string
   tagText: string
   currency: keyof typeof symbols
@@ -27,7 +27,7 @@ export const cartSlice = createSlice({
     },
 
     deleteProduct: (state, action: PayloadAction<string>) => {
-      state.objects = state.objects.filter((obj) => obj.imageUrl !== action.payload)
+      state.objects = state.objects.filter((obj) => obj.imageURL !== action.payload)
     }
   }
 })

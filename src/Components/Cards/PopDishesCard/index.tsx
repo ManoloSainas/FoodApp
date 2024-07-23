@@ -9,7 +9,7 @@ import { Tag } from '../../Tag'
 import { Text } from '../../Text'
 import { StyledList, StyledRow } from './styled'
 import { symbols } from '../../Price'
-import { useCallback, useMemo } from 'react'
+import { useMemo } from 'react'
 
 export type product = {
   imageURL: string
@@ -30,14 +30,18 @@ export type product = {
 
 type Props = {
   products: product[]
-  onClick: () => void
+  onClick: (
+    imageURL: string,
+    text: string,
+    tagText: string,
+    currency: keyof typeof symbols,
+    value: string
+  ) => void
 }
 
 export const drinks: string[] = ['Pepsi', 'Fanta']
 
 export const PopDishes = ({ products, onClick }: Props) => {
-  const memorizedOnClick = useCallback(onClick, [])
-
   const optionsElements = useMemo(
     () =>
       products.map(
@@ -95,7 +99,9 @@ export const PopDishes = ({ products, onClick }: Props) => {
                           size="lg"
                           variant={variant}
                           iconName={iconNameButton}
-                          onClick={memorizedOnClick}
+                          onClick={() =>
+                            onClick(imageURL, text, tagText, currency, value)
+                          }
                           disabled={!available}
                         />
                       </Stack>
@@ -106,7 +112,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
             )
         }
       ),
-    [products, memorizedOnClick]
+    [products]
   )
 
   return <StyledList>{optionsElements}</StyledList>

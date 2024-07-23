@@ -21,6 +21,8 @@ const cartPersistConfig = {
 
 const persistedCartReducer = persistReducer(cartPersistConfig, cartReducer)
 
+// --------------------------------------------------------------------------------------
+
 // Configura lo store Redux con il reducer persistente.
 const store = configureStore({
   reducer: {
