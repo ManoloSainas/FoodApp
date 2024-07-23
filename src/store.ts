@@ -1,21 +1,27 @@
+// Importa le funzioni necessarie da reduxjs/toolkit e redux-persist, oltre allo storage di default.
 import { configureStore } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
-import counterReducer from './reducers/counterReducer'
+import storage from 'redux-persist/lib/storage' // storage di default per il web
+import counterReducer from './reducers/counterReducer' // Importa il reducer per il contatore
 
+// Configurazione per la persistenza del reducer del contatore.
 const counterPersistConfig = {
-  key: 'counter',
-  storage
+  key: 'counter', // La chiave sotto cui salvare lo stato del contatore nel storage
+  storage // Il meccanismo di storage da utilizzare (default: localStorage nel web)
 }
 
+// Applica la persistenza al counterReducer utilizzando la configurazione definita.
 const persistedCounterReducer = persistReducer(counterPersistConfig, counterReducer)
 
+// Configura lo store Redux con il reducer persistente.
 const store = configureStore({
   reducer: {
-    counter: persistedCounterReducer
+    counter: persistedCounterReducer // Associa il reducer persistente allo store
   }
 })
 
+// Crea un persistor per lo store, che permette di salvare e ripristinare lo stato.
 const persistor = persistStore(store)
 
+// Esporta lo store e il persistor per essere utilizzati nell'applicazione.
 export { store, persistor }
