@@ -8,9 +8,10 @@ const counterPersistConfig = {
   key: 'counter', // La chiave sotto cui salvare lo stato del contatore nel storage
   storage // Il meccanismo di storage da utilizzare (default: localStorage nel web)
 }
-
 // Applica la persistenza al counterReducer utilizzando la configurazione definita.
 const persistedCounterReducer = persistReducer(counterPersistConfig, counterReducer)
+
+// --------------------------------------------------------------------------------------
 
 // Configura lo store Redux con il reducer persistente.
 const store = configureStore({

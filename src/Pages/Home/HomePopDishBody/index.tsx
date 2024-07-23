@@ -51,8 +51,6 @@ export const HomePopDishBody = ({
 
   const dispatch = useDispatch()
 
-  console.log()
-
   useEffect(() => {
     const fetchCards = async () => {
       try {
