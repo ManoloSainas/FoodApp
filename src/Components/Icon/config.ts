@@ -39,7 +39,7 @@ export const iconsSet = {
   Xmark: faXmark,
   Bell: faBell,
   Bars: faBars, // DA CAMBIARE!
-  BagShopping: faBagShopping, // DA CAMBIARE!
+  ShoppingCart: faBagShopping, // DA CAMBIARE!
   DoorOpen: faDoorOpen, // DA CAMBIARE!
   Loading: faSpinner // fa-spin-pulse
   // AGGIUNGERE LE ALTRE ICONE

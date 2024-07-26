@@ -52,7 +52,7 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
             <Stack position="relative" alignItems="center" justifyContent="center">
               <IconButton
                 variant="greyIcon"
-                iconName="BagShopping"
+                iconName="ShoppingCart"
                 onClick={() => console.log('Clicked')}
               />
 

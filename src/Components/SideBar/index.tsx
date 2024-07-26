@@ -16,7 +16,7 @@ export const SideBar = () => {
         options={[
           { icon: 'Home', text: 'Home' },
           { icon: 'Catalog', text: 'Catalog' },
-          { icon: 'Category', text: 'Category' },
+          { icon: 'ShoppingCart', text: 'Cart' },
           { icon: 'Map', text: 'Map' },
           { icon: 'Delivery', text: 'Delivery' },
           { icon: 'Settings', text: 'Settings' }

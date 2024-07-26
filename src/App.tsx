@@ -34,12 +34,12 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
 
-          <Route path="/category" element="To-do" />
+          <Route path="/shoppingCart" element={<ShoppingCart />} />
           <Route path="/map" element="To-do" />
           <Route path="/Delivery" element="To-do" />
           <Route path="/Settings" element="To-do" />
 
-          <Route path="/ShoppingCart" element={<ShoppingCart />} />
+          <Route path="/shoppingCart" element={<ShoppingCart />} />
         </Route>
       </Routes>
     </BrowserRouter>
