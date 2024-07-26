@@ -26,12 +26,15 @@ export const IconButton = ({
   const [buttonState, setButtonState] = useState({ variant, iconName })
 
   const handleClick = useCallback(() => {
-    if (buttonState.variant === 'primary' && buttonState.iconName === 'Plus') {
+    if (
+      buttonState.variant === 'primary' &&
+      (buttonState.iconName === 'Plus' || buttonState.iconName === 'Minus')
+    ) {
       onClick()
       setButtonState({ variant: 'redIcon', iconName: 'Check' })
 
       setTimeout(() => {
-        setButtonState({ variant: 'primary', iconName: 'Plus' })
+        setButtonState({ variant: 'primary', iconName: buttonState.iconName })
       }, 1000)
     } else {
       onClick()

@@ -23,7 +23,9 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addProduct: (state, action: PayloadAction<CartObject>) => {
-      state.objects.push(action.payload)
+      if (!state.objects.some((obj) => obj.imageURL === action.payload.imageURL)) {
+        state.objects.push(action.payload)
+      }
     },
 
     deleteProduct: (state, action: PayloadAction<string>) => {
