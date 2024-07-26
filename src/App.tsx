@@ -4,7 +4,7 @@ import { Layout } from './Components/Layout'
 import { Catalog } from './Pages/Catalog'
 import { Home } from './Pages/Home'
 import { useEffect } from 'react'
-import { ShoppingCart } from './Pages/ShoppingCart/index'
+import { Cart } from './Pages/Cart/index'
 
 // Definisce un componente funzionale RedirectToHome per reindirizzare l'utente alla pagina /home
 function RedirectToHome() {
@@ -34,12 +34,12 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
 
-          <Route path="/shoppingCart" element={<ShoppingCart />} />
+          <Route path="/shoppingCart" element={<Cart />} />
           <Route path="/map" element="To-do" />
           <Route path="/Delivery" element="To-do" />
           <Route path="/Settings" element="To-do" />
 
-          <Route path="/shoppingCart" element={<ShoppingCart />} />
+          <Route path="/shoppingCart" element={<Cart />} />
         </Route>
       </Routes>
     </BrowserRouter>

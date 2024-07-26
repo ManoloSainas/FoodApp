@@ -6,8 +6,7 @@ import { StyledHeader } from './styled'
 import { Text } from '../Text'
 import { CurrencySelect } from './CurrencySelect'
 import { useSelector } from 'react-redux'
-import { selectCount } from '../../reducers/counterReducer'
-import { Link } from 'react-router-dom'
+import { selectCartTotal } from '../../reducers/cartReducer'
 
 type Props = {
   setSearchedText: (text: string) => void
@@ -17,7 +16,7 @@ type Props = {
 export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
   const [inputText, setInputText] = useState('')
 
-  const count = useSelector(selectCount)
+  const TotCartObjects = useSelector(selectCartTotal)
 
   return (
     <StyledHeader>
@@ -48,30 +47,28 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
             onClick={() => console.log('Clicked')}
           />
 
-          <Link key="shoppingcart" to={`/shoppingcart`}>
-            <Stack position="relative" alignItems="center" justifyContent="center">
-              <IconButton
-                variant="greyIcon"
-                iconName="ShoppingCart"
-                onClick={() => console.log('Clicked')}
-              />
+          <Stack position="relative" alignItems="center" justifyContent="center">
+            <IconButton
+              variant="greyIcon"
+              iconName="ShoppingCart"
+              onClick={() => console.log('Clicked')}
+            />
 
-              {count > 0 && (
-                <Stack
-                  position="absolute"
-                  backgroundColor="#F74158"
-                  borderRadius={50}
-                  width="12px"
-                  height="12px"
-                  alignItems="center"
-                  justifyContent="center"
-                  transform="translate(45%, 45%)"
-                >
-                  <Text fontSize={8}>{count}</Text>
-                </Stack>
-              )}
-            </Stack>
-          </Link>
+            {TotCartObjects > 0 && (
+              <Stack
+                position="absolute"
+                backgroundColor="#F74158"
+                borderRadius={50}
+                width="12px"
+                height="12px"
+                alignItems="center"
+                justifyContent="center"
+                transform="translate(45%, 45%)"
+              >
+                <Text fontSize={8}>{TotCartObjects}</Text>
+              </Stack>
+            )}
+          </Stack>
 
           <IconButton
             variant="redIcon"

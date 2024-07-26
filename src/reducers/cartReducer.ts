@@ -2,7 +2,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { symbols } from '../Components/Price'
 
-type MyObject = {
+export type CartObject = {
   imageURL: string
   text: string
   tagText: string
@@ -11,7 +11,7 @@ type MyObject = {
 }
 
 type MyState = {
-  objects: MyObject[]
+  objects: CartObject[]
 }
 
 const initialState: MyState = {
@@ -22,7 +22,7 @@ export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addProduct: (state, action: PayloadAction<MyObject>) => {
+    addProduct: (state, action: PayloadAction<CartObject>) => {
       state.objects.push(action.payload)
     },
 
@@ -33,5 +33,11 @@ export const cartSlice = createSlice({
 })
 
 export const { addProduct, deleteProduct } = cartSlice.actions
+
+// Selettore per ottenere la lista dei prodotti
+export const selectCart = (state: { cart: MyState }) => state.cart.objects
+
+// Selettore per ottenere il numero totale di prodotti presenti nell'array
+export const selectCartTotal = (state: { cart: MyState }) => state.cart.objects.length
 
 export default cartSlice.reducer

@@ -10,8 +10,6 @@ export const Home = () => {
   const [selectedDelivery, setSelectedDelivery] = useState<string | string[]>('')
   const [selectSortPrice, setSelectedSortPrice] = useState<string | string[]>('')
 
-  console.log('value->', selectSortPrice)
-
   return (
     <StyledHome>
       <HomeTopCards updateId={setSelectedId} />

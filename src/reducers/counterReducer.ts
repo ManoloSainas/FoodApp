@@ -6,7 +6,6 @@ import { WritableDraft } from 'immer'
 export const counterSlice = createSlice({
   name: 'counter', // Nome dello slice, utilizzato nelle azioni
   initialState: {
-    // Stato iniziale dello slice
     value: 0
   },
   reducers: {
