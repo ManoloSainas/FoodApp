@@ -15,11 +15,18 @@ export const Cart = () => {
         <Text fontSize={25} color="white">
           Shopping Cart
         </Text>
-
-        <ShoppingCard
-          options={cart}
-          onClick={(value) => dispatch(deleteProduct(value))}
-        />
+        {cart.length > 0 ? (
+          <ShoppingCard
+            options={cart}
+            onClick={(value) => dispatch(deleteProduct(value))}
+          />
+        ) : (
+          <Stack justifyContent="center" alignItems="center" width="100%" height="40%">
+            <Text color="#F00C2C" variant="h1">
+              Cart is empty
+            </Text>
+          </Stack>
+        )}
       </Stack>
       <StyledCardDetails>
         <Text color="red">SHOPPING CART</Text>
