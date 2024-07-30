@@ -93,3 +93,6 @@ addons utili per edge/crhome:
   Html tree generator
   lighthouse
   pesticide for chrome
+
+addon per vscode:
+ git graph
