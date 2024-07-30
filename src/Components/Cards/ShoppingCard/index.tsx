@@ -7,7 +7,8 @@ import { Text } from '../../Text'
 import { StyledRow, StyledTable } from './styled'
 import { Stack } from '../../Stack'
 import { useMemo } from 'react'
-import { CartObject } from '../../../reducers/cartReducer'
+import { CartObject, MyState, selectProductQuantity } from '../../../reducers/cartReducer'
+import { useSelector } from 'react-redux'
 
 type Props = {
   options: CartObject[]
@@ -15,6 +16,13 @@ type Props = {
 }
 
 export const ShoppingCard = ({ options, onClick }: Props) => {
+  // Custom selector function to get the quantity for a specific product
+  const getProductQuantity = (productURL: string) => {
+    return useSelector((state: { cart: MyState }) =>
+      selectProductQuantity(state, productURL)
+    )
+  }
+
   const optionsElements = useMemo(
     () =>
       options.map(({ imageURL, text, tagText, currency, value }) => (
@@ -34,7 +42,7 @@ export const ShoppingCard = ({ options, onClick }: Props) => {
             </Stack>
 
             <Stack>
-              <QuantitySelector />
+              <QuantitySelector initalQuantity={getProductQuantity(imageURL)} />
             </Stack>
             <Price currency={currency} value={value} />
             <IconButton
