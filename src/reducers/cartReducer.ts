@@ -16,7 +16,7 @@ export type CartObject = {
   value: string
 }
 
-type MyState = {
+export type MyState = {
   cart: CartObject[]
   quantity: CountCartObject[]
 }
@@ -76,5 +76,11 @@ export const selectCart = (state: { cart: MyState }) => state.cart.cart
 // Selettore per ottenere il numero totale di prodotti presenti nell'array
 export const selectCartTotal = (state: { cart: MyState }) =>
   state.cart.quantity.reduce((total, item) => total + item.quantityCartObject, 0)
+
+// Selettore per ottenere la quantità di un prodotto specifico
+export const selectProductQuantity = (state: { cart: MyState }, productURL: string) => {
+  const quantityItem = state.cart.quantity.find((obj) => obj.cartObjectURL === productURL)
+  return quantityItem ? quantityItem.quantityCartObject : 0
+}
 
 export default cartSlice.reducer
