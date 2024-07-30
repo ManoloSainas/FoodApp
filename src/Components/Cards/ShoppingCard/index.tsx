@@ -19,21 +19,30 @@ export const ShoppingCard = ({ options, onClick }: Props) => {
     () =>
       options.map(({ imageURL, text, tagText, currency, value }) => (
         <StyledRow key={imageURL}>
-          <Image className="shopping-image" imageUrl={imageURL} />
-          <Stack flexDirection="column">
-            <Text className="shopping-text" variant="h2">
-              {text}
-            </Text>
-            <Tag text={tagText} />
-          </Stack>
+          <Stack justifyContent="space-between" alignItems="center" width="100%">
+            <Stack gap="10px">
+              <Stack height="100px" width="100px">
+                <Image className="shopping-image" imageUrl={imageURL} />
+              </Stack>
 
-          <QuantitySelector />
-          <Price currency={currency} value={value} />
-          <IconButton
-            variant="redIcon"
-            iconName="Xmark"
-            onClick={() => onClick(imageURL)}
-          />
+              <Stack flexDirection="column">
+                <Text className="shopping-text" fontSize={20}>
+                  {text}
+                </Text>
+                <Tag text={tagText} />
+              </Stack>
+            </Stack>
+
+            <Stack>
+              <QuantitySelector />
+            </Stack>
+            <Price currency={currency} value={value} />
+            <IconButton
+              variant="redIcon"
+              iconName="Xmark"
+              onClick={() => onClick(imageURL)}
+            />
+          </Stack>
         </StyledRow>
       )),
     [options, onClick]

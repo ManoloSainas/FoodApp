@@ -11,11 +11,11 @@ export type CartObject = {
 }
 
 type MyState = {
-  objects: CartObject[]
+  cart: CartObject[]
 }
 
 const initialState: MyState = {
-  objects: []
+  cart: []
 }
 
 export const cartSlice = createSlice({
@@ -23,13 +23,13 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addProduct: (state, action: PayloadAction<CartObject>) => {
-      if (!state.objects.some((obj) => obj.imageURL === action.payload.imageURL)) {
-        state.objects.push(action.payload)
+      if (!state.cart.some((obj) => obj.imageURL === action.payload.imageURL)) {
+        state.cart.push(action.payload)
       }
     },
 
     deleteProduct: (state, action: PayloadAction<string>) => {
-      state.objects = state.objects.filter((obj) => obj.imageURL !== action.payload)
+      state.cart = state.cart.filter((obj) => obj.imageURL !== action.payload)
     }
   }
 })
@@ -37,9 +37,9 @@ export const cartSlice = createSlice({
 export const { addProduct, deleteProduct } = cartSlice.actions
 
 // Selettore per ottenere la lista dei prodotti
-export const selectCart = (state: { cart: MyState }) => state.cart.objects
+export const selectCart = (state: { cart: MyState }) => state.cart.cart
 
 // Selettore per ottenere il numero totale di prodotti presenti nell'array
-export const selectCartTotal = (state: { cart: MyState }) => state.cart.objects.length
+export const selectCartTotal = (state: { cart: MyState }) => state.cart.cart.length
 
 export default cartSlice.reducer

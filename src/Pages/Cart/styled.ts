@@ -12,7 +12,6 @@ export const StyledCart = styled.div`
 
 export const StyledCardDetails = styled.div`
   display: flex;
-
   width: 100%;
   background-color: #0c0b10;
   border-top-left-radius: 80px 80px;
