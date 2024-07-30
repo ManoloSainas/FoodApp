@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { symbols } from '../Components/Price'
 
-//Gestione prodotto
 export type CountCartObject = {
   cartObjectURL: string
   quantityCartObject: number
