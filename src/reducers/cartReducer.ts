@@ -4,6 +4,8 @@ import { symbols } from '../Components/Price'
 export type CountCartObject = {
   cartObjectURL: string
   quantityCartObject: number
+  currency: keyof typeof symbols
+  value: string
 }
 
 export type CartObject = {
@@ -36,12 +38,16 @@ export const cartSlice = createSlice({
       const quantityItem = state.quantity.find(
         (obj) => obj.cartObjectURL === action.payload.imageURL
       )
-      quantityItem
-        ? (quantityItem.quantityCartObject += 1)
-        : state.quantity.push({
-            cartObjectURL: action.payload.imageURL,
-            quantityCartObject: 1
-          })
+      if (quantityItem) {
+        quantityItem.quantityCartObject += 1
+      } else {
+        state.quantity.push({
+          cartObjectURL: action.payload.imageURL,
+          quantityCartObject: 1,
+          currency: action.payload.currency,
+          value: action.payload.value
+        })
+      }
     },
 
     deleteProduct: (state, action: PayloadAction<string>) => {
