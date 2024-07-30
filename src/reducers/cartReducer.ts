@@ -1,6 +1,10 @@
-// Importa la funzione createSlice da Redux Toolkit
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { symbols } from '../Components/Price'
+
+export type CountCartObject = {
+  cartObjectURL: string
+  quantityCartObject: number
+}
 
 export type CartObject = {
   imageURL: string
@@ -12,10 +16,12 @@ export type CartObject = {
 
 type MyState = {
   cart: CartObject[]
+  quantity: CountCartObject[]
 }
 
 const initialState: MyState = {
-  cart: []
+  cart: [],
+  quantity: []
 }
 
 export const cartSlice = createSlice({
@@ -26,10 +32,32 @@ export const cartSlice = createSlice({
       if (!state.cart.some((obj) => obj.imageURL === action.payload.imageURL)) {
         state.cart.push(action.payload)
       }
+
+      const quantityItem = state.quantity.find(
+        (obj) => obj.cartObjectURL === action.payload.imageURL
+      )
+      quantityItem
+        ? (quantityItem.quantityCartObject += 1)
+        : state.quantity.push({
+            cartObjectURL: action.payload.imageURL,
+            quantityCartObject: 1
+          })
     },
 
     deleteProduct: (state, action: PayloadAction<string>) => {
-      state.cart = state.cart.filter((obj) => obj.imageURL !== action.payload)
+      const quantityItem = state.quantity.find(
+        (obj) => obj.cartObjectURL === action.payload
+      )
+      if (quantityItem) {
+        if (quantityItem.quantityCartObject > 1) {
+          quantityItem.quantityCartObject -= 1
+        } else {
+          state.quantity = state.quantity.filter(
+            (obj) => obj.cartObjectURL !== action.payload
+          )
+          state.cart = state.cart.filter((obj) => obj.imageURL !== action.payload)
+        }
+      }
     }
   }
 })
@@ -40,6 +68,7 @@ export const { addProduct, deleteProduct } = cartSlice.actions
 export const selectCart = (state: { cart: MyState }) => state.cart.cart
 
 // Selettore per ottenere il numero totale di prodotti presenti nell'array
-export const selectCartTotal = (state: { cart: MyState }) => state.cart.cart.length
+export const selectCartTotal = (state: { cart: MyState }) =>
+  state.cart.quantity.reduce((total, item) => total + item.quantityCartObject, 0)
 
 export default cartSlice.reducer
