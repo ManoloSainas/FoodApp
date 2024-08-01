@@ -16,7 +16,7 @@ export type Props = {
   updateId: (value: string) => void
 }
 
-export const HomeTopCards = ({ updateId }: Props) => {
+export const CatalogTopCards = ({ updateId }: Props) => {
   const [data, setData] = useState<CardData[]>([
     { text: 'All', imageUrl: 'src/assets/Images/All.png', id: 'All' }
   ])

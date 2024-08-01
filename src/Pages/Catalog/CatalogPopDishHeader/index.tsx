@@ -10,7 +10,7 @@ export type Props = {
   updateSortPrice: (value: string | string[]) => void
 }
 
-export const HomePopDishHeader = ({ updateDelivery, updateSortPrice }: Props) => {
+export const CatalogPopDishHeader = ({ updateDelivery, updateSortPrice }: Props) => {
   return (
     <Stack
       id="stack-popdish-title"

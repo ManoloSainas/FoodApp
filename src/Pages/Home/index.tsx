@@ -1,28 +1,25 @@
-import { useState } from 'react'
 import { Stack } from '../../Components/Stack'
-import { HomePopDishBody } from './HomePopDishBody'
-import { HomePopDishHeader } from './HomePopDishHeader'
-import { HomeTopCards } from './HomeTopCards'
+import { Text } from '../../Components/Text'
 import { StyledHome } from './styled'
 
 export const Home = () => {
-  const [selectedId, setSelectedId] = useState<string>('All')
-  const [selectedDelivery, setSelectedDelivery] = useState<string | string[]>('')
-  const [selectSortPrice, setSelectedSortPrice] = useState<string | string[]>('')
-
   return (
     <StyledHome>
-      <HomeTopCards updateId={setSelectedId} />
-      <Stack flexDirection="column">
-        <HomePopDishHeader
-          updateDelivery={setSelectedDelivery}
-          updateSortPrice={setSelectedSortPrice}
-        />
-        <HomePopDishBody
-          currentId={selectedId}
-          currentDelivery={selectedDelivery}
-          currentSortPrice={selectSortPrice}
-        />
+      <Stack
+        backgroundColor="#17171C"
+        justifyContent="center"
+        flexDirection="column"
+        alignItems="center"
+        margin="10%"
+        padding="5%"
+        borderRadius={25}
+      >
+        <Text color="#F00C2C" variant="h1">
+          Welcome Joseph Cheong!
+        </Text>
+        <Text color="#ffffff" variant="h2">
+          I hope you're in the mood for something delicious today! 😍❤️
+        </Text>
       </Stack>
     </StyledHome>
   )

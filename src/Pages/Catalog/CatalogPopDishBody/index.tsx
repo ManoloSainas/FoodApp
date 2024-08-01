@@ -38,7 +38,7 @@ export type Props = {
   currentSortPrice: string | string[]
 }
 
-export const HomePopDishBody = ({
+export const CatalogPopDishBody = ({
   currentId,
   currentDelivery,
   currentSortPrice
