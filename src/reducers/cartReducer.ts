@@ -28,6 +28,9 @@ export const cartSlice = createSlice({
       )
       if (quantityItem) {
         quantityItem.quantityCartObject += 1
+        quantityItem.value = (
+          parseFloat(quantityItem.value) + parseFloat(action.payload.value)
+        ).toString()
       } else {
         state.cart.push({
           imageURL: action.payload.imageURL,
