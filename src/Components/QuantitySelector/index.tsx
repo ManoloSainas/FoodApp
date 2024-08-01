@@ -4,8 +4,12 @@ import { StyledQuantitySelector } from './styled'
 import { IconButton } from '../IconButton'
 import { Text } from '../Text'
 
-export const QuantitySelector = () => {
-  const [quantity, setQuantity] = useState(1)
+type Props = {
+  initalQuantity?: number
+}
+
+export const QuantitySelector = ({ initalQuantity = 1 }: Props) => {
+  const [quantity, setQuantity] = useState(initalQuantity)
 
   const handleIncrement = useCallback(() => {
     setQuantity((prevQuantity) => prevQuantity + 1)

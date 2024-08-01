@@ -57,14 +57,16 @@ export const HomePopDishBody = ({
     text: string,
     tagText: string,
     currency: keyof typeof symbols,
-    value: string
+    value: string,
+    quantityCartObject: number
   ) => {
     const productPayload = {
       imageURL,
       text,
       tagText,
       currency,
-      value
+      value,
+      quantityCartObject
     }
 
     dispatch(addProduct(productPayload))
@@ -176,7 +178,7 @@ export const HomePopDishBody = ({
         <PopDishes
           products={filteredData.length > 0 ? filteredData : []}
           onClick={(imageURL, text, tagText, currency, value) =>
-            handleAddProduct(imageURL, text, tagText, currency, value)
+            handleAddProduct(imageURL, text, tagText, currency, value, 1)
           }
         ></PopDishes>
       </Stack>

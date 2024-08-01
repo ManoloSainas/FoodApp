@@ -17,7 +17,7 @@ type Props = {
 export const ShoppingCard = ({ options, onClick }: Props) => {
   const optionsElements = useMemo(
     () =>
-      options.map(({ imageURL, text, tagText, currency, value }) => (
+      options.map(({ imageURL, text, tagText, currency, value, quantityCartObject }) => (
         <StyledRow key={imageURL}>
           <Stack justifyContent="space-between" alignItems="center" width="100%">
             <Stack gap="10px">
@@ -34,7 +34,7 @@ export const ShoppingCard = ({ options, onClick }: Props) => {
             </Stack>
 
             <Stack>
-              <QuantitySelector />
+              <QuantitySelector initalQuantity={quantityCartObject} />
             </Stack>
             <Price currency={currency} value={value} />
             <IconButton
