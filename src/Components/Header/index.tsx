@@ -6,7 +6,7 @@ import { StyledHeader } from './styled'
 import { Text } from '../Text'
 import { CurrencySelect } from './CurrencySelect'
 import { useSelector } from 'react-redux'
-import { selectCartTotal } from '../../reducers/cartReducer'
+import { selectCartTotal } from '../../features/cart/selectors'
 
 type Props = {
   setSearchedText: (text: string) => void

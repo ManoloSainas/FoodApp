@@ -1,14 +1,13 @@
 import { useContext, useEffect, useMemo, useState } from 'react'
 import { PopDishes, product } from '../../../Components/Cards/PopDishesCard'
 import { Stack } from '../../../Components/Stack'
-import { apiClient } from '../../../../api-client'
+import { apiClient } from '../../../features/api/api-client'
 import { symbols } from '../../../Components/Price'
 import { IconName } from '../../../Components/Icon/config'
 import { Text } from '../../../Components/Text'
 import { CurrencyContext, TextContext } from '../../../Components/Layout/index'
 
-import { increment } from '../../../reducers/counterReducer'
-import { addProduct } from '../../../reducers/cartReducer'
+import { addProduct } from '../../../features/cart/reducer'
 import { useDispatch } from 'react-redux'
 
 type FetchedProduct = {
@@ -70,8 +69,6 @@ export const HomePopDishBody = ({
     }
 
     dispatch(addProduct(productPayload))
-
-    dispatch(increment())
   }
 
   useEffect(() => {

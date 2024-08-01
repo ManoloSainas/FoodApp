@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Stack } from '../../../Components/Stack'
-import { apiClient } from '../../../../api-client'
+import { apiClient } from '../../../features/api/api-client'
 import { CardData, ImageTextCard } from '../../../Components/Cards/ImageTextCard'
 import { Text } from '../../../Components/Text'
 

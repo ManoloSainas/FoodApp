@@ -1,18 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { symbols } from '../Components/Price'
-
-export type CartObject = {
-  imageURL: string
-  text: string
-  tagText: string
-  currency: keyof typeof symbols
-  value: string
-  quantityCartObject: number
-}
-
-export type MyState = {
-  cart: CartObject[]
-}
+import { CartObject, MyState } from './model'
 
 export const initialState: MyState = {
   cart: []
@@ -50,12 +37,5 @@ export const cartSlice = createSlice({
 })
 
 export const { addProduct, deleteProduct } = cartSlice.actions
-
-// Selettore per ottenere la lista dei prodotti
-export const selectCart = (state: { cart: MyState }) => state.cart.cart
-
-// Selettore per ottenere il numero totale di prodotti presenti nell'array
-export const selectCartTotal = (state: { cart: MyState }) =>
-  state.cart.cart.reduce((total, item) => total + item.quantityCartObject, 0)
 
 export default cartSlice.reducer

@@ -7,7 +7,7 @@ import { Text } from '../../Text'
 import { StyledRow, StyledTable } from './styled'
 import { Stack } from '../../Stack'
 import { useMemo } from 'react'
-import { CartObject } from '../../../reducers/cartReducer'
+import { CartObject } from '../../../features/cart/model'
 
 type Props = {
   options: CartObject[]

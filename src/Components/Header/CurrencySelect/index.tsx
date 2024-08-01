@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Select } from '../../Form/Select'
-import { apiClient } from '../../../../api-client'
+import { apiClient } from '../../../features/api/api-client'
 import { symbols } from '../../Price'
 import { Text } from '../../Text'
 

@@ -3,7 +3,8 @@ import { ShoppingCard } from '../../Components/Cards/ShoppingCard'
 import { Stack } from '../../Components/Stack'
 import { Text } from '../../Components/Text'
 import { StyledCardDetails, StyledCart } from './styled'
-import { deleteProduct, selectCart } from '../../reducers/cartReducer'
+import { selectCart } from '../../features/cart/selectors'
+import { deleteProduct } from '../../features/cart/reducer'
 
 export const Cart = () => {
   const cart = useSelector(selectCart)
