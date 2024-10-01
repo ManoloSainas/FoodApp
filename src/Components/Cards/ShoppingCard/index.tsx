@@ -34,7 +34,7 @@ export const ShoppingCard = ({ options, onClick }: Props) => {
             </Stack>
 
             <Stack>
-              <QuantitySelector initalQuantity={quantityCartObject} />
+              <QuantitySelector initalQuantity={quantityCartObject} product={imageURL} />
             </Stack>
             <Price currency={currency} value={value} />
             <IconButton
