@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { IconButton } from '../IconButton'
 import { SearchBar } from '../SearchBar'
 import { Stack } from '../Stack'
@@ -18,6 +18,10 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
 
   const TotCartObjects = useSelector(selectCartTotal)
 
+  useEffect(() => {
+    setSearchedText(inputText)
+  }, [inputText, setSearchedText])
+
   return (
     <StyledHeader>
       <SearchBar
@@ -25,11 +29,6 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
         iconName="SearchLens"
         onClick={() => setSearchedText(inputText)}
         onChange={(value) => setInputText(value)}
-        onKeyPress={(e) => {
-          if (e.key === 'Enter') {
-            setSearchedText(inputText)
-          }
-        }}
         placeholder="Search..."
         variant="transparent"
       />

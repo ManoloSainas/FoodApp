@@ -6,7 +6,6 @@ import { StyledSearchBar } from './styled'
 
 type Props = {
   onClick: () => void
-  onKeyPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void
   iconName: IconName
   variant?: ButtonVariant
   disabled?: boolean
@@ -18,7 +17,6 @@ type Props = {
 
 export const SearchBar = ({
   onClick,
-  onKeyPress,
   iconName,
   variant,
   disabled,
@@ -35,7 +33,6 @@ export const SearchBar = ({
         type={type}
         value={value}
         onChange={onChange}
-        onKeyPress={onKeyPress}
       />
       <IconButton
         onClick={onClick}
