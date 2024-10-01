@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Icon } from '../Icon'
 import { IconName } from '../Icon/config'
 import { Text } from '../Text'
@@ -12,7 +12,14 @@ type Props = {
 }
 
 export const SideList = ({ options, onChange }: Props) => {
-  const [selectedRow, setSelectedRow] = useState<IconName>(options[0].icon)
+  const [selectedRow, setSelectedRow] = useState<IconName>(() => {
+    const savedIcon = localStorage.getItem('selectedRow')
+    return savedIcon ? (savedIcon as IconName) : options[0].icon
+  })
+
+  useEffect(() => {
+    localStorage.setItem('selectedRow', selectedRow)
+  }, [selectedRow])
 
   const handleClick = (icon: IconName) => {
     setSelectedRow(icon)
