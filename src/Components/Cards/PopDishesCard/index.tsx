@@ -10,6 +10,7 @@ import { Text } from '../../Text'
 import { StyledList, StyledRow } from './styled'
 import { symbols } from '../../Price'
 import { useMemo } from 'react'
+import { Link } from 'react-router-dom'
 
 export type product = {
   imageURL: string
@@ -42,10 +43,6 @@ type Props = {
 export const drinks: string[] = ['Pepsi', 'Fanta']
 
 export const PopDishes = ({ products, onClick }: Props) => {
-  function ProductInformations() {
-    alert("You've clicked this product")
-  }
-
   const optionsElements = useMemo(
     () =>
       products.map(
@@ -71,54 +68,60 @@ export const PopDishes = ({ products, onClick }: Props) => {
                   width="max-content"
                   height="280px"
                   alignItems="center"
+                  clickable={true}
+                  onClick={() => console.log('Clicked')}
                 >
                   <Stack flexDirection="column" alignItems="flex-start">
-                    <Stack
-                      flexDirection="column"
-                      alignItems="center"
-                      clickable={true}
-                      onClick={() => ProductInformations()}
-                    >
-                      {showIconInCorner && <Icon iconName={iconNameOptional} />}
-                      <Stack justifyContent="center" width="198px">
-                        {tags.includes('534ed6f7-be81-4af3-9c27-ebb8acd2e946') &&
-                        !drinks.includes(text) ? (
-                          <Image className="pop-dish-image-drink" imageUrl={imageURL} />
-                        ) : (
-                          <Image className="pop-dish-image" imageUrl={imageURL} />
-                        )}
-                      </Stack>
-
-                      <Text className="pop-dish-text" variant="h2">
-                        {text}
-                      </Text>
-                      <Text className="pop-dish-textp">{textp}</Text>
-                    </Stack>
-
-                    <Stack
-                      flexDirection="column"
-                      alignItems="center"
-                      gap="20px"
-                      justifyContent="center"
-                    >
+                    <Link key={imageURL} to={`/ProductDetails`}>
                       <Stack
-                        justifyContent="space-around"
+                        flexDirection="column"
                         alignItems="center"
-                        width="max-content"
-                        gap="20px"
                         clickable={true}
-                        onClick={() => ProductInformations()}
+                        onClick={() => console.log('Clicked')}
                       >
-                        <Price currency={currency} value={value} />
-                        <Tag text={tagText} />
+                        {showIconInCorner && <Icon iconName={iconNameOptional} />}
+                        <Stack justifyContent="center" width="198px">
+                          {tags.includes('534ed6f7-be81-4af3-9c27-ebb8acd2e946') &&
+                          !drinks.includes(text) ? (
+                            <Image className="pop-dish-image-drink" imageUrl={imageURL} />
+                          ) : (
+                            <Image className="pop-dish-image" imageUrl={imageURL} />
+                          )}
+                        </Stack>
+
+                        <Text className="pop-dish-text" variant="h2">
+                          {text}
+                        </Text>
+                        <Text className="pop-dish-textp">{textp}</Text>
                       </Stack>
-                    </Stack>
+
+                      <Stack
+                        flexDirection="column"
+                        alignItems="center"
+                        gap="20px"
+                        justifyContent="center"
+                      >
+                        <Stack
+                          justifyContent="space-around"
+                          alignItems="center"
+                          width="max-content"
+                          gap="20px"
+                          clickable={true}
+                          onClick={() => console.log('Clicked')}
+                        >
+                          <Price currency={currency} value={value} />
+                          <Tag text={tagText} />
+                        </Stack>
+                      </Stack>
+                    </Link>
                     <Stack justifyContent="center" width="200px" margin="10px 0 0 0">
                       <IconButton
                         size="xl"
                         variant={variant}
                         iconName={iconNameButton}
-                        onClick={() => onClick(imageURL, text, tagText, currency, value)}
+                        onClick={() => {
+                          onClick(imageURL, text, tagText, currency, value)
+                        }}
                         disabled={!available}
                       />
                     </Stack>

@@ -99,3 +99,5 @@ addon per vscode:
 
  Sito utile per capire Redux!!!!!!!!
  https://builtin.com/software-engineering-perspectives/useselector-usedispatch-react-redux
+
+ Da guarda come funziona Redux-saga

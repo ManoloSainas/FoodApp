@@ -5,6 +5,7 @@ import { Catalog } from './Pages/Catalog'
 import { Home } from './Pages/Home'
 import { useEffect } from 'react'
 import { Cart } from './Pages/Cart/index'
+import { ProductDetails } from './Pages/ProductDetails'
 
 // Definisce un componente funzionale RedirectToHome per reindirizzare l'utente alla pagina /home
 function RedirectToHome() {
@@ -33,8 +34,9 @@ function App() {
           {/* Definisce le varie rotte dell'applicazione e i componenti da renderizzare */}
           <Route path="/home" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
-
+          <Route path="/productDetails" element={<ProductDetails />} />
           <Route path="/shoppingCart" element={<Cart />} />
+
           <Route path="/map" element="To-do" />
           <Route path="/Delivery" element="To-do" />
           <Route path="/Settings" element="To-do" />
