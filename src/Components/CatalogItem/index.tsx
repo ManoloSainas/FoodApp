@@ -36,8 +36,8 @@ export const CatalogItem = ({ text, textp, imgURL, currency, value }: Props) => 
               </Text>
             </Stack>
 
-            <Stack flexDirection="column">
-              <Stack alignItems="center" justifyContent="space-between" gap="30px">
+            <Stack flexDirection="column" gap="30px">
+              <Stack alignItems="center" justifyContent="space-between" gap="35px">
                 <Price fontSize={40} currency={currency} value={value} />
                 <QuantitySelector product="" />
               </Stack>
