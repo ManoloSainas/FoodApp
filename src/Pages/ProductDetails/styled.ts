@@ -6,6 +6,6 @@ export const StyledProductDetails = styled.div`
   height: 100%;
   background-color: #100f14;
   border-top-left-radius: 80px 80px;
-  padding: 50px 0px 50px 50px;
+  padding: 40px 60px 60px 100px;
   gap: 5%;
 `

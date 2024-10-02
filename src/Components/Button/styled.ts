@@ -1,17 +1,29 @@
 import styled from 'styled-components'
 
 export type ButtonVariant = keyof typeof buttonVariants
+export type PaddingVariant = keyof typeof paddingVariants
 
 export const StyledButton = styled.button<{
   $variant: ButtonVariant
+  $paddingVar: PaddingVariant
 }>`
   background-color: ${({ $variant }) => buttonVariants[$variant].backgroundColor};
   color: ${({ $variant }) => buttonVariants[$variant].color};
   border: ${({ $variant }) => buttonVariants[$variant].border};
   border-color: ${({ $variant }) => buttonVariants[$variant].borderColor};
-  padding: 5px 10px 5px 10px;
+  padding: ${({ $paddingVar }) => paddingVariants[$paddingVar].padding};
   border-radius: 200px;
 `
+
+export const paddingVariants = {
+  icon: {
+    padding: '5px 10px 5px 10px'
+  },
+
+  button: {
+    padding: '12px 40px 12px 40px'
+  }
+}
 
 export const buttonVariants = {
   primary: {

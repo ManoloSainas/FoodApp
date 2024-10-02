@@ -17,16 +17,41 @@ export const CatalogItem = ({ text, textp, imgURL, currency, value }: Props) => 
   return (
     <>
       <Stack flexDirection="column">
-        <Text>{text}</Text>
-        <Text>{textp}</Text>
         <Stack>
-          <Price currency={currency} value={value} />
-          <QuantitySelector product="" />
+          <Text fontWeight="bold" color="white" fontSize={50}>
+            {text}
+          </Text>
         </Stack>
-        <Button onClick={() => console.log('clicked')}>Order Now</Button>
-      </Stack>
-      <Stack>
-        <Image width={100} height={100} imageUrl={imgURL} />
+
+        <Stack height="400px" gap="15px">
+          <Stack
+            flexDirection="column"
+            justifyContent="space-between"
+            height="90%"
+            width="300px"
+          >
+            <Stack>
+              <Text color="#404042" variant="h5">
+                {textp}
+              </Text>
+            </Stack>
+
+            <Stack flexDirection="column">
+              <Stack alignItems="center" justifyContent="space-between" gap="30px">
+                <Price fontSize={40} currency={currency} value={value} />
+                <QuantitySelector product="" />
+              </Stack>
+
+              <Button paddingVar="button" onClick={() => console.log('clicked')}>
+                Order Now
+              </Button>
+            </Stack>
+          </Stack>
+
+          <Stack height="100%" alignItems="center">
+            <Image width={400} height={400} imageUrl={imgURL} />
+          </Stack>
+        </Stack>
       </Stack>
     </>
   )

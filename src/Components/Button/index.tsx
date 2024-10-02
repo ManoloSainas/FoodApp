@@ -1,17 +1,29 @@
 import { PropsWithChildren } from 'react'
-import { ButtonVariant, StyledButton } from './styled'
+import { ButtonVariant, PaddingVariant, StyledButton } from './styled'
 import { Icon } from '../Icon'
 
 type Props = PropsWithChildren<{
   onClick: () => void
   disabled?: boolean
   variant?: ButtonVariant
+  paddingVar?: PaddingVariant
 }>
 
-export const Button = ({ children, onClick, disabled, variant = 'primary' }: Props) => {
+export const Button = ({
+  children,
+  onClick,
+  disabled,
+  variant = 'primary',
+  paddingVar = 'icon'
+}: Props) => {
   const buttonTitle = typeof children === 'string' || typeof { Icon } ? children : ''
   return (
-    <StyledButton onClick={onClick} disabled={disabled} $variant={variant}>
+    <StyledButton
+      onClick={onClick}
+      disabled={disabled}
+      $variant={variant}
+      $paddingVar={paddingVar}
+    >
       {buttonTitle}
     </StyledButton>
   )

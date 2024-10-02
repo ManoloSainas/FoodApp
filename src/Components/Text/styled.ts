@@ -23,6 +23,7 @@ export const StyledText = variants.reduce(
       color: ${({ color }) => color};
       font-size: ${({ fontSize }) => fontSize}px;
       font-style: ${({ fontStyle }) => fontStyle};
+      font-weight: ${({ fontWeight }) => fontWeight};
       margin: 5px 0px 5px 0px;
     `
   }),

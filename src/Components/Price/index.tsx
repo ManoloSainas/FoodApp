@@ -4,13 +4,18 @@ import { StyledPrice } from './styled'
 type Props = {
   value: string
   currency: keyof typeof symbols
+  fontSize?: number
 }
 
-export const Price = ({ value, currency }: Props) => {
+export const Price = ({ value, currency, fontSize }: Props) => {
   return (
     <StyledPrice>
-      <Text className="price-text">{symbols[currency]}</Text>
-      <Text className="price-text">{value}</Text>
+      <Text fontSize={fontSize} className="price-text">
+        {symbols[currency]}
+      </Text>
+      <Text fontSize={fontSize} className="price-text">
+        {value}
+      </Text>
     </StyledPrice>
   )
 }

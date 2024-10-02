@@ -6,6 +6,7 @@ export type Props = PropsWithChildren<{
   color?: string
   fontSize?: number
   fontStyle?: 'normal' | 'italic'
+  fontWeight?: 'normal' | 'bold'
   className?: string
 }>
 
@@ -14,7 +15,9 @@ export const Text = ({
   children,
   color = 'white',
   fontSize,
+  fontWeight,
   fontStyle,
+
   className
 }: Props) => {
   const text =
@@ -27,6 +30,7 @@ export const Text = ({
       color={color}
       fontSize={fontSize}
       fontStyle={fontStyle}
+      fontWeight={fontWeight}
     >
       {text}
     </TextComponent>
