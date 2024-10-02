@@ -9,7 +9,7 @@ export const ProductDetails = () => {
       <CatalogItem
         text={state?.text}
         textp={state?.textp}
-        imgURL={state?.imageURL}
+        imageURL={state?.imageURL}
         currency={state?.currency}
         value={state?.value}
         tagText={state?.tagText}

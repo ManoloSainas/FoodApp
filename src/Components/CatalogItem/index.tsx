@@ -5,17 +5,37 @@ import { Price, symbols } from '../Price'
 import { QuantitySelector } from '../QuantitySelector'
 import { Stack } from '../Stack'
 import { Text } from '../Text'
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../../features/cart/reducer'
 
 type Props = {
   text: string
   textp: string
   tagText: string
-  imgURL: string
+  imageURL: string
   currency: keyof typeof symbols
   value: string
 }
 
-export const CatalogItem = ({ text, textp, tagText, imgURL, currency, value }: Props) => {
+export const CatalogItem = ({
+  text,
+  textp,
+  tagText,
+  imageURL,
+  currency,
+  value
+}: Props) => {
+  const dispatch = useDispatch()
+
+  const product = {
+    imageURL,
+    text,
+    tagText,
+    currency,
+    value,
+    quantityCartObject: 1
+  }
+
   return (
     <Stack flexDirection="column">
       <Stack justifyContent="end" width="100%">
@@ -56,14 +76,14 @@ export const CatalogItem = ({ text, textp, tagText, imgURL, currency, value }: P
                 <QuantitySelector product="" />
               </Stack>
 
-              <Button paddingVar="button" onClick={() => console.log('clicked')}>
+              <Button paddingVar="button" onClick={() => dispatch(addProduct(product))}>
                 Order Now
               </Button>
             </Stack>
           </Stack>
 
           <Stack height="100%" alignItems="center">
-            <Image width={400} height={400} imageUrl={imgURL} />
+            <Image width={400} height={400} imageUrl={imageURL} />
           </Stack>
         </Stack>
       </Stack>
