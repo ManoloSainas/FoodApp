@@ -12,6 +12,7 @@ export const ProductDetails = () => {
         imgURL={state?.imageURL}
         currency={state?.currency}
         value={state?.value}
+        tagText={state?.tagText}
       />
     </StyledProductDetails>
   )

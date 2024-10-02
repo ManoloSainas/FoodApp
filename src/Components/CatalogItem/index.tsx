@@ -9,12 +9,13 @@ import { Text } from '../Text'
 type Props = {
   text: string
   textp: string
+  tagText: string
   imgURL: string
   currency: keyof typeof symbols
   value: string
 }
 
-export const CatalogItem = ({ text, textp, imgURL, currency, value }: Props) => {
+export const CatalogItem = ({ text, textp, tagText, imgURL, currency, value }: Props) => {
   return (
     <Stack flexDirection="column">
       <Stack justifyContent="end" width="100%">
