@@ -21,6 +21,8 @@ type Props = PropsWithChildren<{
   left?: string
   bottom?: string
   transform?: string
+  clickable?: boolean
+  onClick?: () => void
 }>
 
 export const Stack = ({
@@ -43,7 +45,9 @@ export const Stack = ({
   right,
   left,
   bottom,
-  transform
+  transform,
+  clickable = false,
+  onClick
 }: Props) => {
   return (
     <StyledStack
@@ -66,6 +70,7 @@ export const Stack = ({
       $left={left}
       $bottom={bottom}
       $transform={transform}
+      onClick={clickable ? onClick : undefined}
     >
       {children}
     </StyledStack>

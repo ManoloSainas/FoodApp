@@ -9,17 +9,18 @@ export const StyledRow = styled.li<{}>`
   padding: 30px;
   border-radius: 40px;
   margin-top: 70px;
+  padding-bottom: 65px;
 
   .pop-dish-image {
     width: 130px;
     height: 130px;
-    margin-top: -90px;
+    margin-top: -70px;
   }
 
   .pop-dish-image-drink {
     width: 65px;
     height: 130px;
-    margin-top: -90px;
+    margin-top: -70px;
   }
 
   .pop-dish-text {
@@ -46,5 +47,5 @@ export const StyledList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   padding: 0%;
-  gap: 50px;
+  gap: 53px;
 `

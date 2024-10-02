@@ -42,6 +42,10 @@ type Props = {
 export const drinks: string[] = ['Pepsi', 'Fanta']
 
 export const PopDishes = ({ products, onClick }: Props) => {
+  function ProductInformations() {
+    alert("You've clicked this product")
+  }
+
   const optionsElements = useMemo(
     () =>
       products.map(
@@ -65,11 +69,16 @@ export const PopDishes = ({ products, onClick }: Props) => {
                 <Stack
                   flexDirection="column"
                   width="max-content"
-                  height="max-content"
+                  height="280px"
                   alignItems="center"
                 >
                   <Stack flexDirection="column" alignItems="flex-start">
-                    <Stack flexDirection="column">
+                    <Stack
+                      flexDirection="column"
+                      alignItems="center"
+                      clickable={true}
+                      onClick={() => ProductInformations()}
+                    >
                       {showIconInCorner && <Icon iconName={iconNameOptional} />}
                       <Stack justifyContent="center" width="198px">
                         {tags.includes('534ed6f7-be81-4af3-9c27-ebb8acd2e946') &&
@@ -87,24 +96,31 @@ export const PopDishes = ({ products, onClick }: Props) => {
                     </Stack>
 
                     <Stack
+                      flexDirection="column"
                       alignItems="center"
-                      justifyContent="space-between"
-                      width="195px"
-                      gap="10px"
+                      gap="20px"
+                      justifyContent="center"
                     >
-                      <Price currency={currency} value={value} />
-                      <Stack alignItems="center" gap="7px">
+                      <Stack
+                        justifyContent="space-around"
+                        alignItems="center"
+                        width="max-content"
+                        gap="20px"
+                        clickable={true}
+                        onClick={() => ProductInformations()}
+                      >
+                        <Price currency={currency} value={value} />
                         <Tag text={tagText} />
-                        <IconButton
-                          size="lg"
-                          variant={variant}
-                          iconName={iconNameButton}
-                          onClick={() =>
-                            onClick(imageURL, text, tagText, currency, value)
-                          }
-                          disabled={!available}
-                        />
                       </Stack>
+                    </Stack>
+                    <Stack justifyContent="center" width="200px" margin="10px 0 0 0">
+                      <IconButton
+                        size="xl"
+                        variant={variant}
+                        iconName={iconNameButton}
+                        onClick={() => onClick(imageURL, text, tagText, currency, value)}
+                        disabled={!available}
+                      />
                     </Stack>
                   </Stack>
                 </Stack>
