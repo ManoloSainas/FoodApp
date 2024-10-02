@@ -9,7 +9,7 @@ export const StyledRow = styled.li<{}>`
   padding: 30px;
   border-radius: 40px;
   margin-top: 70px;
-  padding-bottom: 70px;
+  padding-bottom: 80px;
 
   .pop-dish-image {
     width: 130px;

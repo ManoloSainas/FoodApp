@@ -113,7 +113,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
                           clickable={true}
                           onClick={() => console.log('Clicked')}
                         >
-                          <Price fontSize={27} currency={currency} value={value} />
+                          <Price fontSize={30} currency={currency} value={value} />
                           <Tag text={tagText} />
                         </Stack>
                       </Stack>
