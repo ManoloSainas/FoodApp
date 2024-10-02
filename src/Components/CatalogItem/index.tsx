@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Button } from '../Button'
 import { Image } from '../Image'
 import { Price, symbols } from '../Price'
@@ -15,7 +16,19 @@ type Props = {
 
 export const CatalogItem = ({ text, textp, imgURL, currency, value }: Props) => {
   return (
-    <>
+    <Stack flexDirection="column">
+      <Stack justifyContent="end" width="100%">
+        <Link to="/catalog">
+          <Button
+            onClick={() => console.log('clicked')}
+            paddingVar="button"
+            variant="outlined"
+          >
+            Return to catalog
+          </Button>
+        </Link>
+      </Stack>
+
       <Stack flexDirection="column">
         <Stack>
           <Text fontWeight="bold" color="white" fontSize={50}>
@@ -53,6 +66,6 @@ export const CatalogItem = ({ text, textp, imgURL, currency, value }: Props) => 
           </Stack>
         </Stack>
       </Stack>
-    </>
+    </Stack>
   )
 }

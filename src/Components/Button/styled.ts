@@ -21,7 +21,7 @@ export const paddingVariants = {
   },
 
   button: {
-    padding: '12px 40px 12px 40px'
+    padding: '10px 38px 10px 38px'
   }
 }
 
@@ -37,7 +37,7 @@ export const buttonVariants = {
     backgroundColor: '#00000000',
     color: 'white',
     border: 'solid 1px white',
-    borderColor: 'transparent'
+    borderColor: 'white'
   },
 
   redIcon: {
