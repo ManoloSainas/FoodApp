@@ -7,6 +7,8 @@ import { Stack } from '../Stack'
 import { Text } from '../Text'
 import { useDispatch } from 'react-redux'
 import { addProduct } from '../../features/cart/reducer'
+import { weirdSizeDrinks } from '../Cards/PopDishesCard'
+import { StyledCatalogItem } from './styled'
 
 type Props = {
   text: string
@@ -37,7 +39,7 @@ export const CatalogItem = ({
   }
 
   return (
-    <Stack flexDirection="column">
+    <StyledCatalogItem>
       <Stack justifyContent="end" width="100%">
         <Link to="/catalog">
           <Button
@@ -83,10 +85,14 @@ export const CatalogItem = ({
           </Stack>
 
           <Stack height="100%" alignItems="center">
-            <Image width={400} height={400} imageUrl={imageURL} />
+            {!weirdSizeDrinks.includes(text) ? (
+              <Image className="pop-dish-image-drink" imageUrl={imageURL} />
+            ) : (
+              <Image className="pop-dish-image" imageUrl={imageURL} />
+            )}
           </Stack>
         </Stack>
       </Stack>
-    </Stack>
+    </StyledCatalogItem>
   )
 }

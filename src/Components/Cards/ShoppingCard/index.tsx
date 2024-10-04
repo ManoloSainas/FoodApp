@@ -8,6 +8,7 @@ import { StyledRow, StyledTable } from './styled'
 import { Stack } from '../../Stack'
 import { useMemo } from 'react'
 import { CartObject } from '../../../features/cart/model'
+import { weirdSizeDrinks } from '../PopDishesCard'
 
 type Props = {
   options: CartObject[]
@@ -22,7 +23,11 @@ export const ShoppingCard = ({ options, onClick }: Props) => {
           <Stack justifyContent="space-between" alignItems="center" width="100%">
             <Stack gap="10px">
               <Stack height="100px" width="100px">
-                <Image className="shopping-image" imageUrl={imageURL} />
+                {!weirdSizeDrinks.includes(text) ? (
+                  <Image className="pop-dish-image-drink" imageUrl={imageURL} />
+                ) : (
+                  <Image className="pop-dish-image" imageUrl={imageURL} />
+                )}
               </Stack>
 
               <Stack flexDirection="column">

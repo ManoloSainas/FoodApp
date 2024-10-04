@@ -41,6 +41,7 @@ type Props = {
 }
 
 export const drinks: string[] = ['Pepsi', 'Fanta']
+export const weirdSizeDrinks: string[] = ['Water', 'Coca Cola', 'Heineken Beer']
 
 export const PopDishes = ({ products, onClick }: Props) => {
   const optionsElements = useMemo(

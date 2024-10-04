@@ -10,10 +10,15 @@ export const StyledRow = styled.li<{}>`
   border-radius: 50px;
   width: 100%;
 
-  .shopping-image {
-    width: 100px;
+  .pop-dish-image {
+    width: 60px;
     height: 100px;
-    border-radius: 100%;
+    padding-left: 18px;
+  }
+
+  .pop-dish-image-drink {
+    width: 100px;
+    height: 90px;
   }
 
   .shopping-text {

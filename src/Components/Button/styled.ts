@@ -6,6 +6,7 @@ export type PaddingVariant = keyof typeof paddingVariants
 export const StyledButton = styled.button<{
   $variant: ButtonVariant
   $paddingVar: PaddingVariant
+  hasIcon?: boolean
 }>`
   background-color: ${({ $variant }) => buttonVariants[$variant].backgroundColor};
   color: ${({ $variant }) => buttonVariants[$variant].color};
