@@ -6,9 +6,11 @@ import { Tag } from '../../Tag'
 import { Text } from '../../Text'
 import { StyledRow, StyledTable } from './styled'
 import { Stack } from '../../Stack'
-import { useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import { CartObject } from '../../../features/cart/model'
 import { weirdSizeDrinks } from '../PopDishesCard'
+import { useDispatch } from 'react-redux'
+import { addOneProduct, deleteOneProduct } from '../../../features/cart/reducer'
 
 type Props = {
   options: CartObject[]
@@ -16,6 +18,16 @@ type Props = {
 }
 
 export const ShoppingCard = ({ options, onClick }: Props) => {
+  const dispatch = useDispatch()
+
+  const handleIncrement = useCallback((product: string) => {
+    dispatch(addOneProduct(product))
+  }, [])
+
+  const handleDecrement = useCallback((product: string) => {
+    dispatch(deleteOneProduct(product))
+  }, [])
+
   const optionsElements = useMemo(
     () =>
       options.map(({ imageURL, text, tagText, currency, value, quantityCartObject }) => (
@@ -39,7 +51,11 @@ export const ShoppingCard = ({ options, onClick }: Props) => {
             </Stack>
 
             <Stack>
-              <QuantitySelector initalQuantity={quantityCartObject} product={imageURL} />
+              <QuantitySelector
+                quantity={quantityCartObject}
+                onClickMinus={() => handleDecrement(imageURL)}
+                onClickPlus={() => handleIncrement(imageURL)}
+              />
             </Stack>
             <Price currency={currency} value={value} />
             <IconButton
