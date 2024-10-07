@@ -12,6 +12,10 @@ import { weirdSizeDrinks } from '../Cards/PopDishesCard'
 import { StyledCatalogItem } from './styled'
 import { ButtonVariant } from '../Button/styled'
 
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { Bounce } from 'react-toastify'
+
 type Props = {
   text: string
   textp: string
@@ -29,6 +33,20 @@ export const CatalogItem = ({
   currency,
   value
 }: Props) => {
+  const notify = (text: string) => {
+    toast.success(`${text} added to cart!`, {
+      position: 'top-center',
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+      transition: Bounce
+    })
+  }
+
   const dispatch = useDispatch()
   const [buttonState, setButtonState] = useState<{
     variant: ButtonVariant
@@ -100,7 +118,9 @@ export const CatalogItem = ({
               <Button
                 variant={buttonState.variant}
                 paddingVar="button"
-                onClick={handleClick}
+                onClick={() => {
+                  handleClick(), notify(text)
+                }}
               >
                 {buttonState.buttonText}
               </Button>
@@ -116,6 +136,7 @@ export const CatalogItem = ({
           </Stack>
         </Stack>
       </Stack>
+      <ToastContainer />
     </StyledCatalogItem>
   )
 }

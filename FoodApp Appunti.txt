@@ -101,3 +101,6 @@ addon per vscode:
  https://builtin.com/software-engineering-perspectives/useselector-usedispatch-react-redux
 
  Da guarda come funziona Redux-saga
+
+ React-Toastify
+ https://www.npmjs.com/package/react-toastify

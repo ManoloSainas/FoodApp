@@ -12,6 +12,10 @@ import { symbols } from '../../Price'
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { Bounce } from 'react-toastify'
+
 export type product = {
   imageURL: string
   text: string
@@ -44,6 +48,20 @@ export const drinks: string[] = ['Pepsi', 'Fanta']
 export const weirdSizeDrinks: string[] = ['Water', 'Coca Cola', 'Heineken Beer']
 
 export const PopDishes = ({ products, onClick }: Props) => {
+  const notify = (text: string) => {
+    toast.success(`${text} added to cart!`, {
+      position: 'top-center',
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+      transition: Bounce
+    })
+  }
+
   const [iconButtonStates, setIconButtonStates] = useState<{
     [key: string]: { variant: ButtonVariant; icon: IconName }
   }>({})
@@ -146,6 +164,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
                         onClick={() => {
                           onClick(imageURL, text, tagText, currency, value)
                           handleClick(imageURL)
+                          notify(text)
                         }}
                         disabled={!available}
                       />
@@ -159,5 +178,10 @@ export const PopDishes = ({ products, onClick }: Props) => {
     [products, iconButtonStates]
   )
 
-  return <StyledList>{optionsElements}</StyledList>
+  return (
+    <>
+      <StyledList>{optionsElements}</StyledList>
+      <ToastContainer />
+    </>
+  )
 }
