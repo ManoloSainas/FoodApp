@@ -5,6 +5,11 @@ export const initialState: MyState = {
   cart: []
 }
 
+export type AddProductPayload = {
+  product: CartObject
+  quantity: number
+}
+
 export const cartSlice = createSlice({
   name: 'cart',
   initialState,
@@ -56,11 +61,32 @@ export const cartSlice = createSlice({
           .toFixed(2)
           .toString()
       }
+    },
+
+    addMoreProduct: (state, action: PayloadAction<AddProductPayload>) => {
+      const { product, quantity } = action.payload
+      const Item = state.cart.find((obj) => obj.imageURL === product.imageURL)
+      if (Item) {
+        Item.quantityCartObject += quantity
+        Item.value = (parseFloat(Item.value) + parseFloat(product.value) * quantity)
+          .toFixed(2)
+          .toString()
+      } else {
+        state.cart.push({
+          ...product,
+          quantityCartObject: quantity
+        })
+      }
     }
   }
 })
 
-export const { addProduct, deleteProduct, deleteOneProduct, addOneProduct } =
-  cartSlice.actions
+export const {
+  addProduct,
+  deleteProduct,
+  deleteOneProduct,
+  addOneProduct,
+  addMoreProduct
+} = cartSlice.actions
 
 export default cartSlice.reducer
