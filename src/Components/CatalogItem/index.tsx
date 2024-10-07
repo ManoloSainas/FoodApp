@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Button } from '../Button'
 import { Image } from '../Image'
 import { Price, symbols } from '../Price'
-import { QuantitySelector } from '../QuantitySelector'
 import { Stack } from '../Stack'
 import { Text } from '../Text'
 import { useDispatch } from 'react-redux'
@@ -12,9 +11,13 @@ import { weirdSizeDrinks } from '../Cards/PopDishesCard'
 import { StyledCatalogItem } from './styled'
 import { ButtonVariant } from '../Button/styled'
 
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { Bounce } from 'react-toastify'
+
+// import { selectQuantityByImageURL } from '../../features/cart/selectors'
+// import { MyState } from '../../features/cart/model'
+
+import { notify } from '../../features/Toaster'
 
 type Props = {
   text: string
@@ -33,21 +36,12 @@ export const CatalogItem = ({
   currency,
   value
 }: Props) => {
-  const notify = (text: string) => {
-    toast.success(`${text} added to cart!`, {
-      position: 'top-center',
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: 'dark',
-      transition: Bounce
-    })
-  }
-
   const dispatch = useDispatch()
+
+  // const quantityCartObject = useSelector((state: { cart: MyState }) =>
+  //   selectQuantityByImageURL(state, imageURL)
+  // )
+
   const [buttonState, setButtonState] = useState<{
     variant: ButtonVariant
     buttonText: string
@@ -112,7 +106,6 @@ export const CatalogItem = ({
             <Stack flexDirection="column" gap="30px">
               <Stack alignItems="center" justifyContent="space-between" gap="35px">
                 <Price fontSize={40} currency={currency} value={value} />
-                <QuantitySelector product="" />
               </Stack>
 
               <Button
