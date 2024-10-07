@@ -1,4 +1,4 @@
-import { PropsWithChildren, useCallback, useState } from 'react'
+import { PropsWithChildren } from 'react'
 import { ButtonVariant } from '../Button/styled'
 import { IconName } from '../Icon/config'
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
@@ -24,40 +24,11 @@ export const IconButton = ({
   color,
   size
 }: Props) => {
-  const [buttonState, setButtonState] = useState({ variant, iconName })
-
-  const handleClick = useCallback(() => {
-    console.log('Button clicked. Current state:', buttonState)
-    if (
-      buttonState.variant === 'primary' &&
-      (buttonState.iconName === 'Plus' || buttonState.iconName === 'Minus')
-    ) {
-      onClick()
-      setButtonState({ variant: 'redIcon', iconName: 'Check' })
-      console.log('State after setting to redIcon:', {
-        variant: 'redIcon',
-        iconName: 'Check'
-      })
-
-      setTimeout(() => {
-        setButtonState({ variant: 'primary', iconName })
-        console.log('State after timeout:', { variant: 'primary', iconName })
-      }, 1000)
-    } else {
-      onClick()
-    }
-  }, [buttonState, onClick, iconName])
-
   return (
     <StyledIconButton>
-      <Button
-        hasIcon={true}
-        onClick={handleClick}
-        disabled={disabled}
-        variant={buttonState.variant}
-      >
+      <Button onClick={onClick} disabled={disabled} variant={variant} paddingVar="icon">
         {children}
-        <Icon iconName={buttonState.iconName} color={color} size={size} />
+        <Icon iconName={iconName} color={color} size={size} />
       </Button>
     </StyledIconButton>
   )

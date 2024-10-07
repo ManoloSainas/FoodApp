@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '../Button'
 import { Image } from '../Image'
@@ -9,6 +10,7 @@ import { useDispatch } from 'react-redux'
 import { addProduct } from '../../features/cart/reducer'
 import { weirdSizeDrinks } from '../Cards/PopDishesCard'
 import { StyledCatalogItem } from './styled'
+import { ButtonVariant } from '../Button/styled'
 
 type Props = {
   text: string
@@ -28,6 +30,13 @@ export const CatalogItem = ({
   value
 }: Props) => {
   const dispatch = useDispatch()
+  const [buttonState, setButtonState] = useState<{
+    variant: ButtonVariant
+    buttonText: string
+  }>({
+    variant: 'primary',
+    buttonText: 'Order Now'
+  })
 
   const product = {
     imageURL,
@@ -36,6 +45,16 @@ export const CatalogItem = ({
     currency,
     value,
     quantityCartObject: 1
+  }
+
+  function handleClick() {
+    dispatch(addProduct(product))
+
+    setButtonState({ variant: 'redIcon', buttonText: 'Added to cart' })
+
+    setTimeout(() => {
+      setButtonState({ variant: 'primary', buttonText: 'Order Now' })
+    }, 1000)
   }
 
   return (
@@ -78,8 +97,12 @@ export const CatalogItem = ({
                 <QuantitySelector product="" />
               </Stack>
 
-              <Button paddingVar="button" onClick={() => dispatch(addProduct(product))}>
-                Order Now
+              <Button
+                variant={buttonState.variant}
+                paddingVar="button"
+                onClick={handleClick}
+              >
+                {buttonState.buttonText}
               </Button>
             </Stack>
           </Stack>

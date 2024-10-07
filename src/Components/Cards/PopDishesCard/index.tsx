@@ -1,4 +1,4 @@
-import { buttonVariants } from '../../Button/styled'
+import { ButtonVariant, buttonVariants } from '../../Button/styled'
 import { Icon } from '../../Icon'
 import { IconName } from '../../Icon/config'
 import { IconButton } from '../../IconButton'
@@ -9,7 +9,7 @@ import { Tag } from '../../Tag'
 import { Text } from '../../Text'
 import { StyledList, StyledRow } from './styled'
 import { symbols } from '../../Price'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export type product = {
@@ -44,6 +44,23 @@ export const drinks: string[] = ['Pepsi', 'Fanta']
 export const weirdSizeDrinks: string[] = ['Water', 'Coca Cola', 'Heineken Beer']
 
 export const PopDishes = ({ products, onClick }: Props) => {
+  const [iconButtonStates, setIconButtonStates] = useState<{
+    [key: string]: { variant: ButtonVariant; icon: IconName }
+  }>({})
+
+  function handleClick(imageURL: string) {
+    setIconButtonStates((prevState) => ({
+      ...prevState,
+      [imageURL]: { variant: 'redIcon', icon: 'Check' }
+    }))
+    setTimeout(() => {
+      setIconButtonStates((prevState) => ({
+        ...prevState,
+        [imageURL]: { variant: 'primary', icon: 'Plus' }
+      }))
+    }, 1000)
+  }
+
   const optionsElements = useMemo(
     () =>
       products.map(
@@ -55,12 +72,14 @@ export const PopDishes = ({ products, onClick }: Props) => {
           currency,
           value,
           iconNameOptional,
-          iconNameButton,
-          variant,
           showIconInCorner = false,
           available,
           tags
         }) => {
+          const iconButtonState = iconButtonStates[imageURL] || {
+            variant: 'primary',
+            icon: 'Plus'
+          }
           if (available === true)
             return (
               <StyledRow key={imageURL}>
@@ -122,10 +141,11 @@ export const PopDishes = ({ products, onClick }: Props) => {
                     <Stack justifyContent="center" width="200px" margin="10px 0 0 0">
                       <IconButton
                         size="xl"
-                        variant={variant}
-                        iconName={iconNameButton}
+                        variant={iconButtonState.variant}
+                        iconName={iconButtonState.icon}
                         onClick={() => {
                           onClick(imageURL, text, tagText, currency, value)
+                          handleClick(imageURL)
                         }}
                         disabled={!available}
                       />
@@ -136,7 +156,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
             )
         }
       ),
-    [products]
+    [products, iconButtonStates]
   )
 
   return <StyledList>{optionsElements}</StyledList>
