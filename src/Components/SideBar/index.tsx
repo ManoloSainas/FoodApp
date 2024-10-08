@@ -2,17 +2,18 @@ import { Avatar } from '../Avatar'
 import { IconName } from '../Icon/config'
 import { SideList } from '../SideList'
 import { StyledSideBar } from './styled'
+import { useCallback } from 'react'
 
 export const SideBar = () => {
-  const changePage = (icon: IconName) => {
-    return console.log(icon)
-  }
+  const changePage = useCallback((icon: IconName) => {
+    console.log(icon)
+  }, [])
 
   return (
     <StyledSideBar>
-      <Avatar imageUrl="src\assets\Images\cheong.jpg" text="Joseph Cheong" />
+      <Avatar imageUrl="src/assets/Images/cheong.jpg" text="Joseph Cheong" />
       <SideList
-        onChange={(icon: IconName) => changePage(icon)}
+        onChange={changePage}
         options={[
           { icon: 'Home', text: 'Home' },
           { icon: 'Catalog', text: 'Catalog' },

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Icon } from '../Icon'
 import { IconName } from '../Icon/config'
 import { Text } from '../Text'
@@ -21,10 +21,13 @@ export const SideList = ({ options, onChange }: Props) => {
     localStorage.setItem('selectedRow', selectedRow)
   }, [selectedRow])
 
-  const handleClick = (icon: IconName) => {
-    setSelectedRow(icon)
-    onChange(icon)
-  }
+  const handleClick = useCallback(
+    (icon: IconName) => {
+      setSelectedRow(icon)
+      onChange(icon)
+    },
+    [onChange]
+  )
 
   return (
     <StyledSideList>
@@ -34,7 +37,6 @@ export const SideList = ({ options, onChange }: Props) => {
             <Stack width="75px">
               <Icon id="iconId" iconName={icon} />
             </Stack>
-
             <Text>{text}</Text>
           </StyledRow>
         </Link>

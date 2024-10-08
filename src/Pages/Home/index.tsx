@@ -1,3 +1,4 @@
+import React from 'react'
 import { Stack } from '../../Components/Stack'
 import { Text } from '../../Components/Text'
 import { StyledHome } from './styled'
@@ -18,9 +19,11 @@ export const Home = () => {
           Welcome Joseph Cheong!
         </Text>
         <Text color="#ffffff" variant="h2">
-          I hope you're in the mood for something delicious today! 😍❤️
+          I hope you're in the mood for something delicious today! ❤️
         </Text>
       </Stack>
     </StyledHome>
   )
 }
+
+export default React.memo(Home)

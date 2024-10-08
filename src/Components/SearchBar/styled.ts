@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledSearchBar = styled.div<{}>`
+export const StyledSearchBar = styled.div`
   width: max-content;
   display: flex;
   justify-content: space-between;

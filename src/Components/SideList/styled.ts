@@ -7,7 +7,6 @@ export const StyledRow = styled.li<{ isSelected: boolean }>`
   gap: 20px;
   border-radius: 50px;
   margin: 20px 0px 0px 0px;
-
   background-color: ${({ isSelected }) => (isSelected ? '#F73E55' : 'initial')};
 
   #iconId {

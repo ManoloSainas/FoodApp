@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useState } from 'react'
+import { useContext, useEffect, useMemo, useState, useCallback } from 'react'
 import { PopDishes, product } from '../../../Components/Cards/PopDishesCard'
 import { Stack } from '../../../Components/Stack'
 import { apiClient } from '../../../features/api/api-client'
@@ -6,7 +6,6 @@ import { symbols } from '../../../Components/Price'
 import { IconName } from '../../../Components/Icon/config'
 import { Text } from '../../../Components/Text'
 import { CurrencyContext, TextContext } from '../../../Components/Layout/index'
-
 import { addProduct } from '../../../features/cart/reducer'
 import { useDispatch } from 'react-redux'
 
@@ -51,25 +50,27 @@ export const CatalogPopDishBody = ({
 
   const dispatch = useDispatch()
 
-  const handleAddProduct = (
-    imageURL: string,
-    text: string,
-    tagText: string,
-    currency: keyof typeof symbols,
-    value: string,
-    quantityCartObject: number
-  ) => {
-    const productPayload = {
-      imageURL,
-      text,
-      tagText,
-      currency,
-      value,
-      quantityCartObject
-    }
-
-    dispatch(addProduct(productPayload))
-  }
+  const handleAddProduct = useCallback(
+    (
+      imageURL: string,
+      text: string,
+      tagText: string,
+      currency: keyof typeof symbols,
+      value: string,
+      quantityCartObject: number
+    ) => {
+      const productPayload = {
+        imageURL,
+        text,
+        tagText,
+        currency,
+        value,
+        quantityCartObject
+      }
+      dispatch(addProduct(productPayload))
+    },
+    [dispatch]
+  )
 
   useEffect(() => {
     const fetchCards = async () => {
@@ -92,7 +93,7 @@ export const CatalogPopDishBody = ({
         }))
         setData(newData)
       } catch (err) {
-        console.error(`Error: ${err}`)
+        console.error(`Error fetching products: ${err}`)
       } finally {
         setLoading(false)
       }
@@ -106,10 +107,7 @@ export const CatalogPopDishBody = ({
       data
         .filter((element: product) => {
           const tagMatch = element.tags.includes(currentId) || currentId === 'All'
-
-          let deliveryMatch = false
-
-          deliveryMatch =
+          const deliveryMatch =
             typeof currentDelivery === 'string'
               ? element.delivery.includes(currentDelivery)
               : currentDelivery.some((delivery) => element.delivery.includes(delivery))
@@ -136,49 +134,45 @@ export const CatalogPopDishBody = ({
   )
 
   function convertValue(price: { type: keyof typeof symbols; value: string }) {
-    let numericValue = Number(price.value)
+    const numericValue = Number(price.value)
     switch (selectedCurrency) {
-      case 'EUR': {
+      case 'EUR':
         return price.type === 'EUR'
           ? numericValue.toString()
           : price.type === 'JPY'
           ? (numericValue * 0.0058).toFixed(2).toString()
           : (numericValue * 0.931808).toFixed(2).toString()
-      }
-      case 'JPY': {
+      case 'JPY':
         return price.type === 'JPY'
           ? numericValue.toString()
           : price.type === 'EUR'
           ? (numericValue * 173.253).toFixed(2).toString()
           : (numericValue * 161.438).toFixed(2).toString()
-      }
-      default: {
+      default:
         return price.type === 'USD'
           ? numericValue.toString()
           : price.type === 'JPY'
           ? (numericValue * 0.0062).toFixed(2).toString()
           : (numericValue * 1.0732).toFixed(2).toString()
-      }
     }
   }
 
-  if (loading)
+  if (loading) {
     return (
       <Text variant="h1" color="red">
         Loading...
       </Text>
     )
+  }
 
   return (
-    <>
-      <Stack flexDirection="row">
-        <PopDishes
-          products={filteredData.length > 0 ? filteredData : []}
-          onClick={(imageURL, text, tagText, currency, value) =>
-            handleAddProduct(imageURL, text, tagText, currency, value, 1)
-          }
-        ></PopDishes>
-      </Stack>
-    </>
+    <Stack flexDirection="row">
+      <PopDishes
+        products={filteredData.length > 0 ? filteredData : []}
+        onClick={(imageURL, text, tagText, currency, value) =>
+          handleAddProduct(imageURL, text, tagText, currency, value, 1)
+        }
+      />
+    </Stack>
   )
 }

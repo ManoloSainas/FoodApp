@@ -1,4 +1,4 @@
-import { createContext, memo, useState } from 'react'
+import { createContext, memo, useState, useMemo } from 'react'
 import { Outlet } from 'react-router-dom'
 import { StyledLayout, StyledMain } from './styled'
 import { Header } from '../Header'
@@ -11,6 +11,9 @@ const LayoutComponent = () => {
   const [searchedText, setSearchedText] = useState('')
   const [selectedCurrency, setSelectedCurrency] = useState<string | string[]>('USD')
 
+  const memoizedSearchedText = useMemo(() => searchedText, [searchedText])
+  const memoizedSelectedCurrency = useMemo(() => selectedCurrency, [selectedCurrency])
+
   return (
     <StyledLayout>
       <Header
@@ -19,8 +22,8 @@ const LayoutComponent = () => {
       />
       <StyledMain>
         <SideBar />
-        <TextContext.Provider value={searchedText}>
-          <CurrencyContext.Provider value={selectedCurrency}>
+        <TextContext.Provider value={memoizedSearchedText}>
+          <CurrencyContext.Provider value={memoizedSelectedCurrency}>
             <Outlet />
           </CurrencyContext.Provider>
         </TextContext.Provider>

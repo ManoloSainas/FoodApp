@@ -1,6 +1,7 @@
 import { StyledQuantitySelector } from './styled'
 import { IconButton } from '../IconButton'
 import { Text } from '../Text'
+import { useMemo } from 'react'
 
 type Props = {
   quantity?: number
@@ -9,6 +10,8 @@ type Props = {
 }
 
 export const QuantitySelector = ({ quantity = 1, onClickPlus, onClickMinus }: Props) => {
+  const isMinusDisabled = useMemo(() => quantity <= 1, [quantity])
+
   return (
     <StyledQuantitySelector>
       <IconButton size="xs" iconName="Plus" onClick={onClickPlus} variant="greyIcon" />
@@ -19,7 +22,7 @@ export const QuantitySelector = ({ quantity = 1, onClickPlus, onClickMinus }: Pr
         size="xs"
         iconName="Minus"
         onClick={onClickMinus}
-        disabled={quantity <= 1}
+        disabled={isMinusDisabled}
         variant="greyIcon"
       />
     </StyledQuantitySelector>

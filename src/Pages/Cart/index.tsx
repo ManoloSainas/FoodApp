@@ -5,10 +5,18 @@ import { Text } from '../../Components/Text'
 import { StyledCardDetails, StyledCart } from './styled'
 import { selectCart } from '../../features/cart/selectors'
 import { deleteProduct } from '../../features/cart/reducer'
+import { useCallback } from 'react'
 
 export const Cart = () => {
   const cart = useSelector(selectCart)
   const dispatch = useDispatch()
+
+  const handleDeleteProduct = useCallback(
+    (value: string) => {
+      dispatch(deleteProduct(value))
+    },
+    [dispatch]
+  )
 
   return (
     <StyledCart>
@@ -17,10 +25,7 @@ export const Cart = () => {
           Shopping Cart
         </Text>
         {cart.length > 0 ? (
-          <ShoppingCard
-            options={cart}
-            onClick={(value) => dispatch(deleteProduct(value))}
-          />
+          <ShoppingCard options={cart} onClick={handleDeleteProduct} />
         ) : (
           <Stack justifyContent="center" alignItems="center" width="100%" height="40%">
             <Text color="#F00C2C" variant="h1">
