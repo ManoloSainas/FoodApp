@@ -3,18 +3,15 @@ import { Icon } from '../../Icon'
 import { IconName } from '../../Icon/config'
 import { IconButton } from '../../IconButton'
 import { Image } from '../../Image'
-import { Price } from '../../Price'
+import { Price, symbols } from '../../Price'
 import { Stack } from '../../Stack'
 import { Tag } from '../../Tag'
 import { Text } from '../../Text'
 import { StyledList, StyledRow } from './styled'
-import { symbols } from '../../Price'
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer, toast, Bounce } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { Bounce } from 'react-toastify'
 
 export type product = {
   imageURL: string
@@ -48,7 +45,11 @@ export const drinks: string[] = ['Pepsi', 'Fanta']
 export const weirdSizeDrinks: string[] = ['Water', 'Coca Cola', 'Heineken Beer']
 
 export const PopDishes = ({ products, onClick }: Props) => {
-  const notify = (text: string) => {
+  const [iconButtonStates, setIconButtonStates] = useState<{
+    [key: string]: { variant: ButtonVariant; icon: IconName }
+  }>({})
+
+  const notify = useCallback((text: string) => {
     toast.success(`${text} added to cart!`, {
       position: 'top-center',
       autoClose: 3000,
@@ -60,13 +61,9 @@ export const PopDishes = ({ products, onClick }: Props) => {
       theme: 'dark',
       transition: Bounce
     })
-  }
+  }, [])
 
-  const [iconButtonStates, setIconButtonStates] = useState<{
-    [key: string]: { variant: ButtonVariant; icon: IconName }
-  }>({})
-
-  function handleClick(imageURL: string) {
+  const handleClick = useCallback((imageURL: string) => {
     setIconButtonStates((prevState) => ({
       ...prevState,
       [imageURL]: { variant: 'redIcon', icon: 'Check' }
@@ -77,7 +74,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
         [imageURL]: { variant: 'primary', icon: 'Plus' }
       }))
     }, 1000)
-  }
+  }, [])
 
   const optionsElements = useMemo(
     () =>
@@ -98,7 +95,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
             variant: 'primary',
             icon: 'Plus'
           }
-          if (available === true)
+          if (available)
             return (
               <StyledRow key={imageURL}>
                 <Stack
@@ -106,7 +103,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
                   width="max-content"
                   height="280px"
                   alignItems="center"
-                  clickable={true}
+                  clickable
                   onClick={() => console.log('Clicked')}
                 >
                   <Stack flexDirection="column" alignItems="flex-start">
@@ -118,7 +115,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
                       <Stack
                         flexDirection="column"
                         alignItems="center"
-                        clickable={true}
+                        clickable
                         onClick={() => console.log('Clicked')}
                       >
                         {showIconInCorner && <Icon iconName={iconNameOptional} />}
@@ -148,7 +145,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
                           alignItems="center"
                           width="max-content"
                           gap="20px"
-                          clickable={true}
+                          clickable
                           onClick={() => console.log('Clicked')}
                         >
                           <Price fontSize={27} currency={currency} value={value} />
@@ -175,7 +172,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
             )
         }
       ),
-    [products, iconButtonStates]
+    [products, iconButtonStates, handleClick, notify, onClick]
   )
 
   return (

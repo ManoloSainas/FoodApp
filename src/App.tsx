@@ -7,40 +7,39 @@ import { useEffect } from 'react'
 import { Cart } from './Pages/Cart/index'
 import { ProductDetails } from './Pages/ProductDetails'
 
-// Definisce un componente funzionale RedirectToHome per reindirizzare l'utente alla pagina /home
+// Componente per reindirizzare automaticamente a "/home"
 function RedirectToHome() {
-  // Utilizza il hook useNavigate per ottenere la funzione di navigazione
+  // Hook per navigare tra le pagine
   const navigate = useNavigate()
 
   // Utilizza useEffect per eseguire la navigazione quando il componente viene montato
   useEffect(() => {
-    navigate('/home') // Naviga alla pagina /home
-  }, [navigate]) // Dipendenze dell'effetto, se `navigate` cambia, l'effetto viene rieseguito
+    navigate('/home')
+  }, [navigate])
 
-  return null // Il componente non renderizza nulla
+  return null
 }
 
-// Definisce il componente principale App
+// Componenti principale dell'applicazione
 function App() {
   return (
-    // Utilizza BrowserRouter come router di alto livello con un basename "/"
+    // Router per le pagine web
     <BrowserRouter basename="/">
-      {/* Routes contiene tutte le rotte dell'applicazione */}
+      {/* Routes contiene tutte le pagine dell'applicazione */}
       <Routes>
         {/* Route principale che renderizza il componente Layout per il path "/" */}
         <Route path="/" element={<Layout />}>
           {/* Route index che utilizza RedirectToHome per reindirizzare automaticamente a "/home" */}
           <Route index element={<RedirectToHome />} />
+
           {/* Definisce le varie rotte dell'applicazione e i componenti da renderizzare */}
           <Route path="/home" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/productDetails" element={<ProductDetails />} />
           <Route path="/shoppingCart" element={<Cart />} />
-
           <Route path="/map" element="To-do" />
           <Route path="/Delivery" element="To-do" />
           <Route path="/Settings" element="To-do" />
-
           <Route path="/shoppingCart" element={<Cart />} />
         </Route>
       </Routes>

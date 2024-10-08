@@ -9,12 +9,11 @@ export const StyledImageText = styled.div<{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: max-content;
-  height: 125px;
+  width: ${({ $width }) => $width || 'max-content'};
+  height: ${({ $height }) => $height || '125px'};
   border-radius: 40px;
   background-color: #26262f;
   padding: 15px;
-
   border-bottom: ${({ $isSelected }) => ($isSelected ? '1px solid red' : 'none')};
 
   .card-image {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledRow = styled.li<{}>`
+export const StyledRow = styled.li`
   display: flex;
   align-items: center;
   background-color: #22222a;

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledReview = styled.li<{}>`
+export const StyledReview = styled.li`
   display: flex;
   flex-direction: column;
   list-style-type: none;

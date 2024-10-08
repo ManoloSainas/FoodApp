@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Image } from '../../Image'
 import { Text } from '../../Text'
 import { StyledImageText } from './styled'
@@ -15,11 +15,12 @@ type Props = {
   onClick: (id: string) => void
 }
 
+// Card con immagine e testo
 export const ImageTextCard = ({ cards, onClick }: Props) => {
   const [selectedCard, setSelectedCard] = useState<string>('')
 
   useEffect(() => {
-    const firstVisibleCard = cards.find((card) => card.hidden !== true)
+    const firstVisibleCard = cards.find((card) => !card.hidden)
     if (firstVisibleCard) setSelectedCard(firstVisibleCard.imageUrl)
   }, [cards])
 
@@ -31,12 +32,12 @@ export const ImageTextCard = ({ cards, onClick }: Props) => {
     [onClick]
   )
 
-  return (
-    <>
-      {cards.map((card) => {
-        const isSelected = card.imageUrl === selectedCard
-
-        if (card.hidden !== true)
+  const renderedCards = useMemo(
+    () =>
+      cards
+        .filter((card) => !card.hidden)
+        .map((card) => {
+          const isSelected = card.imageUrl === selectedCard
           return (
             <StyledImageText
               key={card.imageUrl}
@@ -47,7 +48,9 @@ export const ImageTextCard = ({ cards, onClick }: Props) => {
               <Text className="card-text">{card.text}</Text>
             </StyledImageText>
           )
-      })}
-    </>
+        }),
+    [cards, handleClick, selectedCard]
   )
+
+  return <>{renderedCards}</>
 }

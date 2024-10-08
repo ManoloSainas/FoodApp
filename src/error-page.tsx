@@ -1,3 +1,5 @@
+// Pagina per gestire errori di routing, non è utilizzata in questa applicazione
+
 import { useRouteError } from 'react-router-dom'
 
 export default function ErrorPage() {

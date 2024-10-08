@@ -4,7 +4,6 @@ import './index.css'
 import { store } from './features/store.ts'
 import { persistor } from './features/store.ts'
 import { Provider } from 'react-redux'
-
 import App from './App.tsx'
 import { PersistGate } from 'redux-persist/integration/react'
 

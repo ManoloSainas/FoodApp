@@ -1,15 +1,14 @@
 import styled from 'styled-components'
 
-export const StyledRow = styled.li<{}>`
+export const StyledRow = styled.li`
   display: flex;
   align-items: center;
   background-color: #22222a;
   width: max-content;
   height: 200px;
-  padding: 30px;
+  padding: 30px 30px 80px 30px;
   border-radius: 40px;
   margin-top: 70px;
-  padding-bottom: 80px;
 
   .pop-dish-image {
     width: 130px;
@@ -25,7 +24,7 @@ export const StyledRow = styled.li<{}>`
 
   .pop-dish-text {
     color: #e6e5e8;
-    padding: 0%;
+    padding: 0;
     font-size: 19px;
     margin-top: 5%;
   }
@@ -46,6 +45,6 @@ export const StyledRow = styled.li<{}>`
 export const StyledList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  padding: 0%;
+  padding: 0;
   gap: 53px;
 `

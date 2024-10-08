@@ -2,8 +2,15 @@ import { Text } from '../../Text'
 import { StyledReview } from './styled'
 import { useMemo } from 'react'
 
+type Review = {
+  id: string
+  title: string
+  date: string
+  rev: string
+}
+
 type Props = {
-  reviewList: { id: string; title: string; date: string; rev: string }[]
+  reviewList: Review[]
 }
 
 export const ReviewCard = ({ reviewList }: Props) => {

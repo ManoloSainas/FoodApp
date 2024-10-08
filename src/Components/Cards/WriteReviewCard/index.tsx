@@ -29,12 +29,7 @@ export const WriteReviewCard = () => {
       padding="10px 40px 30px 40px"
       gap="20px"
     >
-      <Stack
-        justifyContent="space-between"
-        width="100%"
-        height="100%"
-        alignItems="center"
-      >
+      <Stack justifyContent="space-between" width="100%" alignItems="center">
         <Text variant="h2" color="white">
           Write a review
         </Text>

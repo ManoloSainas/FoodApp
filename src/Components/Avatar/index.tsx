@@ -1,3 +1,4 @@
+import React from 'react'
 import { Image } from '../Image'
 import { Text } from '../Text'
 import { StyledAvatar } from './styled'
@@ -7,7 +8,8 @@ type Props = {
   text: string
 }
 
-export const Avatar = ({ imageUrl, text }: Props) => {
+// Avatar dell'applicazione
+const AvatarComponent = ({ imageUrl, text }: Props) => {
   return (
     <StyledAvatar>
       <Image className="avatar-image" imageUrl={imageUrl} />
@@ -17,3 +19,5 @@ export const Avatar = ({ imageUrl, text }: Props) => {
     </StyledAvatar>
   )
 }
+
+export const Avatar = React.memo(AvatarComponent)

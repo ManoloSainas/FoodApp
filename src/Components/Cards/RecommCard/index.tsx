@@ -2,13 +2,12 @@ import { buttonVariants } from '../../Button/styled'
 import { IconName } from '../../Icon/config'
 import { IconButton } from '../../IconButton'
 import { Image } from '../../Image'
-import { Price } from '../../Price'
+import { Price, symbols } from '../../Price'
 import { Stack } from '../../Stack'
 import { Tag } from '../../Tag'
 import { Text } from '../../Text'
 import { StyledRow } from '../RecommCard/styled'
-import { symbols } from '../../Price'
-import { useCallback, useMemo } from 'react'
+import { useMemo } from 'react'
 import { Icon } from '../../Icon'
 
 type Props = {
@@ -26,9 +25,8 @@ type Props = {
   }[]
   onClick: () => void
 }
-export const RecommCard = ({ options, onClick }: Props) => {
-  const memorizedOnClick = useCallback(onClick, [])
 
+export const RecommCard = ({ options, onClick }: Props) => {
   const optionsElements = useMemo(
     () =>
       options.map(
@@ -61,14 +59,15 @@ export const RecommCard = ({ options, onClick }: Props) => {
                 <IconButton
                   variant={variant}
                   iconName={iconNameButton}
-                  onClick={memorizedOnClick}
+                  onClick={onClick}
                 />
               </Stack>
             </Stack>
           </StyledRow>
         )
       ),
-    [options, memorizedOnClick]
+    [options, onClick]
   )
+
   return <ul>{optionsElements}</ul>
 }

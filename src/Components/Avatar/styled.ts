@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
-export const StyledAvatar = styled.div<{}>`
+export const StyledAvatar = styled.div`
   display: flex;
   flex-direction: column;
+
   .avatar-image {
     border-radius: 100%;
     height: 100px;

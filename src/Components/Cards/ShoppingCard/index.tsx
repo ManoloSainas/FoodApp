@@ -20,13 +20,19 @@ type Props = {
 export const ShoppingCard = ({ options, onClick }: Props) => {
   const dispatch = useDispatch()
 
-  const handleIncrement = useCallback((product: string) => {
-    dispatch(addOneProduct(product))
-  }, [])
+  const handleIncrement = useCallback(
+    (product: string) => {
+      dispatch(addOneProduct(product))
+    },
+    [dispatch]
+  )
 
-  const handleDecrement = useCallback((product: string) => {
-    dispatch(deleteOneProduct(product))
-  }, [])
+  const handleDecrement = useCallback(
+    (product: string) => {
+      dispatch(deleteOneProduct(product))
+    },
+    [dispatch]
+  )
 
   const optionsElements = useMemo(
     () =>
@@ -35,10 +41,10 @@ export const ShoppingCard = ({ options, onClick }: Props) => {
           <Stack justifyContent="space-between" alignItems="center" width="100%">
             <Stack gap="10px">
               <Stack height="100px" width="100px">
-                {!weirdSizeDrinks.includes(text) ? (
-                  <Image className="pop-dish-image-drink" imageUrl={imageURL} />
-                ) : (
+                {weirdSizeDrinks.includes(text) ? (
                   <Image className="pop-dish-image" imageUrl={imageURL} />
+                ) : (
+                  <Image className="pop-dish-image-drink" imageUrl={imageURL} />
                 )}
               </Stack>
 
@@ -66,7 +72,8 @@ export const ShoppingCard = ({ options, onClick }: Props) => {
           </Stack>
         </StyledRow>
       )),
-    [options, onClick]
+    [options, handleDecrement, handleIncrement, onClick]
   )
+
   return <StyledTable>{optionsElements}</StyledTable>
 }
