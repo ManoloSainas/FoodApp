@@ -14,7 +14,7 @@ export const ReviewHeaderComponent = () => {
         onClick={() => console.log('ciao')}
         variant="leaveReview"
       >
-        Leave a review &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Leave a review
       </IconButton>
     </StyledReviewHeader>
   )
