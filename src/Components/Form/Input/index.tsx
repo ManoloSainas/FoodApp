@@ -24,9 +24,12 @@ export const Input = ({
   className,
   maxLength
 }: Props) => {
-  const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    onChange(e.target.value)
-  }, [])
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      onChange(e.target.value)
+    },
+    [onChange]
+  )
 
   return (
     <StyledInput

@@ -1,5 +1,4 @@
-//import { StyledImageRadio } from "./styled";
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Image } from '../Image'
 import { StyledImageRadio } from './styled'
 import { Input } from '../Form/Input'
@@ -13,7 +12,13 @@ type Props = {
   id?: string
 }
 
-export const ImageRadio = ({ images, width, height, onChange, id }: Props) => {
+export const ImageRadio = ({
+  images,
+  width = '100px',
+  height = '100px',
+  onChange,
+  id
+}: Props) => {
   const [selectedCard, setSelectedCard] = useState<string | null>(images[0])
 
   const handleRadioChange = useCallback(
@@ -24,9 +29,11 @@ export const ImageRadio = ({ images, width, height, onChange, id }: Props) => {
     [onChange]
   )
 
+  const memoizedImages = useMemo(() => images, [images])
+
   return (
     <Stack gap="10px">
-      {images.map((currCard) => (
+      {memoizedImages.map((currCard) => (
         <StyledImageRadio
           key={currCard}
           $width={width}

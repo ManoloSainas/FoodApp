@@ -1,5 +1,6 @@
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import { IconName, iconsSet } from './config'
+import { useMemo } from 'react'
 
 type Props = {
   iconName: IconName
@@ -9,5 +10,7 @@ type Props = {
 }
 
 export const Icon = ({ iconName, color, size = 'sm', id }: Props) => {
-  return <FontAwesomeIcon icon={iconsSet[iconName]} color={color} size={size} id={id} />
+  const icon = useMemo(() => iconsSet[iconName], [iconName])
+
+  return <FontAwesomeIcon icon={icon} color={color} size={size} id={id} />
 }

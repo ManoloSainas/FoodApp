@@ -1,7 +1,7 @@
 import { ChangeEvent, useCallback } from 'react'
 import { StyledSelect } from './styled'
 
-export type element = {
+export type Element = {
   id: string
   value: string
   label: string
@@ -10,7 +10,7 @@ export type element = {
 export type Props = {
   onChange: (e: string | string[]) => void
   value?: string | string[]
-  elements: element[]
+  elements: Element[]
   disabled?: boolean
   multiple?: boolean
 }
@@ -27,15 +27,14 @@ export const Select = ({
       const selectedValue = e.target.value
       const newValue = multiple
         ? value?.includes(selectedValue)
-          ? ([...value] ?? []).filter((element) => element !== selectedValue)
-          : [...(value ?? []), selectedValue]
+          ? (value as string[]).filter((element) => element !== selectedValue)
+          : [...(value as string[]), selectedValue]
         : selectedValue
       onChange(newValue)
     },
     [multiple, value, onChange]
   )
 
-  console.log(value)
   return (
     <StyledSelect
       value={value}
@@ -44,7 +43,7 @@ export const Select = ({
       multiple={multiple}
     >
       {elements.map(({ id, label }) => (
-        <option key={label} value={id} id={id}>
+        <option key={id} value={id} id={id}>
           {label}
         </option>
       ))}

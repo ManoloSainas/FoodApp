@@ -15,7 +15,6 @@ type Props = {
 
 export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
   const [inputText, setInputText] = useState('')
-
   const TotCartObjects = useSelector(selectCartTotal)
 
   useEffect(() => {

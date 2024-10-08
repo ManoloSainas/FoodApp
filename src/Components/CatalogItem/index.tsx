@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '../Button'
 import { Image } from '../Image'
@@ -13,9 +13,6 @@ import { ButtonVariant } from '../Button/styled'
 
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
-// import { selectQuantityByImageURL } from '../../features/cart/selectors'
-// import { MyState } from '../../features/cart/model'
 
 import { notify } from '../../features/Toaster'
 
@@ -38,10 +35,6 @@ export const CatalogItem = ({
 }: Props) => {
   const dispatch = useDispatch()
 
-  // const quantityCartObject = useSelector((state: { cart: MyState }) =>
-  //   selectQuantityByImageURL(state, imageURL)
-  // )
-
   const [buttonState, setButtonState] = useState<{
     variant: ButtonVariant
     buttonText: string
@@ -59,15 +52,14 @@ export const CatalogItem = ({
     quantityCartObject: 1
   }
 
-  function handleClick() {
+  const handleClick = useCallback(() => {
     dispatch(addProduct(product))
-
     setButtonState({ variant: 'redIcon', buttonText: 'Added to cart' })
 
     setTimeout(() => {
       setButtonState({ variant: 'primary', buttonText: 'Order Now' })
     }, 1000)
-  }
+  }, [dispatch, product])
 
   return (
     <StyledCatalogItem>
@@ -112,7 +104,8 @@ export const CatalogItem = ({
                 variant={buttonState.variant}
                 paddingVar="button"
                 onClick={() => {
-                  handleClick(), notify(text)
+                  handleClick()
+                  notify(text)
                 }}
               >
                 {buttonState.buttonText}
@@ -121,10 +114,10 @@ export const CatalogItem = ({
           </Stack>
 
           <Stack height="100%" alignItems="center">
-            {!weirdSizeDrinks.includes(text) ? (
-              <Image className="pop-dish-image-drink" imageUrl={imageURL} />
-            ) : (
+            {weirdSizeDrinks.includes(text) ? (
               <Image className="pop-dish-image" imageUrl={imageURL} />
+            ) : (
+              <Image className="pop-dish-image-drink" imageUrl={imageURL} />
             )}
           </Stack>
         </Stack>

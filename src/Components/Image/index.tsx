@@ -1,5 +1,3 @@
-// import { StyledImage } from "./styled";
-
 import { StyledImage } from './styled'
 
 type Props = {
@@ -10,7 +8,7 @@ type Props = {
   className?: string
 }
 
-export const Image = ({ imageUrl, alt, width, height, className }: Props) => {
+export const Image = ({ imageUrl, alt = '', width, height, className }: Props) => {
   return (
     <StyledImage
       className={className}

@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useMemo } from 'react'
 import { ButtonVariant } from '../Button/styled'
 import { IconName } from '../Icon/config'
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
@@ -24,11 +24,16 @@ export const IconButton = ({
   color,
   size
 }: Props) => {
+  const memoizedIcon = useMemo(
+    () => <Icon iconName={iconName} color={color} size={size} />,
+    [iconName, color, size]
+  )
+
   return (
     <StyledIconButton>
       <Button onClick={onClick} disabled={disabled} variant={variant} paddingVar="icon">
         {children}
-        <Icon iconName={iconName} color={color} size={size} />
+        {memoizedIcon}
       </Button>
     </StyledIconButton>
   )

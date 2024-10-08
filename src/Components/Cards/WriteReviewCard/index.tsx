@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { Button } from '../../Button'
-import { TextArea } from '../../Form/TextArea'
+import TextArea from '../../Form/TextArea'
 import { IconButton } from '../../IconButton'
 import { Stack } from '../../Stack'
 import { Text } from '../../Text'

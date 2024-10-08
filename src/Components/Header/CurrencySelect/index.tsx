@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Select } from '../../Form/Select'
 import { apiClient } from '../../../features/api/api-client'
 import { symbols } from '../../Price'
@@ -83,3 +83,5 @@ export const CurrencySelect = ({ updatePrice }: Props) => {
 
   return <Select onChange={(value) => updatePrice(value)} elements={price} />
 }
+
+export default React.memo(CurrencySelect)

@@ -1,5 +1,6 @@
 import { ChangeEvent, useCallback } from 'react'
 import { StyledTextArea } from './styled'
+import React from 'react'
 
 type Props = {
   onChange: (e: string) => void
@@ -10,7 +11,7 @@ type Props = {
   width?: string
 }
 
-export const TextArea = ({
+const TextArea = ({
   onChange,
   disabled,
   placeholder,
@@ -18,9 +19,12 @@ export const TextArea = ({
   height = '530px',
   width = '145px'
 }: Props) => {
-  const handleChange = useCallback((e: ChangeEvent<HTMLTextAreaElement>) => {
-    onChange(e.target.value)
-  }, [])
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLTextAreaElement>) => {
+      onChange(e.target.value)
+    },
+    [onChange]
+  )
 
   return (
     <StyledTextArea
@@ -34,4 +38,4 @@ export const TextArea = ({
   )
 }
 
-//onchange
+export default React.memo(TextArea)
