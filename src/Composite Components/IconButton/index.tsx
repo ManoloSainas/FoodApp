@@ -1,10 +1,10 @@
 import { PropsWithChildren, useMemo } from 'react'
-import { ButtonVariant } from '../Button/styled'
-import { IconName } from '../Icon/config'
+import { ButtonVariant } from '../../Shared Components/Button/styled'
+import { IconName } from '../../Shared Components/Icon/config'
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
-import { Button } from '../Button'
+import { Button } from '../../Shared Components/Button'
 import { StyledIconButton } from './styled'
-import { Icon } from '../Icon'
+import { Icon } from '../../Shared Components/Icon'
 
 type Props = PropsWithChildren<{
   onClick: () => void

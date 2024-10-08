@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Select } from '../../Form/Select'
+import { Select } from '../../../Shared Components/Select'
 import { apiClient } from '../../../features/api/api-client'
-import { symbols } from '../../Price'
-import { Text } from '../../Text'
+import { symbols } from '../../../Composite Components/Price'
+import { Text } from '../../../Shared Components/Text'
 
 export type Props = {
   updatePrice: (value: string | string[]) => void

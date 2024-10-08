@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { apiClient } from '../../../../features/api/api-client'
-import { Select } from '../../../../Components/Form/Select'
-import { Text } from '../../../../Components/Text'
+import { Select } from '../../../../Shared Components/Select'
+import { Text } from '../../../../Shared Components/Text'
 
 export type Props = {
   updateDelivery: (value: string | string[]) => void

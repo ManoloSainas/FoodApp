@@ -1,6 +1,6 @@
 import React from 'react'
-import { IconButton } from '../../../Components/IconButton'
-import { Text } from '../../../Components/Text'
+import { IconButton } from '../../../Composite Components/IconButton'
+import { Text } from '../../../Shared Components/Text'
 import { StyledReviewHeader } from './styled'
 
 export const ReviewHeaderComponent = () => {

@@ -1,9 +1,9 @@
 import { useCallback } from 'react'
-import { Button } from '../../Button'
+import { Button } from '../../../Shared Components/Button'
 import TextArea from '../../Form/TextArea'
-import { IconButton } from '../../IconButton'
-import { Stack } from '../../Stack'
-import { Text } from '../../Text'
+import { IconButton } from '../../../Composite Components/IconButton'
+import { Stack } from '../../../Shared Components/Stack'
+import { Text } from '../../../Shared Components/Text'
 
 export const WriteReviewCard = () => {
   const handleIconButtonClick = useCallback(() => {

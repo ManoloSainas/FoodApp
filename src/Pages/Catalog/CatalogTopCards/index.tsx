@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Stack } from '../../../Components/Stack'
+import { Stack } from '../../../Shared Components/Stack'
 import { apiClient } from '../../../features/api/api-client'
 import { CardData, ImageTextCard } from '../../../Components/Cards/ImageTextCard'
-import { Text } from '../../../Components/Text'
+import { Text } from '../../../Shared Components/Text'
 
 type fetchedTag = {
   id: string

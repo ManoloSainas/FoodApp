@@ -1,4 +1,4 @@
-import { symbols } from '../../Components/Price'
+import { symbols } from '../../Composite Components/Price'
 
 export type MyCurrency = {
   currency: keyof typeof symbols

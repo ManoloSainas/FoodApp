@@ -1,4 +1,4 @@
-import { Select } from '../../../../Components/Form/Select'
+import { Select } from '../../../../Shared Components/Select'
 
 const options = [
   { id: 'Price', value: 'Price', label: 'Sort Prices' },

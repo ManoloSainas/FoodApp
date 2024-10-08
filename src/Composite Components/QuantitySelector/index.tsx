@@ -1,6 +1,6 @@
 import { StyledQuantitySelector } from './styled'
 import { IconButton } from '../IconButton'
-import { Text } from '../Text'
+import { Text } from '../../Shared Components/Text'
 import { useMemo } from 'react'
 
 type Props = {

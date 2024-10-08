@@ -1,4 +1,4 @@
-import { Text } from '../Text'
+import { Text } from '../../Shared Components/Text'
 import { StyledPrice } from './styled'
 import { useMemo } from 'react'
 

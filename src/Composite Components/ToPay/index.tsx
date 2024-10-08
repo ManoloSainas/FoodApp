@@ -1,5 +1,5 @@
 import { Price, symbols as priceSymbols } from '../Price'
-import { Text } from '../Text'
+import { Text } from '../../Shared Components/Text'
 import { StyledToPay } from './styled'
 
 type Props = {

@@ -1,4 +1,4 @@
-import { Text } from '../Text'
+import { Text } from '../../Shared Components/Text'
 import { StyledTag } from './styled'
 
 type Props = {

@@ -1,4 +1,4 @@
-import { Text } from '../../Text'
+import { Text } from '../../../Shared Components/Text'
 import { StyledReview } from './styled'
 import { useMemo } from 'react'
 

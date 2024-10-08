@@ -1,6 +1,6 @@
 import React from 'react'
-import { Image } from '../Image'
-import { Text } from '../Text'
+import { Image } from '../../Shared Components/Image'
+import { Text } from '../../Shared Components/Text'
 import { StyledAvatar } from './styled'
 
 type Props = {

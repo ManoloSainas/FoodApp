@@ -1,6 +1,6 @@
 import React from 'react'
-import { Stack } from '../../Components/Stack'
-import { Text } from '../../Components/Text'
+import { Stack } from '../../Shared Components/Stack'
+import { Text } from '../../Shared Components/Text'
 import { StyledHome } from './styled'
 
 export const Home = () => {

@@ -1,7 +1,7 @@
 import { IconButton } from '../IconButton'
-import { ButtonVariant } from '../Button/styled'
-import { IconName } from '../Icon/config'
-import { Input } from '../Form/Input'
+import { ButtonVariant } from '../../Shared Components/Button/styled'
+import { IconName } from '../../Shared Components/Icon/config'
+import { Input } from '../../Shared Components/Input'
 import { StyledSearchBar } from './styled'
 
 type Props = {

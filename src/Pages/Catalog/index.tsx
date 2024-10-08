@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Stack } from '../../Components/Stack'
+import { Stack } from '../../Shared Components/Stack'
 import { CatalogPopDishBody } from './CatalogPopDishBody'
 import { CatalogPopDishHeader } from './CatalogPopDishHeader'
 import { StyledCatalog } from './styled'

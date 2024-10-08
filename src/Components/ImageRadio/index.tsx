@@ -1,8 +1,8 @@
 import { useCallback, useMemo, useState } from 'react'
-import { Image } from '../Image'
+import { Image } from '../../Shared Components/Image'
 import { StyledImageRadio } from './styled'
 import { Input } from '../Form/Input'
-import { Stack } from '../Stack'
+import { Stack } from '../../Shared Components/Stack'
 
 type Props = {
   images: string[]

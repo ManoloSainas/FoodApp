@@ -1,5 +1,5 @@
-import { Avatar } from '../Avatar'
-import { IconName } from '../Icon/config'
+import { Avatar } from '../../Composite Components/Avatar'
+import { IconName } from '../../Shared Components/Icon/config'
 import { SideList } from '../SideList'
 import { StyledSideBar } from './styled'
 import { useCallback } from 'react'

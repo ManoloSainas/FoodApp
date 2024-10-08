@@ -1,14 +1,14 @@
-import { buttonVariants } from '../../Button/styled'
-import { IconName } from '../../Icon/config'
-import { IconButton } from '../../IconButton'
-import { Image } from '../../Image'
-import { Price, symbols } from '../../Price'
-import { Stack } from '../../Stack'
-import { Tag } from '../../Tag'
-import { Text } from '../../Text'
+import { buttonVariants } from '../../../Shared Components/Button/styled'
+import { IconName } from '../../../Shared Components/Icon/config'
+import { IconButton } from '../../../Composite Components/IconButton'
+import { Image } from '../../../Shared Components/Image'
+import { Price, symbols } from '../../../Composite Components/Price'
+import { Stack } from '../../../Shared Components/Stack'
+import { Tag } from '../../../Composite Components/Tag'
+import { Text } from '../../../Shared Components/Text'
 import { StyledRow } from '../RecommCard/styled'
 import { useMemo } from 'react'
-import { Icon } from '../../Icon'
+import { Icon } from '../../../Shared Components/Icon'
 
 type Props = {
   options: {
