@@ -8,5 +8,5 @@ export const StyledSideBar = styled.div`
   padding: 00px 45px 0px 45px;
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
+  height: 100vh;
 `
