@@ -1,7 +1,7 @@
 import { Avatar } from '../../Composite Components/Avatar'
 import { IconName } from '../../Shared Components/Icon/config'
 import { SideList } from './SideList'
-import { StyledSideBar } from './styled'
+import { StyledSideBarComponent } from './styled'
 import { useCallback } from 'react'
 
 export const SideBar = () => {
@@ -10,7 +10,7 @@ export const SideBar = () => {
   }, [])
 
   return (
-    <StyledSideBar>
+    <StyledSideBarComponent>
       <Avatar imageUrl="src/assets/Images/cheong.jpg" text="Joseph Cheong" />
       <SideList
         onChange={changePage}
@@ -23,6 +23,6 @@ export const SideBar = () => {
           { icon: 'Settings', text: 'Settings' }
         ]}
       />
-    </StyledSideBar>
+    </StyledSideBarComponent>
   )
 }

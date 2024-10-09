@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledSideBar = styled.div`
+export const StyledSideBarComponent = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #17171c;

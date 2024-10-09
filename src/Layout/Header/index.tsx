@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { IconButton } from '../../Composite Components/IconButton'
 import { SearchBar } from '../../Composite Components/SearchBar'
 import { Stack } from '../../Shared Components/Stack'
-import { StyledHeader } from './styled'
+import { StyledHeaderComponent } from './styled'
 import { Text } from '../../Shared Components/Text'
 import { CurrencySelect } from './CurrencySelect'
 import { useSelector } from 'react-redux'
@@ -22,7 +22,7 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
   }, [inputText, setSearchedText])
 
   return (
-    <StyledHeader>
+    <StyledHeaderComponent>
       <SearchBar
         type="text"
         iconName="SearchLens"
@@ -75,6 +75,6 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
           />
         </Stack>
       </Stack>
-    </StyledHeader>
+    </StyledHeaderComponent>
   )
 }

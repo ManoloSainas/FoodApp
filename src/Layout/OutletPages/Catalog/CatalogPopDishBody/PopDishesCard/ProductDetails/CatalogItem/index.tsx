@@ -62,7 +62,7 @@ export const CatalogItem = ({
 
   return (
     <StyledCatalogItem>
-      <Stack justifyContent="end" width="100%">
+      <Stack justifyContent="end" width="65%">
         <Link to="/catalog">
           <Button
             onClick={() => console.log('clicked')}

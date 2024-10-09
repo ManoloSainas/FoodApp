@@ -1,10 +1,24 @@
 import styled from 'styled-components'
 
 export const StyledLayout = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 17% 83%;
+  grid-template-rows: 100px max-content;
 `
-export const StyledMain = styled.main`
-  display: flex;
+
+export const StyledHeader = styled.div`
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+`
+
+export const StyledSideBar = styled.div`
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-row-end: 3;
+`
+
+export const StyledOutlet = styled.main`
+  grid-column-start: 2;
+  grid-row-start: 2;
 `

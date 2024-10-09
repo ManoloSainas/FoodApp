@@ -1,6 +1,6 @@
 import { createContext, memo, useState } from 'react'
 import { Outlet } from 'react-router-dom'
-import { StyledLayout, StyledMain } from './styled'
+import { StyledHeader, StyledLayout, StyledOutlet, StyledSideBar } from './styled'
 import { Header } from './Header'
 import { SideBar } from './SideBar'
 
@@ -13,18 +13,24 @@ const LayoutComponent = () => {
 
   return (
     <StyledLayout>
-      <Header
-        setSearchedText={setSearchedText}
-        setSelectedCurrency={setSelectedCurrency}
-      />
-      <StyledMain>
+      <StyledHeader>
+        <Header
+          setSearchedText={setSearchedText}
+          setSelectedCurrency={setSelectedCurrency}
+        />
+      </StyledHeader>
+
+      <StyledSideBar>
         <SideBar />
+      </StyledSideBar>
+
+      <StyledOutlet>
         <TextContext.Provider value={searchedText}>
           <CurrencyContext.Provider value={selectedCurrency}>
             <Outlet />
           </CurrencyContext.Provider>
         </TextContext.Provider>
-      </StyledMain>
+      </StyledOutlet>
     </StyledLayout>
   )
 }
