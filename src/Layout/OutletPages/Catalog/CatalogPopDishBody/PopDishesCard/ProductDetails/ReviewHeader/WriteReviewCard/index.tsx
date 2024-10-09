@@ -1,9 +1,9 @@
 import { useCallback } from 'react'
-import { Button } from '../../../../../../../Shared Components/Button'
-import TextArea from '../../../../../../../Shared Components/TextArea'
-import { IconButton } from '../../../../../../../Composite Components/IconButton'
-import { Stack } from '../../../../../../../Shared Components/Stack'
-import { Text } from '../../../../../../../Shared Components/Text'
+import { Button } from '../../../../../../../../Shared Components/Button'
+import TextArea from '../../../../../../../../Shared Components/TextArea'
+import { IconButton } from '../../../../../../../../Composite Components/IconButton'
+import { Stack } from '../../../../../../../../Shared Components/Stack'
+import { Text } from '../../../../../../../../Shared Components/Text'
 import { StyledWriteReviewCard } from './styled'
 
 type Props = {

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { IconButton } from '../../../../../../../Composite Components/IconButton'
 import { Text } from '../../../../../../../Shared Components/Text'
 import { StyledReviewHeader } from './styled'
-import { WriteReviewCard } from '../WriteReviewCard'
+import { WriteReviewCard } from './WriteReviewCard'
 export const ReviewHeaderComponent = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false)
 
