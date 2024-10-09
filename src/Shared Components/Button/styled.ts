@@ -39,6 +39,12 @@ export const buttonVariants = {
     color: 'white',
     border: 'solid 2px',
     borderColor: '#137139'
+  },
+  pagination: {
+    backgroundColor: '#22222A',
+    color: '#14C458',
+    border: 'solid 1px',
+    borderColor: '#137139'
   }
 }
 
