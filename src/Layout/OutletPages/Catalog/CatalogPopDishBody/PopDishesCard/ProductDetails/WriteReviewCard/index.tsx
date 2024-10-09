@@ -4,12 +4,13 @@ import TextArea from '../../../../../../../Shared Components/TextArea'
 import { IconButton } from '../../../../../../../Composite Components/IconButton'
 import { Stack } from '../../../../../../../Shared Components/Stack'
 import { Text } from '../../../../../../../Shared Components/Text'
+import { StyledWriteReviewCard } from './styled'
 
-export const WriteReviewCard = () => {
-  const handleIconButtonClick = useCallback(() => {
-    console.log('Clicked!')
-  }, [])
+type Props = {
+  onClose: () => void
+}
 
+export const WriteReviewCard = ({ onClose }: Props) => {
   const handleTextAreaChange = useCallback((value: string) => {
     console.log(value)
   }, [])
@@ -19,16 +20,7 @@ export const WriteReviewCard = () => {
   }, [])
 
   return (
-    <Stack
-      flexDirection="column"
-      margin="20px"
-      borderRadius={20}
-      backgroundColor="#22222A"
-      width="max-content"
-      height="max-content"
-      padding="10px 40px 30px 40px"
-      gap="20px"
-    >
+    <StyledWriteReviewCard>
       <Stack justifyContent="space-between" width="100%" alignItems="center">
         <Text variant="h2" color="white">
           Write a review
@@ -37,7 +29,8 @@ export const WriteReviewCard = () => {
           color="#6C6D73"
           variant="greyIcon"
           iconName="Xmark"
-          onClick={handleIconButtonClick}
+          onClick={onClose}
+          paddingVar="icon"
         />
       </Stack>
 
@@ -51,6 +44,6 @@ export const WriteReviewCard = () => {
       <Stack width="100%" justifyContent="flex-end">
         <Button onClick={handleButtonClick}>Send</Button>
       </Stack>
-    </Stack>
+    </StyledWriteReviewCard>
   )
 }
