@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import { StyledProductDetails } from './styled'
 import { CatalogItem } from './CatalogItem'
-import { ReviewHeader } from './ReviewHeader'
+import { Review } from './Review'
 
 export const ProductDetails = () => {
   let { state } = useLocation()
@@ -16,7 +16,7 @@ export const ProductDetails = () => {
         tagText={state?.tagText}
       />
 
-      <ReviewHeader />
+      <Review />
     </StyledProductDetails>
   )
 }
