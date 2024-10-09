@@ -8,7 +8,7 @@ export const StyledSearchBar = styled.div`
   margin: 17px;
   padding: 2px 2px 2px 22px;
   border-radius: 50px;
-  width: 310px;
+  width: 250px;
   color: #17171c;
 
   #inputId {

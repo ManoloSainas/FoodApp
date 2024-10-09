@@ -61,4 +61,7 @@ export const StyledButton = styled.button<{
   border-color: ${({ $variant }) => buttonVariants[$variant].borderColor};
   padding: ${({ $paddingVar }) => paddingVariants[$paddingVar].padding};
   border-radius: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
