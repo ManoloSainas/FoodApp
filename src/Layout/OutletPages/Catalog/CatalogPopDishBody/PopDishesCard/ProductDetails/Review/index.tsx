@@ -4,9 +4,9 @@ import { ReviewHeader } from './ReviewHeader'
 
 export const Review = () => {
   return (
-    <Stack>
+    <Stack flexDirection="column">
       <ReviewHeader />
-      <ReviewBody />
+      <ReviewBody productId="e39943a5-6ca9-48bf-80d9-292c110d7948" />
     </Stack>
   )
 }
