@@ -44,7 +44,7 @@ export const buttonVariants = {
 
 export const paddingVariants = {
   icon: {
-    padding: '5px 10px'
+    padding: '10px 10px'
   },
   button: {
     padding: '10px 38px'

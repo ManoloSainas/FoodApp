@@ -68,6 +68,7 @@ export const ShoppingCard = ({ options, onClick }: Props) => {
               variant="redIcon"
               iconName="Xmark"
               onClick={() => onClick(imageURL)}
+              paddingVar="icon"
             />
           </Stack>
         </StyledRow>

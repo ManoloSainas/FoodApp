@@ -37,12 +37,14 @@ export const CatalogPopDishHeader = ({ updateDelivery, updateSortPrice }: Props)
             variant="greyIcon"
             onClick={() => console.log('premuto')}
             iconName="Bars"
+            paddingVar="icon"
           />
           <IconButton
             size="lg"
             variant="redIcon"
             onClick={() => console.log('premuto')}
             iconName="Category"
+            paddingVar="icon"
           />
         </Stack>
       </Stack>

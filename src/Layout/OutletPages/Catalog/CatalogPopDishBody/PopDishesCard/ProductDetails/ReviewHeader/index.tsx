@@ -14,6 +14,7 @@ export const ReviewHeaderComponent = () => {
         iconName="AngleBracket"
         onClick={() => console.log('ciao')}
         variant="leaveReview"
+        paddingVar="review"
       >
         Leave a review
       </IconButton>

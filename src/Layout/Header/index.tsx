@@ -43,6 +43,7 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
             variant="greyIcon"
             iconName="Bell"
             onClick={() => console.log('Clicked')}
+            paddingVar="icon"
           />
 
           <Stack position="relative" alignItems="center" justifyContent="center">
@@ -50,6 +51,7 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
               variant="greyIcon"
               iconName="ShoppingCart"
               onClick={() => console.log('Clicked')}
+              paddingVar="icon"
             />
 
             {TotCartObjects > 0 && (
@@ -72,6 +74,7 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
             variant="redIcon"
             iconName="DoorOpen"
             onClick={() => console.log('Clicked')}
+            paddingVar="icon"
           />
         </Stack>
       </Stack>

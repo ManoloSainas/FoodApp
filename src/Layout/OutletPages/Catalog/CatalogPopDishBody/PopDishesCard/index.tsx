@@ -167,6 +167,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
                           notify(text)
                         }}
                         disabled={!available}
+                        paddingVar="icon"
                       />
                     </Stack>
                   </Stack>

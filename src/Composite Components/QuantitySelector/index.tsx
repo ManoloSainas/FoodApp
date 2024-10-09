@@ -14,7 +14,13 @@ export const QuantitySelector = ({ quantity = 1, onClickPlus, onClickMinus }: Pr
 
   return (
     <StyledQuantitySelector>
-      <IconButton size="xs" iconName="Plus" onClick={onClickPlus} variant="greyIcon" />
+      <IconButton
+        size="xs"
+        iconName="Plus"
+        onClick={onClickPlus}
+        variant="greyIcon"
+        paddingVar="icon"
+      />
       <Text className="quant-select-text" variant="span">
         {quantity}
       </Text>
@@ -24,6 +30,7 @@ export const QuantitySelector = ({ quantity = 1, onClickPlus, onClickMinus }: Pr
         onClick={onClickMinus}
         disabled={isMinusDisabled}
         variant="greyIcon"
+        paddingVar="icon"
       />
     </StyledQuantitySelector>
   )
