@@ -13,6 +13,7 @@ type Props = PropsWithChildren<{
   iconName: IconName
   color?: string
   size?: FontAwesomeIconProps['size']
+  id?: string
 }>
 
 export const IconButton = ({
@@ -22,13 +23,14 @@ export const IconButton = ({
   iconName,
   children,
   color,
-  size
+  size,
+  id
 }: Props) => {
   return (
     <StyledIconButton>
-      <Button onClick={onClick} disabled={disabled} variant={variant} paddingVar="icon">
+      <Button onClick={onClick} disabled={disabled} variant={variant} paddingVar="review">
         {children}
-        <Icon iconName={iconName} color={color} size={size} />
+        <Icon id={id} iconName={iconName} color={color} size={size} />
       </Button>
     </StyledIconButton>
   )

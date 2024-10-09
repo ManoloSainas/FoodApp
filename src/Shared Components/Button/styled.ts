@@ -48,6 +48,9 @@ export const paddingVariants = {
   },
   button: {
     padding: '10px 38px'
+  },
+  review: {
+    padding: '0px 0px 0px 20px'
   }
 }
 

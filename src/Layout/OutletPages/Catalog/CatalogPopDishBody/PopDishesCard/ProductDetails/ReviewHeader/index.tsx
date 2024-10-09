@@ -10,6 +10,7 @@ export const ReviewHeaderComponent = () => {
         Reviews
       </Text>
       <IconButton
+        id="iconReview"
         iconName="AngleBracket"
         onClick={() => console.log('ciao')}
         variant="leaveReview"
