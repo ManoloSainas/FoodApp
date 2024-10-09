@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StyledLayout = styled.div`
   display: grid;
-  grid-template-columns: 19% 81%;
+  grid-template-columns: 17% 83%;
   grid-template-rows: 100px max-content;
 `
 
@@ -16,7 +16,7 @@ export const StyledSideBar = styled.div`
   grid-column-start: 1;
   grid-row-start: 2;
   grid-row-end: 3;
-  margin-left: 23px;
+  padding-left: 30px;
 `
 
 export const StyledOutlet = styled.main`
