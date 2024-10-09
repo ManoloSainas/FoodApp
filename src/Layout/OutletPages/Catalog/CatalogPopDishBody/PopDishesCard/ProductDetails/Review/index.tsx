@@ -6,7 +6,7 @@ export const Review = () => {
   return (
     <Stack flexDirection="column">
       <ReviewHeader />
-      <ReviewBody productId="e39943a5-6ca9-48bf-80d9-292c110d7948" />
+      <ReviewBody productId="d1b57f6f-6bbb-43a9-b0c5-9a69c0b81c18" />
     </Stack>
   )
 }

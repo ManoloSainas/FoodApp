@@ -6,7 +6,7 @@ export const StyledReview = styled.li`
   flex-direction: column;
   background-color: #22222a;
   width: max-content;
-  padding: 5%;
+  padding: 20px;
   border-radius: 20px;
   gap: 10px;
 
@@ -21,6 +21,14 @@ export const StyledReview = styled.li`
   .review-text {
     color: #757579;
     font-style: italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    width: 190px;
+    height: 90px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
   }
 `
 
