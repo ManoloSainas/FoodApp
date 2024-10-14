@@ -8,21 +8,21 @@ export function convertValue(
   switch (selectedCurrency) {
     case 'EUR':
       return price.type === 'EUR'
-        ? numericValue.toString()
+        ? numericValue.toString() // EUR to EUR
         : price.type === 'JPY'
-        ? (numericValue * 0.0058).toFixed(2).toString()
-        : (numericValue * 0.931808).toFixed(2).toString()
+        ? (numericValue * 0.0058).toFixed(2).toString() // JPY to EUR
+        : (numericValue * 0.931808).toFixed(2).toString() // USD to EUR
     case 'JPY':
       return price.type === 'JPY'
-        ? numericValue.toString()
+        ? numericValue.toString() // JPY to JPY
         : price.type === 'EUR'
-        ? (numericValue * 173.253).toFixed(2).toString()
-        : (numericValue * 161.438).toFixed(2).toString()
+        ? (numericValue * 173.253).toFixed(2).toString() // EUR to JPY
+        : (numericValue * 161.438).toFixed(2).toString() // USD to JPY
     default:
       return price.type === 'USD'
-        ? numericValue.toString()
+        ? numericValue.toString() // USD to USD
         : price.type === 'JPY'
-        ? (numericValue * 0.0062).toFixed(2).toString()
-        : (numericValue * 1.0732).toFixed(2).toString()
+        ? (numericValue * 0.0062).toFixed(2).toString() // JPY to USD
+        : (numericValue * 1.0732).toFixed(2).toString() // EUR to USD
   }
 }
