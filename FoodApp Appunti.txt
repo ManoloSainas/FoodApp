@@ -96,6 +96,8 @@ addons utili per edge/crhome:
 
 addon per vscode:
  git graph
+ eslint
+ Prettier eslint
 
  Sito utile per capire Redux!!!!!!!!
  https://builtin.com/software-engineering-perspectives/useselector-usedispatch-react-redux

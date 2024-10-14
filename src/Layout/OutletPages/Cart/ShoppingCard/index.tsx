@@ -4,15 +4,15 @@ import { useCallback, useContext, useMemo, useState } from 'react'
 import { addOneProduct, deleteOneProduct } from '../../../../features/cart/reducer'
 import { StyledRow, StyledTable } from './styled'
 import { Stack } from '../../../../Shared Components/Stack'
-import { weirdSizeDrinks } from '../../Catalog/CatalogPopDishBody/PopDishesCard'
 import { Image } from '../../../../Shared Components/Image'
 import { Text } from '../../../../Shared Components/Text'
 import { Tag } from '../../../../Composite Components/Tag'
 import { QuantitySelector } from '../../../../Composite Components/QuantitySelector'
-import { Price, symbols } from '../../../../Composite Components/Price'
+import { Price } from '../../../../Composite Components/Price'
 import { IconButton } from '../../../../Composite Components/IconButton'
 import { DialogDeleteProduct } from '../DialogDeleteProduct'
 import { CurrencyContext } from '../../..'
+import { symbols, weirdSizeDrinks } from '../../../../constants'
 
 type Props = {
   options: CartObject[]
@@ -24,13 +24,13 @@ export const ShoppingCard = ({ options }: Props) => {
   const selectedCurrency = useContext(CurrencyContext) as keyof typeof symbols
   const [isPopupOpen, setIsPopupOpen] = useState(false)
 
-  const handleButtonClick = () => {
+  const handleButtonClick = useCallback(() => {
     setIsPopupOpen(true)
-  }
+  }, [])
 
-  const handleClosePopup = () => {
+  const handleClosePopup = useCallback(() => {
     setIsPopupOpen(false)
-  }
+  }, [])
 
   const handleIncrement = useCallback(
     (product: string) => {
@@ -94,7 +94,8 @@ export const ShoppingCard = ({ options }: Props) => {
       handleIncrement,
       isPopupOpen,
       handleButtonClick,
-      handleClosePopup
+      handleClosePopup,
+      selectedCurrency
     ]
   )
 

@@ -1,4 +1,4 @@
-import { symbols } from '../../Composite Components/Price'
+import { symbols } from '../../constants'
 
 export type CartObject = {
   imageURL: string

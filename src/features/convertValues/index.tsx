@@ -1,4 +1,4 @@
-import { symbols } from '../../Composite Components/Price'
+import { symbols } from '../../constants'
 
 export function convertValue(
   price: { type: keyof typeof symbols; value: string },

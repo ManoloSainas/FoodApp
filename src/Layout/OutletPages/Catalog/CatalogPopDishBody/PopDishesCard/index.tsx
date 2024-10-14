@@ -6,7 +6,7 @@ import { Icon } from '../../../../../Shared Components/Icon'
 import { IconName } from '../../../../../Shared Components/Icon/config'
 import { IconButton } from '../../../../../Composite Components/IconButton'
 import { Image } from '../../../../../Shared Components/Image'
-import { Price, symbols } from '../../../../../Composite Components/Price'
+import { Price } from '../../../../../Composite Components/Price'
 import { Stack } from '../../../../../Shared Components/Stack'
 import { Tag } from '../../../../../Composite Components/Tag'
 import { Text } from '../../../../../Shared Components/Text'
@@ -16,6 +16,7 @@ import { Link } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { notifyProductAdded } from '../../../../../features/Toaster'
+import { drinks, symbols } from '../../../../../constants'
 
 export type product = {
   id: string
@@ -46,9 +47,6 @@ type Props = {
     value: string
   ) => void
 }
-
-export const drinks: string[] = ['Pepsi', 'Fanta']
-export const weirdSizeDrinks: string[] = ['Water', 'Coca Cola', 'Heineken Beer']
 
 export const PopDishes = ({ products, onClick }: Props) => {
   const [iconButtonStates, setIconButtonStates] = useState<{
@@ -166,7 +164,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
             )
         }
       ),
-    [products, iconButtonStates, handleClick, notifyProductAdded, onClick]
+    [products, iconButtonStates, handleClick, onClick]
   )
 
   return (

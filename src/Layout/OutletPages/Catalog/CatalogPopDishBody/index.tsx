@@ -2,13 +2,13 @@ import { useContext, useEffect, useMemo, useState, useCallback } from 'react'
 import { PopDishes, product } from './PopDishesCard'
 import { Stack } from '../../../../Shared Components/Stack'
 import { apiClient } from '../../../../features/api/api-client'
-import { symbols } from '../../../../Composite Components/Price'
 import { IconName } from '../../../../Shared Components/Icon/config'
 import { Text } from '../../../../Shared Components/Text'
 import { CurrencyContext, TextContext } from '../../..'
 import { addProduct } from '../../../../features/cart/reducer'
 import { useDispatch } from 'react-redux'
 import { convertValue } from '../../../../features/convertValues'
+import { symbols } from '../../../../constants'
 
 type FetchedProduct = {
   id: string

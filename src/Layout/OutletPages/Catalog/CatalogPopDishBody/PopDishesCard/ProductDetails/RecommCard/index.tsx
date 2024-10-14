@@ -2,13 +2,14 @@ import { buttonVariants } from '../../../../../../../Shared Components/Button/st
 import { IconName } from '../../../../../../../Shared Components/Icon/config'
 import { IconButton } from '../../../../../../../Composite Components/IconButton'
 import { Image } from '../../../../../../../Shared Components/Image'
-import { Price, symbols } from '../../../../../../../Composite Components/Price'
+import { Price } from '../../../../../../../Composite Components/Price'
 import { Stack } from '../../../../../../../Shared Components/Stack'
 import { Tag } from '../../../../../../../Composite Components/Tag'
 import { Text } from '../../../../../../../Shared Components/Text'
 import { StyledRow } from '../RecommCard/styled'
 import { useMemo } from 'react'
 import { Icon } from '../../../../../../../Shared Components/Icon'
+import { symbols } from '../../../../../../../constants'
 
 type Props = {
   options: {

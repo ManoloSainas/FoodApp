@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { Price, symbols } from '../../../../../../../Composite Components/Price'
+import { Price } from '../../../../../../../Composite Components/Price'
 import { useDispatch } from 'react-redux'
 import { ButtonVariant } from '../../../../../../../Shared Components/Button/styled'
 import { addProduct } from '../../../../../../../features/cart/reducer'
@@ -11,10 +11,10 @@ import { StyledCatalogItem } from './styled'
 import { Stack } from '../../../../../../../Shared Components/Stack'
 import { Button } from '../../../../../../../Shared Components/Button'
 import { Text } from '../../../../../../../Shared Components/Text'
-import { weirdSizeDrinks } from '../..'
 import { Image } from '../../../../../../../Shared Components/Image'
 import { notifyProductAdded } from '../../../../../../../features/Toaster'
 import { CurrencyContext } from '../../../../../..'
+import { symbols, weirdSizeDrinks } from '../../../../../../../constants'
 
 type Props = {
   text: string
@@ -44,23 +44,23 @@ export const CatalogItem = ({
     buttonText: 'Order Now'
   })
 
-  const product = {
-    imageURL,
-    text,
-    tagText,
-    currency,
-    value,
-    quantityCartObject: 1
-  }
-
   const handleClick = useCallback(() => {
+    const product = {
+      imageURL,
+      text,
+      tagText,
+      currency,
+      value,
+      quantityCartObject: 1
+    }
+
     dispatch(addProduct(product))
     setButtonState({ variant: 'redIcon', buttonText: 'Added to cart' })
 
     setTimeout(() => {
       setButtonState({ variant: 'primary', buttonText: 'Order Now' })
     }, 1000)
-  }, [dispatch, product])
+  }, [dispatch, imageURL, text, tagText, currency, value])
 
   return (
     <StyledCatalogItem>

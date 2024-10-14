@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Select } from '../../../Shared Components/Select'
 import { apiClient } from '../../../features/api/api-client'
-import { symbols } from '../../../Composite Components/Price'
 import { Text } from '../../../Shared Components/Text'
+import { symbols } from '../../../constants'
 
 export type Props = {
   updatePrice: (value: string | string[]) => void
@@ -72,6 +72,7 @@ export const CurrencySelect = ({ updatePrice }: Props) => {
     }
 
     fetchPrice()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (loading)
@@ -84,4 +85,5 @@ export const CurrencySelect = ({ updatePrice }: Props) => {
   return <Select onChange={(value) => updatePrice(value)} elements={price} />
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default React.memo(CurrencySelect)
