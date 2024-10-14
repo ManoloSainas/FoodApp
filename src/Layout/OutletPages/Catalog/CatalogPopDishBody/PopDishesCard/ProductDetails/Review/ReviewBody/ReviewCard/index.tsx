@@ -49,7 +49,7 @@ export const ReviewCard = ({ reviewList }: Props) => {
   )
 
   return (
-    <Stack flexDirection="column">
+    <Stack flexDirection="column" margin="25px 0 0 0">
       <Stack
         flexDirection="row"
         justifyContent="space-between"
@@ -57,14 +57,20 @@ export const ReviewCard = ({ reviewList }: Props) => {
         gap="5px"
       >
         <Button variant="pagination" onClick={handlePreviousPage} disabled={pageId === 0}>
-          Previous page
+          ⬅ Previous page
         </Button>
+        <Text color="#14c437" variant="h2">
+          Page:
+        </Text>
+        <Text color="#14c437" variant="h2">
+          {pageId + 1 + '/' + totalPages}
+        </Text>
         <Button
           variant="pagination"
           onClick={handleNextPage}
           disabled={pageId === totalPages - 1}
         >
-          Next page
+          Next page ⮕
         </Button>
       </Stack>
       <StyledReviewList>{reviewListElements}</StyledReviewList>
