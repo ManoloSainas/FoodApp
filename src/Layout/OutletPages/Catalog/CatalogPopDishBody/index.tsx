@@ -8,6 +8,7 @@ import { Text } from '../../../../Shared Components/Text'
 import { CurrencyContext, TextContext } from '../../..'
 import { addProduct } from '../../../../features/cart/reducer'
 import { useDispatch } from 'react-redux'
+import { convertValue } from '../../../../features/convertValues'
 
 type FetchedProduct = {
   id: string
@@ -123,7 +124,7 @@ export const CatalogPopDishBody = ({
         })
         .map((element: product) => ({
           ...element,
-          value: convertValue(element.price),
+          value: convertValue(element.price, selectedCurrency as keyof typeof symbols),
           currency: selectedCurrency as keyof typeof symbols
         }))
         .sort((a, b) => {
@@ -135,30 +136,6 @@ export const CatalogPopDishBody = ({
         }),
     [currentId, data, currentDelivery, selectedCurrency, searchedText, currentSortPrice]
   )
-
-  function convertValue(price: { type: keyof typeof symbols; value: string }) {
-    const numericValue = Number(price.value)
-    switch (selectedCurrency) {
-      case 'EUR':
-        return price.type === 'EUR'
-          ? numericValue.toString()
-          : price.type === 'JPY'
-          ? (numericValue * 0.0058).toFixed(2).toString()
-          : (numericValue * 0.931808).toFixed(2).toString()
-      case 'JPY':
-        return price.type === 'JPY'
-          ? numericValue.toString()
-          : price.type === 'EUR'
-          ? (numericValue * 173.253).toFixed(2).toString()
-          : (numericValue * 161.438).toFixed(2).toString()
-      default:
-        return price.type === 'USD'
-          ? numericValue.toString()
-          : price.type === 'JPY'
-          ? (numericValue * 0.0062).toFixed(2).toString()
-          : (numericValue * 1.0732).toFixed(2).toString()
-    }
-  }
 
   if (loading) {
     return (
