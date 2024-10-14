@@ -50,7 +50,13 @@ export const ReviewBody = ({ productId }: Props) => {
 
   return (
     <Stack gap="20px">
-      <ReviewCard reviewList={data} />
+      {data.length > 0 ? (
+        <ReviewCard reviewList={data} />
+      ) : (
+        <Text color="#F73E55" variant="h3">
+          There are no Reviews for this product.
+        </Text>
+      )}
     </Stack>
   )
 }

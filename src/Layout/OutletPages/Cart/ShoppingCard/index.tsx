@@ -18,7 +18,7 @@ type Props = {
   onClick?: (value: string) => void
 }
 
-export const ShoppingCard = ({ options, onClick }: Props) => {
+export const ShoppingCard = ({ options }: Props) => {
   const dispatch = useDispatch()
   const [isPopupOpen, setIsPopupOpen] = useState(false)
 
