@@ -1,8 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { ShoppingCard } from './ShoppingCard'
-
-import { useCallback } from 'react'
-import { deleteProduct } from '../../../features/cart/reducer'
 import { selectCart } from '../../../features/cart/selectors'
 import { StyledCardDetails, StyledCart } from './styled'
 import { Stack } from '../../../Shared Components/Stack'
@@ -10,14 +7,6 @@ import { Text } from '../../../Shared Components/Text'
 
 export const Cart = () => {
   const cart = useSelector(selectCart)
-  const dispatch = useDispatch()
-
-  const handleDeleteProduct = useCallback(
-    (value: string) => {
-      dispatch(deleteProduct(value))
-    },
-    [dispatch]
-  )
 
   return (
     <StyledCart>
@@ -26,7 +15,9 @@ export const Cart = () => {
           Shopping Cart
         </Text>
         {cart.length > 0 ? (
-          <ShoppingCard options={cart} onClick={handleDeleteProduct} />
+          <>
+            <ShoppingCard options={cart} />
+          </>
         ) : (
           <Stack justifyContent="center" alignItems="center" width="100%" height="40%">
             <Text color="#F00C2C" variant="h1">

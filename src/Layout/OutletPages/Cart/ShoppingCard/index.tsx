@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { CartObject } from '../../../../features/cart/model'
-import { useCallback, useMemo } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { addOneProduct, deleteOneProduct } from '../../../../features/cart/reducer'
 import { StyledRow, StyledTable } from './styled'
 import { Stack } from '../../../../Shared Components/Stack'
@@ -11,14 +11,24 @@ import { Tag } from '../../../../Composite Components/Tag'
 import { QuantitySelector } from '../../../../Composite Components/QuantitySelector'
 import { Price } from '../../../../Composite Components/Price'
 import { IconButton } from '../../../../Composite Components/IconButton'
+import { DialogDeleteProduct } from '../DialogDeleteProduct'
 
 type Props = {
   options: CartObject[]
-  onClick: (value: string) => void
+  onClick?: (value: string) => void
 }
 
 export const ShoppingCard = ({ options, onClick }: Props) => {
   const dispatch = useDispatch()
+  const [isPopupOpen, setIsPopupOpen] = useState(false)
+
+  const handleButtonClick = () => {
+    setIsPopupOpen(true)
+  }
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false)
+  }
 
   const handleIncrement = useCallback(
     (product: string) => {
@@ -67,13 +77,23 @@ export const ShoppingCard = ({ options, onClick }: Props) => {
             <IconButton
               variant="redIcon"
               iconName="Xmark"
-              onClick={() => onClick(imageURL)}
+              onClick={handleButtonClick}
               paddingVar="icon"
             />
+            {isPopupOpen && (
+              <DialogDeleteProduct product={imageURL} onClose={handleClosePopup} />
+            )}
           </Stack>
         </StyledRow>
       )),
-    [options, handleDecrement, handleIncrement, onClick]
+    [
+      options,
+      handleDecrement,
+      handleIncrement,
+      isPopupOpen,
+      handleButtonClick,
+      handleClosePopup
+    ]
   )
 
   return <StyledTable>{optionsElements}</StyledTable>
