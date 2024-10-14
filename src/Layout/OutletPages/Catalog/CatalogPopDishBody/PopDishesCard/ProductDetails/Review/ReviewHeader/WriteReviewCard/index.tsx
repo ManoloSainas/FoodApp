@@ -37,12 +37,11 @@ export const WriteReviewCard = ({ productId, onClose }: Props) => {
       } catch (err) {
         console.error(`Error sending review: ${err}`)
         notifyReview(false)
-      } finally {
       }
     }
 
     sendReview()
-  }, [textReview, productId])
+  }, [textReview, productId, onClose])
 
   return (
     <StyledWriteReviewCard>
