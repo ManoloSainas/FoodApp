@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { Button } from '../../../../../../../../../Shared Components/Button'
 import TextArea from '../../../../../../../../../Shared Components/TextArea'
 import { IconButton } from '../../../../../../../../../Composite Components/IconButton'
@@ -11,9 +11,14 @@ type Props = {
 }
 
 export const WriteReviewCard = ({ onClose }: Props) => {
-  const handleTextAreaChange = useCallback((value: string) => {
-    console.log(value)
-  }, [])
+  const [textReview, setTextReview] = useState<string>('')
+
+  const handleTextAreaChange = useCallback(
+    (value: string) => {
+      setTextReview(value)
+    },
+    [textReview, setTextReview]
+  )
 
   const handleButtonClick = useCallback(() => {
     console.log('Clicked!')

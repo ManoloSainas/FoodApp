@@ -19,6 +19,7 @@ export const ReviewCard = ({ reviewList }: Props) => {
   const [pageId, setPageId] = useState<number>(0)
   const reviewsPerPage = 4
 
+  // Arrotonda un numero decimale per eccesso
   const totalPages = Math.ceil(reviewList.length / reviewsPerPage)
 
   const handleNextPage = () => {

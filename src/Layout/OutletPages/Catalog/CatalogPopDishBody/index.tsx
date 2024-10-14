@@ -52,6 +52,7 @@ export const CatalogPopDishBody = ({
 
   const handleAddProduct = useCallback(
     (
+      id: string,
       imageURL: string,
       text: string,
       tagText: string,
@@ -60,6 +61,7 @@ export const CatalogPopDishBody = ({
       quantityCartObject: number
     ) => {
       const productPayload = {
+        id,
         imageURL,
         text,
         tagText,
@@ -78,6 +80,7 @@ export const CatalogPopDishBody = ({
         setLoading(true)
         const cards: FetchedProduct[] = await apiClient.get('products')
         const newData = cards.map((item: FetchedProduct) => ({
+          id: item.id,
           imageURL: item.imageUrl,
           text: item.name,
           textp: item.description,
@@ -169,8 +172,8 @@ export const CatalogPopDishBody = ({
     <Stack flexDirection="row">
       <PopDishes
         products={filteredData.length > 0 ? filteredData : []}
-        onClick={(imageURL, text, tagText, currency, value) =>
-          handleAddProduct(imageURL, text, tagText, currency, value, 1)
+        onClick={(id, imageURL, text, tagText, currency, value) =>
+          handleAddProduct(id, imageURL, text, tagText, currency, value, 1)
         }
       />
     </Stack>

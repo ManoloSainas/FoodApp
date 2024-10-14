@@ -17,6 +17,7 @@ import { ToastContainer, toast, Bounce } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 export type product = {
+  id: string
   imageURL: string
   text: string
   textp: string
@@ -36,6 +37,7 @@ export type product = {
 type Props = {
   products: product[]
   onClick: (
+    id: string,
     imageURL: string,
     text: string,
     tagText: string,
@@ -83,6 +85,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
     () =>
       products.map(
         ({
+          id,
           imageURL,
           text,
           textp,
@@ -100,7 +103,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
           }
           if (available)
             return (
-              <StyledRow key={imageURL}>
+              <StyledRow key={id}>
                 <Stack
                   flexDirection="column"
                   width="max-content"
@@ -113,7 +116,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
                     <Link
                       key={imageURL}
                       to={`/ProductDetails`}
-                      state={{ text, textp, tagText, imageURL, currency, value }}
+                      state={{ id, text, textp, tagText, imageURL, currency, value }}
                     >
                       <Stack
                         flexDirection="column"
@@ -162,7 +165,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
                         variant={iconButtonState.variant}
                         iconName={iconButtonState.icon}
                         onClick={() => {
-                          onClick(imageURL, text, tagText, currency, value)
+                          onClick(id, imageURL, text, tagText, currency, value)
                           handleClick(imageURL)
                           notify(text)
                         }}

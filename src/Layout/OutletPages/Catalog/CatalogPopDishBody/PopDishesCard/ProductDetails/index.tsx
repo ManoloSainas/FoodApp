@@ -16,7 +16,7 @@ export const ProductDetails = () => {
         tagText={state?.tagText}
       />
 
-      <Review />
+      <Review id={state?.id} />
     </StyledProductDetails>
   )
 }
