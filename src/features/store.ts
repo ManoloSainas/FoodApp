@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // storage di default per il web
 import cartReducer from '../features/cart/reducer'
-import currencyReducer from '../features/currency/reducer'
 
 // --------------------------------------------------------------------------------------
 
@@ -13,22 +12,14 @@ const cartPersistConfig = {
 
 const persistedCartReducer = persistReducer(cartPersistConfig, cartReducer)
 
-// --------------------------------------------------------------------------------------
-
-const currencyPersistConfig = {
-  key: 'currency',
-  storage
-}
-
-const persistedCurrencyReducer = persistReducer(currencyPersistConfig, currencyReducer)
+// -------------------------------------------------------------------------------------
 
 // --------------------------------------------------------------------------------------
 
 // Configura lo store Redux con il reducer persistente.
 const store = configureStore({
   reducer: {
-    cart: persistedCartReducer, // Associa il reducer persistente allo store
-    currency: persistedCurrencyReducer
+    cart: persistedCartReducer // Associa il reducer persistente allo store
   }
 })
 
