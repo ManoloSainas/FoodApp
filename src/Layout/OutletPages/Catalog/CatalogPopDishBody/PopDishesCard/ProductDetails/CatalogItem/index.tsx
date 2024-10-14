@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import { ToastContainer } from 'react-toastify'
@@ -14,6 +14,7 @@ import { Text } from '../../../../../../../Shared Components/Text'
 import { weirdSizeDrinks } from '../..'
 import { Image } from '../../../../../../../Shared Components/Image'
 import { notifyProductAdded } from '../../../../../../../features/Toaster'
+import { CurrencyContext } from '../../../../../..'
 
 type Props = {
   text: string
@@ -33,6 +34,7 @@ export const CatalogItem = ({
   value
 }: Props) => {
   const dispatch = useDispatch()
+  const selectedCurrency = useContext(CurrencyContext) as keyof typeof symbols
 
   const [buttonState, setButtonState] = useState<{
     variant: ButtonVariant
@@ -96,7 +98,7 @@ export const CatalogItem = ({
 
             <Stack flexDirection="column" gap="30px">
               <Stack alignItems="center" justifyContent="space-between" gap="35px">
-                <Price fontSize={40} currency={currency} value={value} />
+                <Price fontSize={40} currency={selectedCurrency} value={value} />
               </Stack>
 
               <Button

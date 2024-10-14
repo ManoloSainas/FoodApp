@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { CartObject } from '../../../../features/cart/model'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useContext, useMemo, useState } from 'react'
 import { addOneProduct, deleteOneProduct } from '../../../../features/cart/reducer'
 import { StyledRow, StyledTable } from './styled'
 import { Stack } from '../../../../Shared Components/Stack'
@@ -9,9 +9,10 @@ import { Image } from '../../../../Shared Components/Image'
 import { Text } from '../../../../Shared Components/Text'
 import { Tag } from '../../../../Composite Components/Tag'
 import { QuantitySelector } from '../../../../Composite Components/QuantitySelector'
-import { Price } from '../../../../Composite Components/Price'
+import { Price, symbols } from '../../../../Composite Components/Price'
 import { IconButton } from '../../../../Composite Components/IconButton'
 import { DialogDeleteProduct } from '../DialogDeleteProduct'
+import { CurrencyContext } from '../../..'
 
 type Props = {
   options: CartObject[]
@@ -20,6 +21,7 @@ type Props = {
 
 export const ShoppingCard = ({ options }: Props) => {
   const dispatch = useDispatch()
+  const selectedCurrency = useContext(CurrencyContext) as keyof typeof symbols
   const [isPopupOpen, setIsPopupOpen] = useState(false)
 
   const handleButtonClick = () => {
@@ -46,7 +48,7 @@ export const ShoppingCard = ({ options }: Props) => {
 
   const optionsElements = useMemo(
     () =>
-      options.map(({ imageURL, text, tagText, currency, value, quantityCartObject }) => (
+      options.map(({ imageURL, text, tagText, value, quantityCartObject }) => (
         <StyledRow key={imageURL}>
           <Stack justifyContent="space-between" alignItems="center" width="100%">
             <Stack gap="10px">
@@ -73,7 +75,7 @@ export const ShoppingCard = ({ options }: Props) => {
                 onClickPlus={() => handleIncrement(imageURL)}
               />
             </Stack>
-            <Price currency={currency} value={value} />
+            <Price currency={selectedCurrency} value={value} />
             <IconButton
               variant="redIcon"
               iconName="Xmark"
