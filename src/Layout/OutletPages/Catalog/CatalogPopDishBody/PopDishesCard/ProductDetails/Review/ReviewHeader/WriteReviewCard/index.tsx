@@ -12,12 +12,6 @@ type Props = {
   onClose: () => void
 }
 
-// type Review = {
-//   text: string
-//   author: string
-//   productId: string
-// }
-
 export const WriteReviewCard = ({ productId, onClose }: Props) => {
   const [textReview, setTextReview] = useState<string>('')
 
@@ -41,12 +35,12 @@ export const WriteReviewCard = ({ productId, onClose }: Props) => {
       } catch (err) {
         console.error(`Error sending review: ${err}`)
       } finally {
-        console.log('Review sent!')
+        onClose()
       }
     }
 
     sendReview()
-  }, [])
+  }, [textReview, productId])
 
   return (
     <StyledWriteReviewCard>
