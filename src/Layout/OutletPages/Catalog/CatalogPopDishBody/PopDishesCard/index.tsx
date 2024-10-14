@@ -13,8 +13,9 @@ import { Text } from '../../../../../Shared Components/Text'
 import { StyledList, StyledRow } from './styled'
 import { useMemo, useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { ToastContainer, toast, Bounce } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { notifyProductAdded } from '../../../../../features/Toaster'
 
 export type product = {
   id: string
@@ -53,20 +54,6 @@ export const PopDishes = ({ products, onClick }: Props) => {
   const [iconButtonStates, setIconButtonStates] = useState<{
     [key: string]: { variant: ButtonVariant; icon: IconName }
   }>({})
-
-  const notify = useCallback((text: string) => {
-    toast.success(`${text} added to cart!`, {
-      position: 'top-center',
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: 'dark',
-      transition: Bounce
-    })
-  }, [])
 
   const handleClick = useCallback((imageURL: string) => {
     setIconButtonStates((prevState) => ({
@@ -167,7 +154,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
                         onClick={() => {
                           onClick(id, imageURL, text, tagText, currency, value)
                           handleClick(imageURL)
-                          notify(text)
+                          notifyProductAdded(text)
                         }}
                         disabled={!available}
                         paddingVar="icon"
@@ -179,7 +166,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
             )
         }
       ),
-    [products, iconButtonStates, handleClick, notify, onClick]
+    [products, iconButtonStates, handleClick, notifyProductAdded, onClick]
   )
 
   return (

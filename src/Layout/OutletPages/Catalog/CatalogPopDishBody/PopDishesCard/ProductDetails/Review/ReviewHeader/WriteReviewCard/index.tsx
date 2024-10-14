@@ -6,6 +6,7 @@ import { Stack } from '../../../../../../../../../Shared Components/Stack'
 import { Text } from '../../../../../../../../../Shared Components/Text'
 import { StyledWriteReviewCard } from './styled'
 import { apiClient } from '../../../../../../../../../features/api/api-client'
+import { notifyReview } from '../../../../../../../../../features/Toaster'
 
 type Props = {
   productId?: string
@@ -22,20 +23,21 @@ export const WriteReviewCard = ({ productId, onClose }: Props) => {
     [textReview, setTextReview]
   )
 
-  console.log({ textReview }, { productId })
-
   const handleButtonClick = useCallback(() => {
     const sendReview = async () => {
       try {
-        await apiClient.post('/reviews', {
+        await apiClient.post('reviews', {
           text: textReview,
           author: 'Manolo Sainas',
           productId: productId
         })
+
+        onClose()
+        notifyReview(true)
       } catch (err) {
         console.error(`Error sending review: ${err}`)
+        notifyReview(false)
       } finally {
-        onClose()
       }
     }
 

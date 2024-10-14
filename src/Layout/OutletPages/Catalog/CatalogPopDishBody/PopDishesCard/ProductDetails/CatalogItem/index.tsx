@@ -11,9 +11,9 @@ import { StyledCatalogItem } from './styled'
 import { Stack } from '../../../../../../../Shared Components/Stack'
 import { Button } from '../../../../../../../Shared Components/Button'
 import { Text } from '../../../../../../../Shared Components/Text'
-import { notify } from '../../../../../../../features/Toaster'
 import { weirdSizeDrinks } from '../..'
 import { Image } from '../../../../../../../Shared Components/Image'
+import { notifyProductAdded } from '../../../../../../../features/Toaster'
 
 type Props = {
   text: string
@@ -104,7 +104,7 @@ export const CatalogItem = ({
                 paddingVar="button"
                 onClick={() => {
                   handleClick()
-                  notify(text)
+                  notifyProductAdded(text)
                 }}
               >
                 {buttonState.buttonText}
