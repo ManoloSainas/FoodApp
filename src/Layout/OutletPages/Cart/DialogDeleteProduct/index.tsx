@@ -19,7 +19,7 @@ export const DialogDeleteProduct = ({ onClose, product }: Props) => {
       dispatch(deleteProduct(value))
       onClose()
     },
-    [dispatch]
+    [dispatch, onClose]
   )
 
   return (

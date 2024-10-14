@@ -4,7 +4,7 @@ import { CatalogItem } from './CatalogItem'
 import { Review } from './Review'
 
 export const ProductDetails = () => {
-  let { state } = useLocation()
+  const { state } = useLocation()
   return (
     <StyledProductDetails>
       <CatalogItem

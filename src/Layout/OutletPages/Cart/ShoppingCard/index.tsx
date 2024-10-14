@@ -23,13 +23,16 @@ export const ShoppingCard = ({ options }: Props) => {
   const dispatch = useDispatch()
   const selectedCurrency = useContext(CurrencyContext) as keyof typeof symbols
   const [isPopupOpen, setIsPopupOpen] = useState(false)
+  const [productToDelete, setProductToDelete] = useState<string | null>(null)
 
-  const handleButtonClick = useCallback(() => {
+  const handleButtonClick = useCallback((product: string) => {
+    setProductToDelete(product)
     setIsPopupOpen(true)
   }, [])
 
   const handleClosePopup = useCallback(() => {
     setIsPopupOpen(false)
+    setProductToDelete(null)
   }, [])
 
   const handleIncrement = useCallback(
@@ -79,10 +82,10 @@ export const ShoppingCard = ({ options }: Props) => {
             <IconButton
               variant="redIcon"
               iconName="Xmark"
-              onClick={handleButtonClick}
+              onClick={() => handleButtonClick(imageURL)}
               paddingVar="icon"
             />
-            {isPopupOpen && (
+            {isPopupOpen && productToDelete === imageURL && (
               <DialogDeleteProduct product={imageURL} onClose={handleClosePopup} />
             )}
           </Stack>
@@ -95,7 +98,8 @@ export const ShoppingCard = ({ options }: Props) => {
       isPopupOpen,
       handleButtonClick,
       handleClosePopup,
-      selectedCurrency
+      selectedCurrency,
+      productToDelete
     ]
   )
 
