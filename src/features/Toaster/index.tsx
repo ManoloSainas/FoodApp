@@ -27,7 +27,7 @@ export const notifyReview = (sentWithoutProblems: boolean) => {
         theme: 'dark',
         transition: Bounce
       })
-    : toast.error(`Error sending review!`, {
+    : toast.error(`Error sending review: can't send an empty review.`, {
         position: 'top-center',
         autoClose: 3000,
         hideProgressBar: false,

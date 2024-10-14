@@ -39,8 +39,7 @@ export const WriteReviewCard = ({ productId, onClose }: Props) => {
         notifyReview(false)
       }
     }
-
-    sendReview()
+    textReview.length > 0 ? sendReview() : notifyReview(false)
   }, [textReview, productId, onClose])
 
   return (
