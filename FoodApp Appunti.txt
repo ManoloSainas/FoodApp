@@ -100,7 +100,7 @@ addon per vscode:
  Sito utile per capire Redux!!!!!!!!
  https://builtin.com/software-engineering-perspectives/useselector-usedispatch-react-redux
 
- Da guarda come funziona Redux-saga
+ Da guarda come funziona Redux-saga e postman
 
  React-Toastify
  https://www.npmjs.com/package/react-toastify

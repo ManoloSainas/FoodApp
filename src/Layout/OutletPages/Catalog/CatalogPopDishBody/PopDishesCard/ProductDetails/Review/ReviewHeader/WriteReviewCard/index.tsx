@@ -5,12 +5,20 @@ import { IconButton } from '../../../../../../../../../Composite Components/Icon
 import { Stack } from '../../../../../../../../../Shared Components/Stack'
 import { Text } from '../../../../../../../../../Shared Components/Text'
 import { StyledWriteReviewCard } from './styled'
+import { apiClient } from '../../../../../../../../../features/api/api-client'
 
 type Props = {
+  productId?: string
   onClose: () => void
 }
 
-export const WriteReviewCard = ({ onClose }: Props) => {
+// type Review = {
+//   text: string
+//   author: string
+//   productId: string
+// }
+
+export const WriteReviewCard = ({ productId, onClose }: Props) => {
   const [textReview, setTextReview] = useState<string>('')
 
   const handleTextAreaChange = useCallback(
@@ -20,8 +28,24 @@ export const WriteReviewCard = ({ onClose }: Props) => {
     [textReview, setTextReview]
   )
 
+  console.log({ textReview }, { productId })
+
   const handleButtonClick = useCallback(() => {
-    console.log('Clicked!')
+    const sendReview = async () => {
+      try {
+        await apiClient.post('/reviews', {
+          text: textReview,
+          author: 'Manolo Sainas',
+          productId: productId
+        })
+      } catch (err) {
+        console.error(`Error sending review: ${err}`)
+      } finally {
+        console.log('Review sent!')
+      }
+    }
+
+    sendReview()
   }, [])
 
   return (

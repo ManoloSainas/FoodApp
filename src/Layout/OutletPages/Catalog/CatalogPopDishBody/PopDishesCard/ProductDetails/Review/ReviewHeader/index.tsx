@@ -3,7 +3,12 @@ import { IconButton } from '../../../../../../../../Composite Components/IconBut
 import { Text } from '../../../../../../../../Shared Components/Text'
 import { StyledReviewHeader } from './styled'
 import { WriteReviewCard } from './WriteReviewCard'
-export const ReviewHeaderComponent = () => {
+
+type Props = {
+  productId: string
+}
+
+export const ReviewHeaderComponent = ({ productId }: Props) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false)
 
   const handleIconButtonClick = () => {
@@ -28,7 +33,9 @@ export const ReviewHeaderComponent = () => {
       >
         Leave a review
       </IconButton>
-      {isPopupOpen && <WriteReviewCard onClose={handleClosePopup} />}
+      {isPopupOpen && (
+        <WriteReviewCard productId={productId} onClose={handleClosePopup} />
+      )}
     </StyledReviewHeader>
   )
 }

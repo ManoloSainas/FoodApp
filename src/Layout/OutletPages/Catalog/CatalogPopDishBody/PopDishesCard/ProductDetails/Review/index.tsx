@@ -9,7 +9,7 @@ type Props = {
 export const Review = ({ id }: Props) => {
   return (
     <Stack flexDirection="column">
-      <ReviewHeader />
+      <ReviewHeader productId={id} />
       <ReviewBody productId={id} />
     </Stack>
   )
