@@ -5,10 +5,14 @@ import { StyledCardDetails, StyledCart } from './styled'
 import { Stack } from '../../../Shared Components/Stack'
 import { Text } from '../../../Shared Components/Text'
 import { ToPay } from '../../../Composite Components/ToPay'
+import { useContext } from 'react'
+import { CurrencyContext } from '../..'
+import { symbols } from '../../../constants'
 
 export const Cart = () => {
   const cart = useSelector(selectCart)
   const priceToPay = useSelector(selectCartTotalPrice)
+  const currency = useContext(CurrencyContext) as keyof typeof symbols
 
   return (
     <StyledCart>
@@ -19,7 +23,7 @@ export const Cart = () => {
         {cart.length > 0 ? (
           <>
             <Stack width="100%" justifyContent="end">
-              <ToPay currency="USD" value={priceToPay.toString()} />
+              <ToPay currency={currency} value={priceToPay.toString()} />
             </Stack>
             <ShoppingCard options={cart} />
           </>
