@@ -7,6 +7,7 @@ export type CartObject = {
   currency: keyof typeof symbols
   value: string
   quantityCartObject: number
+  discountRate: number
 }
 
 export type MyState = {

@@ -28,7 +28,8 @@ export const cartSlice = createSlice({
           tagText: action.payload.tagText,
           currency: action.payload.currency,
           value: action.payload.value,
-          quantityCartObject: 1
+          quantityCartObject: 1,
+          discountRate: action.payload.discountRate
         })
       }
     },

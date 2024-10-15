@@ -16,6 +16,6 @@ export const StyledCardDetailsBox = styled.div`
   background-color: #0c0b10;
   border-top-left-radius: 80px 80px;
   border-bottom-left-radius: 80px 80px;
-  padding: 50px 0px 50px 30px;
+  padding: 50px 0px 0px 30px;
   flex: 1;
 `

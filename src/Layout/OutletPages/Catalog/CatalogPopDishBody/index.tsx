@@ -59,7 +59,8 @@ export const CatalogPopDishBody = ({
       tagText: string,
       currency: keyof typeof symbols,
       value: string,
-      quantityCartObject: number
+      quantityCartObject: number,
+      discountRate: number
     ) => {
       const productPayload = {
         id,
@@ -68,7 +69,8 @@ export const CatalogPopDishBody = ({
         tagText,
         currency,
         value,
-        quantityCartObject
+        quantityCartObject,
+        discountRate
       }
       dispatch(addProduct(productPayload))
     },
@@ -94,7 +96,8 @@ export const CatalogPopDishBody = ({
           price: item.price,
           iconNameOptional: 'Flame' as IconName,
           iconNameButton: 'Plus' as IconName,
-          rating: item.rating
+          rating: item.rating,
+          discountRate: parseFloat(item.discountRate) // Ensure discountRate is a number
         }))
         setData(newData)
       } catch (err) {
@@ -150,8 +153,8 @@ export const CatalogPopDishBody = ({
     <Stack flexDirection="row">
       <PopDishes
         products={filteredData.length > 0 ? filteredData : []}
-        onClick={(id, imageURL, text, tagText, currency, value) =>
-          handleAddProduct(id, imageURL, text, tagText, currency, value, 1)
+        onClick={(id, imageURL, text, tagText, currency, value, discountRate) =>
+          handleAddProduct(id, imageURL, text, tagText, currency, value, 1, discountRate)
         }
       />
     </Stack>
