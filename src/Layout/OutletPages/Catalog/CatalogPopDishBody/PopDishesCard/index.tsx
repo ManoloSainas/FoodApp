@@ -34,6 +34,7 @@ export type product = {
   tags: string[]
   delivery: string
   price: { type: keyof typeof symbols; value: string }
+  rating: string
 }
 
 type Props = {
@@ -80,88 +81,89 @@ export const PopDishes = ({ products, onClick }: Props) => {
           iconNameOptional,
           showIconInCorner = false,
           available,
-          tags
+          tags,
+          rating
         }) => {
           const iconButtonState = iconButtonStates[imageURL] || {
             variant: 'primary',
             icon: 'Plus'
           }
-          if (available)
-            return (
-              <StyledRow key={id}>
-                <Stack
-                  flexDirection="column"
-                  width="max-content"
-                  height="280px"
-                  alignItems="center"
-                  clickable
-                  onClick={() => console.log('Clicked')}
-                >
-                  <Stack flexDirection="column" alignItems="flex-start">
-                    <Link
-                      key={imageURL}
-                      to={`/ProductDetails`}
-                      state={{ id, text, textp, tagText, imageURL, currency, value }}
+          if (available) console.log(`Product ${text} has this rating ${rating}`)
+          return (
+            <StyledRow key={id}>
+              <Stack
+                flexDirection="column"
+                width="max-content"
+                height="280px"
+                alignItems="center"
+                clickable
+                onClick={() => console.log('Clicked')}
+              >
+                <Stack flexDirection="column" alignItems="flex-start">
+                  <Link
+                    key={imageURL}
+                    to={`/ProductDetails`}
+                    state={{ id, text, textp, tagText, imageURL, currency, value }}
+                  >
+                    <Stack
+                      flexDirection="column"
+                      alignItems="center"
+                      clickable
+                      onClick={() => console.log('Clicked')}
+                    >
+                      {showIconInCorner && <Icon iconName={iconNameOptional} />}
+                      <Stack justifyContent="center" width="198px">
+                        {tags.includes('534ed6f7-be81-4af3-9c27-ebb8acd2e946') &&
+                        !drinks.includes(text) ? (
+                          <Image className="pop-dish-image-drink" imageUrl={imageURL} />
+                        ) : (
+                          <Image className="pop-dish-image" imageUrl={imageURL} />
+                        )}
+                      </Stack>
+
+                      <Text className="pop-dish-text" variant="h2">
+                        {text}
+                      </Text>
+                      <Text className="pop-dish-textp">{textp}</Text>
+                    </Stack>
+
+                    <Stack
+                      flexDirection="column"
+                      alignItems="center"
+                      gap="20px"
+                      justifyContent="center"
                     >
                       <Stack
-                        flexDirection="column"
+                        justifyContent="space-around"
                         alignItems="center"
+                        width="max-content"
+                        gap="20px"
                         clickable
                         onClick={() => console.log('Clicked')}
                       >
-                        {showIconInCorner && <Icon iconName={iconNameOptional} />}
-                        <Stack justifyContent="center" width="198px">
-                          {tags.includes('534ed6f7-be81-4af3-9c27-ebb8acd2e946') &&
-                          !drinks.includes(text) ? (
-                            <Image className="pop-dish-image-drink" imageUrl={imageURL} />
-                          ) : (
-                            <Image className="pop-dish-image" imageUrl={imageURL} />
-                          )}
-                        </Stack>
-
-                        <Text className="pop-dish-text" variant="h2">
-                          {text}
-                        </Text>
-                        <Text className="pop-dish-textp">{textp}</Text>
+                        <Price fontSize={27} currency={currency} value={value} />
+                        <Tag text={tagText} />
                       </Stack>
-
-                      <Stack
-                        flexDirection="column"
-                        alignItems="center"
-                        gap="20px"
-                        justifyContent="center"
-                      >
-                        <Stack
-                          justifyContent="space-around"
-                          alignItems="center"
-                          width="max-content"
-                          gap="20px"
-                          clickable
-                          onClick={() => console.log('Clicked')}
-                        >
-                          <Price fontSize={27} currency={currency} value={value} />
-                          <Tag text={tagText} />
-                        </Stack>
-                      </Stack>
-                    </Link>
-                    <Stack justifyContent="center" width="200px" margin="10px 0 0 0">
-                      <IconButton
-                        size="xl"
-                        variant={iconButtonState.variant}
-                        iconName={iconButtonState.icon}
-                        onClick={() => {
-                          onClick(id, imageURL, text, tagText, currency, value)
-                          handleClick(imageURL)
-                          notifyProductAdded(text)
-                        }}
-                        disabled={!available}
-                        paddingVar="icon"
-                      />
                     </Stack>
+                  </Link>
+                  <Stack justifyContent="center" width="200px" margin="10px 0 0 0">
+                    <IconButton
+                      size="xl"
+                      variant={iconButtonState.variant}
+                      iconName={iconButtonState.icon}
+                      onClick={() => {
+                        onClick(id, imageURL, text, tagText, currency, value)
+                        handleClick(imageURL)
+                        notifyProductAdded(text)
+                      }}
+                      disabled={!available}
+                      paddingVar="icon"
+                    />
                   </Stack>
                 </Stack>
-              </StyledRow>
-            )
+              </Stack>
+            </StyledRow>
+          )
         }
       ),
     [products, iconButtonStates, handleClick, onClick]

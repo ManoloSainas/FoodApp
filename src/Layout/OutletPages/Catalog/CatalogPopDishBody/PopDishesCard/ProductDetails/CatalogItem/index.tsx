@@ -1,6 +1,5 @@
 import { useState, useCallback, useContext } from 'react'
 import { Link } from 'react-router-dom'
-
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { Price } from '../../../../../../../Composite Components/Price'
@@ -15,6 +14,7 @@ import { Image } from '../../../../../../../Shared Components/Image'
 import { notifyProductAdded } from '../../../../../../../features/Toaster'
 import { CurrencyContext } from '../../../../../..'
 import { symbols, weirdSizeDrinks } from '../../../../../../../constants'
+import { Rating } from '../../../../../../../Composite Components/Rating'
 
 type Props = {
   text: string
@@ -82,6 +82,8 @@ export const CatalogItem = ({
             {text}
           </Text>
         </Stack>
+
+        <Rating value="0" />
 
         <Stack height="400px" gap="15px">
           <Stack

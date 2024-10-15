@@ -93,7 +93,8 @@ export const CatalogPopDishBody = ({
           delivery: item.delivery,
           price: item.price,
           iconNameOptional: 'Flame' as IconName,
-          iconNameButton: 'Plus' as IconName
+          iconNameButton: 'Plus' as IconName,
+          rating: item.rating
         }))
         setData(newData)
       } catch (err) {
