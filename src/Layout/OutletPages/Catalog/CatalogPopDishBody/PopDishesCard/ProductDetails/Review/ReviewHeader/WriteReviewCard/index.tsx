@@ -20,7 +20,7 @@ export const WriteReviewCard = ({ productId, onClose }: Props) => {
     (value: string) => {
       setTextReview(value)
     },
-    [textReview, setTextReview]
+    [setTextReview]
   )
 
   const handleButtonClick = useCallback(() => {
