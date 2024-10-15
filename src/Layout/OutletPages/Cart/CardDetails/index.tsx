@@ -1,5 +1,7 @@
+import { useSelector } from 'react-redux'
 import { CardDetailsBody } from './CardDetailsBody'
 import { StyledCardDetails } from './styled'
+import { selectCart } from '../../../../features/cart/selectors'
 
 type order = [
   {
@@ -20,6 +22,8 @@ type order = [
 ]
 
 export const CardDetails = () => {
+  const cart = useSelector(selectCart)
+
   return (
     <StyledCardDetails>
       <CardDetailsBody />

@@ -47,7 +47,8 @@ type Props = {
     tagText: string,
     currency: keyof typeof symbols,
     value: string,
-    discountRate: number
+    discountRate: number,
+    delivery: string
   ) => void
 }
 
@@ -85,7 +86,8 @@ export const PopDishes = ({ products, onClick }: Props) => {
           available,
           tags,
           rating,
-          discountRate
+          discountRate,
+          delivery
         }) => {
           const iconButtonState = iconButtonStates[imageURL] || {
             variant: 'primary',
@@ -115,7 +117,8 @@ export const PopDishes = ({ products, onClick }: Props) => {
                         currency,
                         value,
                         rating,
-                        discountRate
+                        discountRate,
+                        delivery
                       }}
                     >
                       <Stack
@@ -172,7 +175,8 @@ export const PopDishes = ({ products, onClick }: Props) => {
                             tagText,
                             currency,
                             value,
-                            discountRate
+                            discountRate,
+                            delivery
                           )
                           handleClick(imageURL)
                           notifyProductAdded(text)

@@ -29,7 +29,9 @@ export const cartSlice = createSlice({
           currency: action.payload.currency,
           value: action.payload.value,
           quantityCartObject: 1,
-          discountRate: action.payload.discountRate
+          discountRate: action.payload.discountRate,
+          id: action.payload.id,
+          delivery: action.payload.delivery
         })
       }
     },

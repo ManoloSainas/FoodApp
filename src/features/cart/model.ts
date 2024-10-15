@@ -8,6 +8,8 @@ export type CartObject = {
   value: string
   quantityCartObject: number
   discountRate: number
+  id: string
+  delivery: string
 }
 
 export type MyState = {

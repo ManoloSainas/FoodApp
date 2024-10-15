@@ -15,6 +15,8 @@ export const Cart = () => {
   const priceToPay = useSelector(selectCartTotalPrice)
   const currency = useContext(CurrencyContext) as keyof typeof symbols
 
+  console.log(cart)
+
   return (
     <StyledCart>
       <Stack flex={1} height="100%" flexDirection="column">

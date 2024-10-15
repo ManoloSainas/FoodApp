@@ -16,6 +16,8 @@ export const ProductDetails = () => {
         tagText={state?.tagText}
         rating={state?.rating}
         discountRate={state?.discountRate}
+        id={state?.id}
+        delivery={state?.delivery}
       />
 
       <Review id={state?.id} />

@@ -60,7 +60,8 @@ export const CatalogPopDishBody = ({
       currency: keyof typeof symbols,
       value: string,
       quantityCartObject: number,
-      discountRate: number
+      discountRate: number,
+      delivery: string
     ) => {
       const productPayload = {
         id,
@@ -70,7 +71,8 @@ export const CatalogPopDishBody = ({
         currency,
         value,
         quantityCartObject,
-        discountRate
+        discountRate,
+        delivery
       }
       dispatch(addProduct(productPayload))
     },
@@ -153,8 +155,18 @@ export const CatalogPopDishBody = ({
     <Stack flexDirection="row">
       <PopDishes
         products={filteredData.length > 0 ? filteredData : []}
-        onClick={(id, imageURL, text, tagText, currency, value, discountRate) =>
-          handleAddProduct(id, imageURL, text, tagText, currency, value, 1, discountRate)
+        onClick={(id, imageURL, text, tagText, currency, value, discountRate, delivery) =>
+          handleAddProduct(
+            id,
+            imageURL,
+            text,
+            tagText,
+            currency,
+            value,
+            1,
+            discountRate,
+            delivery
+          )
         }
       />
     </Stack>

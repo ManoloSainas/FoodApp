@@ -25,6 +25,8 @@ type Props = {
   value: string
   rating: string
   discountRate: number
+  id: string
+  delivery: string
 }
 
 export const CatalogItem = ({
@@ -35,7 +37,9 @@ export const CatalogItem = ({
   currency,
   value,
   rating,
-  discountRate
+  discountRate,
+  id,
+  delivery
 }: Props) => {
   const dispatch = useDispatch()
   const selectedCurrency = useContext(CurrencyContext) as keyof typeof symbols
@@ -56,7 +60,9 @@ export const CatalogItem = ({
       currency,
       value,
       quantityCartObject: 1,
-      discountRate
+      discountRate,
+      id,
+      delivery
     }
 
     dispatch(addProduct(product))
@@ -65,7 +71,7 @@ export const CatalogItem = ({
     setTimeout(() => {
       setButtonState({ variant: 'primary', buttonText: 'Order Now' })
     }, 1000)
-  }, [dispatch, imageURL, text, tagText, currency, value, discountRate])
+  }, [dispatch, imageURL, text, tagText, currency, value, discountRate, id, delivery])
 
   return (
     <StyledCatalogItem>
