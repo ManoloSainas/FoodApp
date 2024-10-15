@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import { ShoppingCard } from './ShoppingCard'
-import { selectCart } from '../../../features/cart/selectors'
+import { selectCart, selectCartTotalPrice } from '../../../features/cart/selectors'
 import { StyledCardDetails, StyledCart } from './styled'
 import { Stack } from '../../../Shared Components/Stack'
 import { Text } from '../../../Shared Components/Text'
@@ -8,6 +8,7 @@ import { ToPay } from '../../../Composite Components/ToPay'
 
 export const Cart = () => {
   const cart = useSelector(selectCart)
+  const priceToPay = useSelector(selectCartTotalPrice)
 
   return (
     <StyledCart>
@@ -18,7 +19,7 @@ export const Cart = () => {
         {cart.length > 0 ? (
           <>
             <Stack width="100%" justifyContent="end">
-              <ToPay currency="USD" value="50" />
+              <ToPay currency="USD" value={priceToPay.toString()} />
             </Stack>
             <ShoppingCard options={cart} />
           </>
