@@ -80,6 +80,10 @@ export const cartSlice = createSlice({
           quantityCartObject: quantity
         })
       }
+    },
+
+    clearCart: (state) => {
+      state.cart = []
     }
   }
 })
@@ -89,7 +93,8 @@ export const {
   deleteProduct,
   deleteOneProduct,
   addOneProduct,
-  addMoreProduct
+  addMoreProduct,
+  clearCart
 } = cartSlice.actions
 
 export default cartSlice.reducer

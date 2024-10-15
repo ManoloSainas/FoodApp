@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Button } from '../../../../Shared Components/Button'
 import { Stack } from '../../../../Shared Components/Stack'
 import { Text } from '../../../../Shared Components/Text'
@@ -7,6 +7,7 @@ import { StyledDialogSendOrder } from './styled'
 import { selectCart } from '../../../../features/cart/selectors'
 import { apiClient } from '../../../../features/api/api-client'
 import { notifyOrder } from '../../../../features/Toaster'
+import { clearCart } from '../../../../features/cart/reducer'
 
 type Props = {
   onClose: () => void
@@ -14,6 +15,7 @@ type Props = {
 
 export const DialogSendOrder = ({ onClose }: Props) => {
   const cart = useSelector(selectCart)
+  const dispatch = useDispatch()
 
   const handleButtonClick = useCallback(() => {
     const sendOrder = async () => {
@@ -29,13 +31,14 @@ export const DialogSendOrder = ({ onClose }: Props) => {
         })
         onClose()
         notifyOrder(true)
+        dispatch(clearCart())
       } catch (err) {
         console.error(`Error sending order: ${err}`)
         notifyOrder(false)
       }
     }
     sendOrder()
-  }, [cart, onClose])
+  }, [cart, onClose, dispatch])
 
   return (
     <StyledDialogSendOrder>
