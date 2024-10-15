@@ -103,7 +103,16 @@ export const PopDishes = ({ products, onClick }: Props) => {
                   <Link
                     key={imageURL}
                     to={`/ProductDetails`}
-                    state={{ id, text, textp, tagText, imageURL, currency, value }}
+                    state={{
+                      id,
+                      text,
+                      textp,
+                      tagText,
+                      imageURL,
+                      currency,
+                      value,
+                      rating
+                    }}
                   >
                     <Stack
                       flexDirection="column"

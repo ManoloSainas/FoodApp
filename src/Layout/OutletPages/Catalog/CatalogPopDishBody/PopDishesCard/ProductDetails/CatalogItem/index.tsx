@@ -23,6 +23,7 @@ type Props = {
   imageURL: string
   currency: keyof typeof symbols
   value: string
+  rating: string
 }
 
 export const CatalogItem = ({
@@ -31,7 +32,8 @@ export const CatalogItem = ({
   tagText,
   imageURL,
   currency,
-  value
+  value,
+  rating
 }: Props) => {
   const dispatch = useDispatch()
   const selectedCurrency = useContext(CurrencyContext) as keyof typeof symbols
@@ -83,7 +85,7 @@ export const CatalogItem = ({
           </Text>
         </Stack>
 
-        <Rating value="0" />
+        <Rating value={rating} />
 
         <Stack height="400px" gap="15px">
           <Stack

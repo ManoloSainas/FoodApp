@@ -11,8 +11,10 @@ type Props = {
 export const ToPay = ({ currency, value = '0' }: Props) => {
   return (
     <StyledToPay>
-      <Text>To pay:</Text>
-      <Price currency={currency} value={value} />
+      <Text fontWeight="bold" fontSize={20}>
+        To pay:
+      </Text>
+      <Price fontSize={20} currency={currency} value={value} />
     </StyledToPay>
   )
 }
