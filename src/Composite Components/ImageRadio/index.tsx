@@ -32,7 +32,7 @@ export const ImageRadio = ({
   const memoizedImages = useMemo(() => images, [images])
 
   return (
-    <Stack gap="10px">
+    <Stack gap="20px">
       {memoizedImages.map((currCard) => (
         <StyledImageRadio
           key={currCard}

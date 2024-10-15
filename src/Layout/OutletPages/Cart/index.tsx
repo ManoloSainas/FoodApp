@@ -1,13 +1,14 @@
 import { useSelector } from 'react-redux'
 import { ShoppingCard } from './ShoppingCard'
 import { selectCart, selectCartTotalPrice } from '../../../features/cart/selectors'
-import { StyledCardDetails, StyledCart } from './styled'
+import { StyledCardDetailsBox, StyledCart } from './styled'
 import { Stack } from '../../../Shared Components/Stack'
 import { Text } from '../../../Shared Components/Text'
 import { ToPay } from '../../../Composite Components/ToPay'
 import { useContext } from 'react'
 import { CurrencyContext } from '../..'
 import { symbols } from '../../../constants'
+import { CardDetails } from './CardDetails'
 
 export const Cart = () => {
   const cart = useSelector(selectCart)
@@ -35,9 +36,9 @@ export const Cart = () => {
           </Stack>
         )}
       </Stack>
-      <StyledCardDetails>
-        <Text color="red">SHOPPING CART</Text>
-      </StyledCardDetails>
+      <StyledCardDetailsBox>
+        <CardDetails />
+      </StyledCardDetailsBox>
     </StyledCart>
   )
 }

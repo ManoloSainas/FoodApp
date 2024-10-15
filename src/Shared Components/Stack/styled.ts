@@ -11,6 +11,7 @@ export const StyledStack = styled.div<{
   $flex?: number
   $padding?: string
   $margin?: string
+  $border?: string
   $borderRadius?: number
   $flexWrap?: string
   id?: string
@@ -31,6 +32,7 @@ export const StyledStack = styled.div<{
   gap: ${({ $gap }) => $gap};
   flex: ${({ $flex }) => $flex};
   padding: ${({ $padding }) => $padding};
+  border: ${({ $border }) => $border};
   margin: ${({ $margin }) => $margin};
   border-radius: ${({ $borderRadius }) => $borderRadius}px;
   flex-wrap: ${({ $flexWrap }) => $flexWrap};

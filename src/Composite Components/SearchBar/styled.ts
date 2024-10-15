@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const StyledSearchBar = styled.div`
-  width: max-content;
   display: flex;
   justify-content: space-between;
   background-color: #111114;
@@ -12,6 +11,6 @@ export const StyledSearchBar = styled.div`
   color: #17171c;
 
   #inputId {
-    width: 253.6px;
+    width: 185px;
   }
 `

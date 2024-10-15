@@ -10,10 +10,11 @@ export const StyledImageRadio = styled.div<{
   height: 100px;
   width: 150px;
   padding: 2%;
-  border: ${({ $isSelected }) => ($isSelected ? '2px solid green' : '2px solid black')};
+  border: ${({ $isSelected }) =>
+    $isSelected ? '2px solid #113420' : '2px solid #29282D'};
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 
   .radio-image {
     width: ${({ $height }) => $height};

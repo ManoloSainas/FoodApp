@@ -1,33 +1,61 @@
-// import { StyledCardDetails } from './styled'
+import { ImageRadio } from '../../../../Composite Components/ImageRadio'
+import { Input } from '../../../../Shared Components/Input'
+import { Stack } from '../../../../Shared Components/Stack'
+import { Text } from '../../../../Shared Components/Text'
+import { StyledCardDetails, StyledHr } from './styled'
 
-// type Props = {
-//   images: string[]
-//   value?: string
-// }
+type order = [
+  {
+    date: string
+    id: string
+    items: [
+      {
+        delivery: string
+        id: string
+        quantity: 0
+        price: {
+          value: 0
+          type: string
+        }
+      }
+    ]
+  }
+]
 
-// type PaymentInfos = {
-//   paymentMethod: string
-//   nameSurname: string
-//   cardNumber: string
-//   expDate: string
-//   cvv: string
-// }
+export const CardDetails = () => {
+  return (
+    <StyledCardDetails>
+      <Text fontSize={28} color="white">
+        Card Details
+      </Text>
+      <Stack flexDirection="column" gap="15px" margin="0 0 20px 0">
+        <Text variant="p" color="#312F3B">
+          Payment method
+        </Text>
+        <ImageRadio
+          width="100%"
+          onChange={() => console.log('carta')}
+          images={[
+            'src\\assets\\Images\\visa.png',
+            'src\\assets\\Images\\mastercard.png'
+          ]}
+        />
+      </Stack>
+      <Stack flexDirection="column" gap="15px" margin="20px 0 20px 0">
+        <Text variant="p" color="#312F3B">
+          Name and Surname
+        </Text>
+        <Input type="text" onChange={() => console.log('nome')} />
+        <StyledHr />
+      </Stack>
 
-// export const months = [
-//   { id: 1, value: '1', label: 'January' },
-//   { id: 2, value: '2', label: 'February' },
-//   { id: 3, value: '3', label: 'March' },
-//   { id: 4, value: '4', label: 'April' },
-//   { id: 5, value: '5', label: 'May' },
-//   { id: 6, value: '6', label: 'June' },
-//   { id: 7, value: '7', label: 'July' },
-//   { id: 8, value: '8', label: 'August' },
-//   { id: 9, value: '9', label: 'September' },
-//   { id: 10, value: '10', label: 'October' },
-//   { id: 11, value: '11', label: 'November' },
-//   { id: 12, value: '12', label: 'December' }
-// ]
-
-// export const CardDetails = ({}: Props) => {
-//   return <StyledCardDetails></StyledCardDetails>
-// }
+      <Stack flexDirection="column" gap="15px" margin="20px 0 20px 0">
+        <Text variant="p" color="#312F3B">
+          Card Number
+        </Text>
+        <Input maxLength={16} type="text" onChange={() => console.log('numero')} />
+        <StyledHr />
+      </Stack>
+    </StyledCardDetails>
+  )
+}
