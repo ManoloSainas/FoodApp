@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux'
 import { ImageRadio } from '../../../../Composite Components/ImageRadio'
 import { Button } from '../../../../Shared Components/Button'
 import { Hr } from '../../../../Shared Components/Hr'
@@ -7,31 +6,23 @@ import { Stack } from '../../../../Shared Components/Stack'
 import { Text } from '../../../../Shared Components/Text'
 import { CardExpiration } from './CardExpiration'
 import { StyledCardDetails } from './styled'
+import { useState } from 'react'
+import { DialogSendOrder } from '../DialogSendOrder'
+import { useSelector } from 'react-redux'
 import { selectCart } from '../../../../features/cart/selectors'
-import { useCallback } from 'react'
-import { apiClient } from '../../../../features/api/api-client'
+import { notifyOrder } from '../../../../features/Toaster'
 
 export const CardDetails = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false)
   const cart = useSelector(selectCart)
 
-  const handleButtonClick = useCallback(() => {
-    const sendOrder = async () => {
-      try {
-        await apiClient.post('order', {
-          userId: 'Manolo Sainas',
-          items: cart.map((item) => {
-            return {
-              id: item.id,
-              quantity: item.quantityCartObject
-            }
-          })
-        })
-      } catch (err) {
-        console.error(`Error sending order: ${err}`)
-      }
-    }
-    cart.length > 0 ? sendOrder() : console.log('error')
-  }, [cart])
+  const handleButtonClick = () => {
+    cart.length > 0 ? setIsPopupOpen(true) : notifyOrder(false)
+  }
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false)
+  }
 
   return (
     <StyledCardDetails>
@@ -85,6 +76,7 @@ export const CardDetails = () => {
       <Stack justifyContent="center">
         <Stack margin="20px 0 0 0">
           <Button onClick={handleButtonClick}>Check Out</Button>
+          {isPopupOpen && <DialogSendOrder onClose={handleClosePopup} />}
         </Stack>
       </Stack>
     </StyledCardDetails>

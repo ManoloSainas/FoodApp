@@ -39,3 +39,29 @@ export const notifyReview = (sentWithoutProblems: boolean) => {
         transition: Bounce
       })
 }
+
+export const notifyOrder = (sentOrderWithoutProblems: boolean) => {
+  sentOrderWithoutProblems
+    ? toast.success(`Order sent!`, {
+        position: 'top-center',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+        transition: Bounce
+      })
+    : toast.error(`Error sending order: can't send an order with an empty cart.`, {
+        position: 'top-center',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+        transition: Bounce
+      })
+}
