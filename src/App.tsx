@@ -42,7 +42,6 @@ function App() {
           <Route path="/map" element="To-do" />
           <Route path="/Delivery" element="To-do" />
           <Route path="/Settings" element="To-do" />
-          <Route path="/shoppingCart" element={<Cart />} />
         </Route>
       </Routes>
       {/* ToastContainer per visualizzare le notifiche */}
