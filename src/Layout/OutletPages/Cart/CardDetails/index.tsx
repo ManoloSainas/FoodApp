@@ -6,7 +6,7 @@ import { Stack } from '../../../../Shared Components/Stack'
 import { Text } from '../../../../Shared Components/Text'
 import { CardExpiration } from './CardExpiration'
 import { StyledCardDetails } from './styled'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { DialogSendOrder } from '../DialogSendOrder'
 import { useSelector } from 'react-redux'
 import { selectCart } from '../../../../features/cart/selectors'
@@ -16,13 +16,13 @@ export const CardDetails = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false)
   const cart = useSelector(selectCart)
 
-  const handleButtonClick = () => {
+  const handleButtonClick = useCallback(() => {
     cart.length > 0 ? setIsPopupOpen(true) : notifyOrder(false)
-  }
+  }, [cart])
 
-  const handleClosePopup = () => {
+  const handleClosePopup = useCallback(() => {
     setIsPopupOpen(false)
-  }
+  }, [])
 
   return (
     <StyledCardDetails>

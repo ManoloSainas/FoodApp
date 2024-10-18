@@ -38,7 +38,7 @@ export const ReviewBody = ({ productId }: Props) => {
       }
     }
     fetchReview()
-  }, [])
+  }, [productId])
 
   if (loading) {
     return (

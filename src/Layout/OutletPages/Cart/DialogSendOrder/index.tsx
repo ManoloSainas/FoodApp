@@ -39,7 +39,7 @@ export const DialogSendOrder = ({ onClose }: Props) => {
       }
     }
     sendOrder()
-  }, [cart, onClose, dispatch])
+  }, [cart, dispatch, onClose])
 
   return (
     <StyledDialogSendOrder>
