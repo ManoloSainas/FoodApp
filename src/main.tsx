@@ -6,6 +6,8 @@ import { persistor } from './features/store.ts'
 import { Provider } from 'react-redux'
 import App from './App.tsx'
 import { PersistGate } from 'redux-persist/integration/react'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 // Utilizza ReactDOM per creare un root e renderizzare l'applicazione
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -21,5 +23,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <App />
       </PersistGate>
     </Provider>
+    <ToastContainer />
   </React.StrictMode>
 )

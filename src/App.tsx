@@ -6,8 +6,6 @@ import { Home } from './Layout/OutletPages/Home'
 import { useEffect } from 'react'
 import { Cart } from './Layout/OutletPages/Cart'
 import { ProductDetails } from './Layout/OutletPages/Catalog/CatalogPopDishBody/PopDishesCard/ProductDetails'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 
 // Componente per reindirizzare automaticamente a "/home"
 function RedirectToHome() {
@@ -45,7 +43,6 @@ function App() {
         </Route>
       </Routes>
       {/* ToastContainer per visualizzare le notifiche */}
-      <ToastContainer />
     </BrowserRouter>
   )
 }

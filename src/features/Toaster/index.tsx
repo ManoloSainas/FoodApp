@@ -64,4 +64,5 @@ export const notifyOrder = (sentOrderWithoutProblems: boolean) => {
         theme: 'dark',
         transition: Bounce
       })
+  console.log('button clicked -- ', sentOrderWithoutProblems)
 }
