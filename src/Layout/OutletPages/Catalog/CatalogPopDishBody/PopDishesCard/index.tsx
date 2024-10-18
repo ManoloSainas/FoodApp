@@ -13,7 +13,6 @@ import { Text } from '../../../../../Shared Components/Text'
 import { StyledList, StyledRow } from './styled'
 import { useMemo, useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { notifyProductAdded } from '../../../../../features/Toaster'
 import { drinks, symbols } from '../../../../../constants'
@@ -197,7 +196,6 @@ export const PopDishes = ({ products, onClick }: Props) => {
   return (
     <>
       <StyledList>{optionsElements}</StyledList>
-      <ToastContainer />
     </>
   )
 }
