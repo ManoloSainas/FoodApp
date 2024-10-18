@@ -13,12 +13,12 @@ type Props = {
 
 export const SideList = ({ options, onChange }: Props) => {
   const [selectedRow, setSelectedRow] = useState<IconName>(() => {
-    const savedIcon = localStorage.getItem('selectedRow')
+    const savedIcon = sessionStorage.getItem('selectedRow')
     return savedIcon ? (savedIcon as IconName) : options[0].icon
   })
 
   useEffect(() => {
-    localStorage.setItem('selectedRow', selectedRow)
+    sessionStorage.setItem('selectedRow', selectedRow)
   }, [selectedRow])
 
   const handleClick = useCallback(
