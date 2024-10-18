@@ -26,4 +26,5 @@ export const Home = () => {
   )
 }
 
-export default React.memo(Home)
+const MemoizedHome = React.memo(Home)
+export default MemoizedHome
