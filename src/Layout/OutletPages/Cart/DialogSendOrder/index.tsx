@@ -29,8 +29,8 @@ export const DialogSendOrder = ({ onClose }: Props) => {
             }
           })
         })
-        onClose()
         notifyOrder(true)
+        onClose()
         dispatch(clearCart())
       } catch (err) {
         console.error(`Error sending order: ${err}`)
