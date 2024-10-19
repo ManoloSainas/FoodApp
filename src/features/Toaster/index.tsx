@@ -53,7 +53,7 @@ export const notifyOrder = (sentOrderWithoutProblems: boolean) => {
         theme: 'dark',
         transition: Bounce
       })
-    : toast.error(`Error sending order: can't send an order with an empty cart.`, {
+    : toast.error(`Can't send an order with an empty cart.`, {
         position: 'top-center',
         autoClose: 3000,
         hideProgressBar: false,
