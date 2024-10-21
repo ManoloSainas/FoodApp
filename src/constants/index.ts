@@ -37,14 +37,14 @@ export const years = [
 export const conversionRates = {
   USD: {
     EUR: 0.931808234,
-    JPY: 161.4381234
+    JPY: 149.505
   },
   EUR: {
-    USD: 1.07321234,
-    JPY: 173.2531234
+    USD: 0.92009,
+    JPY: 162.467
   },
   JPY: {
-    USD: 0.006234,
-    EUR: 0.00581234
+    USD: 0.00669,
+    EUR: 0.00615
   }
 }
