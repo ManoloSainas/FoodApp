@@ -12,7 +12,8 @@ import { Price } from '../../../../Composite Components/Price'
 import { IconButton } from '../../../../Composite Components/IconButton'
 import { DialogDeleteProduct } from '../DialogDeleteProduct'
 import { CurrencyContext } from '../../..'
-import { symbols, weirdSizeDrinks } from '../../../../constants'
+import { conversionRates, symbols, weirdSizeDrinks } from '../../../../constants'
+import { convertValue } from '../../../../features/convertValues'
 
 type Props = {
   options: CartObject[]
@@ -51,7 +52,7 @@ export const ShoppingCard = ({ options }: Props) => {
 
   const optionsElements = useMemo(
     () =>
-      options.map(({ imageURL, text, tagText, value, quantityCartObject }) => (
+      options.map(({ imageURL, text, tagText, currency, value, quantityCartObject }) => (
         <StyledRow key={imageURL}>
           <Stack justifyContent="space-between" alignItems="center" width="100%">
             <Stack gap="10px">
@@ -78,7 +79,16 @@ export const ShoppingCard = ({ options }: Props) => {
                 onClickPlus={() => handleIncrement(imageURL)}
               />
             </Stack>
-            <Price currency={selectedCurrency} value={value} />
+            <Price
+              currency={selectedCurrency}
+              value={
+                convertValue(
+                  { type: currency, value },
+                  selectedCurrency,
+                  conversionRates
+                ) || ''
+              }
+            />
             <IconButton
               variant="redIcon"
               iconName="Xmark"
