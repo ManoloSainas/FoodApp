@@ -42,7 +42,6 @@ function App() {
           <Route path="/Settings" element="To-do" />
         </Route>
       </Routes>
-      {/* ToastContainer per visualizzare le notifiche */}
     </BrowserRouter>
   )
 }

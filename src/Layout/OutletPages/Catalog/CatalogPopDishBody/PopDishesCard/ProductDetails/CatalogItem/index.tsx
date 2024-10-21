@@ -1,6 +1,5 @@
 import { useState, useCallback, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { Price } from '../../../../../../../Composite Components/Price'
 import { useDispatch } from 'react-redux'
@@ -140,7 +139,6 @@ export const CatalogItem = ({
           </Stack>
         </Stack>
       </Stack>
-      <ToastContainer />
     </StyledCatalogItem>
   )
 }
