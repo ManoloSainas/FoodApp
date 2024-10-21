@@ -20,9 +20,7 @@ export function convertValue(
 
   if (conversionRate) {
     // converte il valore numerico
-    const convertedValue = (
-      Math.trunc(numericValue * conversionRate * 100) / 100
-    ).toString()
+    const convertedValue = (numericValue * conversionRate).toFixed(2)
     return convertedValue
   }
 }
