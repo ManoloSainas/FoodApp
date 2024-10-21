@@ -72,7 +72,7 @@ export const ShoppingCard = ({ options }: Props) => {
               </Stack>
             </Stack>
 
-            <Stack gap="40px">
+            <Stack gap="22px">
               <Stack>
                 <QuantitySelector
                   quantity={quantityCartObject}
