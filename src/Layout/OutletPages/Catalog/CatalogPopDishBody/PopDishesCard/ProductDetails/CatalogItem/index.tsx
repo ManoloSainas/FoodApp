@@ -13,8 +13,9 @@ import { Text } from '../../../../../../../Shared Components/Text'
 import { Image } from '../../../../../../../Shared Components/Image'
 import { notifyProductAdded } from '../../../../../../../features/Toaster'
 import { CurrencyContext } from '../../../../../..'
-import { symbols, weirdSizeDrinks } from '../../../../../../../constants'
+import { conversionRates, symbols, weirdSizeDrinks } from '../../../../../../../constants'
 import { Rating } from '../../../../../../../Composite Components/Rating'
+import { convertValue } from '../../../../../../../features/convertValues'
 
 type Props = {
   text: string
@@ -43,6 +44,9 @@ export const CatalogItem = ({
 }: Props) => {
   const dispatch = useDispatch()
   const selectedCurrency = useContext(CurrencyContext) as keyof typeof symbols
+
+  const convertedValue =
+    convertValue({ type: currency, value }, selectedCurrency, conversionRates) || ''
 
   const [buttonState, setButtonState] = useState<{
     variant: ButtonVariant
@@ -111,7 +115,7 @@ export const CatalogItem = ({
 
             <Stack flexDirection="column" gap="30px">
               <Stack alignItems="center" justifyContent="space-between" gap="35px">
-                <Price fontSize={40} currency={selectedCurrency} value={value} />
+                <Price fontSize={40} currency={selectedCurrency} value={convertedValue} />
               </Stack>
 
               <Button
