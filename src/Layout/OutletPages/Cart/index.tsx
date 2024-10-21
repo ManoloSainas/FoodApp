@@ -5,11 +5,13 @@ import { StyledCardDetailsBox, StyledCart } from './styled'
 import { Stack } from '../../../Shared Components/Stack'
 import { Text } from '../../../Shared Components/Text'
 import { ToPay } from '../../../Composite Components/ToPay'
-import { useContext } from 'react'
+import { useCallback, useContext, useState } from 'react'
 import { CurrencyContext } from '../..'
 import { symbols } from '../../../constants'
 import { CardDetails } from './CardDetails'
 import { MyState } from '../../../features/cart/model'
+import { Button } from '../../../Shared Components/Button'
+import { DialogDeleteAllProducts } from './DialogDeleteAllProducts'
 
 export const Cart = () => {
   const cart = useSelector(selectCart)
@@ -18,7 +20,11 @@ export const Cart = () => {
     selectCartTotalPrice(state, currency)
   )
 
-  console.log(cart)
+  const [isPopupOpen, setIsPopupOpen] = useState(false)
+
+  const handleClosePopup = useCallback(() => {
+    setIsPopupOpen(false)
+  }, [])
 
   return (
     <StyledCart>
@@ -28,8 +34,22 @@ export const Cart = () => {
         </Text>
         {cart.length > 0 ? (
           <>
-            <Stack width="100%" justifyContent="end">
+            <Stack
+              width="100%"
+              justifyContent="center"
+              alignItems="center"
+              gap="15px"
+              margin="40px 0 15px 0"
+            >
               <ToPay currency={currency} value={priceToPay.toString()} />
+              <Button
+                paddingVar="deleteProducts"
+                variant="redIcon"
+                onClick={() => setIsPopupOpen(true)}
+              >
+                Delete all products
+              </Button>
+              {isPopupOpen && <DialogDeleteAllProducts onClose={handleClosePopup} />}
             </Stack>
             <ShoppingCard options={cart} />
           </>

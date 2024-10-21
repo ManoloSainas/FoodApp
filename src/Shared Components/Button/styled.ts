@@ -57,6 +57,9 @@ export const paddingVariants = {
   },
   review: {
     padding: '0px 0px 0px 20px'
+  },
+  deleteProducts: {
+    padding: '5px 10px'
   }
 }
 
