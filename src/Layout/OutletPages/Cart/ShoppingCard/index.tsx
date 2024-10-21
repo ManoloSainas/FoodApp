@@ -72,32 +72,35 @@ export const ShoppingCard = ({ options }: Props) => {
               </Stack>
             </Stack>
 
-            <Stack>
-              <QuantitySelector
-                quantity={quantityCartObject}
-                onClickMinus={() => handleDecrement(imageURL)}
-                onClickPlus={() => handleIncrement(imageURL)}
+            <Stack gap="40px">
+              <Stack>
+                <QuantitySelector
+                  quantity={quantityCartObject}
+                  onClickMinus={() => handleDecrement(imageURL)}
+                  onClickPlus={() => handleIncrement(imageURL)}
+                />
+              </Stack>
+              <Price
+                currency={selectedCurrency}
+                value={
+                  convertValue(
+                    { type: currency, value },
+                    selectedCurrency,
+                    conversionRates
+                  ) || ''
+                }
               />
+              <IconButton
+                variant="redIcon"
+                iconName="Xmark"
+                onClick={() => handleButtonClick(imageURL)}
+                paddingVar="icon"
+                size="xl"
+              />
+              {isPopupOpen && productToDelete === imageURL && (
+                <DialogDeleteProduct product={imageURL} onClose={handleClosePopup} />
+              )}
             </Stack>
-            <Price
-              currency={selectedCurrency}
-              value={
-                convertValue(
-                  { type: currency, value },
-                  selectedCurrency,
-                  conversionRates
-                ) || ''
-              }
-            />
-            <IconButton
-              variant="redIcon"
-              iconName="Xmark"
-              onClick={() => handleButtonClick(imageURL)}
-              paddingVar="icon"
-            />
-            {isPopupOpen && productToDelete === imageURL && (
-              <DialogDeleteProduct product={imageURL} onClose={handleClosePopup} />
-            )}
           </Stack>
         </StyledRow>
       )),
