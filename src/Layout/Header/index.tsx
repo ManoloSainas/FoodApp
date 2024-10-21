@@ -7,7 +7,6 @@ import { Text } from '../../Shared Components/Text'
 import { CurrencySelect } from './CurrencySelect'
 import { useSelector } from 'react-redux'
 import { selectCartTotal } from '../../features/cart/selectors'
-import { Link } from 'react-router-dom'
 
 type Props = {
   setSearchedText: (text: string) => void
@@ -47,31 +46,29 @@ export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {
             paddingVar="icon"
           />
 
-          <Link to="/ShoppingCart">
-            <Stack position="relative" alignItems="center" justifyContent="center">
-              <IconButton
-                variant="greyIcon"
-                iconName="ShoppingCart"
-                onClick={() => console.log('Clicked')}
-                paddingVar="icon"
-              />
+          <Stack position="relative" alignItems="center" justifyContent="center">
+            <IconButton
+              variant="greyIcon"
+              iconName="ShoppingCart"
+              onClick={() => console.log('Clicked')}
+              paddingVar="icon"
+            />
 
-              {TotCartObjects > 0 && (
-                <Stack
-                  position="absolute"
-                  backgroundColor="#F74158"
-                  borderRadius={50}
-                  width="12px"
-                  height="12px"
-                  alignItems="center"
-                  justifyContent="center"
-                  transform="translate(45%, 45%)"
-                >
-                  <Text fontSize={8}>{TotCartObjects}</Text>
-                </Stack>
-              )}
-            </Stack>
-          </Link>
+            {TotCartObjects > 0 && (
+              <Stack
+                position="absolute"
+                backgroundColor="#F74158"
+                borderRadius={50}
+                width="12px"
+                height="12px"
+                alignItems="center"
+                justifyContent="center"
+                transform="translate(45%, 45%)"
+              >
+                <Text fontSize={8}>{TotCartObjects}</Text>
+              </Stack>
+            )}
+          </Stack>
 
           <IconButton
             variant="redIcon"
