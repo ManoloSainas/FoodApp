@@ -1,7 +1,9 @@
-import { symbols } from '../../constants'
+import { conversionRates, symbols } from '../../constants'
+import { convertValue } from '../../features/convertValues'
+import { CurrencyContext } from '../../Layout'
 import { Text } from '../../Shared Components/Text'
 import { StyledPrice } from './styled'
-import { useMemo } from 'react'
+import { useContext } from 'react'
 
 type Props = {
   value: string
@@ -10,15 +12,19 @@ type Props = {
 }
 
 export const Price = ({ value, currency, fontSize }: Props) => {
-  const symbol = useMemo(() => symbols[currency], [currency])
+  const selectedCurrency = useContext(CurrencyContext)
 
   return (
     <StyledPrice>
       <Text fontSize={fontSize} className="price-text">
-        {symbol}
+        {symbols[selectedCurrency as keyof typeof symbols]}
       </Text>
       <Text fontSize={fontSize} className="price-text">
-        {value}
+        {convertValue(
+          { type: currency, value },
+          selectedCurrency as keyof typeof symbols,
+          conversionRates
+        ) ?? '0'}
       </Text>
     </StyledPrice>
   )

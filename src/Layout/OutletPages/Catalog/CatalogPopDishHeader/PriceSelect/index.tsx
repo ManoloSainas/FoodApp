@@ -7,7 +7,7 @@ const options = [
 ]
 
 export type Props = {
-  updateSortPrice: (value: string | string[]) => void
+  updateSortPrice: (value: string) => void
 }
 
 export const PriceSelect = ({ updateSortPrice }: Props) => {

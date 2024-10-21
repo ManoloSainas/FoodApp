@@ -5,7 +5,7 @@ import { Text } from '../../../Shared Components/Text'
 import { symbols } from '../../../constants'
 
 export type Props = {
-  updatePrice: (value: string | string[]) => void
+  updatePrice: (value: string) => void
 }
 
 type FetchedProduct = {
@@ -63,7 +63,7 @@ export const CurrencySelect = ({ updatePrice }: Props) => {
           },
           []
         )
-        setPrice([...price, ...newData])
+        setPrice(newData)
       } catch (err) {
         console.error(`Error: ${err}`)
       } finally {
@@ -72,7 +72,6 @@ export const CurrencySelect = ({ updatePrice }: Props) => {
     }
 
     fetchPrice()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (loading)
@@ -82,7 +81,7 @@ export const CurrencySelect = ({ updatePrice }: Props) => {
       </Text>
     )
 
-  return <Select onChange={(value) => updatePrice(value)} elements={price} />
+  return <Select onChange={updatePrice} elements={price} />
 }
 
 // eslint-disable-next-line react-refresh/only-export-components

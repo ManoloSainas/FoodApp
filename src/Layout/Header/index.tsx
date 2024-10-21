@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 
 type Props = {
   setSearchedText: (text: string) => void
-  setSelectedCurrency: (price: string | string[]) => void
+  setSelectedCurrency: (currency: string) => void
 }
 
 export const Header = ({ setSearchedText, setSelectedCurrency }: Props) => {

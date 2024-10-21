@@ -4,11 +4,10 @@ import { Stack } from '../../../../Shared Components/Stack'
 import { apiClient } from '../../../../features/api/api-client'
 import { IconName } from '../../../../Shared Components/Icon/config'
 import { Text } from '../../../../Shared Components/Text'
-import { CurrencyContext, TextContext } from '../../..'
+import { TextContext } from '../../..'
 import { addProduct } from '../../../../features/cart/reducer'
 import { useDispatch } from 'react-redux'
-import { convertValue } from '../../../../features/convertValues'
-import { conversionRates, symbols } from '../../../../constants'
+import { symbols } from '../../../../constants'
 
 type FetchedProduct = {
   id: string
@@ -35,7 +34,7 @@ type FetchedProduct = {
 export type Props = {
   currentId: string
   currentDelivery: string | string[]
-  currentSortPrice: string | string[]
+  currentSortPrice: string
 }
 
 export const CatalogPopDishBody = ({
@@ -47,7 +46,6 @@ export const CatalogPopDishBody = ({
   const [loading, setLoading] = useState(false)
 
   const searchedText = useContext(TextContext)
-  const selectedCurrency = useContext(CurrencyContext)
 
   const dispatch = useDispatch()
 
@@ -99,7 +97,7 @@ export const CatalogPopDishBody = ({
           iconNameOptional: 'Flame' as IconName,
           iconNameButton: 'Plus' as IconName,
           rating: item.rating,
-          discountRate: parseFloat(item.discountRate) // Ensure discountRate is a number
+          discountRate: parseFloat(item.discountRate)
         }))
         setData(newData)
       } catch (err) {
@@ -128,24 +126,14 @@ export const CatalogPopDishBody = ({
             element.text.toLowerCase().includes(searchedText.toLowerCase())
           )
         })
-        .map((element: product) => ({
-          ...element,
-          value:
-            convertValue(
-              element.price,
-              selectedCurrency as keyof typeof symbols,
-              conversionRates
-            ) ?? '0',
-          currency: selectedCurrency as keyof typeof symbols
-        }))
         .sort((a, b) => {
           return currentSortPrice === 'Ascending'
-            ? parseFloat(a.value ?? '0') - parseFloat(b.value ?? '0')
+            ? parseFloat(a.value) - parseFloat(b.value)
             : currentSortPrice === 'Descending'
-            ? parseFloat(b.value ?? '0') - parseFloat(a.value ?? '0')
+            ? parseFloat(b.value) - parseFloat(a.value)
             : 0
         }),
-    [currentId, data, currentDelivery, selectedCurrency, searchedText, currentSortPrice]
+    [currentId, data, currentDelivery, searchedText, currentSortPrice]
   )
 
   if (loading) {

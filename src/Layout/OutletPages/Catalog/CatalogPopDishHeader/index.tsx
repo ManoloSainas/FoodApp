@@ -7,7 +7,7 @@ import { PriceSelect } from './PriceSelect'
 
 export type Props = {
   updateDelivery: (value: string | string[]) => void
-  updateSortPrice: (value: string | string[]) => void
+  updateSortPrice: (value: string) => void
 }
 
 export const CatalogPopDishHeader = ({ updateDelivery, updateSortPrice }: Props) => {

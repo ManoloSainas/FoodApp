@@ -5,11 +5,11 @@ import { Header } from './Header'
 import { SideBar } from './SideBar'
 
 export const TextContext = createContext<string>('')
-export const CurrencyContext = createContext<string | string[]>('')
+export const CurrencyContext = createContext<string>('')
 
 const LayoutComponent = () => {
   const [searchedText, setSearchedText] = useState('')
-  const [selectedCurrency, setSelectedCurrency] = useState<string | string[]>('USD')
+  const [selectedCurrency, setSelectedCurrency] = useState<string>('USD')
 
   return (
     <StyledLayout>

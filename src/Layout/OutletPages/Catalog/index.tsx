@@ -8,7 +8,7 @@ import { CatalogTopCards } from './CatalogTopCards'
 export const Catalog = () => {
   const [selectedId, setSelectedId] = useState<string>('All')
   const [selectedDelivery, setSelectedDelivery] = useState<string | string[]>('')
-  const [selectSortPrice, setSelectedSortPrice] = useState<string | string[]>('')
+  const [selectSortPrice, setSelectedSortPrice] = useState<string>('')
 
   return (
     <StyledCatalog>
