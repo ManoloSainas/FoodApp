@@ -4,10 +4,11 @@ import { Stack } from '../../../../Shared Components/Stack'
 import { apiClient } from '../../../../features/api/api-client'
 import { IconName } from '../../../../Shared Components/Icon/config'
 import { Text } from '../../../../Shared Components/Text'
-import { TextContext } from '../../..'
+import { CurrencyContext, TextContext } from '../../..'
 import { addProduct } from '../../../../features/cart/reducer'
 import { useDispatch } from 'react-redux'
-import { symbols } from '../../../../constants'
+import { conversionRates, symbols } from '../../../../constants'
+import { convertValue } from '../../../../features/convertValues'
 
 type FetchedProduct = {
   id: string
@@ -46,6 +47,7 @@ export const CatalogPopDishBody = ({
   const [loading, setLoading] = useState(false)
 
   const searchedText = useContext(TextContext)
+  const selectedCurrency = useContext(CurrencyContext) as keyof typeof symbols
 
   const dispatch = useDispatch()
 
@@ -128,12 +130,38 @@ export const CatalogPopDishBody = ({
         })
         .sort((a, b) => {
           return currentSortPrice === 'Ascending'
-            ? parseFloat(a.value) - parseFloat(b.value)
+            ? parseFloat(
+                convertValue(
+                  { type: a.currency, value: a.value },
+                  selectedCurrency,
+                  conversionRates
+                ) || '0'
+              ) -
+                parseFloat(
+                  convertValue(
+                    { type: b.currency, value: b.value },
+                    selectedCurrency,
+                    conversionRates
+                  ) || '0'
+                )
             : currentSortPrice === 'Descending'
-            ? parseFloat(b.value) - parseFloat(a.value)
+            ? parseFloat(
+                convertValue(
+                  { type: b.currency, value: b.value },
+                  selectedCurrency,
+                  conversionRates
+                ) || '0'
+              ) -
+              parseFloat(
+                convertValue(
+                  { type: a.currency, value: a.value },
+                  selectedCurrency,
+                  conversionRates
+                ) || '0'
+              )
             : 0
         }),
-    [currentId, data, currentDelivery, searchedText, currentSortPrice]
+    [currentId, data, currentDelivery, searchedText, currentSortPrice, selectedCurrency]
   )
 
   if (loading) {
