@@ -75,7 +75,9 @@ export const CardDetails = () => {
       </Stack>
       <Stack justifyContent="center">
         <Stack margin="20px 0 0 0">
-          <Button onClick={handleButtonClick}>Check Out</Button>
+          <Button onClick={handleButtonClick} ariaLabel="send order">
+            Check Out
+          </Button>
           {isPopupOpen && <DialogSendOrder onClose={handleClosePopup} />}
         </Stack>
       </Stack>

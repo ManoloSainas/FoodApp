@@ -13,6 +13,7 @@ export type Element = {
 type CommonProps = {
   elements: Element[]
   disabled?: boolean
+  arialLabel?: string
 }
 export type SingleSelectProps = {
   onChange: SingleOnChange
@@ -31,7 +32,8 @@ export const Select = ({
   value,
   elements,
   disabled,
-  multiple = false
+  multiple = false,
+  arialLabel
 }: Props) => {
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLSelectElement>) => {
@@ -57,6 +59,7 @@ export const Select = ({
       onChange={handleChange}
       disabled={disabled}
       multiple={multiple}
+      aria-label={arialLabel}
     >
       {elements.map(({ id, label }) => (
         <option key={id} value={id} id={id}>

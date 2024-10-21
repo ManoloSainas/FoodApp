@@ -34,10 +34,14 @@ export const DialogDeleteProduct = ({ onClose, product }: Props) => {
       </Stack>
 
       <Stack justifyContent="center" width="100%" gap="50px">
-        <Button variant="redIcon" onClick={() => handleDeleteProduct(product)}>
+        <Button
+          ariaLabel="delete the product"
+          variant="redIcon"
+          onClick={() => handleDeleteProduct(product)}
+        >
           Confirm
         </Button>
-        <Button variant="greyIcon" onClick={onClose}>
+        <Button ariaLabel="cancel" variant="greyIcon" onClick={onClose}>
           Cancel
         </Button>
       </Stack>

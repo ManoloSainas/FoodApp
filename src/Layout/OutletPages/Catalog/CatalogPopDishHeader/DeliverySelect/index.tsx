@@ -47,5 +47,11 @@ export const DeliverySelect = ({ updateDelivery }: Props) => {
       </Text>
     )
 
-  return <Select onChange={(value) => updateDelivery(value)} elements={delivery} />
+  return (
+    <Select
+      arialLabel="delivery select"
+      onChange={(value) => updateDelivery(value)}
+      elements={delivery}
+    />
+  )
 }

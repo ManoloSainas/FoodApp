@@ -46,6 +46,7 @@ export const Cart = () => {
                 paddingVar="deleteProducts"
                 variant="redIcon"
                 onClick={() => setIsPopupOpen(true)}
+                ariaLabel="Delete all products"
               >
                 Delete all products
               </Button>

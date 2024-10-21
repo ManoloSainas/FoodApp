@@ -6,8 +6,16 @@ import { Stack } from '../../../../../Shared Components/Stack'
 export const CardExpiration = () => {
   return (
     <Stack>
-      <Select elements={months} onChange={() => console.log('changed!')}></Select>
-      <Select elements={years} onChange={() => console.log('changed!')}></Select>
+      <Select
+        arialLabel="months"
+        elements={months}
+        onChange={() => console.log('changed!')}
+      ></Select>
+      <Select
+        arialLabel="years"
+        elements={years}
+        onChange={() => console.log('changed!')}
+      ></Select>
       <Input
         onChange={() => console.log('date changed')}
         type="hidden"

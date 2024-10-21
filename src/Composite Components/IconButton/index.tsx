@@ -35,6 +35,7 @@ export const IconButton = ({
         disabled={disabled}
         variant={variant}
         paddingVar={paddingVar}
+        ariaLabel={iconName}
       >
         {children}
         <Icon id={id} iconName={iconName} color={color} size={size} />

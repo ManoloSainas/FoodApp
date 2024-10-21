@@ -13,6 +13,7 @@ export type Props = {
 export const PriceSelect = ({ updateSortPrice }: Props) => {
   return (
     <Select
+      arialLabel="price select"
       multiple={false}
       onChange={(value) => updateSortPrice(value)}
       elements={options}

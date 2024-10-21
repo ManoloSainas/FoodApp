@@ -81,6 +81,7 @@ export const CatalogItem = ({
       <Stack justifyContent="end" width="65%">
         <Link to="/catalog">
           <Button
+            ariaLabel="return to catalog"
             onClick={() => console.log('clicked')}
             paddingVar="button"
             variant="outlined"
@@ -118,6 +119,7 @@ export const CatalogItem = ({
               </Stack>
 
               <Button
+                ariaLabel="order now"
                 variant={buttonState.variant}
                 paddingVar="button"
                 onClick={() => {

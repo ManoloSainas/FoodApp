@@ -53,10 +53,14 @@ export const DialogSendOrder = ({ onClose }: Props) => {
       </Stack>
 
       <Stack justifyContent="center" width="100%" gap="50px">
-        <Button variant="redIcon" onClick={handleButtonClick}>
+        <Button
+          ariaLabel="submit the order"
+          variant="redIcon"
+          onClick={handleButtonClick}
+        >
           Confirm
         </Button>
-        <Button variant="greyIcon" onClick={onClose}>
+        <Button ariaLabel="cancel" variant="greyIcon" onClick={onClose}>
           Cancel
         </Button>
       </Stack>

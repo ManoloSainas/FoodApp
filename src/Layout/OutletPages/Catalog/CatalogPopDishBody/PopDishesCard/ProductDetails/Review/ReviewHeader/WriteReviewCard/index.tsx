@@ -65,7 +65,9 @@ export const WriteReviewCard = ({ productId, onClose }: Props) => {
       </Stack>
 
       <Stack width="100%" justifyContent="flex-end">
-        <Button onClick={handleButtonClick}>Send</Button>
+        <Button ariaLabel="send review" onClick={handleButtonClick}>
+          Send
+        </Button>
       </Stack>
     </StyledWriteReviewCard>
   )

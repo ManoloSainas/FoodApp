@@ -56,7 +56,12 @@ export const ReviewCard = ({ reviewList }: Props) => {
         margin="0px 0px 10px 0px"
         gap="5px"
       >
-        <Button variant="pagination" onClick={handlePreviousPage} disabled={pageId === 0}>
+        <Button
+          ariaLabel="previous page"
+          variant="pagination"
+          onClick={handlePreviousPage}
+          disabled={pageId === 0}
+        >
           ⬅ Previous page
         </Button>
         <Text color="#14c437" variant="h2">
@@ -66,6 +71,7 @@ export const ReviewCard = ({ reviewList }: Props) => {
           {pageId + 1 + '/' + totalPages}
         </Text>
         <Button
+          ariaLabel="next page"
           variant="pagination"
           onClick={handleNextPage}
           disabled={pageId === totalPages - 1}

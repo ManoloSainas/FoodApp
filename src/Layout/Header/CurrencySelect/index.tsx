@@ -81,7 +81,7 @@ export const CurrencySelect = ({ updatePrice }: Props) => {
       </Text>
     )
 
-  return <Select onChange={updatePrice} elements={price} />
+  return <Select arialLabel="currency select" onChange={updatePrice} elements={price} />
 }
 
 // eslint-disable-next-line react-refresh/only-export-components

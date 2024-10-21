@@ -1,6 +1,5 @@
 import { ChangeEvent, useCallback } from 'react'
 import { StyledTextArea } from './styled'
-import React from 'react'
 
 type Props = {
   onChange: (e: string) => void
@@ -11,7 +10,7 @@ type Props = {
   width?: string
 }
 
-const TextArea = ({
+export const TextArea = ({
   onChange,
   disabled,
   placeholder,
@@ -38,4 +37,4 @@ const TextArea = ({
   )
 }
 
-export default React.memo(TextArea)
+export default TextArea

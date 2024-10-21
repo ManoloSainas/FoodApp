@@ -7,6 +7,7 @@ type Props = PropsWithChildren<{
   disabled?: boolean
   variant?: ButtonVariant
   paddingVar?: PaddingVariant
+  ariaLabel?: string
 }>
 
 // Bottone semplice
@@ -15,7 +16,8 @@ const ButtonComponent = ({
   onClick,
   disabled,
   variant = 'primary',
-  paddingVar = 'button'
+  paddingVar = 'button',
+  ariaLabel
 }: Props) => {
   const memoizedOnClick = useCallback(onClick, [onClick])
   const buttonTitle = typeof children === 'string' || typeof Icon ? children : ''
@@ -26,6 +28,7 @@ const ButtonComponent = ({
       disabled={disabled}
       $variant={variant}
       $paddingVar={paddingVar}
+      aria-label={ariaLabel}
     >
       {buttonTitle}
     </StyledButton>
