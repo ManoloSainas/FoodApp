@@ -8,7 +8,7 @@ import { CurrencyContext, TextContext } from '../../..'
 import { addProduct } from '../../../../features/cart/reducer'
 import { useDispatch } from 'react-redux'
 import { convertValue } from '../../../../features/convertValues'
-import { symbols } from '../../../../constants'
+import { conversionRates, symbols } from '../../../../constants'
 
 type FetchedProduct = {
   id: string
@@ -130,14 +130,19 @@ export const CatalogPopDishBody = ({
         })
         .map((element: product) => ({
           ...element,
-          value: convertValue(element.price, selectedCurrency as keyof typeof symbols),
+          value:
+            convertValue(
+              element.price,
+              selectedCurrency as keyof typeof symbols,
+              conversionRates
+            ) ?? '0',
           currency: selectedCurrency as keyof typeof symbols
         }))
         .sort((a, b) => {
           return currentSortPrice === 'Ascending'
-            ? parseFloat(a.value) - parseFloat(b.value)
+            ? parseFloat(a.value ?? '0') - parseFloat(b.value ?? '0')
             : currentSortPrice === 'Descending'
-            ? parseFloat(b.value) - parseFloat(a.value)
+            ? parseFloat(b.value ?? '0') - parseFloat(a.value ?? '0')
             : 0
         }),
     [currentId, data, currentDelivery, selectedCurrency, searchedText, currentSortPrice]

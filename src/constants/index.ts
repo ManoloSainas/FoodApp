@@ -33,3 +33,18 @@ export const years = [
   { id: '2029', value: '2029', label: '2029' },
   { id: '2030', value: '2030', label: '2030' }
 ]
+
+export const conversionRates = {
+  USD: {
+    EUR: 0.931808,
+    JPY: 161.438
+  },
+  EUR: {
+    USD: 1.0732,
+    JPY: 173.253
+  },
+  JPY: {
+    USD: 0.0062,
+    EUR: 0.0058
+  }
+}
