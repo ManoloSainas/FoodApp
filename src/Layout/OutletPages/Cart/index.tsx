@@ -9,11 +9,16 @@ import { useContext } from 'react'
 import { CurrencyContext } from '../..'
 import { symbols } from '../../../constants'
 import { CardDetails } from './CardDetails'
+import { MyState } from '../../../features/cart/model'
 
 export const Cart = () => {
   const cart = useSelector(selectCart)
-  const priceToPay = useSelector(selectCartTotalPrice)
   const currency = useContext(CurrencyContext) as keyof typeof symbols
+  const priceToPay = useSelector((state: { cart: MyState }) =>
+    selectCartTotalPrice(state, currency)
+  )
+
+  console.log(cart)
 
   return (
     <StyledCart>
