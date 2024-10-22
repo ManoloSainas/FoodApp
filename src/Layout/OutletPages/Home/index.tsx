@@ -2,6 +2,7 @@ import React from 'react'
 import { Stack } from '../../../Shared Components/Stack'
 import { Text } from '../../../Shared Components/Text'
 import { StyledHome } from './styled'
+import { Image } from '../../../Shared Components/Image'
 
 export const Home = () => {
   return (
@@ -11,11 +12,18 @@ export const Home = () => {
         justifyContent="center"
         flexDirection="column"
         alignItems="center"
-        margin="10%"
-        padding="5%"
+        margin="65px"
+        padding="2%"
         borderRadius={25}
       >
-        <Text color="#F00C2C" variant="h1">
+        <Image
+          className="flying-food"
+          width={574}
+          height={300}
+          alt="FlyingFood"
+          imageUrl="src\assets\Images\FlyingFood.jpg"
+        />
+        <Text color="#F74B23" variant="h1">
           Welcome Joseph Cheong!
         </Text>
         <Text color="#ffffff" variant="h2">
