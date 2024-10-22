@@ -19,7 +19,7 @@ export const Home = () => {
         <Image
           className="flying-food"
           width={574}
-          height={300}
+          height={301}
           alt="FlyingFood"
           imageUrl="src\assets\Images\FlyingFood.jpg"
         />
