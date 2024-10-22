@@ -9,4 +9,5 @@ export const StyledSideBarComponent = styled.div`
   justify-content: flex-start;
   align-items: center;
   height: 100vh;
+  margin-top: -25px;
 `
