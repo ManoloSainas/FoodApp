@@ -1,8 +1,6 @@
 export const symbols = {
   USD: '$',
-
   EUR: '€',
-
   JPY: '¥'
 }
 

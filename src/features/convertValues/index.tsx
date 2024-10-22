@@ -1,4 +1,3 @@
-// Assuming symbols hold a mapping of currency codes to their display symbols
 import { symbols } from '../../constants'
 
 type CurrencyCode = keyof typeof symbols

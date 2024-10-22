@@ -2,7 +2,6 @@ import { IconButton } from '../../../../Composite Components/IconButton'
 import { Stack } from '../../../../Shared Components/Stack'
 import { Text } from '../../../../Shared Components/Text'
 import { DeliverySelect } from './DeliverySelect'
-// import { IngredientsSelect } from './IngredientsSelect'
 import { PriceSelect } from './PriceSelect'
 
 export type Props = {
@@ -25,8 +24,6 @@ export const CatalogPopDishHeader = ({ updateDelivery, updateSortPrice }: Props)
       <Stack alignItems="center" gap="20px" margin="0px 40px 0px 0px">
         <Stack gap="1px">
           <DeliverySelect updateDelivery={updateDelivery} />
-
-          {/* <IngredientsSelect /> */}
 
           <PriceSelect updateSortPrice={updateSortPrice} />
         </Stack>
