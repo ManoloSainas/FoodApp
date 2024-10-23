@@ -5,11 +5,12 @@ export const StyledInput = styled.input`
   outline: none;
   background: none;
   color: #fbfbfb;
-  font-style: italic;
+  font-style: normal;
   font-size: 16px;
   width: 220px;
 
-  ::placeholder {
-    color: gray;
+  &::placeholder {
+    color: #545454;
+    font-style: italic;
   }
 `
