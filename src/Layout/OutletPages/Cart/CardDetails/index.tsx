@@ -26,11 +26,11 @@ export const CardDetails = () => {
 
   return (
     <StyledCardDetails>
-      <Text fontSize={28} color="white">
+      <Text fontSize={30} color="white">
         Card Details
       </Text>
       <Stack flexDirection="column" gap="15px" margin="0 0 20px 0">
-        <Text variant="p" color="#312F3B">
+        <Text fontSize={22} variant="p" color="#e4e4e4eb">
           Payment method
         </Text>
         <ImageRadio
@@ -43,22 +43,31 @@ export const CardDetails = () => {
         />
       </Stack>
       <Stack flexDirection="column" gap="15px">
-        <Text variant="p" color="#312F3B">
+        <Text fontSize={22} variant="p" color="#e4e4e4eb">
           Name and Surname
         </Text>
-        <Input type="text" onChange={() => console.log('name')} />
+        <Input
+          placeholder="E.g. James Sunderland"
+          type="text"
+          onChange={() => console.log('name')}
+        />
         <Hr />
       </Stack>
       <Stack flexDirection="column" gap="15px" margin="20px 0 20px 0">
-        <Text variant="p" color="#312F3B">
+        <Text fontSize={22} variant="p" color="#e4e4e4eb">
           Card Number
         </Text>
-        <Input maxLength={16} type="text" onChange={() => console.log('number')} />
+        <Input
+          placeholder="E.g. 1234 5678 1234 5678"
+          maxLength={16}
+          type="text"
+          onChange={() => console.log('number')}
+        />
         <Hr />
       </Stack>
       <Stack gap="20px" margin="20px 0 20px 0">
         <Stack flexDirection="column" padding="0 0 20px 0 " gap="30px">
-          <Text variant="p" color="#312F3B">
+          <Text fontSize={22} variant="p" color="#e4e4e4eb">
             Expiration Date
           </Text>
 
@@ -66,11 +75,16 @@ export const CardDetails = () => {
         </Stack>
 
         <Stack flexDirection="column" gap="23px">
-          <Text variant="p" color="#312F3B">
+          <Text fontSize={22} variant="p" color="#e4e4e4eb">
             CVV
           </Text>
-          <Input maxLength={3} type="text" onChange={() => console.log('cvv')} />
-          <Hr />
+          <Input
+            placeholder="E.g. 753"
+            maxLength={3}
+            type="text"
+            onChange={() => console.log('cvv')}
+          />
+          <Hr className="cvv" />
         </Stack>
       </Stack>
       <Stack justifyContent="center">

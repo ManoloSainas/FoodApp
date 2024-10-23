@@ -5,6 +5,11 @@ export const StyledInput = styled.input`
   outline: none;
   background: none;
   color: #fbfbfb;
-  font-style: normal;
-  font-size: 20px;
+  font-style: italic;
+  font-size: 16px;
+  width: 220px;
+
+  ::placeholder {
+    color: gray;
+  }
 `

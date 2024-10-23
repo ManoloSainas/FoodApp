@@ -1,5 +1,9 @@
 import { StyledHr } from './styled'
 
-export const Hr = () => {
-  return <StyledHr />
+type Props = {
+  className?: string
+}
+
+export const Hr = ({ className }: Props) => {
+  return <StyledHr className={className} />
 }
