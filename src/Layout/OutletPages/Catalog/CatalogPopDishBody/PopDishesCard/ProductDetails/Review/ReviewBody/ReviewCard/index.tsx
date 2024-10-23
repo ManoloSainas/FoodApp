@@ -55,6 +55,7 @@ export const ReviewCard = ({ reviewList }: Props) => {
         justifyContent="space-between"
         margin="0px 0px 10px 0px"
         gap="5px"
+        alignItems="center"
       >
         <Button
           ariaLabel="previous page"
@@ -64,12 +65,21 @@ export const ReviewCard = ({ reviewList }: Props) => {
         >
           ⬅ Previous page
         </Button>
-        <Text color="#14c437" variant="h2">
-          Page:
-        </Text>
-        <Text color="#14c437" variant="h2">
-          {pageId + 1 + '/' + totalPages}
-        </Text>
+        <Stack
+          gap="5px"
+          backgroundColor="black"
+          borderRadius={15}
+          padding="0 7px 0 7px"
+          border="1px solid #18C458"
+        >
+          <Text color="#efefef" variant="h2">
+            Page:
+          </Text>
+          <Text color="#18C458" variant="h2">
+            {pageId + 1 + '/' + totalPages}
+          </Text>
+        </Stack>
+
         <Button
           ariaLabel="next page"
           variant="pagination"
