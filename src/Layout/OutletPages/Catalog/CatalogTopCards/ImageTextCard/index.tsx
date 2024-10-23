@@ -15,7 +15,6 @@ type Props = {
   onClick: (id: string) => void
 }
 
-// Card con immagine e testo
 export const ImageTextCard = ({ cards, onClick }: Props) => {
   const [selectedCard, setSelectedCard] = useState<string>('')
 

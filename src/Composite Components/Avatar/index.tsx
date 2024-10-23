@@ -8,7 +8,6 @@ type Props = {
   text: string
 }
 
-// Avatar dell'applicazione
 const AvatarComponent = ({ imageUrl, text }: Props) => {
   return (
     <StyledAvatar>

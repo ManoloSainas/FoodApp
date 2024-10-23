@@ -14,13 +14,12 @@ import { Button } from '../../../Shared Components/Button'
 import { DialogDeleteAllProducts } from './DialogDeleteAllProducts'
 
 export const Cart = () => {
-  const cart = useSelector(selectCart)
+  const [isPopupOpen, setIsPopupOpen] = useState(false)
   const currency = useContext(CurrencyContext) as keyof typeof symbols
+  const cart = useSelector(selectCart)
   const priceToPay = useSelector((state: { cart: MyState }) =>
     selectCartTotalPrice(state, currency)
   )
-
-  const [isPopupOpen, setIsPopupOpen] = useState(false)
 
   const handleClosePopup = useCallback(() => {
     setIsPopupOpen(false)

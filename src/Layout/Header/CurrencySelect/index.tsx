@@ -32,7 +32,6 @@ type FetchedProduct = {
 
 export const CurrencySelect = ({ updatePrice }: Props) => {
   const [price, setPrice] = useState<{ id: string; value: string; label: string }[]>([])
-
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {

@@ -14,6 +14,7 @@ export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
+    // Aggiunge un prodotto al carrello
     addProduct: (state, action: PayloadAction<CartObject>) => {
       const Item = state.cart.find((obj) => obj.imageURL === action.payload.imageURL)
       if (Item) {
@@ -36,10 +37,12 @@ export const cartSlice = createSlice({
       }
     },
 
+    // Elimina un prodotto dal carrello
     deleteProduct: (state, action: PayloadAction<string>) => {
       state.cart = state.cart.filter((obj) => obj.imageURL !== action.payload)
     },
 
+    // Elimina un'unità di un prodotto dal carrello
     deleteOneProduct: (state, action: PayloadAction<string>) => {
       const Item = state.cart.find((obj) => obj.imageURL === action.payload)
       if (Item && Item.quantityCartObject > 0) {
@@ -53,6 +56,7 @@ export const cartSlice = createSlice({
       }
     },
 
+    // Aggiunge un'unità di un prodotto al carrello
     addOneProduct: (state, action: PayloadAction<string>) => {
       const Item = state.cart.find((obj) => obj.imageURL === action.payload)
       if (Item) {
@@ -66,6 +70,7 @@ export const cartSlice = createSlice({
       }
     },
 
+    // Aggiunge più unità di un prodotto al carrello
     addMoreProduct: (state, action: PayloadAction<AddProductPayload>) => {
       const { product, quantity } = action.payload
       const Item = state.cart.find((obj) => obj.imageURL === product.imageURL)
@@ -82,6 +87,7 @@ export const cartSlice = createSlice({
       }
     },
 
+    // Svuota il carrello
     clearCart: (state) => {
       state.cart = []
     }
