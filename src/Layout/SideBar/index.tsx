@@ -1,12 +1,11 @@
 import { Avatar } from '../../Composite Components/Avatar'
-import { IconName } from '../../Shared Components/Icon/config'
 import { SideList } from './SideList'
 import { StyledSideBarComponent } from './styled'
 import { useCallback } from 'react'
 
 export const SideBar = () => {
-  const changePage = useCallback((icon: IconName) => {
-    console.log(icon)
+  const changePage = useCallback(() => {
+    console.log()
   }, [])
 
   return (
