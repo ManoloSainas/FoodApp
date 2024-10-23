@@ -9,6 +9,11 @@ export const StyledRow = styled.li`
   padding: 30px 30px 80px 30px;
   border-radius: 40px;
   margin-top: 70px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   .pop-dish-image {
     width: 130px;

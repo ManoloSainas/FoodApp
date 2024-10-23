@@ -15,6 +15,11 @@ export const StyledImageText = styled.div<{
   background-color: #26262f;
   padding: 15px;
   border-bottom: ${({ $isSelected }) => ($isSelected ? '1px solid red' : 'none')};
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   .card-image {
     width: 90px;
