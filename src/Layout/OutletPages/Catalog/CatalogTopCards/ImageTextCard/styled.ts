@@ -19,6 +19,7 @@ export const StyledImageText = styled.div<{
 
   &:hover {
     transform: scale(1.1);
+    cursor: pointer;
   }
 
   .card-image {
