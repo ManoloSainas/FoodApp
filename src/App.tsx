@@ -1,24 +1,10 @@
-import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import './App.css'
 import { Layout } from './Layout'
 import { Home } from './Pages/Home'
 import { Catalog } from './Pages/Catalog'
 import { ProductDetails } from './Pages/Catalog/ProductDetails'
 import { Cart } from './Pages/Cart'
-import { useEffect } from 'react'
-
-// Componente per reindirizzare automaticamente a "/home"
-function RedirectToHome() {
-  // Hook per navigare tra le pagine
-  const navigate = useNavigate()
-
-  // Utilizza useEffect per eseguire la navigazione quando il componente viene montato
-  useEffect(() => {
-    navigate('/home')
-  }, [navigate])
-
-  return null
-}
 
 // Componenti principale dell'applicazione
 function App() {
@@ -29,9 +15,8 @@ function App() {
       <Routes>
         {/* Route principale che renderizza il componente Layout per il path "/" */}
         <Route path="/" element={<Layout />}>
-          {/* Route index che utilizza RedirectToHome per reindirizzare automaticamente a "/home" */}
-          <Route index element={<RedirectToHome />} />
-
+          {/* Route index che utilizza Navigate per reindirizzare automaticamente a "/home" */}
+          <Route index element={<Navigate to="/home" />} />
           {/* Definisce le varie rotte dell'applicazione e i componenti da renderizzare */}
           <Route path="/home" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
