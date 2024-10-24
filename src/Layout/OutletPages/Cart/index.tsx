@@ -12,6 +12,7 @@ import { CardDetails } from './CardDetails'
 import { MyState } from '../../../features/cart/model'
 import { Button } from '../../../Shared Components/Button'
 import { DialogDeleteAllProducts } from './DialogDeleteAllProducts'
+import { Overlay } from '../../../Shared Components/Overlay/styled'
 
 export const Cart = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false)
@@ -49,7 +50,6 @@ export const Cart = () => {
               >
                 Delete all products
               </Button>
-              {isPopupOpen && <DialogDeleteAllProducts onClose={handleClosePopup} />}
             </Stack>
             <ShoppingCard options={cart} />
           </>
@@ -64,6 +64,8 @@ export const Cart = () => {
       <StyledCardDetailsBox>
         <CardDetails />
       </StyledCardDetailsBox>
+      {isPopupOpen && <Overlay />}
+      {isPopupOpen && <DialogDeleteAllProducts onClose={handleClosePopup} />}
     </StyledCart>
   )
 }

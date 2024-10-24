@@ -3,6 +3,7 @@ import { IconButton } from '../../../../../../../../Composite Components/IconBut
 import { Text } from '../../../../../../../../Shared Components/Text'
 import { StyledReviewHeader } from './styled'
 import { WriteReviewCard } from './WriteReviewCard'
+import { Overlay } from '../../../../../../../../Shared Components/Overlay/styled'
 
 type Props = {
   productId: string
@@ -33,6 +34,7 @@ export const ReviewHeaderComponent = ({ productId }: Props) => {
       >
         Leave a review
       </IconButton>
+      {isPopupOpen && <Overlay />}
       {isPopupOpen && (
         <WriteReviewCard productId={productId} onClose={handleClosePopup} />
       )}

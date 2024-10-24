@@ -11,6 +11,7 @@ import { DialogSendOrder } from '../DialogSendOrder'
 import { useSelector } from 'react-redux'
 import { selectCart } from '../../../../features/cart/selectors'
 import { notifyOrder } from '../../../../features/Toaster'
+import { Overlay } from '../../../../Shared Components/Overlay/styled'
 
 export const CardDetails = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false)
@@ -92,6 +93,7 @@ export const CardDetails = () => {
           <Button onClick={handleButtonClick} ariaLabel="send order">
             Check Out
           </Button>
+          {isPopupOpen && <Overlay />}
           {isPopupOpen && <DialogSendOrder onClose={handleClosePopup} />}
         </Stack>
       </Stack>

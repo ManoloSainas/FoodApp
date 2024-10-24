@@ -14,6 +14,7 @@ import { DialogDeleteProduct } from '../DialogDeleteProduct'
 import { CurrencyContext } from '../../..'
 import { conversionRates, symbols, weirdSizeDrinks } from '../../../../constants'
 import { convertValue } from '../../../../features/convertValues'
+import { Overlay } from '../../../../Shared Components/Overlay/styled'
 
 type Props = {
   options: CartObject[]
@@ -97,6 +98,7 @@ export const ShoppingCard = ({ options }: Props) => {
                 paddingVar="icon"
                 size="xl"
               />
+              {isPopupOpen && <Overlay />}
               {isPopupOpen && productToDelete === imageURL && (
                 <DialogDeleteProduct product={imageURL} onClose={handleClosePopup} />
               )}
