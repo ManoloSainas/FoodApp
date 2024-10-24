@@ -106,3 +106,6 @@ addon per vscode:
 
  React-Toastify
  https://www.npmjs.com/package/react-toastify
+
+
+ // Redux thunk
