@@ -55,59 +55,61 @@ export const ShoppingCard = ({ options }: Props) => {
 
   const optionsElements = useMemo(
     () =>
-      options.map(({ imageURL, text, tagText, currency, value, quantityCartObject }) => (
-        <StyledRow key={imageURL}>
-          <Stack justifyContent="space-between" alignItems="center" width="100%">
-            <Stack gap="10px">
-              <Stack height="100px" width="100px">
-                {weirdSizeDrinks.includes(text) ? (
-                  <Image className="pop-dish-image" imageUrl={imageURL} />
-                ) : (
-                  <Image className="pop-dish-image-drink" imageUrl={imageURL} />
+      options.map(
+        ({ id, imageURL, text, tagText, currency, value, quantityCartObject }) => (
+          <StyledRow key={imageURL}>
+            <Stack justifyContent="space-between" alignItems="center" width="100%">
+              <Stack gap="10px">
+                <Stack height="100px" width="100px">
+                  {weirdSizeDrinks.includes(text) ? (
+                    <Image className="pop-dish-image" imageUrl={imageURL} />
+                  ) : (
+                    <Image className="pop-dish-image-drink" imageUrl={imageURL} />
+                  )}
+                </Stack>
+
+                <Stack flexDirection="column">
+                  <Text className="shopping-text" fontSize={20}>
+                    {text}
+                  </Text>
+                  <Tag text={tagText} />
+                </Stack>
+              </Stack>
+
+              <Stack gap="22px">
+                <Stack>
+                  <QuantitySelector
+                    quantity={quantityCartObject}
+                    onClickMinus={() => handleDecrement(id)}
+                    onClickPlus={() => handleIncrement(id)}
+                  />
+                </Stack>
+                <Price
+                  currency={selectedCurrency}
+                  value={
+                    convertValue(
+                      { type: currency, value },
+                      selectedCurrency,
+                      conversionRates
+                    ) || ''
+                  }
+                />
+                <IconButton
+                  variant="redIcon"
+                  iconName="Xmark"
+                  onClick={() => handleButtonClick(id)}
+                  paddingVar="icon"
+                  size="xl"
+                />
+                {isPopupOpen && <Overlay />}
+                {isPopupOpen && productToDelete === id && (
+                  <DialogDeleteProduct productId={id} onClose={handleClosePopup} />
                 )}
               </Stack>
-
-              <Stack flexDirection="column">
-                <Text className="shopping-text" fontSize={20}>
-                  {text}
-                </Text>
-                <Tag text={tagText} />
-              </Stack>
             </Stack>
-
-            <Stack gap="22px">
-              <Stack>
-                <QuantitySelector
-                  quantity={quantityCartObject}
-                  onClickMinus={() => handleDecrement(imageURL)}
-                  onClickPlus={() => handleIncrement(imageURL)}
-                />
-              </Stack>
-              <Price
-                currency={selectedCurrency}
-                value={
-                  convertValue(
-                    { type: currency, value },
-                    selectedCurrency,
-                    conversionRates
-                  ) || ''
-                }
-              />
-              <IconButton
-                variant="redIcon"
-                iconName="Xmark"
-                onClick={() => handleButtonClick(imageURL)}
-                paddingVar="icon"
-                size="xl"
-              />
-              {isPopupOpen && <Overlay />}
-              {isPopupOpen && productToDelete === imageURL && (
-                <DialogDeleteProduct product={imageURL} onClose={handleClosePopup} />
-              )}
-            </Stack>
-          </Stack>
-        </StyledRow>
-      )),
+          </StyledRow>
+        )
+      ),
     [
       options,
       handleDecrement,

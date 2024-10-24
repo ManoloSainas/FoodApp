@@ -16,7 +16,7 @@ export const cartSlice = createSlice({
   reducers: {
     // Aggiunge un prodotto al carrello
     addProduct: (state, action: PayloadAction<CartObject>) => {
-      const Item = state.cart.find((obj) => obj.imageURL === action.payload.imageURL)
+      const Item = state.cart.find((obj) => obj.id === action.payload.id)
       if (Item) {
         Item.quantityCartObject += 1
         Item.value = (parseFloat(Item.value) + parseFloat(action.payload.value))
@@ -39,12 +39,12 @@ export const cartSlice = createSlice({
 
     // Elimina un prodotto dal carrello
     deleteProduct: (state, action: PayloadAction<string>) => {
-      state.cart = state.cart.filter((obj) => obj.imageURL !== action.payload)
+      state.cart = state.cart.filter((obj) => obj.id !== action.payload)
     },
 
     // Elimina un'unità di un prodotto dal carrello
     deleteOneProduct: (state, action: PayloadAction<string>) => {
-      const Item = state.cart.find((obj) => obj.imageURL === action.payload)
+      const Item = state.cart.find((obj) => obj.id === action.payload)
       if (Item && Item.quantityCartObject > 0) {
         Item.quantityCartObject -= 1
         Item.value = (
@@ -58,7 +58,7 @@ export const cartSlice = createSlice({
 
     // Aggiunge un'unità di un prodotto al carrello
     addOneProduct: (state, action: PayloadAction<string>) => {
-      const Item = state.cart.find((obj) => obj.imageURL === action.payload)
+      const Item = state.cart.find((obj) => obj.id === action.payload)
       if (Item) {
         Item.quantityCartObject += 1
         Item.value = (
@@ -73,7 +73,7 @@ export const cartSlice = createSlice({
     // Aggiunge più unità di un prodotto al carrello
     addMoreProduct: (state, action: PayloadAction<AddProductPayload>) => {
       const { product, quantity } = action.payload
-      const Item = state.cart.find((obj) => obj.imageURL === product.imageURL)
+      const Item = state.cart.find((obj) => obj.id === product.id)
       if (Item) {
         Item.quantityCartObject += quantity
         Item.value = (parseFloat(Item.value) + parseFloat(product.value) * quantity)

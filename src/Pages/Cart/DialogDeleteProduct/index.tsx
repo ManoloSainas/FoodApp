@@ -8,10 +8,10 @@ import { deleteProduct } from '../../../features/cart/reducer'
 
 type Props = {
   onClose: () => void
-  product: string
+  productId: string
 }
 
-export const DialogDeleteProduct = ({ onClose, product }: Props) => {
+export const DialogDeleteProduct = ({ onClose, productId }: Props) => {
   const dispatch = useDispatch()
 
   const handleDeleteProduct = useCallback(
@@ -37,7 +37,7 @@ export const DialogDeleteProduct = ({ onClose, product }: Props) => {
         <Button
           ariaLabel="delete the product"
           variant="redIcon"
-          onClick={() => handleDeleteProduct(product)}
+          onClick={() => handleDeleteProduct(productId)}
         >
           Confirm
         </Button>
