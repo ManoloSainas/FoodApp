@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Select } from '../../../Shared Components/Select'
+import { Select } from '../../../shared components/Select'
 import { apiClient } from '../../../features/api/api-client'
-import { Text } from '../../../Shared Components/Text'
+import { Text } from '../../../shared components/Text'
 import { symbols } from '../../../constants'
 
 export type Props = {

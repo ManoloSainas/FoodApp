@@ -1,4 +1,4 @@
-import { Avatar } from '../../Composite Components/Avatar'
+import { Avatar } from '../../shared components/Avatar'
 import { SideList } from './SideList'
 import { StyledSideBarComponent } from './styled'
 import { useCallback } from 'react'

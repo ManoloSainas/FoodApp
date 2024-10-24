@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
-import { Icon } from '../../../Shared Components/Icon'
-import { IconName } from '../../../Shared Components/Icon/config'
-import { Text } from '../../../Shared Components/Text'
+import { Icon } from '../../../shared components/Icon'
+import { IconName } from '../../../shared components/Icon/config'
+import { Text } from '../../../shared components/Text'
 import { StyledRow, StyledSideList } from './styled'
-import { Stack } from '../../../Shared Components/Stack'
+import { Stack } from '../../../shared components/Stack'
 import { Link, useLocation } from 'react-router-dom'
 
 type Props = {

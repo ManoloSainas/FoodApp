@@ -1,5 +1,5 @@
 import { conversionRates, symbols } from '../../constants'
-import { convertValue } from '../convertValues'
+import { convertValue } from '../../utils/convertValues'
 import { MyState } from './model'
 
 // Selettore per ottenere la lista dei prodotti

@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
 import { Layout } from './Layout'
-import { Catalog } from './Layout/OutletPages/Catalog'
-import { Home } from './Layout/OutletPages/Home'
+import { Home } from './Pages/Home'
+import { Catalog } from './Pages/Catalog'
+import { ProductDetails } from './Pages/Catalog/ProductDetails'
+import { Cart } from './Pages/Cart'
 import { useEffect } from 'react'
-import { Cart } from './Layout/OutletPages/Cart'
-import { ProductDetails } from './Layout/OutletPages/Catalog/CatalogPopDishBody/PopDishesCard/ProductDetails'
 
 // Componente per reindirizzare automaticamente a "/home"
 function RedirectToHome() {
