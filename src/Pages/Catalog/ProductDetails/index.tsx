@@ -5,6 +5,7 @@ import { Review } from '../Review'
 
 export const ProductDetails = () => {
   const { state } = useLocation()
+  console.log(state)
   return (
     <StyledProductDetails>
       <CatalogItem

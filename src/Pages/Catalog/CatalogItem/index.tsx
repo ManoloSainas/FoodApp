@@ -77,8 +77,6 @@ export const CatalogItem = ({
     }, 1000)
   }, [dispatch, imageURL, text, tagText, currency, value, discountRate, id, delivery])
 
-  console.log(`value: ${value}`)
-
   return (
     <StyledCatalogItem>
       <Stack justifyContent="end" width="65%">

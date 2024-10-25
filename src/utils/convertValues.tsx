@@ -1,4 +1,4 @@
-import { symbols } from '../../constants'
+import { symbols } from '../constants'
 
 type CurrencyCode = keyof typeof symbols
 
