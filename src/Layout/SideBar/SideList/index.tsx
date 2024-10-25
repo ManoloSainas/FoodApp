@@ -46,7 +46,7 @@ export const SideList = ({ options, onChange }: Props) => {
     <StyledSideList>
       {options.map(({ icon, text }) => (
         <Link key={icon} to={`/${icon}`}>
-          <StyledRow onClick={() => handleClick(icon)} isSelected={selectedRow === icon}>
+          <StyledRow onClick={() => handleClick(icon)} $isSelected={selectedRow === icon}>
             <Stack width="75px">
               <Icon id="iconId" iconName={icon} />
             </Stack>
