@@ -1,7 +1,6 @@
 import { useContext, useEffect, useMemo, useState, useCallback } from 'react'
 import { PopDishes, product } from '../PopDishesCard'
 import { useDispatch } from 'react-redux'
-import { addProduct } from '../../../features/cart/reducer'
 import { Stack } from '../../../shared components/Stack'
 import { TextContext } from '../../../Layout'
 import { CurrencyContext } from '../../../Layout'
@@ -11,6 +10,7 @@ import { apiClient } from '../../../features/api/api-client'
 import { IconName } from '../../../shared components/Icon/config'
 import { convertValue } from '../../../utils/convertValues'
 import { Text } from '../../../shared components/Text'
+import { updateProductQuantity } from '../../../features/cart/reducer'
 
 type FetchedProduct = {
   id: string
@@ -61,7 +61,6 @@ export const CatalogPopDishBody = ({
       tagText: string,
       currency: keyof typeof symbols,
       value: string,
-      quantityCartObject: number,
       discountRate: number,
       delivery: string
     ) => {
@@ -72,11 +71,10 @@ export const CatalogPopDishBody = ({
         tagText,
         currency,
         value,
-        quantityCartObject,
         discountRate,
         delivery
       }
-      dispatch(addProduct(productPayload))
+      dispatch(updateProductQuantity({ product: productPayload, quantity: 1 }))
     },
     [dispatch]
   )
@@ -186,7 +184,6 @@ export const CatalogPopDishBody = ({
             tagText,
             currency,
             value,
-            1,
             discountRate,
             delivery
           )

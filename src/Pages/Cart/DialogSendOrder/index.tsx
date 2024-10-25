@@ -24,8 +24,8 @@ export const DialogSendOrder = ({ onClose }: Props) => {
           userId: 'Manolo Sainas',
           items: cart.map((item) => {
             return {
-              id: item.id,
-              quantity: item.quantityCartObject
+              id: item.product.id,
+              quantity: item.quantity
             }
           })
         })

@@ -110,7 +110,5 @@ addon per vscode:
 
  // Redux thunk
 
- cambiare addproduct, deleteproduct etc facendo un solo metodo per tutto
- cambiare il tipo nel cart reducer e fare oggetto+quantitàoggetto
  creare slicer per catalog
  

@@ -1,10 +1,10 @@
 import { useDispatch } from 'react-redux'
 import { useCallback, useContext, useMemo, useState } from 'react'
-import { addOneProduct, deleteOneProduct } from '../../../features/cart/reducer'
+// import { addOneProduct, deleteOneProduct } from '../../../features/cart/reducer'
 import { convertValue } from '../../../utils/convertValues'
 import { CurrencyContext } from '../../../Layout'
 import { symbols } from '../../../constants'
-import { CartObject } from '../../../features/cart/model'
+// import { CartObject } from '../../../features/cart/model'
 import { conversionRates } from '../../../constants'
 import { Image } from '../../../shared components/Image'
 import { IconButton } from '../../../shared components/IconButton'
@@ -17,9 +17,11 @@ import { Tag } from '../../../shared components/Tag'
 import { Text } from '../../../shared components/Text'
 import { StyledRow, StyledTable } from './styled'
 import { weirdSizeDrinks } from '../../../constants/'
+import { CartProduct } from '../../../features/cart/model'
+import { updateProductQuantity } from '../../../features/cart/reducer'
 
 type Props = {
-  options: CartObject[]
+  options: CartProduct[]
   onClick?: (value: string) => void
 }
 
@@ -39,81 +41,78 @@ export const ShoppingCard = ({ options }: Props) => {
     setProductToDelete(null)
   }, [])
 
-  const handleIncrement = useCallback(
-    (product: string) => {
-      dispatch(addOneProduct(product))
-    },
-    [dispatch]
-  )
-
-  const handleDecrement = useCallback(
-    (product: string) => {
-      dispatch(deleteOneProduct(product))
+  const handleModifyQuantityProduct = useCallback(
+    (product: string, quantity: number) => {
+      const currentProduct = options.find((item) => item.product.id === product)
+      currentProduct
+        ? dispatch(
+            updateProductQuantity({ product: currentProduct.product, quantity: quantity })
+          )
+        : null
     },
     [dispatch]
   )
 
   const optionsElements = useMemo(
     () =>
-      options.map(
-        ({ id, imageURL, text, tagText, currency, value, quantityCartObject }) => (
-          <StyledRow key={imageURL}>
-            <Stack justifyContent="space-between" alignItems="center" width="100%">
-              <Stack gap="10px">
-                <Stack height="100px" width="100px">
-                  {weirdSizeDrinks.includes(text) ? (
-                    <Image className="pop-dish-image" imageUrl={imageURL} />
-                  ) : (
-                    <Image className="pop-dish-image-drink" imageUrl={imageURL} />
-                  )}
-                </Stack>
-
-                <Stack flexDirection="column">
-                  <Text className="shopping-text" fontSize={20}>
-                    {text}
-                  </Text>
-                  <Tag text={tagText} />
-                </Stack>
-              </Stack>
-
-              <Stack gap="22px">
-                <Stack>
-                  <QuantitySelector
-                    quantity={quantityCartObject}
-                    onClickMinus={() => handleDecrement(id)}
-                    onClickPlus={() => handleIncrement(id)}
-                  />
-                </Stack>
-                <Price
-                  currency={selectedCurrency}
-                  value={
-                    convertValue(
-                      { type: currency, value },
-                      selectedCurrency,
-                      conversionRates
-                    ) || ''
-                  }
-                />
-                <IconButton
-                  variant="redIcon"
-                  iconName="Xmark"
-                  onClick={() => handleButtonClick(id)}
-                  paddingVar="icon"
-                  size="xl"
-                />
-                {isPopupOpen && <Overlay />}
-                {isPopupOpen && productToDelete === id && (
-                  <DialogDeleteProduct productId={id} onClose={handleClosePopup} />
+      options.map(({ product, quantity }) => (
+        <StyledRow key={product.imageURL}>
+          <Stack justifyContent="space-between" alignItems="center" width="100%">
+            <Stack gap="10px">
+              <Stack height="100px" width="100px">
+                {weirdSizeDrinks.includes(product.text) ? (
+                  <Image className="pop-dish-image" imageUrl={product.imageURL} />
+                ) : (
+                  <Image className="pop-dish-image-drink" imageUrl={product.imageURL} />
                 )}
               </Stack>
+
+              <Stack flexDirection="column">
+                <Text className="shopping-text" fontSize={20}>
+                  {product.text}
+                </Text>
+                <Tag text={product.tagText} />
+              </Stack>
             </Stack>
-          </StyledRow>
-        )
-      ),
+
+            <Stack gap="22px">
+              <Stack>
+                <QuantitySelector
+                  quantity={quantity}
+                  onClickMinus={() => handleModifyQuantityProduct(product.id, -1)}
+                  onClickPlus={() => handleModifyQuantityProduct(product.id, 1)}
+                />
+              </Stack>
+              <Price
+                currency={selectedCurrency}
+                value={
+                  convertValue(
+                    {
+                      type: product.currency,
+                      value: (parseFloat(product.value) * quantity).toFixed(2).toString()
+                    },
+                    selectedCurrency,
+                    conversionRates
+                  ) || ''
+                }
+              />
+              <IconButton
+                variant="redIcon"
+                iconName="Xmark"
+                onClick={() => handleButtonClick(product.id)}
+                paddingVar="icon"
+                size="xl"
+              />
+              {isPopupOpen && <Overlay />}
+              {isPopupOpen && productToDelete === product.id && (
+                <DialogDeleteProduct productId={product.id} onClose={handleClosePopup} />
+              )}
+            </Stack>
+          </Stack>
+        </StyledRow>
+      )),
     [
       options,
-      handleDecrement,
-      handleIncrement,
       isPopupOpen,
       handleButtonClick,
       handleClosePopup,

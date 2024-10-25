@@ -102,7 +102,7 @@ export const PopDishes = ({ products, onClick }: Props) => {
                 >
                   <Stack flexDirection="column" alignItems="flex-start">
                     <Link
-                      key={imageURL}
+                      key={id}
                       to={`/ProductDetails`}
                       state={{
                         id,

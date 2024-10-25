@@ -13,10 +13,10 @@ import { convertValue } from '../../../utils/convertValues'
 import { CurrencyContext } from '../../../Layout'
 import { symbols } from '../../../constants'
 import { conversionRates } from '../../../constants'
-import { addProduct } from '../../../features/cart/reducer'
 import { notifyProductAdded } from '../../../features/Toaster'
 import { weirdSizeDrinks } from '../../../constants'
 import { ButtonVariant } from '../../../shared components/Button/styled'
+import { updateProductQuantity } from '../../../features/cart/reducer'
 
 type Props = {
   text: string
@@ -64,19 +64,20 @@ export const CatalogItem = ({
       tagText,
       currency,
       value,
-      quantityCartObject: 1,
       discountRate,
       id,
       delivery
     }
 
-    dispatch(addProduct(product))
+    dispatch(updateProductQuantity({ product: product, quantity: 1 }))
     setButtonState({ variant: 'redIcon', buttonText: 'Added to cart' })
 
     setTimeout(() => {
       setButtonState({ variant: 'primary', buttonText: 'Order Now' })
     }, 1000)
   }, [dispatch, imageURL, text, tagText, currency, value, discountRate, id, delivery])
+
+  console.log(`value: ${value}`)
 
   return (
     <StyledCatalogItem>

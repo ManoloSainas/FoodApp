@@ -7,7 +7,7 @@ export const selectCart = (state: { cart: MyState }) => state.cart.cart
 
 // Selettore per ottenere il numero totale di prodotti presenti nell'array
 export const selectCartTotal = (state: { cart: MyState }) =>
-  state.cart.cart.reduce((total, item) => total + item.quantityCartObject, 0)
+  state.cart.cart.reduce((total, item) => total + item.quantity, 0)
 
 // Selettore per ottenere il prezzo totale dei prodotti presenti nell'array
 export const selectCartTotalPrice = (
@@ -20,7 +20,12 @@ export const selectCartTotalPrice = (
         total +
         parseFloat(
           convertValue(
-            { type: item.currency, value: item.value },
+            {
+              type: item.product.currency,
+              value: (parseFloat(item.product.value) * item.quantity)
+                .toFixed(2)
+                .toString()
+            },
             selectedCurrency,
             conversionRates
           ) || '0'
@@ -31,6 +36,6 @@ export const selectCartTotalPrice = (
 
 // Selettore per ottenere la quantità di un prodotto dato il suo imageURL
 export const selectQuantityByImageURL = (state: { cart: MyState }, imageURL: string) => {
-  const item = state.cart.cart.find((item) => item.imageURL === imageURL)
-  return item ? item.quantityCartObject : 0
+  const item = state.cart.cart.find((item) => item.product.imageURL === imageURL)
+  return item ? item.quantity : 0
 }
