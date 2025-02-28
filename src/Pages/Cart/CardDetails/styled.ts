@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const StyledCardDetails = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 10px 0 0 35px;
+  margin: 0px 0 0 0px;
   padding: 0;
-  gap: 20px;
+  gap: 7px;
   width: 100%;
 `

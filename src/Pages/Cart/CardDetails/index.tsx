@@ -30,7 +30,7 @@ export const CardDetails = () => {
       <Text fontSize={30} color="white">
         Card Details
       </Text>
-      <Stack flexDirection="column" gap="15px" margin="0 0 20px 0">
+      <Stack flexDirection="column" gap="15px" margin="0 0 10px 0">
         <Text fontSize={22} variant="p" color="#e4e4e4eb">
           Payment method
         </Text>
@@ -66,7 +66,7 @@ export const CardDetails = () => {
         />
         <Hr />
       </Stack>
-      <Stack gap="20px" margin="20px 0 20px 0">
+      <Stack gap="20px" margin="10px 0 10px 0">
         <Stack flexDirection="column" padding="0 0 20px 0 " gap="30px">
           <Text fontSize={22} variant="p" color="#e4e4e4eb">
             Expiration Date
