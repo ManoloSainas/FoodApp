@@ -66,7 +66,7 @@ export const CardDetails = () => {
         />
         <Hr />
       </Stack>
-      <Stack gap="20px" margin="10px 0 10px 0">
+      <Stack gap="20px" margin="10px 0 0px 0">
         <Stack flexDirection="column" padding="0 0 20px 0 " gap="30px">
           <Text fontSize={22} variant="p" color="#e4e4e4eb">
             Expiration Date

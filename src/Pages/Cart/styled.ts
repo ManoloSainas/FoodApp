@@ -6,7 +6,7 @@ export const StyledCart = styled.div`
   height: 100%;
   background-color: #100f14;
   border-top-left-radius: 80px 80px;
-  padding: 40px 0px 50px 50px;
+  padding: 30px 0px 50px 50px;
   gap: 5%;
 `
 
