@@ -6,5 +6,5 @@ This Single page application was developed during my university internship at St
 Additional tools used include Vite, npm, Flexbox, Grid, React Router, Context, Redux, Redux Toolkit, Redux Persist, and React Toastify.
 
 The token for API requests has been disabled by Stackhouse SRL. 
-To see how the application works, please refer to the video and the screenshots contained in the folder "Final result - video and screenshots".
+To see how the application works, please refer to the videos and the screenshots contained in the folder "Final result - videos and screenshots".
 
