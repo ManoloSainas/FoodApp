@@ -1,2 +1,3 @@
 Cart-products.mp4 filter=lfs diff=lfs merge=lfs -text
 Filters.mp4 filter=lfs diff=lfs merge=lfs -text
+ProductDetails[[:space:]]and[[:space:]]Review.mp4 filter=lfs diff=lfs merge=lfs -text
