@@ -39,14 +39,23 @@ This Single page application was developed during my university internship at St
 ## 📁 Project Structure
 
 src/
+
 ├── assets/                  # Images and static resources
+
 ├── constants/               # Constants used in the app (e.g. months, years)
+
 ├── features/                # API logic, Redux store, reducers, models, selectors, and toast handlers
+
 ├── layout/                  # App layout: Header, Sidebar, and main content (with React Router)
+
 ├── pages/                   # App pages: Home, Catalog, Cart.
+
 ├── shared components/       # Reusable React components
+
 ├── utils/                   # Utility functions (e.g. currency converter)
+
 ├── App.tsx                  # App root component 
+
 ├── main.tsx                 # Entry point
 
 ---
@@ -54,8 +63,11 @@ src/
 ## 🧑‍💻 Getting Started
 
 git clone https://github.com/ManoloSainas/FoodApp.git
+
 cd FoodApp
+
 npm install
+
 npm start
 
 ---
