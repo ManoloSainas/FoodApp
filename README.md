@@ -1,8 +1,11 @@
-Project: Flying Food
-A front-end web application for food delivery online.
+# 🍔 Flying Food
 
-The token for API requests has been disabled by Stackhouse SRL. 
-To see how the application works, please refer to the videos and the screenshots contained in the folder "Final result - videos and screenshots".
+A front-end web application for online food delivery, built during my university internship at Stackhouse SRL using React and TypeScript.
+
+## 📸 Demo
+
+> ⚠️ The token for API requests has been disabled by Stackhouse SRL.  
+> You can still see how the app works by checking the [Final result - videos and screenshots](./path/to/folder](https://github.com/ManoloSainas/FoodApp/tree/main/Final%20result%20-%20videos%20and%20screenshots).
 
 --------------------------------------------------------------------------
 
