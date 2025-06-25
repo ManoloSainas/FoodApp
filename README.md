@@ -8,7 +8,7 @@ This Single page application was developed during my university internship at St
 ## 📸 Demo
 
 > ⚠️ The token for API requests maight be disabled by Stackhouse SRL at any time.  
-> You can still see how the app works by checking the [Final result - videos and screenshots](./path/to/folder](https://github.com/ManoloSainas/FoodApp/tree/main/Final%20result%20-%20videos%20and%20screenshots).
+> You can still see how the app works by checking the [Final result - videos and screenshots](https://github.com/ManoloSainas/FoodApp/tree/main/Final%20result%20-%20videos%20and%20screenshots).
 
 ------------------------------
 
