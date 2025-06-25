@@ -40,7 +40,8 @@ This Single page application was developed during my university internship at St
 
 src/
 
-├── assets/                  ```Images and static resources```
+```Images and static resources```
+├── assets/                  
 
 ├── constants/              ```Constants used in the app (e.g. months, years)```
 
@@ -82,5 +83,6 @@ src/
 ## 📄 License
 
 This project was created for educational purposes.
+
 © 2024 – Manolo Sainas
 
