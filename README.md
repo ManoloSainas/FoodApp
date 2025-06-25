@@ -40,9 +40,9 @@ This Single page application was developed during my university internship at St
 
 src/
 
-├── assets/                  # Images and static resources
+├── assets/                  ```Images and static resources```
 
-├── constants/               # Constants used in the app (e.g. months, years)
+├── constants/              ```Constants used in the app (e.g. months, years)```
 
 ├── features/                # API logic, Redux store, reducers, models, selectors, and toast handlers
 
